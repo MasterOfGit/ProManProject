@@ -126,7 +126,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ProMan_Database\ProMan_Database\ProMan_Database.csproj">
+    <ProjectReference Include="..\ProMan_Database\ProMan_Database.csproj">
       <Project>{8e2e2802-b39d-48d6-9512-9d350e75aef4}</Project>
       <Name>ProMan_Database</Name>
     </ProjectReference>
