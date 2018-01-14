@@ -6,13 +6,14 @@ using System.Net.Http;
 using System.Web.Http;
 using ProMan_WebAPI.Models;
 using ProMan_Database;
+using ProMan_WebAPI.DataProvider;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("maschine")]
     public class MaschineController : ApiController
     {
-        ProManContext dbcontext = new ProManContext();
+        IDataProvider dataprovider = new DataProviderFactory().data;
 
         // GET api/<controller>
         public IEnumerable<string> Get()
@@ -23,20 +24,9 @@ namespace ProMan_WebAPI.Controllers
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            var item = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == id);
-            MaschineDto maschine = new MaschineDto()
-            {
-                InventarNummer = item.InventarNummer,
-                Zeichnungsnummer = item.Zeichnungsnummer,
-                Baujahr = item.Baujahr.GetValueOrDefault(),
-                Garantie = item.Garantie.GetValueOrDefault(),
-                MaschinenStatus = item.MaschinenStatus,
-                Hersteller = item.Hersteller.Name,
-                Type = item.Type.Name
 
-            };
 
-            return Ok(maschine);
+            return Ok(dataprovider.GetMaschineDto(id));
         }
 
         // POST api/<controller>

@@ -6,13 +6,14 @@ using System.Net.Http;
 using System.Web.Http;
 using ProMan_Database;
 using ProMan_WebAPI.Models;
+using ProMan_WebAPI.DataProvider;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("user")]
     public class UserController : ApiController
     {
-        ProManContext dbcontext = new ProManContext();
+        IDataProvider dataprovider = new DataProviderFactory().data;
 
         // GET: api/User
         public IEnumerable<string> Get()
@@ -23,19 +24,8 @@ namespace ProMan_WebAPI.Controllers
         // GET: api/User/5
         public IHttpActionResult Get(int id)
         {
-            var item = dbcontext.User.FirstOrDefault(x => x.UserID == id);
-            UserDto user = new UserDto()
-            {
-                Abteilung = item.Abteilung.Fachbereich,
-                FirstName = item.FirstName,
-                FamilyName = item.FamilyName,
-                eMail = item.eMail,
-                Phone = item.Phone,
-                Mobile = item.Mobile,
-                Title = item.Title,
-                Werk = item.Abteilung.Werk.Name
-            };
-            return Ok(user);
+
+            return Ok(dataprovider.GetUserDto(id));
         }
 
         // POST: api/User

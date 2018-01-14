@@ -27,27 +27,27 @@ namespace ProMan_Simulator
         {
             InitializeComponent();
 
-            Stopwatch watch = new Stopwatch();
+           // Stopwatch watch = new Stopwatch();
 
-            watch.Start();
+           // watch.Start();
 
-            MainModel tmp = new MainModel();
+           // MainModel tmp = new MainModel();
 
-            tmp = new MainModel();
+           // tmp = new MainModel();
 
-            HttpHelper test = new HttpHelper();
-            var result = Task.Run(() => test.HttpGet<string>("api/login/2")).Result;
-            //var mytask2 = test.HttpPost<string>("api/login","Katze");
-            //var mytask = test.HttpGet<string>("api/login/2");
-            //mytask.Start();
-           // mytask.Wait();
-           // var item = mytask.Result;
-            Console.WriteLine(result);
-            result = Task.Run(() => test.HttpGet<string>("api/login/2")).Result;
-            Console.WriteLine(result);
+           // HttpHelper test = new HttpHelper();
+           // var result = Task.Run(() => test.HttpGet<string>("api/login/2")).Result;
+           // //var mytask2 = test.HttpPost<string>("api/login","Katze");
+           // //var mytask = test.HttpGet<string>("api/login/2");
+           // //mytask.Start();
+           //// mytask.Wait();
+           //// var item = mytask.Result;
+           // Console.WriteLine(result);
+           // result = Task.Run(() => test.HttpGet<string>("api/login/2")).Result;
+           // Console.WriteLine(result);
 
-            watch.Stop();
-            var time = watch.Elapsed;
+           // watch.Stop();
+           // var time = watch.Elapsed;
         }
     }
 }
