@@ -34,7 +34,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>01/07/2018 12:37:13</publishTime>
     </File>
     <File Include="bin/ProMan_WebAPI.dll">
-      <publishTime>01/13/2018 11:41:31</publishTime>
+      <publishTime>01/20/2018 10:35:19</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -88,7 +88,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>01/06/2018 11:50:44</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/13/2018 11:01:21</publishTime>
+      <publishTime>01/14/2018 14:56:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

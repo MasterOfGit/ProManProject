@@ -1,4 +1,5 @@
 ﻿using ProMan_Database;
+using ProMan_WebAPI.DataProvider;
 using ProMan_WebAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace ProMan_WebAPI.Controllers
 {
     public class FertigungController : ApiController
     {
-        ProManContext dbcontext = new ProManContext();
+        IDataProvider dataprovider = new DataProviderFactory().data;
 
         // GET: api/Fertigung
         public IEnumerable<string> Get()
@@ -22,33 +23,19 @@ namespace ProMan_WebAPI.Controllers
         // GET: api/Fertigung/5
         public IHttpActionResult Get(int id)
         {
-            var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
-
-            FertigungDto fertigung = new FertigungDto()
-            {
-                ID = item.FertigungID,
-                Fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
-                {
-                    Maschinen = x.Maschinen.Select(y => new MaschineDto()
-                    {
-                        InventarNummer = y.InventarNummer,
-                        Zeichnungsnummer = y.Zeichnungsnummer,
-                        MaschinenStatus = y.MaschinenStatus,
-                    }).ToList()
-                }).ToList()
-            };
-
-            return Ok(fertigung);
+            return Ok(dataprovider.GetFertigungsDto(id));
         }
 
-        // POST: api/Fertigung
-        public void Post([FromBody]string value)
+        // POST api/<controller>
+        public void Post([FromBody]FertigungDto value)
         {
+            dataprovider.SetFertigungsDto(value);
         }
 
-        // PUT: api/Fertigung/5
-        public void Put(int id, [FromBody]string value)
+        // PUT api/<controller>/5
+        public void Put(int id, [FromBody]FertigungDto value)
         {
+            dataprovider.UpdateFertigungsDto(value, id);
         }
 
         // DELETE: api/Fertigung/5

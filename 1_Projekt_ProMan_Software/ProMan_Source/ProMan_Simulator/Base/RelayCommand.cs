@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace ProMan_Simulator.Base
@@ -40,4 +41,6 @@ namespace ProMan_Simulator.Base
 
         #endregion
     }
+
+    
 }

@@ -4,9 +4,49 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProMan_Simulator"
+        xmlns:mymodel="clr-namespace:ProMan_Simulator.Model"
         mc:Ignorable="d"
-        Title="ProMan_Simulator" Height="350" Width="525">
-    <Grid>
-        
+        Title="ProMan_Simulator" Height="350" Width="800">
+    <Window.Resources>
+        <!-- This creates the instance of the HomepageViewModel -->
+        <mymodel:MainModel x:Key="DataModel" />
+        <Style x:Key="baseStyle" TargetType="{x:Type Control}">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style x:Key="Result" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Foreground" Value="Blue"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="LightGray" DataContext="{StaticResource DataModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="ID" Style="{StaticResource baseStyle}"></Label>
+        <TextBox Name="SelectedID" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Text="{Binding ID}" Style="{StaticResource baseStyle}"></TextBox>
+        <Label Grid.Row="0" Grid.Column="2" Content="Object" Style="{StaticResource baseStyle}"></Label>
+        <ComboBox Name="SelectedMode" Grid.Row="0" Grid.Column="3" ItemsSource="{Binding Modes}" SelectedValue="{Binding SelectedMode}" SelectedIndex="0" Style="{StaticResource baseStyle}"></ComboBox>
+        <Button Grid.Row="0" Grid.Column="4" Content="GetExecute" Style="{StaticResource baseStyle}" Command="{Binding GetButtonCommand}"></Button>
+        <Button Grid.Row="0" Grid.Column="5" Content="SetExecute" Style="{StaticResource baseStyle}" Command="{Binding SetButtonCommand}"></Button>
+        <Label Grid.Row="1" Grid.Column="0" Content="Result" Style="{StaticResource baseStyle}"></Label>
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" BorderBrush="Black" BorderThickness="2">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+                <TextBlock Name="ResultData" Style="{StaticResource Result}" Text="{Binding Result}"></TextBlock>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>

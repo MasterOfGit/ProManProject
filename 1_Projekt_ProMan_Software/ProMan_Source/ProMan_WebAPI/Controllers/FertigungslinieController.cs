@@ -6,13 +6,14 @@ using System.Net.Http;
 using System.Web.Http;
 using ProMan_WebAPI.Models;
 using ProMan_Database;
+using ProMan_WebAPI.DataProvider;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("fertigungslinie")]
     public class FertigungslinieController : ApiController
     {
-        ProManContext dbcontext = new ProManContext();
+        IDataProvider dataprovider = new DataProviderFactory().data;
 
         // GET api/<controller>
         public IEnumerable<string> Get()
@@ -23,30 +24,21 @@ namespace ProMan_WebAPI.Controllers
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
-
-            FertigungslinieDto fertigungslinie = new FertigungslinieDto()
-            {
-                Maschinen = item.Maschinen.Select(x => new MaschineDto()
-                {
-                    InventarNummer = x.InventarNummer,
-                    Zeichnungsnummer = x.Zeichnungsnummer,
-                    MaschinenStatus = x.MaschinenStatus,
-                }).ToList()
-            };
 
 
-            return Ok(fertigungslinie);
+            return Ok(dataprovider.GetFertigungslinieDto(id));
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]FertigungslinieDto value)
         {
+            dataprovider.SetFertigungslinieDto(value);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]FertigungslinieDto value)
         {
+            dataprovider.UpdateFertigungslinieDto(value, id);
         }
 
         // DELETE api/<controller>/5
