@@ -26,14 +26,16 @@ namespace ProMan_WebAPI.Controllers
             return Ok(dataprovider.GetFertigungsDto(id));
         }
 
-        // POST: api/Fertigung
-        public void Post([FromBody]string value)
+        // POST api/<controller>
+        public void Post([FromBody]FertigungDto value)
         {
+            dataprovider.SetFertigungsDto(value);
         }
 
-        // PUT: api/Fertigung/5
-        public void Put(int id, [FromBody]string value)
+        // PUT api/<controller>/5
+        public void Put(int id, [FromBody]FertigungDto value)
         {
+            dataprovider.UpdateFertigungsDto(value, id);
         }
 
         // DELETE: api/Fertigung/5

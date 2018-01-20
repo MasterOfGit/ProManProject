@@ -79,6 +79,7 @@ namespace ProMan_Simulator.Model
 
         public MainModel()
         {
+            //_httphelper = new HttpHelper(@"http://localhost:50435/");
             _httphelper = new HttpHelper();
             Modes.Add("Fertigung");
             Modes.Add("Fertigungslinie");
@@ -92,25 +93,46 @@ namespace ProMan_Simulator.Model
             //Fertigung.Add(Task.Run(() => test.HttpGet<FertigungDto>("api/fertigung/2")).Result);
         }
 
-        private AsyncCommand m_ButtonCommand;
-        public AsyncCommand ButtonCommand
+        #region Buttons
+
+        private AsyncCommand m_GetButtonCommand;
+        public AsyncCommand GetButtonCommand
         {
             get
             {
-                if (m_ButtonCommand == null)
+                if (m_GetButtonCommand == null)
                 {
-                    m_ButtonCommand = new AsyncCommand(() => ExecuteFunction(), () => true);
+                    m_GetButtonCommand = new AsyncCommand(() => GetExecuteFunction(), () => true);
                 }
 
-                return m_ButtonCommand;
+                return m_GetButtonCommand;
             }
             set
             {
-                m_ButtonCommand = value;
+                m_GetButtonCommand = value;
             }
         }
 
-        private void ExecuteFunction()
+        private AsyncCommand m_SetButtonCommand;
+        public AsyncCommand SetButtonCommand
+        {
+            get
+            {
+                if (m_SetButtonCommand == null)
+                {
+                    m_SetButtonCommand = new AsyncCommand(() => SetExecuteFunction(), () => true);
+                }
+
+                return m_SetButtonCommand;
+            }
+            set
+            {
+                m_SetButtonCommand = value;
+            }
+        }
+
+        #endregion
+        private void GetExecuteFunction()
         {
             switch (SelectedMode)
             {
@@ -156,6 +178,80 @@ namespace ProMan_Simulator.Model
             }
 
         }
+
+        private async void SetExecuteFunction()
+        {
+            switch (SelectedMode)
+            {
+                case "Fertigung":
+                    {
+                        Result = $"Mode with the name \"{SelectedMode}\" is not supported";
+                        break;
+                    }
+                case "Fertigungslinie":
+                    {
+                        Result = $"Mode with the name \"{SelectedMode}\" is not supported";
+                        break;
+                    }
+                case "Maschine":
+                    {
+                        await _httphelper.HttpPost($"api/maschine", new MaschineDto()
+                        {
+                            Baujahr = DateTime.Now,
+                            Garantie = DateTime.Now.AddYears(5),
+                            Hersteller = "Hersteller 1",
+                            Type = "Type_1",
+                            InventarNummer = 123
+                        }
+    );
+                        break;
+                    }
+                case "User":
+                    {
+                        await _httphelper.HttpPost($"api/user", new UserDto()
+                        {
+                            FirstName = "Katze",
+                            FamilyName = "Hund",
+                            Abteilung = "Test",
+                            eMail = "katze@firma.de",
+                            Mobile = "123",
+                            Phone = "456",
+                        }
+    );
+                        break;
+                    }
+                case "Reparatur":
+                    {
+                        await _httphelper.HttpPost($"api/reparatur", new ReparaturDto()
+                        {
+                            Dauer = DateTime.Now,
+                            InventarNummer = 1,
+                            Status = "InWork",
+                            Zeichnungsnummer = "Dies ist ein Test",
+                        }
+    );
+                        break;
+                    }
+                case "Wartung":
+                    {
+                        await _httphelper.HttpPost($"api/wartung", new WartungDto()
+                        {
+                            Beschreibung = "Dies ist ein Test",
+                            InventarNummer = 1,
+                            Status = "InWork",
+                            WartungsInterval = DateTime.Now,
+                        }
+                            );
+                        break;
+                    }
+                default:
+                    Result = $"Mode with the name \"{SelectedMode}\" is not supported";
+                    break;
+            }
+
+        }
+
+
 
         public string Serialize<T>(T dataToSerialize)
         {

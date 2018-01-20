@@ -28,14 +28,16 @@ namespace ProMan_WebAPI.Controllers
             return Ok(dataprovider.GetUserDto(id));
         }
 
-        // POST: api/User
-        public void Post([FromBody]string value)
+        // POST api/<controller>
+        public void Post([FromBody]UserDto value)
         {
+            dataprovider.SetUserDto(value);
         }
 
-        // PUT: api/User/5
-        public void Put(int id, [FromBody]string value)
+        // PUT api/<controller>/5
+        public void Put(int id, [FromBody]UserDto value)
         {
+            dataprovider.UpdateUserDto(value, id);
         }
 
         // DELETE: api/User/5

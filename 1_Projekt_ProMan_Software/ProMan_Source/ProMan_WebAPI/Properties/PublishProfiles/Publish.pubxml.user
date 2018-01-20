@@ -28,13 +28,13 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/08/2014 20:33:56</publishTime>
+      <publishTime>08/03/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/ProMan_Database.dll">
       <publishTime>01/07/2018 12:37:13</publishTime>
     </File>
     <File Include="bin/ProMan_WebAPI.dll">
-      <publishTime>01/14/2018 14:56:40</publishTime>
+      <publishTime>01/20/2018 10:35:19</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>

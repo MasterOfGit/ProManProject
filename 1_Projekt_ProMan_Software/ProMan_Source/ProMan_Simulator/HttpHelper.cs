@@ -22,7 +22,7 @@ namespace ProMan_Simulator
 
         public HttpHelper(string uri)
         {
-            //client = new HttpClient();
+            client = new HttpClient();
             client.BaseAddress = new Uri(uri);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -42,7 +42,7 @@ namespace ProMan_Simulator
 
         public async Task HttpPost<T>(string adress, T value)
         {
-            HttpResponseMessage res = await client.PutAsJsonAsync(adress, value);
+            HttpResponseMessage res = await client.PostAsJsonAsync(adress, value);
             res.EnsureSuccessStatusCode();
             if (res.IsSuccessStatusCode)
             {

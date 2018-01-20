@@ -11,6 +11,8 @@ namespace ProMan_WebAPI.DataProvider
     {
         ProManContext dbcontext = new ProManContext();
 
+        #region gets
+
         public FertigungDto GetFertigungsDto(int id)
         {
             var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
@@ -143,34 +145,173 @@ namespace ProMan_WebAPI.DataProvider
             return wartung;
         }
 
+        #endregion
+
+        #region set/create
+
         public bool SetFertigungsDto(FertigungDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung());
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool SetFertigungslinieDto(FertigungslinieDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool SetMaschineDto(MaschineDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
+            {
+                Baujahr = data.Baujahr,
+                Garantie = data.Garantie,
+                Hersteller = dbcontext.MaschineHersteller.FirstOrDefault(x => x.Name ==  data.Hersteller),
+                MaschinenStatus = data.MaschinenStatus,
+                Type = dbcontext.MaschineTypen.FirstOrDefault(x => x.Name == data.Type),
+                Zeichnungsnummer = data.Zeichnungsnummer,
+                InventarNummer = data.InventarNummer,                
+            });
+
+            dbcontext.SaveChanges();
+
+            return true;
+
         }
 
         public bool SetReparaturDto(ReparaturDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.Reparaturen.Add(new ProMan_Database.Model.Reparatur()
+            {
+                Dauer = data.Dauer,
+                Maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.InventarNummer),
+                Start = data.Start,
+                Status = data.Status,
+                User = dbcontext.User.FirstOrDefault(x => x.FirstName == data.User.FirstName && x.FamilyName == data.User.FamilyName)
+            });
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool SetUserDto(UserDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.User.Add(new ProMan_Database.Model.User()
+            {
+                FamilyName = data.FamilyName,
+                FirstName = data.FirstName,
+                eMail = data.eMail,
+                Phone = data.Phone,
+                Title = data.Title,
+                Mobile = data.Mobile,
+                Country = data.Werk,
+                Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Fachbereich == data.Abteilung)
+            }
+                );
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool SetWartungDto(WartungDto data)
         {
-            throw new NotImplementedException();
+            dbcontext.Wartungen.Add(new ProMan_Database.Model.Wartung()
+            {
+                Beschreibung = data.Beschreibung,
+                Status = data.Status,
+                WartungsInterval = data.WartungsInterval,          
+            });
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
+
+        #endregion
+
+        #region updates
+        public bool UpdateReparaturDto(ReparaturDto data, int id)
+        {
+            var item = dbcontext.Reparaturen.FirstOrDefault(x => x.ReparaturID == id);
+
+            item.Status = data.Status;
+            item.Dauer = data.Dauer;
+            
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        public bool UpdateFertigungsDto(FertigungDto data, int id)
+        {
+            var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
+
+
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
+        {
+            var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
+
+
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        public bool UpdateMaschineDto(MaschineDto data, int id)
+        {
+            var item = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == id);
+
+            item.Garantie = data.Garantie;
+            item.MaschinenStatus = data.MaschinenStatus;
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        public bool UpdateUserDto(UserDto data, int id)
+        {
+            var item = dbcontext.User.FirstOrDefault(x => x.UserID == id);
+
+            item.FirstName = data.FirstName;
+            item.FamilyName = data.FamilyName;
+            item.eMail = data.eMail;
+            item.Mobile = data.Mobile;
+            item.Phone = data.Phone;
+
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        public bool UpdateWartungDto(WartungDto data, int id)
+        {
+            var item = dbcontext.Wartungen.FirstOrDefault(x => x.WartungID == id);
+
+            item.Beschreibung = data.Beschreibung;
+            item.WartungsInterval = data.WartungsInterval;
+            item.Status = data.Status;
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
+        #endregion
     }
 }

@@ -163,5 +163,35 @@ namespace ProMan_WebAPI.DataProvider
         {
             throw new NotImplementedException();
         }
+
+        public bool UpdateFertigungsDto(FertigungDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateMaschineDto(MaschineDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateReparaturDto(ReparaturDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateUserDto(UserDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateWartungDto(WartungDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
