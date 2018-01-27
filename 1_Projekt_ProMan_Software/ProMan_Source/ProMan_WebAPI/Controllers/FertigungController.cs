@@ -1,4 +1,5 @@
-﻿using ProMan_Database;
+﻿using Newtonsoft.Json.Linq;
+using ProMan_Database;
 using ProMan_WebAPI.DataProvider;
 using ProMan_WebAPI.Models;
 using System;
@@ -23,7 +24,8 @@ namespace ProMan_WebAPI.Controllers
         // GET: api/Fertigung/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(dataprovider.GetFertigungsDto(id));
+
+            return Ok(JToken.FromObject(dataprovider.GetFertigungsDto(id)));
         }
 
         // POST api/<controller>

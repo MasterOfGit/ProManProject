@@ -7,6 +7,7 @@ using System.Web.Http;
 using ProMan_Database;
 using ProMan_WebAPI.Models;
 using ProMan_WebAPI.DataProvider;
+using Newtonsoft.Json.Linq;
 
 namespace ProMan_WebAPI.Controllers
 {
@@ -25,7 +26,7 @@ namespace ProMan_WebAPI.Controllers
         public IHttpActionResult Get(int id)
         {
 
-            return Ok(dataprovider.GetUserDto(id));
+            return Ok(JToken.FromObject(dataprovider.GetUserDto(id)));
         }
 
         // POST api/<controller>

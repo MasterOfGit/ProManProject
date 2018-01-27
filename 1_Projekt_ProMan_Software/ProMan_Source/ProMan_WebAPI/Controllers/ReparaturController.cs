@@ -7,6 +7,7 @@ using System.Web.Http;
 using ProMan_WebAPI.Models;
 using ProMan_Database;
 using ProMan_WebAPI.DataProvider;
+using Newtonsoft.Json.Linq;
 
 namespace ProMan_WebAPI.Controllers
 {
@@ -24,7 +25,7 @@ namespace ProMan_WebAPI.Controllers
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(dataprovider.GetReparaturDto(id));
+            return Ok(JToken.FromObject(dataprovider.GetReparaturDto(id)));
         }
 
         // POST api/<controller>

@@ -7,6 +7,7 @@ using System.Web.Http;
 using ProMan_WebAPI.Models;
 using ProMan_Database;
 using ProMan_WebAPI.DataProvider;
+using Newtonsoft.Json.Linq;
 
 namespace ProMan_WebAPI.Controllers
 {
@@ -26,7 +27,7 @@ namespace ProMan_WebAPI.Controllers
         {
 
 
-            return Ok(dataprovider.GetMaschineDto(id));
+            return Ok(JToken.FromObject(dataprovider.GetMaschineDto(id)));
         }
 
         // POST api/<controller>

@@ -10,30 +10,26 @@ namespace ProMan_WebAPI.DataProvider
     {
         public FertigungDto GetFertigungsDto(int id)
         {
-            Random rnd = new Random(id);
             List<FertigungslinieDto> tmp = new List<FertigungslinieDto>();
             for (int i = 0; i < id; i++)
             {
-                tmp.Add(GetFertigungslinieDto((rnd.Next(1, 5))));
+                tmp.Add(GetFertigungslinieDto(i));
             }
 
             FertigungDto item = new FertigungDto()
             {
                 ID = id,
                 Fertigungslinien = tmp
-            }
-            ;
+            };
             return item;
         }
 
         public FertigungslinieDto GetFertigungslinieDto(int id)
         {
-            Random rnd = new Random(id);
-
             List<MaschineDto> tmp = new List<MaschineDto>();
             for (int i = 0; i < id; i++)
             {
-                tmp.Add(GetMaschineDto(rnd.Next(0, 99)));
+                tmp.Add(GenerateMaschine(id));
             }
 
             FertigungslinieDto item = new FertigungslinieDto()
@@ -47,7 +43,134 @@ namespace ProMan_WebAPI.DataProvider
 
         public MaschineDto GetMaschineDto(int id)
         {
-            MaschineDto item = new MaschineDto()
+            return GenerateMaschine(id);
+        }
+
+        public ReparaturDto GetReparaturDto(int id)
+        {
+            return GenerateReparatur(id);
+        }
+
+        public UserDto GetUserDto(int id)
+        {
+            return GenerateUser(id);
+        }
+
+        public WartungDto GetWartungDto(int id)
+        {
+            return GenerateWartung(id);
+        }
+        #region set
+
+        public bool SetFertigungsDto(FertigungDto data)
+        {
+            return true;
+        }
+
+        public bool SetFertigungslinieDto(FertigungslinieDto data)
+        {
+            return true;
+        }
+
+        public bool SetMaschineDto(MaschineDto data)
+        {
+            return true;
+        }
+
+        public bool SetReparaturDto(ReparaturDto data)
+        {
+            return true;
+        }
+
+        public bool SetUserDto(UserDto data)
+        {
+            return true;
+        }
+
+        public bool SetWartungDto(WartungDto data)
+        {
+            return true;
+        }
+        #endregion
+
+        #region Update
+
+        public bool UpdateFertigungsDto(FertigungDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateMaschineDto(MaschineDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateReparaturDto(ReparaturDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateUserDto(UserDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateWartungDto(WartungDto data, int id)
+        {
+            return true;
+        }
+        #endregion
+
+        #region Generate Data
+
+        private WartungDto GenerateWartung(int id)
+        {
+            return new WartungDto()
+            {
+                Beschreibung = "Dies ist eine Wartung",
+                InventarNummer = 5,
+                Status = "OnGoing",
+                User = GetUserDto(0),
+                WartungsInterval = DateTime.Now,
+                Zeichnungsnummer = "123",
+            };
+        }
+
+        private UserDto GenerateUser(int id)
+        {
+            return new UserDto()
+            {
+                FirstName = $"Hans_NR{id}",
+                FamilyName = "Peter",
+                Abteilung = "Schrauber",
+                Werk = "Kassel",
+                eMail = "123@xyz.de",
+                Phone = "0123/4567",
+                Mobile = "0456/1234567"
+            };
+        }
+
+        private ReparaturDto GenerateReparatur(int id)
+        {
+            return new ReparaturDto()
+            {
+                Status = "Finish",
+                Dauer = new DateTime().AddHours(id),
+                InventarNummer = 1,
+                Start = DateTime.Now.AddHours(-id),
+                User = GetUserDto(0),
+                Zeichnungsnummer = $"Reparatur_{id}"
+            };
+        }
+
+        private MaschineDto GenerateMaschine(int id)
+        {
+            return new MaschineDto()
             {
                 InventarNummer = id,
                 Zeichnungsnummer = $"Maschine_{id}",
@@ -57,7 +180,6 @@ namespace ProMan_WebAPI.DataProvider
                 Type = $"Type_{id}",
                 MaschinenStatus = GetMaschinenStatus(id),
             };
-            return item;
         }
 
         private ProMan_Database.Enums.MaschinenStatus GetMaschinenStatus(int id)
@@ -89,109 +211,8 @@ namespace ProMan_WebAPI.DataProvider
             return result;
         }
 
+        #endregion
 
-        public ReparaturDto GetReparaturDto(int id)
-        {
-            ReparaturDto item = new ReparaturDto()
-            {
-                Status = "Finish",
-                Dauer = new DateTime().AddHours(id),
-                InventarNummer = 1,
-                Start = DateTime.Now.AddHours(-id),
-                User = GetUserDto(0),
-                Zeichnungsnummer = $"Reparatur_{id}"
-            };
-            return item;
-        }
 
-        public UserDto GetUserDto(int id)
-        {
-            UserDto item = new UserDto()
-            {
-                FirstName = "Hand",
-                FamilyName = "Peter",
-                Abteilung = "Schrauber",
-                Werk = "Kassel",
-                eMail = "123@xyz.de",
-                Phone = "0123/4567",
-                Mobile = "0456/1234567"
-            };
-            return item;
-        }
-
-        public WartungDto GetWartungDto(int id)
-        {
-            WartungDto item = new WartungDto()
-            {
-                Beschreibung = "Dies ist eine Wartung",
-                InventarNummer = 5,
-                Status = "OnGoing",
-                User = GetUserDto(0),
-                WartungsInterval = DateTime.Now,
-                Zeichnungsnummer = "123",
-            };
-
-            return item;
-        }
-
-        public bool SetFertigungsDto(FertigungDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetFertigungslinieDto(FertigungslinieDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetMaschineDto(MaschineDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetReparaturDto(ReparaturDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetUserDto(UserDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool SetWartungDto(WartungDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateFertigungsDto(FertigungDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateMaschineDto(MaschineDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateReparaturDto(ReparaturDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateUserDto(UserDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateWartungDto(WartungDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
