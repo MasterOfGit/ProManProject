@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+</head>
+<body>
+<h1>Das ist ein Jason Test</h1>
+
+<script>
+	
+write("<h1>Das ist ein Jason Script Test</h1>");	
+	
+$.ajax({
+  dataType: "json",
+  url: url,
+  data: data,
+  success: success
+});
+	
+	
+	
+	
+$.getJSON( "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/2", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});
+  
+</script>
+<h1>Der Test ist zu Ende</h1>
+	
+<!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+<script src="js/jquery-3.2.1.min.js"></script> 
+<!-- <script src="js/bootstrap.min.js"></script> --> 
+<script src="js/bootstrap-3.3.7.js"></script> 
+</body>
+</html>
