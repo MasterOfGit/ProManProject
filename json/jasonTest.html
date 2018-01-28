@@ -9,6 +9,8 @@
 
 <script>
 	
+	
+alert("Das ist ein Jason Script Test");
 write("<h1>Das ist ein Jason Script Test</h1>");	
 	
 $.ajax({
@@ -21,7 +23,12 @@ $.ajax({
 	
 	
 	
-$.getJSON( "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/2", function( data ) {
+
+/*
+$.getJSON( "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/2", function(
+*/ 
+$.getJSON( "test.json", function( 		  
+		  data ) {
   var items = [];
   $.each( data, function( key, val ) {
     items.push( "<li id='" + key + "'>" + val + "</li>" );
@@ -34,11 +41,12 @@ $.getJSON( "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/2", 
 });
   
 </script>
+	
 <h1>Der Test ist zu Ende</h1>
 	
 <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
-<script src="js/jquery-3.2.1.min.js"></script> 
+<script src="../js/jquery-3.2.1.min.js"></script> 
 <!-- <script src="js/bootstrap.min.js"></script> --> 
-<script src="js/bootstrap-3.3.7.js"></script> 
+<script src="../js/bootstrap-3.3.7.js"></script> 
 </body>
 </html>

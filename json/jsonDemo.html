@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.getJSON("http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/2", function(result){
+        $.getJSON("http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/fertigung/3", function(result){
             $.each(result, function(identifier, field){
 				if(identifier == "ID"){
                 $("div").append("ID: " + field + " " + "<br/>");
@@ -27,8 +27,11 @@ $(document).ready(function(){
 					});
 				}
 				
+				
             });
-        });
+        
+		});
+		$("dir").append("<br/>");
     });
 });
 </script>
