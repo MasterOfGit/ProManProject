@@ -8,10 +8,12 @@ using System.Web.Http;
 using ProMan_WebAPI.Models;
 using ProMan_WebAPI.DataProvider;
 using Newtonsoft.Json.Linq;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("wartung")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class WartungController : ApiController
     {
         IDataProvider dataprovider = new DataProviderFactory().data;

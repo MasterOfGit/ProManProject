@@ -8,10 +8,12 @@ using ProMan_WebAPI.Models;
 using ProMan_Database;
 using ProMan_WebAPI.DataProvider;
 using Newtonsoft.Json.Linq;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("maschine")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MaschineController : ApiController
     {
         IDataProvider dataprovider = new DataProviderFactory().data;
