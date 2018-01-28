@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Base\BaseApiController.cs" />
     <Compile Include="Controllers\FertigungController.cs" />
     <Compile Include="Controllers\FertigungslinieController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -109,19 +110,9 @@
     <Compile Include="Controllers\ReparaturController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WartungController.cs" />
-    <Compile Include="DataProvider\DatabaseDataProvider.cs" />
-    <Compile Include="DataProvider\DataProviderFactory.cs" />
-    <Compile Include="DataProvider\DummyDataProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="DataProvider\IDataProvider.cs" />
-    <Compile Include="Models\FertigungDto.cs" />
-    <Compile Include="Models\FertigungslinieDto.cs" />
-    <Compile Include="Models\MaschineDto.cs" />
-    <Compile Include="Models\ReparaturDto.cs" />
-    <Compile Include="Models\UserDto.cs" />
-    <Compile Include="Models\WartungDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +129,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ProMan_Database\ProMan_Database\ProMan_Database.csproj">
-      <Project>{8e2e2802-b39d-48d6-9512-9d350e75aef4}</Project>
-      <Name>ProMan_Database</Name>
+    <ProjectReference Include="..\ProMan_BusinessLayer\ProMan_BusinessLayer.csproj">
+      <Project>{cd8f009a-277c-4bb5-b0cd-d4586bbffdfd}</Project>
+      <Name>ProMan_BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

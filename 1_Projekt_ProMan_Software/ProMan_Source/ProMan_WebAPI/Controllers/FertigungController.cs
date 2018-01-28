@@ -1,22 +1,15 @@
 ﻿using Newtonsoft.Json.Linq;
-using ProMan_Database;
-using ProMan_WebAPI.DataProvider;
-using ProMan_WebAPI.Models;
-using System;
+using ProMan_BusinessLayer.Models;
+using ProMan_WebAPI.Base;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class FertigungController : ApiController
+    public class FertigungController : BaseApiController
     {
-        IDataProvider dataprovider = new DataProviderFactory().data;
-
         // GET: api/Fertigung
         public IEnumerable<string> Get()
         {

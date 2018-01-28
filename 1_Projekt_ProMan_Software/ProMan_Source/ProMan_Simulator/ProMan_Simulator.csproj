@@ -46,6 +46,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,7 +67,17 @@
     </ApplicationDefinition>
     <Compile Include="Base\AsyncCommand.cs" />
     <Compile Include="Base\RelayCommand.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Helper\ObjectDtos.cs" />
+    <Compile Include="Model\SetValueModel.cs" />
+    <Compile Include="Helper\SerializeHelper.cs" />
+    <Compile Include="Views\SetValueWindow.xaml.cs">
+      <DependentUpon>SetValueWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\BaseTest.cs" />
+    <Compile Include="Test\ITest.cs" />
+    <Compile Include="Test\MaschinenTest.cs" />
+    <Compile Include="Helper\WindowService.cs" />
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -75,11 +86,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Base\BaseModel.cs" />
-    <Compile Include="HttpHelper.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Helper\HttpHelper.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SetValueWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\MainModel.cs" />
@@ -111,9 +126,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProMan_WebAPI\ProMan_WebAPI.csproj">
-      <Project>{5F525806-708E-4A2D-87C8-3A0986879FD9}</Project>
-      <Name>ProMan_WebAPI</Name>
+    <ProjectReference Include="..\ProMan_BusinessLayer\ProMan_BusinessLayer.csproj">
+      <Project>{cd8f009a-277c-4bb5-b0cd-d4586bbffdfd}</Project>
+      <Name>ProMan_BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

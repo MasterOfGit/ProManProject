@@ -4,11 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ProMan_WebAPI.Base;
 
 namespace ProMan_WebAPI.Controllers
 {
     //[RoutePrefix("login")]
-    public class LoginController : ApiController
+    public class LoginController : BaseApiController
     {
         // GET api/<controller>
         public IEnumerable<string> Get()

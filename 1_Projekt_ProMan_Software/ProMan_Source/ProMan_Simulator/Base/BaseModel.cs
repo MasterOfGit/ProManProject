@@ -19,5 +19,15 @@ namespace ProMan_Simulator.Base
                 handler(this, new PropertyChangedEventArgs(name));
             }
         }
+
+        public void ExecuteRequestClose()
+        {
+            if (RequestClose == null)
+                throw new Exception("The \"RequestClose\" action was called but not wired. Check the stacktrace where it was called from.");
+            else
+                RequestClose();
+        }
+
+        public event Action RequestClose;
     }
 }

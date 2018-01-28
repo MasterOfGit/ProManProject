@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using ProMan_WebAPI.Models;
-using ProMan_Database;
-using ProMan_WebAPI.DataProvider;
 using Newtonsoft.Json.Linq;
 using System.Web.Http.Cors;
+using ProMan_BusinessLayer.DataProvider;
+using ProMan_BusinessLayer.Models;
+using ProMan_WebAPI.Base;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("reparatur")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class ReparaturController : ApiController
+    public class ReparaturController : BaseApiController
     {
-        IDataProvider dataprovider = new DataProviderFactory().data;
 
         // GET api/<controller>
         public IEnumerable<string> Get()

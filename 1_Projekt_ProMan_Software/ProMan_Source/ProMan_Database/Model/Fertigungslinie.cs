@@ -10,6 +10,8 @@ namespace ProMan_Database.Model
     {
         public int FertigungslinieID { get; set; }
 
+        public string Name { get; set; }
+
         public virtual Fertigung Fertigung { get; set; }
         public virtual ICollection<Werkstuecktraeger> Werkstuecktraeger { get; set; }
         public virtual ICollection<Maschine> Maschinen { get; set; }

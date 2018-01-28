@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProMan_Database.Model
 {
+    // Verschiedene Schritte der Fertigung
     public class Fertigung
     {
         public int FertigungID { get; set; }
 
-        public int InventarID { get; set; }
+        public string Name { get; set; }
 
         public virtual Abteilung Abteilung { get; set; }
         public DateTime? TaktzeitSoll { get; set; }
