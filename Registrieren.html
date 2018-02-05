@@ -52,40 +52,71 @@
     <div class="row">
       <div class="col-md-12">
         <div class="jumbotron">
-          <h1>Login</h1>
+          <h1>Registrieren </h1>
           <div class="jumbotron">
             <h1>Bitte geben sie ihre Daten ein !!</h1>
             <form>
               <div class="form-group">
-                <label for="userID">UserID</label>
-                <input type="email" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">
+                
+				<label for="userID">UserID (falls bekannt)</label>
+                <input type="text" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">
+				
+				<label for="anrede">Anrede</label>  
+				<select class="form-control" id="anrede">
+				  <option>Herr</option>
+				  <option>Frau</option>
+				  <option>Dr.</option>
+				  <option>Prof.</option>
+				  <option>Prof.Dr.</option>
+				</select>
+				  
+				<label for="position">Position</label>  
+				<select class="form-control" id="position">
+				  <option>Administrator</option>
+				  <option>Maschinenführer</option>
+				  <option>Instandhalter</option>
+				  <option>Gruppensprecher</option>
+				  <option>Meister</option>
+				  <option>Sachbearbeiter</option>		
+				</select>
+				  <br>
+
+				
+				 <img id="bild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image">
+				 <label for="bilddatei">Bilddatei auswählen</label>
+			    <input type="file" id="bilddatei" name="bilddatei" multiple>
+				
+				<label for="vorname">Vorname</label>
+                <input type="text" class="form-control" id="vorname" aria-describedby="userID" placeholder="Vorname">
+				<label for="nachname">Nachname</label>
+                <input type="text" class="form-control" id="nachname" aria-describedby="userID" placeholder="Nachname">
+				  
+				<label for="werk">Werk</label>
+                <input type="text" class="form-control" id="werk" aria-describedby="Werk" placeholder="Werk">
+				  
+				<label for="abteilung">Abteilung</label>
+                <input type="text" class="form-control" id="Abteilung" aria-describedby="userID" placeholder="Abteilung">
+				
+				<label for="eMail">eMail</label>
+                <input type="email" class="form-control" id="email" aria-describedby="eMail" placeholder="eMail">
+				  
+				<label for="telfest">Festnetz</label>
+                <input type="email" class="form-control" id="telfest" aria-describedby="Festnetz" placeholder="Festnetz"> 
+				  
+				<label for="mobil">Mobil</label>
+                <input type="email" class="form-control" id="mobil" aria-describedby="Mobil" placeholder="Mobil"> 
+				  
+				<label for="bemerkung">Bemerkung</label>
+                <input type="text" class="form-control" id="bemerkung" aria-describedby="Bemerkung" placeholder="Bemerkung">
+				
+				  
               </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-              </div>
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="seePassword">
-                <label class="form-check-label" for="seePassword">Passwort anzeigen</label>
-              </div>
-              <button type="submit" class="btn btn-primary">Login</button>
-             <a href="Registrieren.html">Registrieren</a>
-			  <div class="form-check">
-				<h2>Das ist nur Testen !!!</h2> 
-				<a href="inArbeit.html">Dummylink Admin Page</a><br>
-
-				<a href="inArbeit.html">Dummylink Meister Page</a><br>
-
-				<a href="inArbeit.html">Dummylink Maschinenführer Page</a><br>
-
-				<a href="inArbeit.html">Dummyling Instandhalter Page</a><br>
-
-				<a href="inArbeit.html">Dummyling Sachbearbeiter Page</a><br>
-
-								  
-				</div>
+             
+              <button type="submit" class="btn btn-primary">Senden</button>
+              <button type="submit" class="btn btn-primary">Löschen</button>
+			 
             </form>
-          </div>S
+          </div>
         </div>
       </div>
     </div>
@@ -100,7 +131,8 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
           <li><a href="index.html">Home</a></li>
-          <li class="active">Login</li>
+		   <li ><a href="login.html">Login</a></li>	
+          <li class="active">Registieren</li>
         </ol>
 
 	 </div>
