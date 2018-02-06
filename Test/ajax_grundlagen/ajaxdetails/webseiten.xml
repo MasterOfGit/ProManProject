@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webseiten>
+<seite>
+<titel>AJAX-NET.de</titel>
+<url>http://www.ajax-net.de</url>
+<bemerkung>Portal zu AJAX und dem Web 2.0</bemerkung>
+</seite>
+<seite>
+<titel>RJS EDV-KnowHow</titel>
+<url>http://rjs.de</url>
+<bemerkung>Homepage des Autors</bemerkung>
+</seite>
+<seite>
+<titel>Mein Blog</titel>
+<url>http://rjsedv.blogspot.com</url>
+<bemerkung>Der Blog von Ralph Steyer</bemerkung>
+</seite>
+<seite>
+<titel>JavaFX</titel>
+<url>http://www.javafx-buch.de</url>
+<bemerkung>Die Webseite zum Buch JavaFX</bemerkung>
+</seite>
+</webseiten>
+

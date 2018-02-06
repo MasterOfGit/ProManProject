@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videotrainings>
+	<training>
+		<titel>JavaScript - Video-Training</titel>
+		<untertitel>Einstieg für Anspruchsvolle</untertitel>
+		<datum>März 2007</datum>
+		<url>http://www.video2brain.com/de/products-109.htm</url>
+		<medium>DVD</medium>
+	</training>
+	<training>
+		<titel>JavaFX - Video-Training</titel>
+		<untertitel>Einstieg in JavaFX und JavaFX Script</untertitel>
+		<datum>April 2008</datum>
+		<url>http://www.video2brain.com/de/products-223.htm</url>
+		<medium>DVD</medium>
+	</training>
+	<training>
+		<titel>HTML und CSS - Online-Training</titel>
+		<untertitel></untertitel>
+		<datum>Mai 2008</datum>
+		<url></url>
+		<medium>Online</medium>
+	</training>
+	<training>
+	<titel>JavaScript - Online-Training</titel>
+		<untertitel></untertitel>
+		<datum>Mai 2008</datum>
+		<url></url>
+		<medium>Online</medium>
+	</training>
+	<training>
+		<titel>AJAX - Video-Training</titel>
+		<untertitel></untertitel>
+		<datum>Juni 2008</datum>
+		<url></url>
+		<medium>DVD</medium>
+	</training>
+	<training>
+		<titel>Eclipse - Video-Training</titel>
+		<untertitel></untertitel>
+		<datum>Juli 2008</datum>
+		<url></url>
+		<medium>DVD</medium>
+	</training>
+</videotrainings>

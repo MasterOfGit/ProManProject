@@ -1,0 +1,13 @@
+{
+"bindings": [ 
+	{
+		"kennzeichen": "O", "gebiet": "Diplomatisches Corps"
+	}, 
+	{
+		"kennzeichen": "A", "gebiet": "Augsburg (Bayern)"
+	}, 
+	{
+		"kennzeichen": "AA", "gebiet": "Aalen Ostalbkreis (BaWü)"
+	} 
+]
+}

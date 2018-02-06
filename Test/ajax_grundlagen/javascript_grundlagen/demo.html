@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>JavaScript-Demo</title>
+	
+	</head>
+	
+	<body>
+	<h1 id="meineID">Eins</h1>
+	<h1>Zwei</h1>	
+	<h1>Drei</h1>
+	<form>
+	<input>
+	<form>
+	<br />
+	<button>Klick</button>
+	<script>
+	  document.getElementsByTagName("button")[0].onclick=test;
+	  function test(){
+	    document.getElementById("meineID").innerHTML="Neuer Inhalt";
+	  }
+	</script>
+	</body>
+</html>
