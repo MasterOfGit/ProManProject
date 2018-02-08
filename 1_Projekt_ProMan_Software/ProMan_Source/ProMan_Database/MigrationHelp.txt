@@ -1,0 +1,2 @@
+﻿Add-Migration 0.0.x => neue erstellen
+Update-Database -TargetMigration 0.0.x => updaten der Datenbank

@@ -11,5 +11,7 @@ namespace ProMan_Database.Model
         public int WerkID { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
+
+        public virtual ICollection<Abteilung> Abteilungen { get; set; }
     }
 }

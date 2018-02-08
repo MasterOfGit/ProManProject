@@ -4,8 +4,53 @@ using ProMan_BusinessLayer.Models;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
+    /// <summary>
+    /// Generates dummy data for the view. Does not support setting or updating data
+    /// </summary>
     public class DummyDataProvider : IDataProvider
     {
+        public AbteilungDto GetAbteilungDto(int id)
+        {
+            List<FertigungDto> ferttmp = new List<FertigungDto>();
+            List<UserDto> usertmp = new List<UserDto>();
+
+            for(int i = 1; i < id +1; i++)
+            {
+                ferttmp.Add(GetFertigungsDto(i));
+                usertmp.Add(GenerateUser(i));
+            }
+
+            AbteilungDto item = new AbteilungDto()
+            {
+                ID = id,
+                Name = $"Abteilung{id}",
+                Fachbereich = $"Fachbereich{id}",
+                WerkName = $"Werk{id}",
+                Fertigungen = ferttmp,
+                User = usertmp,
+            };
+
+            return item;
+        }
+
+        public WerkDto GetWerkDto(int id)
+        {
+            List<AbteilungDto> tmp = new List<AbteilungDto>();
+            for (int i = 1; i < id + 2; i++)
+            {
+                tmp.Add(GetAbteilungDto(i));
+            }
+            WerkDto item = new WerkDto()
+            {
+                ID = id,
+                Name = $"Werk_{id}",
+                Ort = $"Ort_{id}",
+                Abteilungen = tmp,
+
+            };
+            return item;
+        }
+
         public FertigungDto GetFertigungsDto(int id)
         {
             List<FertigungslinieDto> tmp = new List<FertigungslinieDto>();
@@ -18,6 +63,7 @@ namespace ProMan_BusinessLayer.DataProvider
             {
                 ID = id,
                 Name = $"Fertigung{id}",
+                AbteilungName = $"Abteilung{id}",
                 Fertigungslinien = tmp
             };
             return item;
@@ -35,7 +81,8 @@ namespace ProMan_BusinessLayer.DataProvider
             {
                 ID = id,
                 Name = $"linie{id}",
-                Maschinen = tmp
+                Maschinen = tmp,
+                FertigungName = $"Fertigung{id}"
             };
 
             return item;
@@ -92,6 +139,17 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return true;
         }
+
+        public bool SetAbteilungDto(AbteilungDto data)
+        {
+            return true;
+        }
+
+        public bool SetWerkDto(WerkDto data)
+        {
+            return true;
+        }
+
         #endregion
 
         #region Update
@@ -125,6 +183,16 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return true;
         }
+        public bool UpdateAbteilungDto(AbteilungDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateWerkDto(WerkDto data, int id)
+        {
+            return true;
+        }
+
         #endregion
 
         #region Generate Data
@@ -154,7 +222,9 @@ namespace ProMan_BusinessLayer.DataProvider
                 Werk = "Kassel",
                 eMail = "123@xyz.de",
                 Phone = "0123/4567",
-                Mobile = "0456/1234567"
+                Mobile = "0456/1234567",
+                WerkName = $"Werk{id}",
+                AbteilungName = $"Abteilung{id}",
             };
         }
 
@@ -187,6 +257,8 @@ namespace ProMan_BusinessLayer.DataProvider
             };
         }
 
+
+
         private ProMan_Database.Enums.MaschinenStatus GetMaschinenStatus(int id)
         {
             Random rnd = new Random(id);
@@ -215,6 +287,18 @@ namespace ProMan_BusinessLayer.DataProvider
             }
             return result;
         }
+
+
+
+
+
+
+
+
+
+
+
+        
 
         #endregion
 

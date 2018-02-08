@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Base\BaseApiController.cs" />
+    <Compile Include="Controllers\AbteilungController.cs" />
     <Compile Include="Controllers\FertigungController.cs" />
     <Compile Include="Controllers\FertigungslinieController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Controllers\ReparaturController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WartungController.cs" />
+    <Compile Include="Controllers\WerkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

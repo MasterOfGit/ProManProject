@@ -55,6 +55,10 @@
     <Compile Include="Migrations\201801061112415_0.0.1.Designer.cs">
       <DependentUpon>201801061112415_0.0.1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802081731357_0.0.2.cs" />
+    <Compile Include="Migrations\201802081731357_0.0.2.Designer.cs">
+      <DependentUpon>201802081731357_0.0.2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Abteilung.cs" />
     <Compile Include="Model\Bauteil.cs" />
@@ -85,6 +89,12 @@
     <EmbeddedResource Include="Migrations\201801061112415_0.0.1.resx">
       <DependentUpon>201801061112415_0.0.1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081731357_0.0.2.resx">
+      <DependentUpon>201802081731357_0.0.2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MigrationHelp.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

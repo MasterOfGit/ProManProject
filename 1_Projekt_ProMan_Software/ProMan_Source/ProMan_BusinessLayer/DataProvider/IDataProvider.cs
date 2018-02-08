@@ -32,5 +32,13 @@ namespace ProMan_BusinessLayer.DataProvider
         WartungDto GetWartungDto(int id);
         bool SetWartungDto(WartungDto data);
         bool UpdateWartungDto(WartungDto data, int id);
+
+        AbteilungDto GetAbteilungDto(int id);
+        bool SetAbteilungDto(AbteilungDto data);
+        bool UpdateAbteilungDto(AbteilungDto data, int id);
+
+        WerkDto GetWerkDto(int id);
+        bool SetWerkDto(WerkDto data);
+        bool UpdateWerkDto(WerkDto data, int id);
     }
 }

@@ -8,33 +8,33 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class FertigungController : BaseApiController
+    public class WerkController : BaseApiController
     {
-        // GET: api/Fertigung
+        // GET: api/Werk
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Fertigung/5
+        // GET: api/Werk/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetFertigungsDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetWerkDto(id)));
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]FertigungDto value)
+        // POST: api/Werk
+        public void Post([FromBody]WerkDto value)
         {
-            dataprovider.SetFertigungsDto(value);
+            dataprovider.SetWerkDto(value);
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]FertigungDto value)
+        // PUT: api/Werk/5
+        public void Put(int id, [FromBody]WerkDto value)
         {
-            dataprovider.UpdateFertigungsDto(value, id);
+            dataprovider.UpdateWerkDto(value, id);
         }
 
-        // DELETE: api/Fertigung/5
+        // DELETE: api/Werk/5
         public void Delete(int id)
         {
         }

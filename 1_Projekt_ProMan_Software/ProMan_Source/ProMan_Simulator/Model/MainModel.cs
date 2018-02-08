@@ -152,37 +152,49 @@ namespace ProMan_Simulator.Model
         {
             switch (SelectedMode)
             {
-                case "Fertigung":
+                case ObjectDtos.WerkDtoName:
+                    {
+                        var item = _httphelper.HttpGet<WerkDto>($"api/werk/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AbteilungDtoName:
+                    {
+                        var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.FertigungDtoName:
                     {
                         var item = _httphelper.HttpGet<FertigungDto>($"api/fertigung/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
-                case "Fertigungslinie":
+                case ObjectDtos.FertigungslinieDtoName:
                     {
                         var item = _httphelper.HttpGet<FertigungslinieDto>($"api/fertigungslinie/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
-                case "Maschine":
+                case ObjectDtos.MaschineDtoName:
                     {
                         var item = _httphelper.HttpGet<MaschineDto>($"api/maschine/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
-                case "User":
+                case ObjectDtos.UserDtoName:
                     {
                         var item = _httphelper.HttpGet<UserDto>($"api/user/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
-                case "Reparatur":
+                case ObjectDtos.ReparaturDtoName:
                     {
                         var item = _httphelper.HttpGet<ReparaturDto>($"api/reparatur/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
-                case "Wartung":
+                case ObjectDtos.WartungDtoName:
                     {
                         var item = _httphelper.HttpGet<WartungDto>($"api/wartung/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
@@ -198,74 +210,6 @@ namespace ProMan_Simulator.Model
         private void SetExecuteFunction(string s)
         {
             WindowService.ShowSetValueWindow(new SetValueModel(SelectedMode));
-    //        switch (SelectedMode)
-    //        {
-    //            case "Fertigung":
-    //                {
-    //                    Result = $"Mode with the name \"{SelectedMode}\" is not supported";
-    //                    break;
-    //                }
-    //            case "Fertigungslinie":
-    //                {
-    //                    Result = $"Mode with the name \"{SelectedMode}\" is not supported";
-    //                    break;
-    //                }
-    //            case "Maschine":
-    //                {
-    //                    await _httphelper.HttpPost($"api/maschine", new MaschineDto()
-    //                    {
-    //                        Baujahr = DateTime.Now,
-    //                        Garantie = DateTime.Now.AddYears(5),
-    //                        Hersteller = "Hersteller 1",
-    //                        Type = "Type_1",
-    //                        InventarNummer = 123
-    //                    }
-    //);
-    //                    break;
-    //                }
-    //            case "User":
-    //                {
-    //                    await _httphelper.HttpPost($"api/user", new UserDto()
-    //                    {
-    //                        FirstName = "Katze",
-    //                        FamilyName = "Hund",
-    //                        Abteilung = "Test",
-    //                        eMail = "katze@firma.de",
-    //                        Mobile = "123",
-    //                        Phone = "456",
-    //                    }
-    //);
-    //                    break;
-    //                }
-    //            case "Reparatur":
-    //                {
-    //                    await _httphelper.HttpPost($"api/reparatur", new ReparaturDto()
-    //                    {
-    //                        Dauer = DateTime.Now,
-    //                        InventarNummer = 1,
-    //                        Status = "InWork",
-    //                        Zeichnungsnummer = "Dies ist ein Test",
-    //                    }
-    //);
-    //                    break;
-    //                }
-    //            case "Wartung":
-    //                {
-    //                    await _httphelper.HttpPost($"api/wartung", new WartungDto()
-    //                    {
-    //                        Beschreibung = "Dies ist ein Test",
-    //                        InventarNummer = 1,
-    //                        Status = "InWork",
-    //                        WartungsInterval = DateTime.Now,
-    //                    }
-    //                        );
-    //                    break;
-    //                }
-    //            default:
-    //                Result = $"Mode with the name \"{SelectedMode}\" is not supported";
-    //                break;
-    //        }
-
         }
 
         private void StartTestFunction(string value)
