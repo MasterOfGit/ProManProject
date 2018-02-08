@@ -7,4 +7,11 @@
 <file name="ReparaturController.cs" server="192.168.178.26" local="131609419715296227" remote="131615361000000000" Dst="1" />
 <file name="UserController.cs" server="192.168.178.26" local="131609419715336245" remote="131615361000000000" Dst="1" />
 <file name="WartungController.cs" server="192.168.178.26" local="131609419715376287" remote="131615361000000000" Dst="1" />
+<file name="FertigungController.cs" server="C:/xampp/htdocs/proman/" local="131624030349835211" remote="131624030340000000" Dst="1" />
+<file name="FertigungslinieController.cs" server="C:/xampp/htdocs/proman/" local="131624030349845221" remote="131624030340000000" Dst="1" />
+<file name="LoginController.cs" server="C:/xampp/htdocs/proman/" local="131624030349855234" remote="131624030340000000" Dst="1" />
+<file name="MaschineController.cs" server="C:/xampp/htdocs/proman/" local="131624030349875238" remote="131624030340000000" Dst="1" />
+<file name="ReparaturController.cs" server="C:/xampp/htdocs/proman/" local="131624030349885248" remote="131624030340000000" Dst="1" />
+<file name="UserController.cs" server="C:/xampp/htdocs/proman/" local="131624030349895251" remote="131624030340000000" Dst="1" />
+<file name="WartungController.cs" server="C:/xampp/htdocs/proman/" local="131624030349905255" remote="131624030340000000" Dst="1" />
 </dwsync>

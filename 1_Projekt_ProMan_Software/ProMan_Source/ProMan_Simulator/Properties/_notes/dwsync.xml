@@ -5,4 +5,9 @@
 <file name="Resources.resx" server="192.168.178.26" local="131607616830773256" remote="131615361000000000" Dst="1" />
 <file name="Settings.Designer.cs" server="192.168.178.26" local="131607616830838307" remote="131615361000000000" Dst="1" />
 <file name="Settings.settings" server="192.168.178.26" local="131607616830893339" remote="131615361000000000" Dst="1" />
+<file name="AssemblyInfo.cs" server="C:/xampp/htdocs/proman/" local="131624030349494984" remote="131624030340000000" Dst="1" />
+<file name="Resources.Designer.cs" server="C:/xampp/htdocs/proman/" local="131624030349515001" remote="131624030340000000" Dst="1" />
+<file name="Resources.resx" server="C:/xampp/htdocs/proman/" local="131624030349535014" remote="131624030340000000" Dst="1" />
+<file name="Settings.Designer.cs" server="C:/xampp/htdocs/proman/" local="131624030349545021" remote="131624030340000000" Dst="1" />
+<file name="Settings.settings" server="C:/xampp/htdocs/proman/" local="131624030349555018" remote="131624030340000000" Dst="1" />
 </dwsync>

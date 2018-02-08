@@ -4,15 +4,13 @@
 <file name=".gitignore" server="192.168.178.26" local="131607616829826844" remote="131616369000000000" Dst="1" />
 <file name=".gitattributes" server="//MSSERVER2016/ProManWeb/" local="131599945832691567" remote="131599945830000000" Dst="1" />
 <file name=".gitignore" server="//MSSERVER2016/ProManWeb/" local="131607616829826844" remote="131607616820000000" Dst="1" />
-<file name="index.html" server="192.168.178.26" local="131616368345621103" remote="131616369000000000" Dst="1" />
-<file name=".gitattributes" server="C:/xampp/htdocs/proman/" local="131599945832691567" remote="131599945830000000" Dst="1" />
-<file name=".gitignore" server="C:/xampp/htdocs/proman/" local="131607616829826844" remote="131607616820000000" Dst="1" />
-<file name="adminkontakt.html" server="C:/xampp/htdocs/proman/" local="131623153755158492" remote="131623153750000000" Dst="1" />
-<file name="impressum.html" server="C:/xampp/htdocs/proman/" local="131623154008137456" remote="131623154000000000" Dst="1" />
+<file name=".gitattributes" server="C:/xampp/htdocs/proman/" local="131624030348294181" remote="131624030340000000" Dst="1" />
+<file name=".gitignore" server="C:/xampp/htdocs/proman/" local="131624030348304188" remote="131624030340000000" Dst="1" />
+<file name="adminkontakt.html" server="C:/xampp/htdocs/proman/" local="131625747194159424" remote="131625747190000000" Dst="1" />
+<file name="impressum.html" server="C:/xampp/htdocs/proman/" local="131625747196661056" remote="131625747190000000" Dst="1" />
 <file name="inArbeit.html" server="C:/xampp/htdocs/proman/" local="131623149722576357" remote="131623149720000000" Dst="1" />
-<file name="index.html" server="C:/xampp/htdocs/proman/" local="131623153005673391" remote="131623153000000000" Dst="1" />
-<file name="login.html" server="C:/xampp/htdocs/proman/" local="131623169828701949" remote="131623169820000000" Dst="1" />
-<file name="Registrieren.html" server="C:/xampp/htdocs/proman/" local="131623168023491735" remote="131623168020000000" Dst="1" />
-<file name="start.html" server="C:/xampp/htdocs/proman/" local="131623153000000000" remote="131623153000000000" Dst="1" />
-<file name="Content_Dummy.html" server="C:/xampp/htdocs/proman/" local="131625079491991228" remote="131625079490000000" Dst="1" />
+<file name="login.html" server="C:/xampp/htdocs/proman/" local="131625748903401712" remote="131625748900000000" Dst="1" />
+<file name="usercontent.html" server="C:/xampp/htdocs/proman/" local="131625747200253463" remote="131625747200000000" Dst="1" />
+<file name="admincontent.html" server="C:/xampp/htdocs/proman/" local="131625767056088526" remote="131625767050000000" Dst="1" />
+<file name="start.html" server="C:/xampp/htdocs/proman/" local="131625743999820148" remote="131625743990000000" Dst="1" />
 </dwsync>

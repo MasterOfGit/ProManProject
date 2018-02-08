@@ -1,7 +1,7 @@
 <?php
-echo("PHP Datenabfrage");
+echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
-echo "Anfrage : "  . $q;
+echo "Anfrage : "  . $q . "<br>";
 
 ?>
 

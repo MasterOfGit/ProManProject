@@ -4,4 +4,8 @@
 <file name="DataProviderFactory.cs" server="192.168.178.26" local="131609419715396294" remote="131615361000000000" Dst="1" />
 <file name="DummyDataProvider.cs" server="192.168.178.26" local="131609419715646451" remote="131615361000000000" Dst="1" />
 <file name="IDataProvider.cs" server="192.168.178.26" local="131609419715666455" remote="131615361000000000" Dst="1" />
+<file name="DatabaseDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131624030349955291" remote="131624030340000000" Dst="1" />
+<file name="DataProviderFactory.cs" server="C:/xampp/htdocs/proman/" local="131624030349945279" remote="131624030340000000" Dst="1" />
+<file name="DummyDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131624030349975308" remote="131624030340000000" Dst="1" />
+<file name="IDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131624030349985323" remote="131624030340000000" Dst="1" />
 </dwsync>

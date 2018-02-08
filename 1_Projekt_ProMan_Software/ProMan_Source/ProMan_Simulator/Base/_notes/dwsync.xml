@@ -3,4 +3,7 @@
 <file name="AsyncCommand.cs" server="192.168.178.26" local="131609419714935967" remote="131615361000000000" Dst="1" />
 <file name="BaseModel.cs" server="192.168.178.26" local="131607616830197827" remote="131615361000000000" Dst="1" />
 <file name="RelayCommand.cs" server="192.168.178.26" local="131609419714965996" remote="131615361000000000" Dst="1" />
+<file name="AsyncCommand.cs" server="C:/xampp/htdocs/proman/" local="131624030349284844" remote="131624030340000000" Dst="1" />
+<file name="BaseModel.cs" server="C:/xampp/htdocs/proman/" local="131624030349294851" remote="131624030340000000" Dst="1" />
+<file name="RelayCommand.cs" server="C:/xampp/htdocs/proman/" local="131624030349304858" remote="131624030340000000" Dst="1" />
 </dwsync>

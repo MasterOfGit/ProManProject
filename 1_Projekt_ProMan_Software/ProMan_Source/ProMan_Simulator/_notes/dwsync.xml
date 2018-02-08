@@ -8,4 +8,12 @@
 <file name="MainWindow.xaml.cs" server="192.168.178.26" local="131609419715046058" remote="131615361000000000" Dst="1" />
 <file name="packages.config" server="192.168.178.26" local="131607616830953409" remote="131615361000000000" Dst="1" />
 <file name="ProMan_Simulator.csproj" server="192.168.178.26" local="131609419715126108" remote="131615361000000000" Dst="1" />
+<file name="App.config" server="C:/xampp/htdocs/proman/" local="131624030349244815" remote="131624030340000000" Dst="1" />
+<file name="App.xaml" server="C:/xampp/htdocs/proman/" local="131624030349254833" remote="131624030340000000" Dst="1" />
+<file name="App.xaml.cs" server="C:/xampp/htdocs/proman/" local="131624030349264828" remote="131624030340000000" Dst="1" />
+<file name="HttpHelper.cs" server="C:/xampp/htdocs/proman/" local="131624030349394918" remote="131624030340000000" Dst="1" />
+<file name="MainWindow.xaml" server="C:/xampp/htdocs/proman/" local="131624030349404918" remote="131624030340000000" Dst="1" />
+<file name="MainWindow.xaml.cs" server="C:/xampp/htdocs/proman/" local="131624030349414925" remote="131624030340000000" Dst="1" />
+<file name="packages.config" server="C:/xampp/htdocs/proman/" local="131624030349705125" remote="131624030340000000" Dst="1" />
+<file name="ProMan_Simulator.csproj" server="C:/xampp/htdocs/proman/" local="131624030349484978" remote="131624030340000000" Dst="1" />
 </dwsync>

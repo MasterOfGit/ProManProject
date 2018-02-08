@@ -6,4 +6,10 @@
 <file name="ReparaturDto.cs" server="192.168.178.26" local="131599945833197709" remote="131615361000000000" Dst="1" />
 <file name="UserDto.cs" server="192.168.178.26" local="131599945833207718" remote="131615361000000000" Dst="1" />
 <file name="WartungDto.cs" server="192.168.178.26" local="131599945833217725" remote="131615361000000000" Dst="1" />
+<file name="FertigungDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350035342" remote="131624030350000000" Dst="1" />
+<file name="FertigungslinieDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350045351" remote="131624030350000000" Dst="1" />
+<file name="MaschineDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350055358" remote="131624030350000000" Dst="1" />
+<file name="ReparaturDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350065368" remote="131624030350000000" Dst="1" />
+<file name="UserDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350075368" remote="131624030350000000" Dst="1" />
+<file name="WartungDto.cs" server="C:/xampp/htdocs/proman/" local="131624030350085375" remote="131624030350000000" Dst="1" />
 </dwsync>
