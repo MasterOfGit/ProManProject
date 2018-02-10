@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="Models.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("http://localhost:50435/api/werk/2", function(result){
+			JSONresult = JSON.stringify(result);
+			JSONresult2 = JSON.parse(JSONresult);
+			$("div").append("Zeug: " + JSONresult + " " + "<br/>");
+			$("div").append("Zeug2: " + JSONresult2 + " " + "<br/>");				
+			var obj = new WerkDto(JSONresult2.ID,JSONresult2.Name,JSONresult2.Ort,JSONresult2.Abteilungen);
+			
+			$("div").append("WerkID_obj: " + obj.ID + " " + "<br/>");
+			$("div").append("WerkName_obj: " + obj.Name + " " + "<br/>");
+			$("div").append("WerkOrt_obj: " + obj.Ort + " " + "<br/>");
+			
+			$("div").append("<br/>");
+			$("div").append("Abteilungen<br/>");
+			$("div").append("<br/>");
+			obj.Abteilungen.forEach(function(Abteilungenelement)
+			{
+				$("div").append("ID: " + Abteilungenelement.ID + " " + "<br/>");
+				$("div").append("Name: " + Abteilungenelement.Name + " " + "<br/>");
+				$("div").append("Fachbereich: " + Abteilungenelement.Fachbereich + " " + "<br/>");
+				$("div").append("AbteilungName: " + Abteilungenelement.WerkName + " " + "<br/>");
+				$("div").append("<br/>");
+				$("div").append("Fertigungen<br/>");
+				$("div").append("<br/>");
+				Abteilungenelement.Fertigungen.forEach(function(Fertigungenelement)
+				{
+					$("div").append("ID: " + Fertigungenelement.ID + " " + "<br/>");
+					$("div").append("Name: " + Fertigungenelement.Name + " " + "<br/>");
+					$("div").append("AbteilungName: " + Fertigungenelement.AbteilungName + " " + "<br/>");
+				});
+
+			});
+            
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div></div>
+
+</body>
+</html>
