@@ -68,6 +68,8 @@
     <Compile Include="Base\AsyncCommand.cs" />
     <Compile Include="Base\RelayCommand.cs" />
     <Compile Include="Helper\ObjectDtos.cs" />
+    <Compile Include="Helper\SetValuesHelper.cs" />
+    <Compile Include="Model\UpdateValueModel.cs" />
     <Compile Include="Model\SetValueModel.cs" />
     <Compile Include="Helper\SerializeHelper.cs" />
     <Compile Include="Views\SetValueWindow.xaml.cs">
@@ -77,6 +79,9 @@
     <Compile Include="Test\ITest.cs" />
     <Compile Include="Test\MaschinenTest.cs" />
     <Compile Include="Helper\WindowService.cs" />
+    <Compile Include="Views\UpdateValueWindow.xaml.cs">
+      <DependentUpon>UpdateValueWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +97,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\SetValueWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateValueWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

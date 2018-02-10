@@ -19,7 +19,8 @@ namespace ProMan_WebAPI.Controllers
         // GET: api/Werk/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetWerkDto(id)));
+            //return Ok(JToken.FromObject(dataprovider.GetWerkDto(id)));
+            return Ok(dataprovider.GetWerkDto(id));
         }
 
         // POST: api/Werk

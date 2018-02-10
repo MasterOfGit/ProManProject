@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProMan_Simulator"
         xmlns:mymodel="clr-namespace:ProMan_Simulator.Model"
         mc:Ignorable="d"
-        Title="ProMan_Simulator" Height="350" Width="900">
+        Title="ProMan_Simulator" Height="350" Width="950">
     <Window.Resources>
         <!-- This creates the instance of the HomepageViewModel -->
         <mymodel:MainModel x:Key="DataModel" />
@@ -34,16 +34,18 @@
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="1"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="ID" Style="{StaticResource baseStyle}"></Label>
-        <TextBox Name="SelectedID" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Text="{Binding ID}" Style="{StaticResource baseStyle}"></TextBox>
+        <TextBox Name="SelectedID" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Text="{Binding ID}" Style="{StaticResource baseStyle}" PreviewTextInput="NumberValidationTextBox"></TextBox>
         <Label Grid.Row="0" Grid.Column="2" Content="Object" Style="{StaticResource baseStyle}"></Label>
         <ComboBox Name="SelectedMode" Grid.Row="0" Grid.Column="3" ItemsSource="{Binding Modes}" SelectedValue="{Binding SelectedMode}" SelectedIndex="0" Style="{StaticResource baseStyle}"></ComboBox>
         <Button Grid.Row="0" Grid.Column="4" Content="GetExecute" Style="{StaticResource baseStyle}" Command="{Binding GetButtonCommand}"></Button>
         <Button Grid.Row="0" Grid.Column="5" Content="SetExecute" Style="{StaticResource baseStyle}" Command="{Binding SetButtonCommand}"></Button>
-        <Button Grid.Row="0" Grid.Column="6" Content="StartTest" Style="{StaticResource baseStyle}" Command="{Binding StartTestButtonCommand}"></Button>
+        <Button Grid.Row="0" Grid.Column="6" Content="UpdateData" Style="{StaticResource baseStyle}" Command="{Binding UpdateDataButtonCommand}"></Button>
+        <Button Grid.Row="0" Grid.Column="7" Content="StartTest" Style="{StaticResource baseStyle}" Command="{Binding StartTestButtonCommand}"></Button>
         <Label Grid.Row="1" Grid.Column="0" Content="Result" Style="{StaticResource baseStyle}"></Label>
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="10" BorderBrush="Black" BorderThickness="2">
             <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">

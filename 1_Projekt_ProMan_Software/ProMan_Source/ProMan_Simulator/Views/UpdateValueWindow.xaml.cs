@@ -5,11 +5,11 @@ using System.Windows;
 namespace ProMan_Simulator.Views
 {
     /// <summary>
-    /// Interaktionslogik für SetValueWindow.xaml
+    /// Interaktionslogik für UpdateValueWindow.xaml
     /// </summary>
-    public partial class SetValueWindow : Window
+    public partial class UpdateValueWindow : Window
     {
-        public SetValueWindow()
+        public UpdateValueWindow()
         {
             InitializeComponent();
         }
@@ -19,6 +19,7 @@ namespace ProMan_Simulator.Views
         {
             var model = DataContext as BaseModel;
             model.RequestClose += () => { Close(); };
+
         }
     }
 }

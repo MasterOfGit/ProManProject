@@ -2,7 +2,8 @@
 using ProMan_BusinessLayer.Models;
 using ProMan_Simulator.Base;
 using ProMan_Simulator.Helper;
-
+using System;
+using System.Windows.Threading;
 
 namespace ProMan_Simulator.Model
 {
@@ -11,9 +12,9 @@ namespace ProMan_Simulator.Model
         private HttpHelper _httphelper;
 
 
-        private string _id = "0";
+        private int _id = 1;
 
-        public string ID
+        public int ID
         {
             get
             {
@@ -128,6 +129,24 @@ namespace ProMan_Simulator.Model
             }
         }
 
+        private RelayCommand m_UpdateDataButtonCommand;
+        public RelayCommand UpdateDataButtonCommand
+        {
+            get
+            {
+                if (m_UpdateDataButtonCommand == null)
+                {
+                    m_UpdateDataButtonCommand = new RelayCommand((s) => UpdateDataFunction(s as string), () => true);
+                }
+
+                return m_UpdateDataButtonCommand;
+            }
+            set
+            {
+                m_UpdateDataButtonCommand = value;
+            }
+        }
+
         private RelayCommand m_StartTestButtonCommand;
         public RelayCommand StartTestButtonCommand
         {
@@ -210,6 +229,12 @@ namespace ProMan_Simulator.Model
         private void SetExecuteFunction(string s)
         {
             WindowService.ShowSetValueWindow(new SetValueModel(SelectedMode));
+        }
+
+        private void UpdateDataFunction(string s)
+        {
+            WindowService.ShowUpdateValueWindow(new UpdateValueModel(SelectedMode, Convert.ToInt32(ID)));
+
         }
 
         private void StartTestFunction(string value)

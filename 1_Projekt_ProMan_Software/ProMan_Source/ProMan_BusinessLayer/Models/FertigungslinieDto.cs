@@ -8,7 +8,7 @@ namespace ProMan_BusinessLayer.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string FertigungName { get; set; }
-        public List<string> Werkstücktraeger { get; set; }
+        public List<string> Werkstuecktraeger { get; set; }
         public List<MaschineDto> Maschinen { get; set; }
             
     }

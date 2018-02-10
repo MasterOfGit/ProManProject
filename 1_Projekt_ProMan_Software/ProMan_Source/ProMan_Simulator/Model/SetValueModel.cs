@@ -2,11 +2,8 @@
 using ProMan_Simulator.Base;
 using ProMan_Simulator.Helper;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProMan_Simulator.Model
 {
@@ -15,9 +12,9 @@ namespace ProMan_Simulator.Model
         private HttpHelper _httphelper;
         private string _type = string.Empty;
 
-        private ObservableCollection<SetValues> _setValues;
+        private ObservableCollection<SetValuesHelper> _setValues;
 
-        public ObservableCollection<SetValues> SetValues
+        public ObservableCollection<SetValuesHelper> SetValues
         {
             get
             {
@@ -30,14 +27,14 @@ namespace ProMan_Simulator.Model
             }
         }
 
-        private RelayCommand m_SaveButtonCommand;
-        public RelayCommand SaveButtonCommand
+        private AsyncCommand m_SaveButtonCommand;
+        public AsyncCommand SaveButtonCommand
         {
             get
             {
                 if (m_SaveButtonCommand == null)
                 {
-                    m_SaveButtonCommand = new RelayCommand(() => SetExecuteFunction(), () => true);
+                    m_SaveButtonCommand = new AsyncCommand(() => SetExecuteFunction(), () => true);
                 }
 
                 return m_SaveButtonCommand;
@@ -98,62 +95,62 @@ namespace ProMan_Simulator.Model
 
         private void FillCollection()
         {
-            SetValues = new ObservableCollection<Model.SetValues>();
+            SetValues = new ObservableCollection<SetValuesHelper>();
             switch (_type)
             {
                 case ObjectDtos.WerkDtoName:
-                    SetValues.Add(new SetValues() { Label = "Name", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Ort", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Name", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Ort", Value = "" });
                     break;
                 case ObjectDtos.AbteilungDtoName:
-                    SetValues.Add(new SetValues() { Label = "Name", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Fachbereich", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "WerkName", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Name", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Fachbereich", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "WerkName", Value = "" });
                     break;
                 case ObjectDtos.FertigungDtoName:
-                    SetValues.Add(new SetValues() { Label = "Name", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "AbteilungName", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Name", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "AbteilungName", Value = "" });
                     break;
                 case ObjectDtos.FertigungslinieDtoName:
-                    SetValues.Add(new SetValues() { Label = "Name", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "FertigungName", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "FertigungID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Name", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "FertigungName", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "FertigungID", Value = "" });
                     break;
                 case ObjectDtos.MaschineDtoName:
-                    SetValues.Add(new SetValues() { Label = "InventarNummer", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Zeichnungsnummer", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Type", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Hersteller", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Baujahr", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Garantie", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "InventarNummer", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Zeichnungsnummer", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Type", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Hersteller", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Baujahr", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Garantie", Value = "" });
                     break;
                 case ObjectDtos.ReparaturDtoName:
-                    SetValues.Add(new SetValues() { Label = "Start", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Dauer", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Status", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "MaschineID", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "UserID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Start", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Dauer", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Status", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
                     break;
                 case ObjectDtos.UserDtoName:
-                    SetValues.Add(new SetValues() { Label = "Title", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "FirstName", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "FamilyName", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Abteilung", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Werk", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "eMail", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Phone", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Mobile", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Title", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "FirstName", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "FamilyName", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Abteilung", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Werk", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "eMail", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Phone", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Mobile", Value = "" });
                     break;
                 case ObjectDtos.WartungDtoName:
-                    SetValues.Add(new SetValues() { Label = "WartungsInterval", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Status", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "Beschreibung", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "MaschineID", Value = "" });
-                    SetValues.Add(new SetValues() { Label = "UserID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "WartungsInterval", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Status", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Beschreibung", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
                     break;
                 default:                   
-                    SetValues.Add(new SetValues() { Label = "Test", Value = "Content" });
-                    SetValues.Add(new SetValues() { Label = "Test2", Value = "Content2" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Test", Value = "Content" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Test2", Value = "Content2" });
                     break;
             }
         }
@@ -168,7 +165,7 @@ namespace ProMan_Simulator.Model
                     {
                         Name = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                         Ort = SetValues.ToList().FirstOrDefault(x => x.Label == "Ort").Value,
-                    }).Wait(20000);
+                    }).Wait();
                     break;
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPost($"api/abteilung", new AbteilungDto()
@@ -233,29 +230,13 @@ namespace ProMan_Simulator.Model
                     }).Wait();
                     break;
                 default:
-                    SetValues.Add(new SetValues() { Label = "Test", Value = "Content" });
-                    SetValues.Add(new SetValues() { Label = "Test2", Value = "Content2" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Test", Value = "Content" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Test2", Value = "Content2" });
                     break;
             }
-
-            var test = SetValues;
-
 
             base.ExecuteRequestClose();
         }
 
-
-        
-
-
     }
-
-
-
-    public class SetValues
-    {
-        public string Label { get; set; }
-        public string Value { get; set; }
-    }
-
 }

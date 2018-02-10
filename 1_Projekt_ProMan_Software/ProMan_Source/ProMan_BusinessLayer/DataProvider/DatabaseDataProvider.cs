@@ -79,7 +79,7 @@ namespace ProMan_BusinessLayer.DataProvider
                     Zeichnungsnummer = x.Zeichnungsnummer,
                     MaschinenStatus = x.MaschinenStatus,
                 }).ToList(),
-                Werkstücktraeger = new List<string>()
+                Werkstuecktraeger = new List<string>()
                 {
                     $"Stück_zur_Linie_{id}_1",
                     $"Stück_zur_Linie_{id}_2",
