@@ -18,7 +18,7 @@
 <file name="Werk.cs" server="192.168.178.26" local="131599945833001774" remote="131615361000000000" Dst="1" />
 <file name="Werkstuecktraeger.cs" server="192.168.178.26" local="131599945833011784" remote="131615361000000000" Dst="1" />
 <file name="Werkzeug.cs" server="192.168.178.26" local="131599945833021827" remote="131615361000000000" Dst="1" />
-<file name="Abteilung.cs" server="C:/xampp/htdocs/proman/" local="131624030348984641" remote="131624030340000000" Dst="1" />
+<file name="Abteilung.cs" server="C:/xampp/htdocs/proman/" local="131628167984143622" remote="131628167980000000" Dst="1" />
 <file name="Bauteil.cs" server="C:/xampp/htdocs/proman/" local="131624030348994651" remote="131624030340000000" Dst="1" />
 <file name="Fertigung.cs" server="C:/xampp/htdocs/proman/" local="131624030349004667" remote="131624030340000000" Dst="1" />
 <file name="Fertigungslinie.cs" server="C:/xampp/htdocs/proman/" local="131624030349014664" remote="131624030340000000" Dst="1" />
@@ -33,7 +33,7 @@
 <file name="Ruesten.cs" server="C:/xampp/htdocs/proman/" local="131624030349104721" remote="131624030340000000" Dst="1" />
 <file name="User.cs" server="C:/xampp/htdocs/proman/" local="131624030349114743" remote="131624030340000000" Dst="1" />
 <file name="Wartung.cs" server="C:/xampp/htdocs/proman/" local="131624030349124747" remote="131624030340000000" Dst="1" />
-<file name="Werk.cs" server="C:/xampp/htdocs/proman/" local="131624030349134756" remote="131624030340000000" Dst="1" />
+<file name="Werk.cs" server="C:/xampp/htdocs/proman/" local="131628167984153635" remote="131628167980000000" Dst="1" />
 <file name="Werkstuecktraeger.cs" server="C:/xampp/htdocs/proman/" local="131624030349144745" remote="131624030340000000" Dst="1" />
 <file name="Werkzeug.cs" server="C:/xampp/htdocs/proman/" local="131624030349154755" remote="131624030340000000" Dst="1" />
 </dwsync>

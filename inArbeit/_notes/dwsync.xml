@@ -4,4 +4,8 @@
 <file name="Content_Dummy.html" server="C:/xampp/htdocs/proman/" local="131625093412303258" remote="131625093410000000" Dst="1" />
 <file name="Content_Gesammt_Dummy.html" server="C:/xampp/htdocs/proman/" local="131625093412613459" remote="131625093410000000" Dst="1" />
 <file name="DummyDatenLaden.html" server="C:/xampp/htdocs/proman/" local="131625747199122709" remote="131625747190000000" Dst="1" />
+<file name="Content_Detail_Dummy.html" server="192.168.178.26" local="131625093411923008" remote="131628364800000000" Dst="1" />
+<file name="Content_Dummy.html" server="192.168.178.26" local="131625093412303258" remote="131628364800000000" Dst="1" />
+<file name="Content_Gesammt_Dummy.html" server="192.168.178.26" local="131625093412613459" remote="131628364800000000" Dst="1" />
+<file name="DummyDatenLaden.html" server="192.168.178.26" local="131625747199122709" remote="131628364800000000" Dst="1" />
 </dwsync>

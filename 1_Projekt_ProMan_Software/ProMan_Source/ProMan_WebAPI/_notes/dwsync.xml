@@ -11,9 +11,9 @@
 <file name="Global.asax" server="C:/xampp/htdocs/proman/" local="131624030350015328" remote="131624030350000000" Dst="1" />
 <file name="Global.asax.cs" server="C:/xampp/htdocs/proman/" local="131624030350025335" remote="131624030350000000" Dst="1" />
 <file name="packages.config" server="C:/xampp/htdocs/proman/" local="131624030350245479" remote="131624030350000000" Dst="1" />
-<file name="ProMan_WebAPI.csproj" server="C:/xampp/htdocs/proman/" local="131624030350105397" remote="131624030350000000" Dst="1" />
+<file name="ProMan_WebAPI.csproj" server="C:/xampp/htdocs/proman/" local="131628167984333752" remote="131628167980000000" Dst="1" />
 <file name="ProMan_WebAPI.csproj.user" server="C:/xampp/htdocs/proman/" local="131624030350125405" remote="131624030350000000" Dst="1" />
-<file name="Web.config" server="C:/xampp/htdocs/proman/" local="131624030350225468" remote="131624030350000000" Dst="1" />
+<file name="Web.config" server="C:/xampp/htdocs/proman/" local="131628167984373782" remote="131628167980000000" Dst="1" />
 <file name="Web.Debug.config" server="C:/xampp/htdocs/proman/" local="131624030350205458" remote="131624030350000000" Dst="1" />
 <file name="Web.Release.config" server="C:/xampp/htdocs/proman/" local="131624030350215462" remote="131624030350000000" Dst="1" />
 </dwsync>

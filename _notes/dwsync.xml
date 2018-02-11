@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name=".gitattributes" server="192.168.178.26" local="131599945832691567" remote="131616369000000000" Dst="1" />
-<file name=".gitignore" server="192.168.178.26" local="131607616829826844" remote="131616369000000000" Dst="1" />
+<file name=".gitattributes" server="192.168.178.26" local="131624030348294181" remote="131628364800000000" Dst="1" />
+<file name=".gitignore" server="192.168.178.26" local="131624030348304188" remote="131628364800000000" Dst="1" />
 <file name=".gitattributes" server="//MSSERVER2016/ProManWeb/" local="131599945832691567" remote="131599945830000000" Dst="1" />
 <file name=".gitignore" server="//MSSERVER2016/ProManWeb/" local="131607616829826844" remote="131607616820000000" Dst="1" />
 <file name=".gitattributes" server="C:/xampp/htdocs/proman/" local="131624030348294181" remote="131624030340000000" Dst="1" />
@@ -9,8 +9,19 @@
 <file name="adminkontakt.html" server="C:/xampp/htdocs/proman/" local="131625747194159424" remote="131625747190000000" Dst="1" />
 <file name="impressum.html" server="C:/xampp/htdocs/proman/" local="131625747196661056" remote="131625747190000000" Dst="1" />
 <file name="inArbeit.html" server="C:/xampp/htdocs/proman/" local="131623149722576357" remote="131623149720000000" Dst="1" />
-<file name="login.html" server="C:/xampp/htdocs/proman/" local="131625748903401712" remote="131625748900000000" Dst="1" />
+<file name="login.html" server="C:/xampp/htdocs/proman/" local="131628363273354564" remote="131628363270000000" Dst="1" />
 <file name="usercontent.html" server="C:/xampp/htdocs/proman/" local="131625747200253463" remote="131625747200000000" Dst="1" />
-<file name="admincontent.html" server="C:/xampp/htdocs/proman/" local="131625767056088526" remote="131625767050000000" Dst="1" />
+<file name="admincontent.html" server="C:/xampp/htdocs/proman/" local="131628358473678470" remote="131628358470000000" Dst="1" />
 <file name="start.html" server="C:/xampp/htdocs/proman/" local="131625743999820148" remote="131625743990000000" Dst="1" />
+<file name="usercontent.html" server="192.168.178.26" local="131625747200253463" remote="131628364800000000" Dst="1" />
+<file name="start.html" server="192.168.178.26" local="131625743999820148" remote="131628364800000000" Dst="1" />
+<file name="registrieren.html" server="192.168.178.26" local="131625770132369371" remote="131628364800000000" Dst="1" />
+<file name="login.html" server="192.168.178.26" local="131628363273354564" remote="131628364800000000" Dst="1" />
+<file name="inArbeit.html" server="192.168.178.26" local="131623149722576357" remote="131628364800000000" Dst="1" />
+<file name="impressum.html" server="192.168.178.26" local="131625747196661056" remote="131628364800000000" Dst="1" />
+<file name="admincontent.html" server="192.168.178.26" local="131628358473678470" remote="131628364800000000" Dst="1" />
+<file name="adminkontakt.html" server="192.168.178.26" local="131625747194159424" remote="131628364800000000" Dst="1" />
+<file name="registrieren.html" server="C:/xampp/htdocs/proman/" local="131625770132369371" remote="131625770130000000" Dst="1" />
+<file name="instcontent.html" server="C:/xampp/htdocs/proman/" local="131628361732402425" remote="131628361730000000" Dst="1" />
+<file name="instcontent.html" server="192.168.178.26" local="131628361732402425" remote="131628364800000000" Dst="1" />
 </dwsync>

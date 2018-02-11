@@ -31,29 +31,17 @@
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bereiche<span class="caret"></span></a>
             <ul class="dropdown-menu">
 			  <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestUser.php?q=1111',myFunction1)">User</a>
+				  <a href="#" onclick="loadDoc('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">offen Aufräge</a>
+			  </li>
+				<li>
+				  <a href="#" onclick="loadDoc('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">wertergebene Aufräge</a>
+			  </li>
+			  <li>
+				  <a href="#" onclick="loadDoc('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">erledigte Aufräge</a>
 			  </li>
               <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestAbteilung.php?q=2222',myFunction1)">Abteilung</a>
-			  </li>
-			 <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestBauteile.php?q=2222',myFunction1)">Bauteile</a>
-			  </li>		
-			  <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestMaschinen.php?q=2222',myFunction1)">Maschinen</a>
-			  </li>	
-			   <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestFertigung.php?q=2222',myFunction1)">Fertigung</a>
-			  </li>
-			  <li>
-				  <a href="#" onclick="loadDoc('lib/php/admin/adminContentRequestFertigungslinie.php?q=2222',myFunction1)">Fertigungslinie</a>
-			  </li>	
-			  
-			 
-			  	<li role="separator" class="divider"></li>
-			  <li>
-				  <a href="login.html">Logout</a>
-			  </li>
+				  <a href="#" onclick="loadDoc('lib/php/user/userContentRequestDetail.php?q=2222',myFunction1)">Detail</a></li>
+              <li><a href="login.html">Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -74,8 +62,8 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
           <li><a href="start.html">Home</a></li>
-          <li><a href="login.html">Login</a></li>
-			<li class="active">Administrator</li>
+			<li><a href="login.html">Login</a></li>
+          <li class="active">Instandhalter</li>
         </ol>
 
 	 </div>
