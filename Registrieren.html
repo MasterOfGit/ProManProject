@@ -11,8 +11,6 @@
 
 <!-- Design -->
 <link href="lib/css/masterdesign.css" rel="stylesheet">
-
-
 </head>
 
 <body style="padding-top: 70px; padding-bottom: 70px;">
@@ -30,8 +28,8 @@
           <li> <a id="datekw">none</a> </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kontakt<span class="caret"></span></a>
             <ul class="dropdown-menu">
-			  <li><a href="start.html">Home</a></li>
-              <li><a href="#">Admin Kontaktieren</a></li>
+              <li><a href="start.html">Home</a></li>
+              <li><a href="adminkontakt.html">Admin Kontaktieren</a></li>
               <li><a href="impressum.html">Impressum</a></li>
             </ul>
           </li>
@@ -51,73 +49,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="jumbotron">
-          <h1>Registrieren </h1>
-          <div class="jumbotron">
-            <h1>Bitte geben sie ihre Daten ein !!</h1>
-            <form>
-              <div class="form-group">
-                
-				<label for="userID">UserID (falls bekannt)</label>
-                <input type="text" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">
-				
-				<label for="anrede">Anrede</label>  
-				<select class="form-control" id="anrede">
-				  <option>Herr</option>
-				  <option>Frau</option>
-				  <option>Dr.</option>
-				  <option>Prof.</option>
-				  <option>Prof.Dr.</option>
-				</select>
-				  
-				<label for="position">Position</label>  
-				<select class="form-control" id="position">
-				  <option>Administrator</option>
-				  <option>Maschinenführer</option>
-				  <option>Instandhalter</option>
-				  <option>Gruppensprecher</option>
-				  <option>Meister</option>
-				  <option>Sachbearbeiter</option>		
-				</select>
-				  <br>
-
-				
-				 <img id="bild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image">
-				 <label for="bilddatei">Bilddatei auswählen</label>
-			    <input type="file" id="bilddatei" name="bilddatei" multiple>
-				
-				<label for="vorname">Vorname</label>
-                <input type="text" class="form-control" id="vorname" aria-describedby="userID" placeholder="Vorname">
-				<label for="nachname">Nachname</label>
-                <input type="text" class="form-control" id="nachname" aria-describedby="userID" placeholder="Nachname">
-				  
-				<label for="werk">Werk</label>
-                <input type="text" class="form-control" id="werk" aria-describedby="Werk" placeholder="Werk">
-				  
-				<label for="abteilung">Abteilung</label>
-                <input type="text" class="form-control" id="Abteilung" aria-describedby="userID" placeholder="Abteilung">
-				
-				<label for="eMail">eMail</label>
-                <input type="email" class="form-control" id="email" aria-describedby="eMail" placeholder="eMail">
-				  
-				<label for="telfest">Festnetz</label>
-                <input type="tel" class="form-control" id="telfest" aria-describedby="Festnetz" placeholder="Festnetz"> 
-				  
-				<label for="mobil">Mobil</label>
-                <input type="tel" "" class="form-control" id="mobil" aria-describedby="Mobil" placeholder="Mobil"> 
-				  
-				<label for="bemerkung">Bemerkung</label>
-                <input type="text" class="form-control" id="bemerkung" aria-describedby="Bemerkung" placeholder="Bemerkung">
-				
-				  
-              </div>
-             
-              <button type="submit" class="btn btn-primary">Senden</button>
-			  <button type="reset" class="btn btn-primary">alles löschen</button>	
-             			 
-            </form>
-          </div>
-        </div>
+        <div id="daten">Keine Daten vorhanden !!</div>
       </div>
     </div>
     <hr>
@@ -125,20 +57,18 @@
 </main>
 <footer>
   <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
+    <div class="container-fluid"> 
       <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
           <li><a href="start.html">Home</a></li>
-		   <li ><a href="login.html">Login</a></li>	
+          <li ><a href="login.html">Login</a></li>
           <li class="active">Registieren</li>
         </ol>
-
-	 </div>
+      </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bottomFixedNavbar1">
-        
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Statusmeldung</a></li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information<span class="caret"></span></a>
@@ -151,9 +81,9 @@
           </li>
         </ul>
       </div>
-      <!-- /.navbar-collapse -->
+      <!-- /.navbar-collapse --> 
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.container-fluid --> 
   </nav>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -162,8 +92,11 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="lib/js/bootstrap.js"></script> 
 <script src="lib/js/helpers.js"></script> 
+<script src="lib/js/requestdata.js"></script> 
 <script> 
-    currentDate();   
+    currentDate();
+	loadDoc("lib/php/admin/adminContentRequestRegistierenFormular.php?q=1111",myFunction1);
+	//alert("Master Skipt");
 </script>
 </body>
 </html>

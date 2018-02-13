@@ -33,7 +33,7 @@ echo "Anfrage : "  . $q . "<br>";
                   <ul id="a1" class="list-group">
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         Teilenummer
-                        <span class="badge badge-primary badge-pill"><a href="../txt/inArbeit.html" style="color:white">1</a></span>
+                        <span class="badge badge-primary badge-pill"><a href="../lib/txt/inArbeit.html" style="color:white">1</a></span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         Stückzahl
@@ -111,7 +111,7 @@ echo "Anfrage : "  . $q . "<br>";
                   <ul id="a1" class="list-group">
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         Teilenummer
-                        <span class="badge badge-primary badge-pill"><a href="../txt/inArbeit.html" style="color:white">1</a></span>
+                        <span class="badge badge-primary badge-pill"><a href="../lib/txt/inArbeit.html" style="color:white">1</a></span>
                       </li>
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                         Stückzahl
