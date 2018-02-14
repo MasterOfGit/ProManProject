@@ -11,7 +11,105 @@
 </head>
 <body>
 
-
+<div class="Maschine">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Maschinen</h2>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home">Alle Maschine anzeigen</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">Maschine suchen</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu2">Maschine bearbeiten</a> </li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active"><br>
+          <h3>Alle Maschine anzeigen</h3>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                  <th>City</th>
+                  <th>Country</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Anna</td>
+                  <td>Pitt</td>
+                  <td>35</td>
+                  <td>New York</td>
+                  <td>USA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="menu1" class="container tab-pane fade"><br>
+          <h3>Maschine suchen</h3>
+          <form class="form-inline" action="/action_page.php">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                  <th>City</th>
+                  <th>Country</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Anna</td>
+                  <td>Pitt</td>
+                  <td>35</td>
+                  <td>New York</td>
+                  <td>USA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="menu2" class="container tab-pane fade"><br>
+          <h3>Maschine bearbeiten</h3>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>ddd</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Anna</td>
+                  <td>Pitt</td>
+                  <th><button>bearbeiten</button></th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="Abteilung">
   <div class="jumbotron">
     <div class="container">
@@ -111,6 +209,60 @@
     </div>
   </div>
 </div>
+<div class="Registrtierung">
+  <div class="jumbotron">
+    <h1>Registrieren </h1>
+    <div class="jumbotron">
+      <h1>Bitte geben sie ihre Daten ein !!</h1>
+      <form>
+        <div class="form-group">
+          <label for="userID">UserID (falls bekannt)</label>
+          <input type="text" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">
+          <label for="anrede">Anrede</label>
+          <select class="form-control" id="anrede">
+            <option>Herr</option>
+            <option>Frau</option>
+            <option>Dr.</option>
+            <option>Prof.</option>
+            <option>Prof.Dr.</option>
+          </select>
+          <label for="position">Position</label>
+          <select class="form-control" id="position">
+            <option>Administrator</option>
+            <option>Maschinenführer</option>
+            <option>Instandhalter</option>
+            <option>Gruppensprecher</option>
+            <option>Meister</option>
+            <option>Sachbearbeiter</option>
+          </select>
+          <br>
+          <img id="bild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image">
+          <label for="bilddatei">Bilddatei auswählen</label>
+          <input type="file" id="bilddatei" name="bilddatei" multiple>
+          <label for="vorname">Vorname</label>
+          <input type="text" class="form-control" id="vorname" aria-describedby="userID" placeholder="Vorname">
+          <label for="nachname">Nachname</label>
+          <input type="text" class="form-control" id="nachname" aria-describedby="userID" placeholder="Nachname">
+          <label for="werk">Werk</label>
+          <input type="text" class="form-control" id="werk" aria-describedby="Werk" placeholder="Werk">
+          <label for="abteilung">Abteilung</label>
+          <input type="text" class="form-control" id="Abteilung" aria-describedby="userID" placeholder="Abteilung">
+          <label for="eMail">eMail</label>
+          <input type="email" class="form-control" id="email" aria-describedby="eMail" placeholder="eMail">
+          <label for="telfest">Festnetz</label>
+          <input type="tel" class="form-control" id="telfest" aria-describedby="Festnetz" placeholder="Festnetz">
+          <label for="mobil">Mobil</label>
+          <input type="tel" class="form-control" id="mobil" aria-describedby="Mobil" placeholder="Mobil">
+          <label for="bemerkung">Bemerkung</label>
+          <input type="text" class="form-control" id="bemerkung" aria-describedby="Bemerkung" placeholder="Bemerkung">
+        </div>
+        <button type="button" 
+					class="btn btn-primary" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Senden</button>
+        <button type="reset" class="btn btn-primary">alles löschen</button>
+      </form>
+    </div>
+  </div>
+</div>
 // Fertig
 <div class="gesammtbereich">
   <div class="jumbotron">
@@ -163,7 +315,6 @@
     <div class="col-sm-4">Aktuelle Schicht A3</div>
   </div>
 </div>
-	
 <div class="detailbereich">
   <div class="jumbotron">
     <div class="container-fluid">
@@ -244,7 +395,6 @@
     </div>
   </div>
 </div>
-	
 <div class="User">
   <div class="jumbotron">
     <div class="container">
@@ -438,7 +588,7 @@
     </div>
   </div>
 </div>
-	
+-->
 <div class="Bauteil bearbeiten">
   <div class="jumbotron">
     <h1>Bauteil bearbeiten</h1>
@@ -484,113 +634,14 @@
 					class="btn btn-primary" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Speichern</button>
         <button type="button" 
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Löschen</button>
-        <button type="button" 
+		  <button type="button" 
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Ersetzen</button>
+   
       </form>
     </div>
   </div>
 </div>
-<div class="Bauteil">
-  <div class="jumbotron">
-    <div class="container">
-      <h2>Bauteil</h2>
-      <br>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home40">Bauteie suchen</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu40">Bauteilverwendung</a></li>
-      </ul>
-      
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div id="home40" class="container tab-pane fade"><br>
-          <h3>Login Anfragen</h3>
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Teilenummer</th>
-                  <th>Index</th>
-                  <th>Bearbeitungsstand</th>
-                  <th>Version</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>123 445 777</td>
-                  <td>AC</td>
-                  <td>Rohteil</td>
-                  <td>V.1.5</td>
-                  <td>NullSerie</td>
-                  <td><input type="button" value="Bauteildaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilBear.php?q=1111',myFunction1)" ></td>
-                </tr>
-                <tr>
-                  <td>123 445 777</td>
-                  <td>AD</td>
-                  <td>Rohteil</td>
-                  <td>V.1.0</td>
-                  <td>Produktiv</td>
-                  <td><input type="button" value="Bauteildaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilBear.php?q=1111',myFunction1)"></td>
-                </tr>
-              </tbody>
-            </table>
-            
-          </div>
-        </div>
-        <div id="menu40" class="container tab-pane active"><br>
-          <h3>Maschinen</h3>
-          <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                 <th>Fertigungslinie</th>
-				 <th>Teilenummer</th>
-                  <th>Index</th>
-                  <th>MaschinenID</th>
-                  <th>Technologie</th>
-                  <th>Bearbeitung</th>
-					<th>Bear.Schritt</th>
-					<th>GType</th>
-                </tr>
-              </thead>
-                   <tbody>
-                <tr>
-                  <td>Festrad 3</td>
-					<td>123 445 777</td>
-                  <td>AD</td>
-                  <td>112254</td>
-                  <td>HardDrehen</td>
-                  <td>PlanF 10a</td>
-					<td>1</td>
-					<td>5.Gang Getrieb 1254as8</td>
-                  <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
-                </tr>
-                <tr>
-					<td>Festrad 3</td>
-                  <td>123 445 777</td>
-                  <td>AD</td>
-                  <td>125545</td>
-                  <td>Verz.Schleifen</td>
-                  <td>VZ Aussen</td>
-					<td>2</td>
-					<td>5.Gang Getrieb 1254as8</td>
-                  <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
-                </tr>
-				
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>	
-	
+
 <div class="Maschine bearbeiten">
   <div class="jumbotron">
     <h1>Maschine bearbeiten</h1>
@@ -606,22 +657,23 @@
             <option>Rundschleifen</option>
             <option>Verzahnungsschleifen</option>
             <option>Planschleifen</option>
-            <option>Räumen</option>
-            <option>Schaben</option>
+			<option>Räumen</option>
+			<option>Schaben</option>
           </select>
           <label for="hersteller">Hersteller</label>
           <input type="text" class="form-control" id="hersteller" aria-describedby="userID" placeholder="Hersteller">
           <label for="Status">Status</label>
           <select class="form-control" id="bearbeitungsstand">
             <option>Produktion</option>
-            <option>Umbau</option>
+			<option>Umbau</option>
             <option>Reperatur</option>
             <option>Wartung</option>
             <option>Ersatz</option>
             <option>NullSerie</option>
             <option>Sonstige</option>
-            <option>Schrott</option>
-            <option>Optimierung</option>
+             <option>Schrott</option>
+			 <option>Optimierung</option>
+            
           </select>
           <label for="bauteilVersion">Version</label>
           <input type="text" class="form-control" id="bauteilVersion" aria-describedby="userID" placeholder="UserID">
@@ -631,9 +683,10 @@
           <input type="text" class="form-control" id="standort" aria-describedby="userID" placeholder="UserID">
           <label for="anschaffungsdatum">Anschaffungsdatum</label>
           <input type="date" class="form-control" id="anschaffungsdatum" aria-describedby="userID" placeholder="UserID">
-          <label for="garantieBis">GarantieBis</label>
+		  <label for="garantieBis">GarantieBis</label>
           <input type="date" class="form-control" id="garantieBis" aria-describedby="userID" placeholder="UserID">
-          <label for="maschinenBild">Maschinenbild</label>
+            
+		<label for="maschinenBild">Maschinenbild</label>
           <img id="bauteilbild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image"> <br>
           <label for="maschinenBild">Bilddatei auswählen</label>
           <input type="file" id="maschinenBild" name="maschinenBild" multiple>
@@ -642,68 +695,30 @@
 					class="btn btn-primary" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Speichern</button>
         <button type="button" 
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Löschen</button>
-        <button type="button" 
+		  <button type="button" 
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Ersetzen</button>
+   
       </form>
     </div>
   </div>
 </div>
- <div class="Maschinen">
+	
+	
+<div class="Maschinen">
   <div class="jumbotron">
     <div class="container">
       <h2>Maschine</h2>
       <br>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home70">Maschine suchen</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu70">Maschinenverwendung</a></li>
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home30">Registrierte User</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu31">Registrierungsanfragen</a></li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu32">Nachichten</a> </li>
       </ul>
       
       <!-- Tab panes -->
       <div class="tab-content">
-        <div id="home70" class="container tab-pane fade"><br>
-          <h3>Login Anfragen</h3>
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Inventarnummer</th>
-                  <th>Hersteller</th>
-                  <th>Technologie</th>
-                  <th>Standort</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>19555455</td>
-                  <td>Scherer</td>
-                  <td>Fräsen</td>
-                  <td>Werk 12 Halle 10 Feld C3 HG</td>
-                  <td>Produktiv</td>
-                  <td><input type="button" value="Maschdaten bearbeiten"
-							 onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)" ></td>
-                </tr>
-                <tr>
-                  <td>9998855</td>
-                  <td>Weisser</td>
-                  <td>Schleifen</td>
-                  <td>Werk 12 Halle 1 Feld A5 EG</td>
-                  <td>Produktiv</td>
-                  <td><input type="button" value="Maschdaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
-                </tr>
-              </tbody>
-            </table>
-            <tr>
-              <td>dvc2222</td>
-              <td>Peter</td>
-              <td>Müller</td>
-              <td>peter.mueller@proman.de</td>
-              <td>0561/884455</td>
-              <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck88" disabled></td>
-          </div>
-        </div>
-        <div id="menu70" class="container tab-pane active"><br>
+        <div id="home30" class="container tab-pane active"><br>
           <h3>Maschinen</h3>
           <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -717,37 +732,88 @@
                   <th>Hersteller</th>
                   <th>Technologie</th>
                   <th>Standort</th>
-                  <th>Status</th>
-                  <th>Abteilung</th>
-                  <th>Fertigung</th>
-                  <th>Fertigungslinie</th>
-                  <th>Bear.Schritt</th>
+                  <th>Starus</th>
+                  
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>19555455</td>
-                  <td>Scherer</td>
-                  <td>Fräsen</td>
-                  <td>Werk 12 Halle 10 Feld C3 HG</td>
-                  <td>Produktiv</td>
-                  <td>1015-5</td>
-                  <td>Grünfertigung</td>
-                  <td>Festrad 7</td>
-                  <td>5</td>
-                  <td><input type="button" value="Verw. Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                  <td>dvc1278</td>
+                  <td>Anna</td>
+                  <td>Pitt</td>
+                  <td>anna.Pitt@proman.de</td>
+                  <td>0561/12535</td>
+                  <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled></td>
+                  <td><input type="button" value="Bearbeiten"></td>
                 </tr>
                 <tr>
-                  <td>9998855</td>
-                  <td>Weisser</td>
-                  <td>Schleifen</td>
-                  <td>Werk 12 Halle 1 Feld A5 EG</td>
-                  <td>Umbau</td>
-                  <td>1015-5</td>
-                  <td>Hardfertigung</td>
-                  <td>Festrad 4</td>
-                  <td>4</td>
-                  <td><input type="button" value="Verw. Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                  <td>dvc2222</td>
+                  <td>Peter</td>
+                  <td>Müller</td>
+                  <td>peter.mueller@proman.de</td>
+                  <td>0561/884455</td>
+                  <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck5" disabled></td>
+                  <td><input type="button" value="Bearbeiten"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="menu31" class="container tab-pane fade"><br>
+          <h3>Login Anfragen</h3>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>UserID</th>
+                  <th>Vorname</th>
+                  <th>Nachname</th>
+                  <th>eMail</th>
+                  <th>Telefon</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>none</td>
+                  <td>Michael</td>
+                  <td>Pittler</td>
+                  <td>Michael.Pittler@proman.de</td>
+                  <td>0561/88899</td>
+                  <td><input type="button" value="Bearbeiten"></td>
+                </tr>
+                <tr>
+                  <td>dvc87899</td>
+                  <td>Uwe</td>
+                  <td>Neu</td>
+                  <td>uwe.neu@proman.de</td>
+                  <td>0561/7777</td>
+                  <td><input type="button" value="Bearbeiten"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="menu32" class="container tab-pane fade"><br>
+          <h3>Nachichten</h3>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>UserID</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Aktiv</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>dvc1278</td>
+                  <td>Anna</td>
+                  <td>Pitt</td>
+                  <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck2" disabled></td>
+                  <th><button>Nachicht ansehen</button></th>
                 </tr>
               </tbody>
             </table>
