@@ -10,8 +10,6 @@
 <script src="../lib/js/bootstrap.js"></script>
 </head>
 <body>
-
-
 <div class="Abteilung">
   <div class="jumbotron">
     <div class="container">
@@ -163,7 +161,6 @@
     <div class="col-sm-4">Aktuelle Schicht A3</div>
   </div>
 </div>
-	
 <div class="detailbereich">
   <div class="jumbotron">
     <div class="container-fluid">
@@ -244,7 +241,6 @@
     </div>
   </div>
 </div>
-	
 <div class="User">
   <div class="jumbotron">
     <div class="container">
@@ -438,7 +434,6 @@
     </div>
   </div>
 </div>
-	
 <div class="Bauteil bearbeiten">
   <div class="jumbotron">
     <h1>Bauteil bearbeiten</h1>
@@ -535,7 +530,6 @@
                 </tr>
               </tbody>
             </table>
-            
           </div>
         </div>
         <div id="menu40" class="container tab-pane active"><br>
@@ -548,40 +542,39 @@
             <table class="table">
               <thead>
                 <tr>
-                 <th>Fertigungslinie</th>
-				 <th>Teilenummer</th>
+                  <th>Fertigungslinie</th>
+                  <th>Teilenummer</th>
                   <th>Index</th>
                   <th>MaschinenID</th>
                   <th>Technologie</th>
                   <th>Bearbeitung</th>
-					<th>Bear.Schritt</th>
-					<th>GType</th>
+                  <th>Bear.Schritt</th>
+                  <th>GType</th>
                 </tr>
               </thead>
-                   <tbody>
+              <tbody>
                 <tr>
                   <td>Festrad 3</td>
-					<td>123 445 777</td>
+                  <td>123 445 777</td>
                   <td>AD</td>
                   <td>112254</td>
                   <td>HardDrehen</td>
                   <td>PlanF 10a</td>
-					<td>1</td>
-					<td>5.Gang Getrieb 1254as8</td>
+                  <td>1</td>
+                  <td>5.Gang Getrieb 1254as8</td>
                   <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
                 <tr>
-					<td>Festrad 3</td>
+                  <td>Festrad 3</td>
                   <td>123 445 777</td>
                   <td>AD</td>
                   <td>125545</td>
                   <td>Verz.Schleifen</td>
                   <td>VZ Aussen</td>
-					<td>2</td>
-					<td>5.Gang Getrieb 1254as8</td>
+                  <td>2</td>
+                  <td>5.Gang Getrieb 1254as8</td>
                   <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				
               </tbody>
             </table>
           </div>
@@ -589,8 +582,7 @@
       </div>
     </div>
   </div>
-</div>	
-	
+</div>
 <div class="Maschine bearbeiten">
   <div class="jumbotron">
     <h1>Maschine bearbeiten</h1>
@@ -648,7 +640,8 @@
     </div>
   </div>
 </div>
- <div class="Maschinen">
+	
+<div class="Maschinen">
   <div class="jumbotron">
     <div class="container">
       <h2>Maschine</h2>
@@ -702,6 +695,7 @@
               <td>0561/884455</td>
               <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck88" disabled></td>
           </div>
+		  
         </div>
         <div id="menu70" class="container tab-pane active"><br>
           <h3>Maschinen</h3>
@@ -757,6 +751,305 @@
     </div>
   </div>
 </div>
+	
+<div class="Fertigungslinie">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Fertigungslinie</h2>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Fertigungslinie anlegen</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu100">Fertigungslinien anzeigen</a></li>
+		  <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Fertigungsgrafik</a></li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+		  
+        <div id="home100" class="container tab-pane fade"><br>
+          <form class="form-inline" action="/action_page.php">
+            <label for="abteilung">Abteilung</label>
+            <select id="abteilung">
+              <option>Abteilung_1</option>
+              <option>Abteilung_2</option>
+              <option>Abteilung_3</option>
+            </select>
+            <label for="fertigung">Fertigung</label>
+            <select id="fertigung">
+              <option>Fertigung_1</option>
+              <option>Fertigung_2</option>
+              <option>Fertigung_3</option>
+            </select>
+            <label for="fertigung">Fertigungslinie</label>
+            <select id="fertigung">
+              <option>Fertigunglinie_1</option>
+              <option>Fertigunglinie_2</option>
+              <option>Fertigunglinie_3</option>
+            </select>
+            <label for="Fertigungsnamme">Fertigungsart</label>
+            <select id="teilenummer">
+              <option>Grünfertigung</option>
+              <option>Hardfertigung</option>
+              <option>Härter</option>
+            </select>
+            <label for="teilenummer">Teilenummer</label>
+            <select id="teilenummer">
+              <option>Festrad_1</option>
+              <option>Festrad_2</option>
+              <option>Festrad_3</option>
+              <option>Schaldradrad_1</option>
+              <option>Schaldradrad_2</option>
+              <option>Schaldradrad_3</option>
+            </select>
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Abteilung</th>
+                  <th>Fertigung</th>
+                  <th>Fertigungslinie</th>
+                  <th>Maschinen</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                  <td>1</td>
+                  <td><select >
+                      <option selected>111111</option>
+                      <option >222222</option>
+                      <option>333333</option>
+                      <option>444444</option>
+                      <option>555555</option>
+                    </select></td>
+                  <td><select >
+                      <option selected>Drehen</option>
+                      <option >Fräsen</option>
+                      <option>Entgraten</option>
+                      <option>Waschen</option>
+                      <option>Messen</option>
+                    </select></td>
+                  <td><select >
+                      <option selected>Rohteil drehen</option>
+                      <option  >Verzahnung fräsen</option>
+                      <option>Verzahnung entgraten</option>
+                    </select></td>
+                  <td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><select >
+                      <option>111111</option>
+                      <option selected>222222</option>
+                      <option>333333</option>
+                      <option>444444</option>
+                      <option>555555</option>
+                    </select></td>
+                  <td><select >
+                      <option >Drehen</option>
+                      <option selected>Fräsen</option>
+                      <option>Entgraten</option>
+                      <option>Waschen</option>
+                      <option>Messen</option>
+                    </select></td>
+                  <td><select >
+                      <option >Rohteil drehen</option>
+                      <option  selected>Verzahnung fräsen</option>
+                      <option>Verzahnung entgraten</option>
+                    </select></td>
+                  <td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><select >
+                      <option>111111</option>
+                      <option >222222</option>
+                      <option selected>333333</option>
+                      <option>444444</option>
+                      <option>555555</option>
+                    </select></td>
+                  <td><select >
+                      <option >Drehen</option>
+                      <option >Fräsen</option>
+                      <option selected>Entgraten</option>
+                      <option>Waschen</option>
+                      <option>Messen</option>
+                    </select></td>
+                  <td><select >
+                      <option >Rohteil drehen</option>
+                      <option  >Verzahnung fräsen</option>
+                      <option selected>Verzahnung entgraten</option>
+                    </select></td>
+                  <td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><select >
+                      <option>111111</option>
+                      <option >222222</option>
+                      <option >333333</option>
+                      <option selected>444444</option>
+                      <option>555555</option>
+                    </select></td>
+                  <td><select >
+                      <option >Drehen</option>
+                      <option >Fräsen</option>
+                      <option >Entgraten</option>
+                      <option selected>Waschen</option>
+                      <option>Messen</option>
+                    </select></td>
+                  <td><select >
+                      <option >Rohteil drehen</option>
+                      <option  >Verzahnung fräsen</option>
+                      <option >Verzahnung entgraten</option>
+                      <option selected>none</option>
+                    </select></td>
+                  <td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td><select >
+                      <option>111111</option>
+                      <option >222222</option>
+                      <option >333333</option>
+                      <option >444444</option>
+                      <option selected>555555</option>
+                    </select></td>
+                  <td><select >
+                      <option >Drehen</option>
+                      <option >Fräsen</option>
+                      <option >Entgraten</option>
+                      <option >Waschen</option>
+                      <option selected>Messen</option>
+                    </select></td>
+                  <td><select >
+                      <option >Rohteil drehen</option>
+                      <option  >Verzahnung fräsen</option>
+                      <option >Verzahnung entgraten</option>
+                      <option selected>none</option>
+                    </select></td>
+                  <td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="button" value="Neu Arbeitsfolge hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+            <br>
+            <div>
+              <input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+              <input type="button" value="Reset" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+          </div>
+        </div>
+		  
+        <div id="menu100" class="container tab-pane fade"><br>
+          <form class="form-inline" action="/action_page.php">
+            <label for="abteilung">Abteilung</label>
+            <select id="abteilung">
+              <option>Abteilung_1</option>
+              <option>Abteilung_2</option>
+              <option>Abteilung_3</option>
+            </select>
+            <label for="fertigung">Fertigung</label>
+            <select id="fertigung">
+              <option>Fertigung_1</option>
+              <option>Fertigung_2</option>
+              <option>Fertigung_3</option>
+            </select>
+            <label for="fertigung">Fertigungslinie</label>
+            <select id="fertigung">
+              <option>Fertigunglinie_1</option>
+              <option>Fertigunglinie_2</option>
+              <option>Fertigunglinie_3</option>
+            </select>
+           
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Abteilung</th>
+                  <th>Fertigung</th>
+                  <th>Fertigungslinie</th>
+                  <th>Maschine</th>
+                </tr>
+				  
+              </thead>
+              <tbody>
+                <tr>
+                      <td>Abteilung_1</td>
+                      <td>Fertigung_1</td>
+                      <td>Fertigungsline_1</td>
+                      <td>Maschine_1</td>
+                   
+              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+               
+				   <tr>
+                      <td>Abteilung_1</td>
+                      <td>Fertigung_1</td>
+                      <td>Fertigungsline_1</td>
+                      <td>Maschine_2</td>
+                   
+              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+				  
+				   <tr>
+                      <td>Abteilung_1</td>
+                      <td>Fertigung_1</td>
+                      <td>Fertigungsline_1</td>
+                      <td>Maschine_3</td>
+                   
+              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+				  
+				   <tr>
+                      <td>Abteilung_1</td>
+                      <td>Fertigung_1</td>
+                      <td>Fertigungsline_1</td>
+                      <td>Maschine_4</td>
+                   
+              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+				   <tr>
+                      <td>Abteilung_1</td>
+                      <td>Fertigung_1</td>
+                      <td>Fertigungsline_1</td>
+                      <td>Maschine_5</td>
+                   
+              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
+        </div>
+		  
+		<div id="menu101" class="container tab-pane fade"><br>
+          <form class="form-inline" action="/action_page.php">
+           
+			<input type="button" value="Grafik generierren" onclick="loadDoc('lib/php/admin/Fertigungslinie/adminCRFertigungsliniegrafik.php?q=1111',myFunction1)">	
+           
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   

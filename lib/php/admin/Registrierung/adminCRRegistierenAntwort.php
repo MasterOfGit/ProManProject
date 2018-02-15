@@ -18,7 +18,7 @@ echo "Anfrage : "  . $q . "<br>";
 		 Markus Kessler
 		 <br>
 		  
-		 <a class="btn btn-primary btn-lg" href="start.html" role="button">Zum Start</a>
+		 <a class="btn btn-primary btn-lg" href="../start.html" role="button">Zum Start</a>
 		
 	  </p>
 		

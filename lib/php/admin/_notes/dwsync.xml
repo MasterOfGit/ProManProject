@@ -1,27 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="adminContentRequestUser.php" server="C:/xampp/htdocs/proman/" local="131630314851520806" remote="131630314850000000" Dst="1" />
-<file name="adminContentRequestBauteile.php" server="C:/xampp/htdocs/proman/" local="131631060099187765" remote="131631060090000000" Dst="1" />
-<file name="adminContentRequestAbteilung.php" server="C:/xampp/htdocs/proman/" local="131631071399052961" remote="131631071390000000" Dst="1" />
-<file name="adminContentRequestMaschinen.php" server="C:/xampp/htdocs/proman/" local="131631069202402980" remote="131631069200000000" Dst="1" />
-<file name="adminContentRequestAbteilung.php" server="192.168.178.26" local="131625804625759640" remote="131628364800000000" Dst="1" />
-<file name="adminContentRequestBauteile.php" server="192.168.178.26" local="131625803171750286" remote="131628364800000000" Dst="1" />
-<file name="adminContentRequestMaschinen.php" server="192.168.178.26" local="131625803908691580" remote="131628364800000000" Dst="1" />
-<file name="adminContentRequestUser.php" server="192.168.178.26" local="131630314851520806" remote="131630316600000000" Dst="1" />
-<file name="adminContentRequestFertigungslinie.php" server="C:/xampp/htdocs/proman/" local="131631070763162088" remote="131631070760000000" Dst="1" />
-<file name="adminContentRequestFertigung.php" server="C:/xampp/htdocs/proman/" local="131631071078301905" remote="131631071070000000" Dst="1" />
-<file name="adminContentRequestFertigung.php" server="192.168.178.26" local="131628353723235531" remote="131628364800000000" Dst="1" />
-<file name="adminContentRequestFertigungslinie.php" server="192.168.178.26" local="131628353471977401" remote="131628364800000000" Dst="1" />
-<file name="adminContentRequestRegistieren.php" server="C:/xampp/htdocs/proman/" local="131630245089893922" remote="131630245080000000" Dst="1" />
-<file name="adminContentRequestRegistierenAntwort.php" server="C:/xampp/htdocs/proman/" local="131630260074867626" remote="131630260070000000" Dst="1" />
-<file name="adminContentRequestRegistierenFormular.php" server="C:/xampp/htdocs/proman/" local="131630254820253682" remote="131630254820000000" Dst="1" />
-<file name="adminContentRequestUserBearbeiten.php" server="C:/xampp/htdocs/proman/" local="131630301031031295" remote="131630301030000000" Dst="1" />
-<file name="adminContentRequestRegistieren.php" server="192.168.178.26" local="131630245089893922" remote="131630301600000000" Dst="1" />
-<file name="adminContentRequestRegistierenAntwort.php" server="192.168.178.26" local="131630260074867626" remote="131630301600000000" Dst="1" />
-<file name="adminContentRequestRegistierenFormular.php" server="192.168.178.26" local="131630254820253682" remote="131630301600000000" Dst="1" />
-<file name="adminContentRequestUserBearbeiten.php" server="192.168.178.26" local="131630301031031295" remote="131630301600000000" Dst="1" />
-<file name="adminContentRequestBauteilBear.php" server="C:/xampp/htdocs/proman/" local="131631059522440063" remote="131631059520000000" Dst="1" />
-<file name="adminContentRequestBauteilVerwBear.php" server="C:/xampp/htdocs/proman/" local="131631058898123394" remote="131631058890000000" Dst="1" />
-<file name="adminContentRequestMaschineBear.php" server="C:/xampp/htdocs/proman/" local="131631066223194879" remote="131631066220000000" Dst="1" />
-<file name="adminContentRequestMaschineVerwBear.php" server="C:/xampp/htdocs/proman/" local="131631070403342528" remote="131631070400000000" Dst="1" />
+<file name="adminContentRequestUserBearbeiten.php" server="192.168.178.26" local="131630301600000000" remote="131630301600000000" Dst="1" />
 </dwsync>
