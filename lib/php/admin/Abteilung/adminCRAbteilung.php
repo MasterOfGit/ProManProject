@@ -5,57 +5,155 @@ echo "Anfrage : "  . $q . "<br>";
 
 ?>
 
-<div class="fertigung">
+<div class="Abteilung">
 	<div class="jumbotron">
-		<div class="container-fluid">
-			<h2>Abteilungsübersicht</h2>
-			<div class="row">
-				<div class="col-sm-6">
-				  <lable for="a1">Informationen:</lable>
-				  <ul id="a1" class="list-group">
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Name <span class="badge badge-primary badge-pill"><a href="../inArbeit.html" style="color:white">1</a></span> </li>
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Abteilung <span class="badge badge-primary badge-pill">Halle 12 Werk Kassel</span></span> </li>
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Ansprechpartner<span class="badge badge-primary badge-pill">Hans Peter (0123/456798)</span> </li>
-				  </ul>
-				</div>
-				<div class="col-sm-6">
-				  <lable for="a1">Status:</lable>
-				  <ul id="a1" class="list-group">
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Zugeordnete Fertigung <span class="badge badge-primary badge-pill"><a href="../inArbeit.html" style="color:white">5</a></span> </li>
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Reparaturen Insgesamt <span class="badge badge-primary badge-pill">5</span>  </li>
-					<li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen Insgesamt<span class="badge badge-primary badge-pill">2</span> </li>
-				  </ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6">
-					<details>
-						<summary>Zugeordnete Fertigungen &darr;</summary>
-						<div class="table-responsive-sm">
+		<div class="container">
+			<h2>Abteilung</h2>
+			<br>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Abteilung anlegen</a>&nbsp;</li>
+				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu100">Abteilung anzeigen</a>
+				</li>
+				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Abteilungsgrafik</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+
+				<div id="home100" class="container tab-pane fade"><br>
+					<form class="form-inline" action="/action_page.php">
+						<label for="Abteilung">Abteilung</label>
+						<select id="AbteilungAbteilung">
+							<option>Abteilung_1</option>
+							<option>Abteilung_2</option>
+							<option>Abteilung_3</option>
+						</select>
+					</form>
+					<div class="table-responsive-sm">
 						<table class="table">
-						  <thead>
-							<tr>
-							  <th>#</th>
-							  <th>Bezeichnung</th>
-							  <th>Status</th>
-							</tr>
-						  </thead>
-						  <tbody>
-							<tr>
-							  <td>1</td>
-							  <td><a href="../inArbeit.html" style="color:blue">Linie_1</a></td>
-							  <td>ok</td>
-							</tr>
-							<tr>
-							  <td>2</td>
-							  <td><a href="../inArbeit.html" style="color:blue">Linie_2</a></td>
-							  <td>Reparatur</td>
-							</tr>
-						  </tbody>
+							<thead>
+								<tr>
+									<th>Fertigung</th>
+									<th>Fertigungslinienabzahl</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<select>
+											<option selected>Fertigung_1</option>
+											<option>Fertigung_2</option>
+											<option>Fertigung_3</option>
+											<option>Fertigung_4</option>
+											<option>Fertigung_5</option>
+										</select>
+									</td>
+									</td>
+									<td>5</td>
+									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<select>
+											<option >Fertigung_1</option>
+											<option>Fertigung_2</option>
+											<option selected>Fertigung_3</option>
+											<option>Fertigung_4</option>
+											<option>Fertigung_5</option>
+										</select>
+									</td>
+									</td>
+									<td>5</td>
+									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+
+									</td>
+								</tr>
+								
+																
+							</tbody>
 						</table>
-					  </div>
-				  </div>
-				</details>
+						<br>
+						<div>
+							<input type="button" value="Neu Fertigung hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+						</div>
+						<br>
+						<div>
+							<input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+							<input type="button" value="Reset" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+						</div>
+					</div>
+				</div>
+
+				<div id="menu100" class="container tab-pane fade"><br>
+				  <form class="form-inline" action="/action_page.php">
+				    <label for="abteilung">Abteilung</label>
+				    <select id="abteilung">
+							<option>Abteilung_1</option>
+							<option>Abteilung_2</option>
+							<option>Abteilung_3</option>
+						</select>
+</form>
+					<div class="table-responsive-sm">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Abteilung</th>
+									<th>Fertigung</th>
+									<th>Fertigungsliniezahl</th>
+									<th>Gesamtmaschinenzahl</th>
+								</tr>
+
+							</thead>
+							<tbody>
+								<tr>
+									<td>Abteilung_1</td>
+									<td>Fertigung_1</td>
+									<td>5</td>
+									<td>50</td>
+
+									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+									</td>
+								</tr>
+								
+								<tr>
+									<td>Abteilung_1</td>
+									<td>Fertigung_3</td>
+									<td>2</td>
+									<td>20</td>
+
+									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+									</td>
+								</tr>
+								
+									
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+				<div id="menu101" class="container tab-pane fade"><br>
+					<form class="form-inline" action="/action_page.php">
+
+
+					</form>
+					<canvas id="myCanvas" width="400" height="500" style="border:1px solid #d3d3d3;">
+						Your browser does not support the HTML5 canvas tag.</canvas>
+				
+
+
+
+
+					<input type="button" value="Grafik generierren" onclick="createCanvas()">
+
+				</div>
 			</div>
 		</div>
 	</div>

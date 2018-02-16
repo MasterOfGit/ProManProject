@@ -12,7 +12,7 @@ echo "Anfrage : "  . $q . "<br>";
       <br>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home40">Bauteie suchen</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home40">Bauteie bearbeiten</a>&nbsp;</li>
         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu40">Bauteilverwendung</a></li>
       </ul>
       
@@ -50,7 +50,7 @@ echo "Anfrage : "  . $q . "<br>";
                 </tr>
               </tbody>
             </table>
-            
+            <input type="button" value="Neues Bauteil" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)">
           </div>
         </div>
         <div id="menu40" class="container tab-pane active"><br>
@@ -77,7 +77,7 @@ echo "Anfrage : "  . $q . "<br>";
                 <tr>
                   <td>Festrad 3</td>
 					<td>123 445 777</td>
-                  <td>AD</td>
+                  <td>BB</td>
                   <td>112254</td>
                   <td>HardDrehen</td>
                   <td>PlanF 10a</td>
@@ -94,6 +94,17 @@ echo "Anfrage : "  . $q . "<br>";
                   <td>VZ Aussen</td>
 					<td>2</td>
 					<td>5.Gang Getrieb 1254as8</td>
+                  <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+					    <tr>
+					<td></td>
+                  <td>123 445 777</td>
+                  <td>NEU</td>
+                  <td></td>
+                  <td>Verz.Schleifen</td>
+                  <td>VZ Aussen</td>
+					<td>2</td>
+					<td>5.Gang Getrieb 1254as99</td>
                   <td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
 				

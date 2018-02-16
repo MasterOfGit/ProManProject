@@ -24,29 +24,19 @@ echo "Anfrage : " . $q . "<br>";
 
 				<div id="home100" class="container tab-pane fade"><br>
 					<form class="form-inline" action="/action_page.php">
-						<label for="abteilung">Abteilung</label>
-						<select id="abteilung">
-							<option>Abteilung_1</option>
-							<option>Abteilung_2</option>
-							<option>Abteilung_3</option>
-						</select>
-						<label for="fertigung">Fertigung</label>
-						<select id="fertigung">
-							<option>Fertigung_1</option>
-							<option>Fertigung_2</option>
-							<option>Fertigung_3</option>
-						</select>
-						<label for="fertigung">Fertigungslinie</label>
+<label for="fertigung">Fertigungslinie</label>
 						<select id="fertigung">
 							<option>Fertigunglinie_1</option>
 							<option>Fertigunglinie_2</option>
 							<option>Fertigunglinie_3</option>
 						</select>
-						<label for="Fertigungsnamme">Fertigungsart</label>
-						<select id="teilenummer">
+						<label for="fertigungstype">Fertigungstyp</label>
+						<select id="fertigungstype">
 							<option>Grünfertigung</option>
 							<option>Hardfertigung</option>
 							<option>Härter</option>
+							<option>Montage</option>
+							<option>Qualitätssicherung</option>
 						</select>
 						<label for="teilenummer">Teilenummer</label>
 						<select id="teilenummer">
@@ -57,15 +47,17 @@ echo "Anfrage : " . $q . "<br>";
 							<option>Schaldradrad_2</option>
 							<option>Schaldradrad_3</option>
 						</select>
+						
+						MEHRERE TEILENUMMERM PRO FERTIGUNGSLINIE ????
 					</form>
 					<div class="table-responsive-sm">
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Abteilung</th>
-									<th>Fertigung</th>
-									<th>Fertigungslinie</th>
-									<th>Maschinen</th>
+									<th>Arbeitsfolge</th>
+									<th>Maschine</th>
+									<th>Technologie</th>
+									<th>Arbeitsplan</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -73,30 +65,20 @@ echo "Anfrage : " . $q . "<br>";
 									<td>1</td>
 									<td>
 										<select>
-											<option selected>111111</option>
-											<option>222222</option>
-											<option>333333</option>
-											<option>444444</option>
-											<option>555555</option>
+											<option selected>Maschine_1</option>
+											<option>Maschine_2</option>
+											<option>Maschine_3</option>
+											<option>Maschine_4</option>
+											<option>Maschine_5</option>
 										</select>
 									</td>
 									<td>
-										<select>
-											<option selected>Drehen</option>
-											<option>Fräsen</option>
-											<option>Entgraten</option>
-											<option>Waschen</option>
-											<option>Messen</option>
-										</select>
+										Drehen
 									</td>
 									<td>
-										<select>
-											<option selected>Rohteil drehen</option>
-											<option>Verzahnung fräsen</option>
-											<option>Verzahnung entgraten</option>
-										</select>
+										Rohteil drehen
 									</td>
-									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+										<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
@@ -104,28 +86,18 @@ echo "Anfrage : " . $q . "<br>";
 									<td>2</td>
 									<td>
 										<select>
-											<option>111111</option>
-											<option selected>222222</option>
-											<option>333333</option>
-											<option>444444</option>
-											<option>555555</option>
+											<option>Maschine_1</option>
+											<option selected>Maschine_2</option>
+											<option>Maschine_3</option>
+											<option>Maschine_4</option>
+											<option>Maschine_5</option>
 										</select>
 									</td>
 									<td>
-										<select>
-											<option>Drehen</option>
-											<option selected>Fräsen</option>
-											<option>Entgraten</option>
-											<option>Waschen</option>
-											<option>Messen</option>
-										</select>
+									Fräsen
 									</td>
 									<td>
-										<select>
-											<option>Rohteil drehen</option>
-											<option selected>Verzahnung fräsen</option>
-											<option>Verzahnung entgraten</option>
-										</select>
+									Verzahnung fräsen
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -135,28 +107,18 @@ echo "Anfrage : " . $q . "<br>";
 									<td>3</td>
 									<td>
 										<select>
-											<option>111111</option>
-											<option>222222</option>
-											<option selected>333333</option>
-											<option>444444</option>
-											<option>555555</option>
+											<option>Maschine_1</option>
+											<option>Maschine_2</option>
+											<option selected>Maschine_3</option>
+											<option>Maschine_4</option>
+											<option>Maschine_5</option>
 										</select>
 									</td>
 									<td>
-										<select>
-											<option>Drehen</option>
-											<option>Fräsen</option>
-											<option selected>Entgraten</option>
-											<option>Waschen</option>
-											<option>Messen</option>
-										</select>
+										Entgraten
 									</td>
 									<td>
-										<select>
-											<option>Rohteil drehen</option>
-											<option>Verzahnung fräsen</option>
-											<option selected>Verzahnung entgraten</option>
-										</select>
+										Verzahnung entgraten
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -166,29 +128,18 @@ echo "Anfrage : " . $q . "<br>";
 									<td>4</td>
 									<td>
 										<select>
-											<option>111111</option>
-											<option>222222</option>
-											<option>333333</option>
-											<option selected>444444</option>
-											<option>555555</option>
+											<option>Maschine_1</option>
+											<option>Maschine_2</option>
+											<option>Maschine_3</option>
+											<option selected>Maschine_4</option>
+											<option>Maschine_5</option>
 										</select>
 									</td>
 									<td>
-										<select>
-											<option>Drehen</option>
-											<option>Fräsen</option>
-											<option>Entgraten</option>
-											<option selected>Waschen</option>
-											<option>Messen</option>
-										</select>
+										Waschen
 									</td>
 									<td>
-										<select>
-											<option>Rohteil drehen</option>
-											<option>Verzahnung fräsen</option>
-											<option>Verzahnung entgraten</option>
-											<option selected>none</option>
-										</select>
+										none
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -198,29 +149,18 @@ echo "Anfrage : " . $q . "<br>";
 									<td>5</td>
 									<td>
 										<select>
-											<option>111111</option>
-											<option>222222</option>
-											<option>333333</option>
-											<option>444444</option>
-											<option selected>555555</option>
+											<option>Maschine_1</option>
+											<option>Maschine_2</option>
+											<option>Maschine_3</option>
+											<option>Maschine_4</option>
+											<option selected>Maschine_5</option>
 										</select>
 									</td>
 									<td>
-										<select>
-											<option>Drehen</option>
-											<option>Fräsen</option>
-											<option>Entgraten</option>
-											<option>Waschen</option>
-											<option selected>Messen</option>
-										</select>
+										Messen
 									</td>
 									<td>
-										<select>
-											<option>Rohteil drehen</option>
-											<option>Verzahnung fräsen</option>
-											<option>Verzahnung entgraten</option>
-											<option selected>none</option>
-										</select>
+										none
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -241,19 +181,7 @@ echo "Anfrage : " . $q . "<br>";
 
 				<div id="menu100" class="container tab-pane fade"><br>
 					<form class="form-inline" action="/action_page.php">
-						<label for="abteilung">Abteilung</label>
-						<select id="abteilung">
-							<option>Abteilung_1</option>
-							<option>Abteilung_2</option>
-							<option>Abteilung_3</option>
-						</select>
-						<label for="fertigung">Fertigung</label>
-						<select id="fertigung">
-							<option>Fertigung_1</option>
-							<option>Fertigung_2</option>
-							<option>Fertigung_3</option>
-						</select>
-						<label for="fertigung">Fertigungslinie</label>
+<label for="fertigung">Fertigungslinie</label>
 						<select id="fertigung">
 							<option>Fertigunglinie_1</option>
 							<option>Fertigunglinie_2</option>
@@ -265,67 +193,42 @@ echo "Anfrage : " . $q . "<br>";
 						<table class="table">
 							<thead>
 								<tr>
-									<th>Abteilung</th>
-									<th>Fertigung</th>
 									<th>Fertigungslinie</th>
 									<th>Maschine</th>
+									
 								</tr>
 
 							</thead>
 							<tbody>
 								<tr>
-									<td>Abteilung_1</td>
+									
 									<td>Fertigung_1</td>
-									<td>Fertigungsline_1</td>
 									<td>Maschine_1</td>
 
 									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
-
 								<tr>
-									<td>Abteilung_1</td>
+									
 									<td>Fertigung_1</td>
-									<td>Fertigungsline_1</td>
-									<td>Maschine_2</td>
-
-									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-
-								<tr>
-									<td>Abteilung_1</td>
-									<td>Fertigung_1</td>
-									<td>Fertigungsline_1</td>
 									<td>Maschine_3</td>
 
 									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
-
 								<tr>
-									<td>Abteilung_1</td>
+									
 									<td>Fertigung_1</td>
-									<td>Fertigungsline_1</td>
-									<td>Maschine_4</td>
+									<td>Maschine_7</td>
 
 									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
-								<tr>
-									<td>Abteilung_1</td>
-									<td>Fertigung_1</td>
-									<td>Fertigungsline_1</td>
-									<td>Maschine_5</td>
 
-									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
+							
 							</tbody>
 						</table>
 
