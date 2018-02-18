@@ -54,13 +54,15 @@
     <Compile Include="DataProvider\DummyDataProvider.cs" />
     <Compile Include="DataProvider\IDataProvider.cs" />
     <Compile Include="Models\AbteilungDto.cs" />
+    <Compile Include="Models\ArbeitsfolgeDto.cs" />
+    <Compile Include="Models\AuditDto.cs" />
+    <Compile Include="Models\BauteilDto.cs" />
     <Compile Include="Models\FertigungDto.cs" />
     <Compile Include="Models\FertigungslinieDto.cs" />
     <Compile Include="Models\MaschineDto.cs" />
     <Compile Include="Models\ReparaturDto.cs" />
     <Compile Include="Models\UserDto.cs" />
     <Compile Include="Models\WartungDto.cs" />
-    <Compile Include="Models\WerkDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

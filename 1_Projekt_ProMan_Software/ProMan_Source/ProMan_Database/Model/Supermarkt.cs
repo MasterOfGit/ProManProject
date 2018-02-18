@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProMan_Database.Model
 {
-    public class MaschineType
+    public class Supermarkt
     {
-        public int MaschineTypeID { get; set; }
-        public string Name { get; set; }
+        public int SupermarktID { get; set; }
+        public Bauteil Bauteil { get; set; }
+        public int Iststueckzahl { get; set; }
     }
 }

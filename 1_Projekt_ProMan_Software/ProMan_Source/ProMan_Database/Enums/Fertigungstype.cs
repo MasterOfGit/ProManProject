@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProMan_Database.Enums
 {
-    public enum MaschinenStatus
+    public enum Fertigungstype
     {
-        Okay,
-        Warnung,
-        Fehler,
-        Wartung,
-        Defekt
+        Gruenfertigung,
+        Hardfertigung,
+        Qualitaetssicherung,
+        Montage,
+        Haerterei
     }
 }

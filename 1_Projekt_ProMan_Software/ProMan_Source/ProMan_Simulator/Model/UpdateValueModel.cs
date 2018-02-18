@@ -126,13 +126,6 @@ namespace ProMan_Simulator.Model
             var tmpUpdateValues = new ObservableCollection<SetValuesHelper>();
             switch (_type)
             {
-                case ObjectDtos.WerkDtoName:
-                    {
-                        var item = _httphelper.HttpGet<WerkDto>($"api/werk/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.Name });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Ort", Value = item.Ort });
-                        break;
-                    }
                 case ObjectDtos.AbteilungDtoName:
                     {
                         var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{_id}").Result;
@@ -158,13 +151,13 @@ namespace ProMan_Simulator.Model
                     }
                 case ObjectDtos.MaschineDtoName:
                     {
-                        var item = _httphelper.HttpGet<MaschineDto>($"api/maschine/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "InventarNummer", Value = item.InventarNummer.ToString() });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Zeichnungsnummer", Value = item.Zeichnungsnummer });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Type", Value = item.Type });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Hersteller", Value = item.Hersteller });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Baujahr", Value = item.Baujahr.ToString() });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Garantie", Value = item.Garantie.ToString() });
+                        //var item = _httphelper.HttpGet<MaschineDto>($"api/maschine/{_id}").Result;
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "InventarNummer", Value = item.InventarNummer.ToString() });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Zeichnungsnummer", Value = item.Zeichnungsnummer });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Type", Value = item.Type });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Hersteller", Value = item.Hersteller });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Baujahr", Value = item.Baujahr.ToString() });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Garantie", Value = item.Garantie.ToString() });
                         break;
                     }
                 case ObjectDtos.ReparaturDtoName:
@@ -180,25 +173,25 @@ namespace ProMan_Simulator.Model
                     }
                 case ObjectDtos.UserDtoName:
                     {
-                        var item = _httphelper.HttpGet<UserDto>($"api/user/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Title", Value = item.Title });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "FirstName", Value = item.FirstName });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "FamilyName", Value = item.FamilyName });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Abteilung", Value = item.AbteilungName });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Werk", Value = item.WerkName });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "eMail", Value = item.eMail });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Phone", Value = item.Phone });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Mobile", Value = item.Mobile });
+                        //var item = _httphelper.HttpGet<UserDto>($"api/user/{_id}").Result;
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Title", Value = item.Title });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "FirstName", Value = item.FirstName });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "FamilyName", Value = item.FamilyName });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Abteilung", Value = item.AbteilungName });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Werk", Value = item.WerkName });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "eMail", Value = item.eMail });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Phone", Value = item.Phone });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Mobile", Value = item.Mobile });
                         break;
                     }
                 case ObjectDtos.WartungDtoName:
                     {
-                        var item = _httphelper.HttpGet<WartungDto>($"api/wartung/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "WartungsInterval", Value = item.WartungsInterval.ToString() });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Status", Value = item.Status });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Beschreibung", Value = item.Beschreibung });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
+                        //var item = _httphelper.HttpGet<WartungDto>($"api/wartung/{_id}").Result;
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "WartungsInterval", Value = item.WartungsInterval.ToString() });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Status", Value = item.Status });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "Beschreibung", Value = item.Beschreibung });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
+                        //tmpUpdateValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
                         break;
                     }
 
@@ -219,13 +212,6 @@ namespace ProMan_Simulator.Model
             //Update the data
             switch (_type)
             {
-                case ObjectDtos.WerkDtoName:
-                    _httphelper.HttpPut($"api/werk/{_id}", new WerkDto()
-                    {
-                        Name = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        Ort = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Ort").Value,
-                    }).Wait();
-                    break;
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPut($"api/abteilung/{_id}", new AbteilungDto()
                     {
@@ -251,12 +237,6 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.MaschineDtoName:
                     _httphelper.HttpPut($"api/maschine/{_id}", new MaschineDto()
                     {
-                        Baujahr = Convert.ToDateTime(UpdateValues.ToList().FirstOrDefault(x => x.Label == "Baujahr").Value),
-                        Garantie = Convert.ToDateTime(UpdateValues.ToList().FirstOrDefault(x => x.Label == "Garantie").Value),
-                        Hersteller = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Hersteller").Value,
-                        Type = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Type").Value,
-                        InventarNummer = Convert.ToInt32(UpdateValues.ToList().FirstOrDefault(x => x.Label == "InventarNummer").Value),
-                        Zeichnungsnummer = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Zeichnungsnummer").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.ReparaturDtoName:
@@ -270,22 +250,11 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.UserDtoName:
                     _httphelper.HttpPut($"api/user/{_id}", new UserDto()
                     {
-                        Title = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Title").Value,
-                        FirstName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "FirstName").Value,
-                        FamilyName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "FamilyName").Value,
-                        Abteilung = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Abteilung").Value,
-                        Werk = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Werk").Value,
-                        eMail = UpdateValues.ToList().FirstOrDefault(x => x.Label == "eMail").Value,
-                        Phone = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Phone").Value,
-                        Mobile = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Mobile").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.WartungDtoName:
                     _httphelper.HttpPut($"api/wartung", new WartungDto()
                     {
-                        WartungsInterval = Convert.ToDateTime(UpdateValues.ToList().FirstOrDefault(x => x.Label == "WartungsInterval").Value),
-                        Status = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Status").Value,
-                        Beschreibung = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Beschreibung").Value,
                     }).Wait();
                     break;
                 default:

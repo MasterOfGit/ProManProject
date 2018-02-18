@@ -160,13 +160,6 @@ namespace ProMan_Simulator.Model
         {
             switch (_type)
             {
-                case ObjectDtos.WerkDtoName:
-                    _httphelper.HttpPost($"api/werk", new WerkDto()
-                    {
-                        Name = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        Ort = SetValues.ToList().FirstOrDefault(x => x.Label == "Ort").Value,
-                    }).Wait();
-                    break;
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPost($"api/abteilung", new AbteilungDto()
                     {
@@ -192,12 +185,6 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.MaschineDtoName:
                     _httphelper.HttpPost($"api/maschine", new MaschineDto()
                     {
-                        Baujahr = Convert.ToDateTime(SetValues.ToList().FirstOrDefault(x => x.Label == "Baujahr").Value) ,
-                        Garantie = Convert.ToDateTime(SetValues.ToList().FirstOrDefault(x => x.Label == "Garantie").Value),
-                        Hersteller = SetValues.ToList().FirstOrDefault(x => x.Label == "Hersteller").Value,
-                        Type = SetValues.ToList().FirstOrDefault(x => x.Label == "Type").Value,
-                        InventarNummer = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "InventarNummer").Value),
-                        Zeichnungsnummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Zeichnungsnummer").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.ReparaturDtoName:
@@ -211,22 +198,12 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.UserDtoName:
                     _httphelper.HttpPost($"api/user", new UserDto()
                     {
-                        Title = SetValues.ToList().FirstOrDefault(x => x.Label == "Title").Value,
-                        FirstName = SetValues.ToList().FirstOrDefault(x => x.Label == "FirstName").Value,
-                        FamilyName = SetValues.ToList().FirstOrDefault(x => x.Label == "FamilyName").Value,
-                        Abteilung = SetValues.ToList().FirstOrDefault(x => x.Label == "Abteilung").Value,
-                        Werk = SetValues.ToList().FirstOrDefault(x => x.Label == "Werk").Value,
-                        eMail = SetValues.ToList().FirstOrDefault(x => x.Label == "eMail").Value,
-                        Phone = SetValues.ToList().FirstOrDefault(x => x.Label == "Phone").Value,
-                        Mobile = SetValues.ToList().FirstOrDefault(x => x.Label == "Mobile").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.WartungDtoName:
                     _httphelper.HttpPost($"api/wartung", new WartungDto()
                     {
-                        WartungsInterval = Convert.ToDateTime(SetValues.ToList().FirstOrDefault(x => x.Label == "WartungsInterval").Value),
-                        Status = SetValues.ToList().FirstOrDefault(x => x.Label == "Status").Value,
-                        Beschreibung = SetValues.ToList().FirstOrDefault(x => x.Label == "Beschreibung").Value,                     
+                
                     }).Wait();
                     break;
                 default:

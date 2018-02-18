@@ -171,12 +171,6 @@ namespace ProMan_Simulator.Model
         {
             switch (SelectedMode)
             {
-                case ObjectDtos.WerkDtoName:
-                    {
-                        var item = _httphelper.HttpGet<WerkDto>($"api/werk/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
                 case ObjectDtos.AbteilungDtoName:
                     {
                         var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{ID}").Result;
