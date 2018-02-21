@@ -104,6 +104,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Base\BaseApiController.cs" />
     <Compile Include="Controllers\AbteilungController.cs" />
+    <Compile Include="Controllers\AdminPageController.cs" />
     <Compile Include="Controllers\FertigungController.cs" />
     <Compile Include="Controllers\FertigungslinieController.cs" />
     <Compile Include="Controllers\LoginController.cs" />

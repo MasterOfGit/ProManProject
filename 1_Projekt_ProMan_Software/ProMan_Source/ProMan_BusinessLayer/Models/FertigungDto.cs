@@ -11,5 +11,14 @@ namespace ProMan_BusinessLayer.Models
         public string Name { get; set; }
         public string AbteilungName { get; set; }
         public List<FertigungslinieDto> Fertigungslinien;
+        public int FertigungslinienAnzahl
+        {
+            get
+            {
+                return Fertigungslinien.Count;
+            }
+            set { }
+
+        }
     }
 }

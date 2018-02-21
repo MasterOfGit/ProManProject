@@ -11,6 +11,12 @@
         public const string ReparaturDtoName = "Reparatur";
         public const string WartungDtoName = "Wartung";
 
+        public const string AdminPageAbteilung = "AdminPageAbteilung";
+        public const string AdminPageBauteil = "AdminPageBauteil";
+        public const string AdminPageFertigung = "AdminPageFertigung";
+        public const string AdminPageFertigungslinie = "AdminPageFertigungslinie";
+        public const string AdminPageMaschine = "AdminPageMaschine";
+        public const string AdminPageUser = "AdminPageUser";
 
     }
 }

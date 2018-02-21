@@ -14,5 +14,15 @@ namespace ProMan_BusinessLayer.Models
         public List<FertigungDto> Fertigungen { get; set; }
         public List<UserDto> User { get; set; }
         public string WerkName { get; set; }
+        public int FertigungsCount
+        {
+            get
+            {
+                return Fertigungen.Count;
+            }
+            set { }
+
+        }
+
     }
 }

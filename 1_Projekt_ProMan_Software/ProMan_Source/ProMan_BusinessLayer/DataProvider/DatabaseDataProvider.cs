@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProMan_BusinessLayer.Models;
+using ProMan_BusinessLayer.Models.AdminPages;
+using System;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -301,6 +303,36 @@ namespace ProMan_BusinessLayer.DataProvider
             dbcontext.SaveChanges();
 
             return true;
+        }
+
+        public AdminPageUserDto GetAdminPageUserDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdminPageAbteilungDto GetAdminPageAbteilungDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdminPageBauteilDto GetAdminPageBauteilDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdminPageFertigungDto GetAdminPageFertigungDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdminPageFertigungslinieDto GetAdminPageFertigungslinieDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdminPageMaschineDto GetAdminPageMaschineDto()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

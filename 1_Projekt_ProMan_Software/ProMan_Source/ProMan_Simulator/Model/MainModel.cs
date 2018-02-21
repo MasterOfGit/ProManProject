@@ -4,6 +4,7 @@ using ProMan_Simulator.Base;
 using ProMan_Simulator.Helper;
 using System;
 using System.Windows.Threading;
+using ProMan_BusinessLayer.Models.AdminPages;
 
 namespace ProMan_Simulator.Model
 {
@@ -171,6 +172,7 @@ namespace ProMan_Simulator.Model
         {
             switch (SelectedMode)
             {
+                #region single objects
                 case ObjectDtos.AbteilungDtoName:
                     {
                         var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{ID}").Result;
@@ -213,6 +215,46 @@ namespace ProMan_Simulator.Model
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
+                #endregion
+                #region adminpages
+                case ObjectDtos.AdminPageAbteilung:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageAbteilungDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageAbteilung}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AdminPageBauteil:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageBauteilDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageBauteil}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AdminPageFertigung:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageFertigungDto>($"api/adminpage/?identifier={ ObjectDtos.AdminPageFertigung}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AdminPageFertigungslinie:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageFertigungslinieDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageFertigungslinie}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AdminPageMaschine:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageMaschineDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageMaschine}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AdminPageUser:
+                    {
+                        var item = _httphelper.HttpGet<AdminPageUserDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageUser}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+
+                #endregion
                 default:
                     Result = $"Mode with the name \"{SelectedMode}\" is not supported";
                     break;

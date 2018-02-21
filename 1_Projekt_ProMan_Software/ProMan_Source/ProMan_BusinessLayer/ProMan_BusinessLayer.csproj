@@ -54,6 +54,12 @@
     <Compile Include="DataProvider\DummyDataProvider.cs" />
     <Compile Include="DataProvider\IDataProvider.cs" />
     <Compile Include="Models\AbteilungDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageAbteilungDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageBauteilDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageFertigungDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageFertigungslinieDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageMaschineDto.cs" />
+    <Compile Include="Models\AdminPages\AdminPageUserDto.cs" />
     <Compile Include="Models\ArbeitsfolgeDto.cs" />
     <Compile Include="Models\AuditDto.cs" />
     <Compile Include="Models\BauteilDto.cs" />

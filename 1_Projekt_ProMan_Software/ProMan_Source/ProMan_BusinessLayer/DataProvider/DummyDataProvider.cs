@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ProMan_BusinessLayer.Models;
+using ProMan_BusinessLayer.Models.AdminPages;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -14,7 +15,7 @@ namespace ProMan_BusinessLayer.DataProvider
             List<FertigungDto> ferttmp = new List<FertigungDto>();
             List<UserDto> usertmp = new List<UserDto>();
 
-            for(int i = 1; i < id +1; i++)
+            for (int i = 1; i < id + 1; i++)
             {
                 ferttmp.Add(GetFertigungsDto(i));
                 usertmp.Add(GenerateUser(i));
@@ -205,23 +206,350 @@ namespace ProMan_BusinessLayer.DataProvider
             };
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
         #endregion
 
+        #region Adminpages
+
+
+        public AdminPageAbteilungDto GetAdminPageAbteilungDto()
+        {
+            AdminPageAbteilungDto value = new AdminPageAbteilungDto();
+            value.Abteilungen = new List<AbteilungDto>()
+            {
+                new AbteilungDto()
+                {
+                    ID = 1,
+                    Name = "Fertigung_1",
+                    WerkName = "Werk_1",
+                    Fertigungen = new List<FertigungDto>()
+                    {
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_1",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_2",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_3",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+
+                            }
+                        }
+                    }
+
+                },
+                new AbteilungDto()
+                {
+                    ID = 1,
+                    Name = "Fertigung_2",
+                    WerkName = "Werk_1",
+                    Fertigungen = new List<FertigungDto>()
+                    {
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_10",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_20",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_30",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+
+                            }
+                        }
+                    }
+                }
+            };
+
+
+            return value;
+        }
+
+        public AdminPageBauteilDto GetAdminPageBauteilDto()
+        {
+            AdminPageBauteilDto value = new AdminPageBauteilDto();
+            value.Bauteile = new List<BauteilDto>()
+            {
+                new BauteilDto()
+                {
+                    ID = 1,
+                    Teilart = "Bauteil_1",
+                    Version = "1.0",
+                    Verwendungsort = "hier"
+                },
+                new BauteilDto()
+                {
+                    ID = 2,
+                    Teilart = "Bauteil_2",
+                    Version = "1.2",
+                    Verwendungsort = "dort"
+                },
+                new BauteilDto()
+                {
+                    ID = 1,
+                    Teilart = "Bauteil_3",
+                    Version = "1.3",
+                    Verwendungsort = "da hinten"
+                }
+            };
+            return value;
+        }
+
+        public AdminPageFertigungDto GetAdminPageFertigungDto()
+        {
+            AdminPageFertigungDto value = new AdminPageFertigungDto();
+            value.Fertigungen = new List<FertigungDto>()
+                    {
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_1",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_2",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_3",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+
+                            }
+                        },
+                                                new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_10",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_20",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+                                new FertigungslinieDto(),
+                            }
+                        },
+                        new FertigungDto()
+                        {
+                            ID = 1,
+                            Name = "Fertigung_30",
+                            Fertigungslinien = new List<FertigungslinieDto>()
+                            {
+                                new FertigungslinieDto(),
+
+                            }
+                        }
+            };
+            return value;
+        }
+
+        public AdminPageFertigungslinieDto GetAdminPageFertigungslinieDto()
+        {
+            AdminPageFertigungslinieDto value = new AdminPageFertigungslinieDto();
+            value.Fertigungslinien = new List<FertigungslinieDto>()
+            {
+                new FertigungslinieDto()
+                {
+                    ID = 1,
+                    Name = "linie_1",
+                    Arbeitsfolgen = new List<ArbeitsfolgeDto>()
+                    {
+                        new ArbeitsfolgeDto()
+                        {
+                            ID = 1,
+                            ArbeitsfolgeName = "ABF_1",
+                            Arbeitsplaene = "PL_1",
+                            Status = ProMan_Database.Enums.StatusArt.Aufbau
+                        },
+                        new ArbeitsfolgeDto()
+                        {
+                            ID = 2,
+                            ArbeitsfolgeName = "ABF_2",
+                            Arbeitsplaene = "PL_2",
+                            Status = ProMan_Database.Enums.StatusArt.Aufbau
+                        }
+                    }
+                },
+                                new FertigungslinieDto()
+                {
+                    ID = 2,
+                    Name = "linie_2",
+                    Arbeitsfolgen = new List<ArbeitsfolgeDto>()
+                    {
+                        new ArbeitsfolgeDto()
+                        {
+                            ID = 3,
+                            ArbeitsfolgeName = "ABF_3",
+                            Arbeitsplaene = "PL_3",
+                            Status = ProMan_Database.Enums.StatusArt.AusserBetrieb
+                        },
+                        new ArbeitsfolgeDto()
+                        {
+                            ID = 4,
+                            ArbeitsfolgeName = "ABF_3",
+                            Arbeitsplaene = "PL_3",
+                            Status = ProMan_Database.Enums.StatusArt.AusserBetrieb
+                        }
+                    }
+                }
+            };
+
+            return value;
+        }
+
+        public AdminPageMaschineDto GetAdminPageMaschineDto()
+        {
+            AdminPageMaschineDto value = new AdminPageMaschineDto();
+            value.Maschinenen = new List<MaschineDto>()
+            {
+                new MaschineDto()
+                {
+                    ID = 1,
+                    Anschaffungsdatum = DateTime.Now.AddDays(-10),
+                    Garantie = DateTime.Now.AddDays(10),
+                    Hersteller = "Masch_1",
+                    Standort = "Stand_1",
+                    Version = "1",
+                    Zeichnungsnummer = "123",
+                    Technologien = new List<ProMan_Database.Enums.Technologie>()
+                    {
+                        ProMan_Database.Enums.Technologie.drehen,
+                        ProMan_Database.Enums.Technologie.fraesen
+                    }
+
+                },
+                                new MaschineDto()
+                {
+                    ID = 1,
+                    Anschaffungsdatum = DateTime.Now.AddDays(-20),
+                    Garantie = DateTime.Now.AddDays(20),
+                    Hersteller = "Masch_2",
+                    Standort = "Stand_2",
+                    Version = "2",
+                    Zeichnungsnummer = "456",
+                    Technologien = new List<ProMan_Database.Enums.Technologie>()
+                    {
+                        ProMan_Database.Enums.Technologie.messen,
+                        ProMan_Database.Enums.Technologie.schleifen
+                    }
+
+                },
+                                                new MaschineDto()
+                {
+                    ID = 1,
+                    Anschaffungsdatum = DateTime.Now.AddDays(-30),
+                    Garantie = DateTime.Now.AddDays(30),
+                    Hersteller = "Masch_3",
+                    Standort = "Stand_3",
+                    Version = "3",
+                    Zeichnungsnummer = "789",
+                    Technologien = new List<ProMan_Database.Enums.Technologie>()
+                    {
+                        ProMan_Database.Enums.Technologie.waschen,
+                    }
+
+                },
+            };
+
+            return value;
+        }
+
+        public AdminPageUserDto GetAdminPageUserDto()
+        {
+            AdminPageUserDto value = new AdminPageUserDto();
+
+            value.User = new List<UserDto>()
+            {
+                new UserDto()
+                {
+                    Active = true,
+                    Bemerkung = "Projektleiter",
+                    Nachname = "Molkenthin",
+                    Vorname = "Thomas",
+                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
+                    ID = 3
+                },
+                                                new UserDto()
+                {
+                    Active = true,
+                    Bemerkung = "Projektadmin",
+                    Nachname = "Kessler",
+                    Vorname = "Markus",
+                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
+                    ID = 3
+                },
+                new UserDto()
+                {
+                    Active = true,
+                    Bemerkung = "Projektmitarbeiter",
+                    Nachname = "Molkenthin",
+                    Vorname = "Sebastian",
+                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
+                    ID = 3
+                },
+            };
+
+            return value;
+        }
+
+        #endregion
 
     }
 }

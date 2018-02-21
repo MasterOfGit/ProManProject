@@ -1,9 +1,5 @@
 ﻿using ProMan_BusinessLayer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ProMan_BusinessLayer.Models.AdminPages;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -36,5 +32,13 @@ namespace ProMan_BusinessLayer.DataProvider
         AbteilungDto GetAbteilungDto(int id);
         bool SetAbteilungDto(AbteilungDto data);
         bool UpdateAbteilungDto(AbteilungDto data, int id);
+
+        AdminPageUserDto GetAdminPageUserDto();
+        AdminPageAbteilungDto GetAdminPageAbteilungDto();
+        AdminPageBauteilDto GetAdminPageBauteilDto();
+        AdminPageFertigungDto GetAdminPageFertigungDto();
+        AdminPageFertigungslinieDto GetAdminPageFertigungslinieDto();
+        AdminPageMaschineDto GetAdminPageMaschineDto();
+
     }
 }
