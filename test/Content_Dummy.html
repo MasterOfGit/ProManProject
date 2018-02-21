@@ -10,6 +10,192 @@
 <script src="../lib/js/bootstrap.js"></script>
 </head>
 <body>
+<div class="Sonderaufgaben">
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Sonderaufgaben </h2>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home900">Wartungen</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menue901">Audit</a></li>
+      </ul>
+      
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="home900" class="container tab-pane fade"><br>
+          <form class="form-inline" action="/action_page.php">
+            <label for="teilenummer">Abteilung</label>
+            <select id="teilenummer">
+              <option>alles</option>
+              
+            </select>
+			 <label for="teilenummer">Fertigung</label>
+            <select id="teilenummer">
+              <option>alles</option>
+             
+            </select>
+			   <label for="teilenummer">Fertigungslinie</label>
+            <select id="teilenummer">
+              <option>alles</option>
+              
+            </select>
+			     <label for="teilenummer">Maschine</label>
+            <select id="teilenummer">
+              <option>alles</option>
+              
+            </select>
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Abteilung</th>
+                  <th>Fertigung</th>
+                  <th>Fertigungslinie</th>
+                  <th>Maschine</th>
+                  <th>Aufgabeart</th>
+                  <th>Terminturnus</th>
+                  <th>Status</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Grünfertigung</td>
+                  <td>Fertigungslinie_5</td>
+                  <td>Maschine_8</td>
+                  <td>Reinigung</td>
+                  <td>wöchentlich</td>
+                  <td>offen</td>
+                  <td><input type="button" value="Status ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Grünfertigung</td>
+					<td>Fertigungslinie_6</td>
+                  <td>Maschine_8</td>
+                  <td>Reinigung</td>
+                  <td>wöchentlich</td>
+                  <td>offen</td>
+                  <td><input type="button" value="Status ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Grünfertigung</td>
+                  <td>Fertigungslinie_4</td>
+                  <td>Maschine_1</td>
+					<td>Filter wechseln</td>
+					<td>monatlich</td>
+                  <td>erledigt</td>
+                  <td><input type="button" value="Status ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Grünfertigung</td>
+                  <td>Fertigungslinie_5</td>
+                  <td>Maschine_8</td>
+                  <td>Reinigung</td>
+                  <td>wöchentlich</td>
+                  <td>verschoben</td>
+                  <td><input type="button" value="Status ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="button" value="Neu Wartung hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+            <br>
+            <div>
+              <input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+          </div>
+        </div>
+		<div id="menue901" class="container tab-pane fade"><br>
+          <form class="form-inline" action="/action_page.php">
+            <label for="teilenummer">Abteilung</label>
+            <select id="teilenummer">
+              <option>alles</option>
+              
+            </select>
+			
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Abteilung</th>
+                  <th>Auditart</th>
+                  <th>Termin</th>
+                  <th>Status</th>
+                  <th>Nacharbeit</th>
+                  <th>Terminturnus</th>
+                  <th>Note</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>SOS</td>
+                  <td>01.03.2018</td>
+                  <td>offen</td>
+                  <td>keine</td>
+                  <td>jährlich</td>
+                  <td>keine</td>
+                  <td>
+					  <input type="button" value="bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                      <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                <tr>
+                  <td>Abteilung_2</td>
+                  <td>SOS</td>
+                  <td>01.01.2018</td>
+                  <td>erledigt</td>
+                  <td>ja</td>
+                  <td>jährlich</td>
+                  <td>90%(B)</td>
+                  <td>
+					  <input type="button" value="bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                      <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+                 <tr>
+                  <td>Abteilung_3</td>
+                  <td>Arbeitssicherheit</td>
+                  <td>01.01.2018</td>
+                  <td>erledigt</td>
+                  <td>ja</td>
+                  <td>jährlich</td>
+                  <td>60%(NB)</td>
+                  <td>
+					  <input type="button" value="bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                      <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="button" value="Neu Audit hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+            <br>
+            <div>
+              <input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+            </div>
+          </div>
+        </div>  
+        
+      </div>
+    </div>
+  </div>
+</div>
 	
 <div class="produktionsprogramm">
   <div class="jumbotron">
@@ -20,17 +206,12 @@
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home800">Produktionsprogramm</a>&nbsp;</li>
         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menue801">Supermarkt</a></li>
-		 
       </ul>
       
       <!-- Tab panes -->
       <div class="tab-content">
-		  
-		  
         <div id="home800" class="container tab-pane fade"><br>
           <form class="form-inline" action="/action_page.php">
-                     
-           
             <label for="teilenummer">Teilenummer</label>
             <select id="teilenummer">
               <option>alles</option>
@@ -40,7 +221,6 @@
               <option>Schaldrad_1</option>
               <option>Schaldrad_2</option>
               <option>Schaldrad_3</option>
-				
             </select>
           </form>
           <div class="table-responsive-sm">
@@ -50,63 +230,51 @@
                   <th>Folgenummer</th>
                   <th>Teilenummer</th>
                   <th>Verwendung</th>
-				  <th>Sollmenge</th>
-				  <th>Status</th>
-				  </tr>
+                  <th>Sollmenge</th>
+                  <th>Status</th>
+                </tr>
               </thead>
               <tbody>
-			    <tr>
-					  <td>1</td>
-					  <td>Festrad_1</td>
-					  <td>Getriebe 15ab7</td>
-					  <td>600</td>
-					  <td>inArbeit</td>
-					
-					  <td>
-						  <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                <tr>
+                  <td>1</td>
+                  <td>Festrad_1</td>
+                  <td>Getriebe 15ab7</td>
+                  <td>600</td>
+                  <td>inArbeit</td>
+                  <td><input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
                 <tr>
-					  <td>2</td>
-					  <td>Festrad_2</td>
-					  <td>Getriebe 15cc7</td>
-					  <td>200</td>
-					<td>offen</td>
-					  <td>
-						  <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                  <td>2</td>
+                  <td>Festrad_2</td>
+                  <td>Getriebe 15cc7</td>
+                  <td>200</td>
+                  <td>offen</td>
+                  <td><input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
                 <tr>
-					  <td>3</td>
-					  <td>Schaldrad_1 </td>
-					  <td>Getriebe 15bb7</td>
-					  <td>600</td>
-					<td>offen</td>
-					  <td>
-						  <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                  <td>3</td>
+                  <td>Schaldrad_1 </td>
+                  <td>Getriebe 15bb7</td>
+                  <td>600</td>
+                  <td>offen</td>
+                  <td><input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
                 <tr>
-					  <td>4</td>
-					  <td>Festrad_1</td>
-					  <td>Getriebe 15ab7</td>
-					  <td>400</td>
-					  <td>erledigt (Fremdzukauf)</td>
-					  <td>
-						  <input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                  <td>4</td>
+                  <td>Festrad_1</td>
+                  <td>Getriebe 15ab7</td>
+                  <td>400</td>
+                  <td>erledigt (Fremdzukauf)</td>
+                  <td><input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Einfügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-                
-                  
-               
               </tbody>
             </table>
             <div>
@@ -118,11 +286,8 @@
             </div>
           </div>
         </div>
-		 
         <div id="menue801" class="container tab-pane fade"><br>
           <form class="form-inline" action="/action_page.php">
-                     
-           
             <label for="teilenummer">Teilenummer</label>
             <select id="teilenummer">
               <option>alles</option>
@@ -132,7 +297,6 @@
               <option>Schaldrad_1</option>
               <option>Schaldrad_2</option>
               <option>Schaldrad_3</option>
-				
             </select>
           </form>
           <div class="table-responsive-sm">
@@ -146,55 +310,38 @@
                 </tr>
               </thead>
               <tbody>
-			    <tr>
-					  <td>Festrad_1</td>
-					  <td>Getriebe 15ab7</td>
-					  <td>500</td>
-					  <td>200</td>
-					  
-					<td>
-						  <input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                <tr>
+                  <td>Festrad_1</td>
+                  <td>Getriebe 15ab7</td>
+                  <td>500</td>
+                  <td>200</td>
+                  <td><input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				<tr>
-					  <td>Festrad_2</td>
-					  <td>Getriebe 15ab7</td>
-					  <td>400</td>
-					  <td>600</td>
-					  
-					<td>
-						  <input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                <tr>
+                  <td>Festrad_2</td>
+                  <td>Getriebe 15ab7</td>
+                  <td>400</td>
+                  <td>600</td>
+                  <td><input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				<tr>
-					  <td>Festrad_5</td>
-					  <td>Getriebe 15cc7</td>
-					  <td>0</td>
-					  <td>0</td>
-					  
-					<td>
-						  <input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
+                <tr>
+                  <td>Festrad_5</td>
+                  <td>Getriebe 15cc7</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				<tr>
-					  <td>Schaldrad_1</td>
-					  <td>Getriebe 881ab7</td>
-					  <td>800</td>
-					  <td>200</td>
-					  
-					<td>
-						  <input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						  <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-					  </td>
-                </tr>  
-				
-                
-                
-                  
-               
+                <tr>
+                  <td>Schaldrad_1</td>
+                  <td>Getriebe 881ab7</td>
+                  <td>800</td>
+                  <td>200</td>
+                  <td><input type="button" value="Ändern" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                    <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
+                </tr>
               </tbody>
             </table>
             <div>
@@ -205,15 +352,11 @@
               <input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
             </div>
           </div>
-        </div>      
-		 </div>
-		 </div>
-
+        </div>
+      </div>
+    </div>
   </div>
-</div>	
-	
-	
-	
+</div>
 <div class="Abteilung">
   <div class="jumbotron">
     <div class="container">
@@ -844,7 +987,6 @@
     </div>
   </div>
 </div>
-	
 <div class="Maschinen">
   <div class="jumbotron">
     <div class="container">
@@ -899,7 +1041,6 @@
               <td>0561/884455</td>
               <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck88" disabled></td>
           </div>
-		  
         </div>
         <div id="menu70" class="container tab-pane active"><br>
           <h3>Maschinen</h3>
@@ -955,7 +1096,6 @@
     </div>
   </div>
 </div>
-	
 <div class="Fertigungslinie">
   <div class="jumbotron">
     <div class="container">
@@ -965,12 +1105,11 @@
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Fertigungslinie anlegen</a>&nbsp;</li>
         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu100">Fertigungslinien anzeigen</a></li>
-		  <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Fertigungsgrafik</a></li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Fertigungsgrafik</a></li>
       </ul>
       
       <!-- Tab panes -->
       <div class="tab-content">
-		  
         <div id="home100" class="container tab-pane fade"><br>
           <form class="form-inline" action="/action_page.php">
             <label for="abteilung">Abteilung</label>
@@ -1018,7 +1157,7 @@
                 </tr>
               </thead>
               <tbody>
-                    <tr>
+                <tr>
                   <td>1</td>
                   <td><select >
                       <option selected>111111</option>
@@ -1152,7 +1291,6 @@
             </div>
           </div>
         </div>
-		  
         <div id="menu100" class="container tab-pane fade"><br>
           <form class="form-inline" action="/action_page.php">
             <label for="abteilung">Abteilung</label>
@@ -1173,7 +1311,6 @@
               <option>Fertigunglinie_2</option>
               <option>Fertigunglinie_3</option>
             </select>
-           
           </form>
           <div class="table-responsive-sm">
             <table class="table">
@@ -1184,78 +1321,61 @@
                   <th>Fertigungslinie</th>
                   <th>Maschine</th>
                 </tr>
-				  
               </thead>
               <tbody>
                 <tr>
-                      <td>Abteilung_1</td>
-                      <td>Fertigung_1</td>
-                      <td>Fertigungsline_1</td>
-                      <td>Maschine_1</td>
-                   
-              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                  <td>Abteilung_1</td>
+                  <td>Fertigung_1</td>
+                  <td>Fertigungsline_1</td>
+                  <td>Maschine_1</td>
+                  <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
                     <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-               
-				   <tr>
-                      <td>Abteilung_1</td>
-                      <td>Fertigung_1</td>
-                      <td>Fertigungsline_1</td>
-                      <td>Maschine_2</td>
-                   
-              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Fertigung_1</td>
+                  <td>Fertigungsline_1</td>
+                  <td>Maschine_2</td>
+                  <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
                     <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				  
-				   <tr>
-                      <td>Abteilung_1</td>
-                      <td>Fertigung_1</td>
-                      <td>Fertigungsline_1</td>
-                      <td>Maschine_3</td>
-                   
-              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Fertigung_1</td>
+                  <td>Fertigungsline_1</td>
+                  <td>Maschine_3</td>
+                  <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
                     <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				  
-				   <tr>
-                      <td>Abteilung_1</td>
-                      <td>Fertigung_1</td>
-                      <td>Fertigungsline_1</td>
-                      <td>Maschine_4</td>
-                   
-              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Fertigung_1</td>
+                  <td>Fertigungsline_1</td>
+                  <td>Maschine_4</td>
+                  <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
                     <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
-				   <tr>
-                      <td>Abteilung_1</td>
-                      <td>Fertigung_1</td>
-                      <td>Fertigungsline_1</td>
-                      <td>Maschine_5</td>
-                   
-              <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+                <tr>
+                  <td>Abteilung_1</td>
+                  <td>Fertigung_1</td>
+                  <td>Fertigungsline_1</td>
+                  <td>Maschine_5</td>
+                  <td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
                     <input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)"></td>
                 </tr>
               </tbody>
             </table>
-           
           </div>
         </div>
-		  
-		<div id="menu101" class="container tab-pane fade"><br>
+        <div id="menu101" class="container tab-pane fade"><br>
           <form class="form-inline" action="/action_page.php">
-           
-			<input type="button" value="Grafik generierren" onclick="loadDoc('lib/php/admin/Fertigungslinie/adminCRFertigungsliniegrafik.php?q=1111',myFunction1)">	
-           
+            <input type="button" value="Grafik generierren" onclick="loadDoc('lib/php/admin/Fertigungslinie/adminCRFertigungsliniegrafik.php?q=1111',myFunction1)">
           </form>
-  
         </div>
       </div>
     </div>
   </div>
 </div>
-
-	
-	
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
