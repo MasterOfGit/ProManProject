@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function ajax_get_json(){
+	var results = document.getElementById("results");
+	
+    // Anfrageparameter
+	var var1 = 1000;
+	var var2 = 1000;
+	
+	// HTTP Request
+	var hr = new XMLHttpRequest();
+    hr.open("POST", "json_data.php", true);
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var data = JSON.parse(hr.responseText);
+			results.innerHTML = "";
+			// Hier hommt ein Teil einer HTML Seite mit aktuellen Daten zurück
+			// und wird in die Hauptseite eingebaut
+			for(var obj in data){
+				results.innerHTML += "Property A: "+data[obj].propertyA+"<hr />";
+				results.innerHTML += "Property B: "+data[obj].propertyB;
+			}
+	    }
+    }
+    hr.send("var1=" + var1 + "&var2=" + var2);
+    results.innerHTML = "requesting...";
+}
+</script>
+</head>
+<body>
+<div id="results"></div>
+<script>ajax_get_json();</script>
+</body>
+</html>
