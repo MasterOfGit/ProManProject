@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProMan_Database.Enums
 {
-    public enum Bauteilstatus
+    public enum Fachtype
     {
-        Anfang,
-        Fraesen,
-        Bohren,
-        Fertig
-        
+        elektrisch,
+        mechanisch
     }
 }

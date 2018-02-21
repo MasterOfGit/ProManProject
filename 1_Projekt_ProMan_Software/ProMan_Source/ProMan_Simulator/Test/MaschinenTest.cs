@@ -27,14 +27,14 @@ namespace ProMan_Simulator.Test
 
         public async Task<string> StartSetTest()
         {
-            await _httphelper.HttpPost($"api/maschine", new MaschineDto()
-            {
-                Baujahr = DateTime.Now,
-                Garantie = DateTime.Now.AddYears(5),
-                Hersteller = "Hersteller 1",
-                Type = "Type_1",
-                InventarNummer = 123
-            });
+            //await _httphelper.HttpPost($"api/maschine", new MaschineDto()
+            //{
+            //    Baujahr = DateTime.Now,
+            //    Garantie = DateTime.Now.AddYears(5),
+            //    Hersteller = "Hersteller 1",
+            //    Type = "Type_1",
+            //    InventarNummer = 123
+            //});
 
             return "";
         }

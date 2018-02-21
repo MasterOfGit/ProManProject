@@ -11,21 +11,6 @@ namespace ProMan_BusinessLayer.DataProvider
 
         #region gets
 
-        public WerkDto GetWerkDto(int id)
-        {
-            var item = dbcontext.Werke.FirstOrDefault(x => x.WerkID == id);
-
-            WerkDto werk = new WerkDto()
-            {
-                ID = item.WerkID,
-                Name = item.Name,
-                Ort = item.Country,      
-                Abteilungen = item.Abteilungen.Select(x => GetAbteilungDto(x.AbteilungID)).ToList()
-            };
-            return werk;
-
-        }
-
         public AbteilungDto GetAbteilungDto(int id)
         {
             var item = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == id);
@@ -33,11 +18,9 @@ namespace ProMan_BusinessLayer.DataProvider
             AbteilungDto abteilung = new AbteilungDto()
             {
                 ID = item.AbteilungID,
-                Name = item.Name,
-                Fachbereich = item.Fachbereich,
-                WerkName = item.Werk.Name,
+                Name = item.Bezeichnung,
+                WerkName = item.Werk,
                 Fertigungen = item.Fertigungen.Select(x => GetFertigungsDto(x.FertigungID)).ToList(),
-                User = item.Users.Select(x => GetUserDto(x.UserID)).ToList()
             };
 
             return abteilung;
@@ -50,14 +33,13 @@ namespace ProMan_BusinessLayer.DataProvider
             FertigungDto fertigung = new FertigungDto()
             {
                 ID = item.FertigungID,
-                Name = item.Name,
+                Name = item.Bezeichnung,
                 Fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
                 {
-                    Maschinen = x.Maschinen.Select(y => new MaschineDto()
+                    Arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
-                        InventarNummer = y.InventarNummer,
-                        Zeichnungsnummer = y.Zeichnungsnummer,
-                        MaschinenStatus = y.MaschinenStatus,
+                        ID = y.ArbeitsfolgeID,
+                        ArbeitsfolgeName = y.ArbeitsfolgeName,
                     }).ToList()
                 }).ToList()
             };
@@ -71,20 +53,12 @@ namespace ProMan_BusinessLayer.DataProvider
             FertigungslinieDto fertigungslinie = new FertigungslinieDto()
             {
                 ID = item.FertigungslinieID,
-                Name = item.Name,
-                Maschinen = item.Maschinen.Select(x => new MaschineDto()
+                Name = item.Bezeichnung,
+                Arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                 {
-                    ID = x.MaschineID,
-                    InventarNummer = x.InventarNummer,
-                    Zeichnungsnummer = x.Zeichnungsnummer,
-                    MaschinenStatus = x.MaschinenStatus,
-                }).ToList(),
-                Werkstuecktraeger = new List<string>()
-                {
-                    $"Stück_zur_Linie_{id}_1",
-                    $"Stück_zur_Linie_{id}_2",
-                    $"Stück_zur_Linie_{id}_3"
-                }
+                    ID = y.ArbeitsfolgeID,
+                    ArbeitsfolgeName = y.ArbeitsfolgeName,
+                }).ToList()
             };
 
             return fertigungslinie;
@@ -96,13 +70,13 @@ namespace ProMan_BusinessLayer.DataProvider
             MaschineDto maschine = new MaschineDto()
             {
                 ID = item.MaschineID,
-                InventarNummer = item.InventarNummer,
                 Zeichnungsnummer = item.Zeichnungsnummer,
-                Baujahr = item.Baujahr.GetValueOrDefault(),
+                Anschaffungsdatum = item.Anschaffungsdatum.GetValueOrDefault(),
                 Garantie = item.Garantie.GetValueOrDefault(),
-                MaschinenStatus = item.MaschinenStatus,
-                Hersteller = item.Hersteller.Name,
-                Type = item.Type.Name
+                Standort = item.Standort,
+                Hersteller = item.Hersteller,
+                Technologien = item.Technologien.ToList(),
+                Version = item.Version
 
             };
 
@@ -111,45 +85,28 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public ReparaturDto GetReparaturDto(int id)
         {
-            var item = dbcontext.Reparaturen.FirstOrDefault(x => x.Maschine.MaschineID == id);
+            var item = dbcontext.Reparaturen.FirstOrDefault(x => x.Maschinen.FirstOrDefault().MaschineID == id);
 
             ReparaturDto reparatur = new ReparaturDto()
             {
-                ID = item.ReparaturID,
-                InventarNummer = item.Maschine.InventarNummer,
-                Zeichnungsnummer = item.Maschine.Zeichnungsnummer,
-                Status = item.Status,
-                User = new UserDto()
-                {
-                    Abteilung = item.User.Abteilung.Fachbereich,
-                    FirstName = item.User.FirstName,
-                    FamilyName = item.User.FamilyName,
-                    eMail = item.User.eMail,
-                    Phone = item.User.Phone,
-                    Mobile = item.User.Mobile,
-                    Title = item.User.Title,
-                    Werk = item.User.Abteilung.Werk.Name
-                },
-                Start = item.Start.GetValueOrDefault(),
-                Dauer = item.Dauer.GetValueOrDefault(),
             };
             return reparatur;
         }
 
         public UserDto GetUserDto(int id)
         {
-            var item = dbcontext.User.FirstOrDefault(x => x.UserID == id);
+            var item = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == id);
             UserDto user = new UserDto()
             {
-                ID = item.UserID,
-                Abteilung = item.Abteilung.Fachbereich,
-                FirstName = item.FirstName,
-                FamilyName = item.FamilyName,
+                ID = item.MitarbeiterID,
+                Vorname = item.Vorname,
+                Active = item.Active,
+                Bemerkung = item.Bemerkung,
                 eMail = item.eMail,
-                Phone = item.Phone,
-                Mobile = item.Mobile,
-                Title = item.Title,
-                Werk = item.Abteilung.Werk.Name
+                Festnetz = item.Festnetz,
+                Mobil = item.Mobil,
+                Nachname = item.Nachname,
+                Namenszusatz = item.Namenszusatz
             };
 
             return user;
@@ -157,29 +114,16 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public WartungDto GetWartungDto(int id)
         {
-            var item = dbcontext.Wartungen.FirstOrDefault(x => x.MaschineID == id);
-            var itemmaschine = dbcontext.Maschinen.FirstOrDefault(x => item.MaschineID == x.MaschineID);
+            var item = dbcontext.Wartungen.FirstOrDefault(x => x.Maschine.MaschineID == id);
+            var itemmaschine = dbcontext.Maschinen.FirstOrDefault(x => item.Maschine.MaschineID == x.MaschineID);
 
             WartungDto wartung = new WartungDto()
             {
                 ID = item.WartungID,
-                InventarNummer = itemmaschine.InventarNummer,
-                Zeichnungsnummer = itemmaschine.Zeichnungsnummer,
-                Beschreibung = item.Beschreibung,
-                Status = item.Status,
-                User = new UserDto()
-                {
-                    ID = item.User.UserID,
-                    Abteilung = item.User.Abteilung.Fachbereich,
-                    FirstName = item.User.FirstName,
-                    FamilyName = item.User.FamilyName,
-                    eMail = item.User.eMail,
-                    Phone = item.User.Phone,
-                    Mobile = item.User.Mobile,
-                    Title = item.User.Title,
-                    Werk = item.User.Abteilung.Werk.Name
-                },
-                WartungsInterval = item.WartungsInterval.GetValueOrDefault(),
+                Bereich = item.Bereich,
+                Beginntermin = item.Beginntermin.GetValueOrDefault(),
+                Endtermin = item.Endtermin.GetValueOrDefault(),
+                Aufgabe = item.Aufgabe
             };
             return wartung;
         }
@@ -188,26 +132,13 @@ namespace ProMan_BusinessLayer.DataProvider
 
         #region set/create
 
-        public bool SetWerkDto(WerkDto data)
-        {
-            dbcontext.Werke.Add(new ProMan_Database.Model.Werk()
-            {
-                Name = data.Name,
-                Country = data.Ort,
-            });
-
-            dbcontext.SaveChanges();
-
-            return true;
-        }
 
         public bool SetAbteilungDto(AbteilungDto data)
         {
             dbcontext.Abteilungen.Add(new ProMan_Database.Model.Abteilung()
             {
-                Name = data.Name,
-                Fachbereich = data.Fachbereich,
-                Werk = dbcontext.Werke.FirstOrDefault(x => x.Name == data.WerkName),
+                Bezeichnung = data.Name,
+                Werk = data.WerkName,
 
             });
             dbcontext.SaveChanges();
@@ -219,8 +150,7 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung()
             {
-                Name = data.Name,
-                Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Name == data.AbteilungName)
+                Bezeichnung = data.Name,
             });
 
             dbcontext.SaveChanges();
@@ -232,8 +162,7 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             dbcontext.Fertigungslinien.Add(new ProMan_Database.Model.Fertigungslinie()
             {
-                Name = data.Name,
-                Fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.Name == data.FertigungName)
+                Bezeichnung = data.Name,
             }
             )
             ;
@@ -247,13 +176,11 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
             {
-                Baujahr = data.Baujahr,
+                Anschaffungsdatum = data.Anschaffungsdatum,
                 Garantie = data.Garantie,
-                Hersteller = dbcontext.MaschineHersteller.FirstOrDefault(x => x.Name == data.Hersteller),
-                MaschinenStatus = data.MaschinenStatus,
-                Type = dbcontext.MaschineTypen.FirstOrDefault(x => x.Name == data.Type),
+                Hersteller = data.Hersteller,
+                Technologien = data.Technologien,
                 Zeichnungsnummer = data.Zeichnungsnummer,
-                InventarNummer = data.InventarNummer,
             });
 
             dbcontext.SaveChanges();
@@ -266,11 +193,7 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             dbcontext.Reparaturen.Add(new ProMan_Database.Model.Reparatur()
             {
-                Dauer = data.Dauer,
-                Maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.InventarNummer),
-                Start = data.Start,
-                Status = data.Status,
-                User = dbcontext.User.FirstOrDefault(x => x.FirstName == data.User.FirstName && x.FamilyName == data.User.FamilyName)
+                BeginnTermin = data.Start,
             });
 
             dbcontext.SaveChanges();
@@ -280,16 +203,14 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public bool SetUserDto(UserDto data)
         {
-            dbcontext.User.Add(new ProMan_Database.Model.User()
+            dbcontext.Mitarbeiter.Add(new ProMan_Database.Model.Mitarbeiter()
             {
-                FamilyName = data.FamilyName,
-                FirstName = data.FirstName,
+                Vorname = data.Vorname,
+                Nachname = data.Nachname,
                 eMail = data.eMail,
-                Phone = data.Phone,
-                Title = data.Title,
-                Mobile = data.Mobile,
-                Country = data.Werk,
-                Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Fachbereich == data.Abteilung)
+                Festnetz = data.Festnetz,
+                Mobil = data.Mobil,
+                Bemerkung = data.Bemerkung,
             }
                 );
 
@@ -302,9 +223,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             dbcontext.Wartungen.Add(new ProMan_Database.Model.Wartung()
             {
-                Beschreibung = data.Beschreibung,
-                Status = data.Status,
-                WartungsInterval = data.WartungsInterval,
             });
 
             dbcontext.SaveChanges();
@@ -318,10 +236,8 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public bool UpdateAbteilungDto(AbteilungDto data, int id)
         {
-            var item = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == id);
 
-            item.Name = data.Name;
-            item.Werk = dbcontext.Werke.FirstOrDefault(x => x.Name == data.WerkName);
+
 
 
             dbcontext.SaveChanges();
@@ -329,24 +245,10 @@ namespace ProMan_BusinessLayer.DataProvider
             return true;
         }
 
-        public bool UpdateWerkDto(WerkDto data, int id)
-        {
-            var item = dbcontext.Werke.FirstOrDefault(x => x.WerkID == id);
-
-            item.Name = data.Name;
-            item.Country = data.Ort;
-
-            dbcontext.SaveChanges();
-
-            return true;
-        }
 
         public bool UpdateReparaturDto(ReparaturDto data, int id)
         {
             var item = dbcontext.Reparaturen.FirstOrDefault(x => x.ReparaturID == id);
-
-            item.Status = data.Status;
-            item.Dauer = data.Dauer;
 
             dbcontext.SaveChanges();
 
@@ -357,8 +259,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
 
-            item.Name = data.Name;
-            item.Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Name == data.AbteilungName);
 
             dbcontext.SaveChanges();
 
@@ -369,9 +269,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
 
-            item.Name = data.Name;
-            item.Fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.Name == data.FertigungName);
-
             dbcontext.SaveChanges();
 
             return true;
@@ -381,9 +278,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             var item = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == id);
 
-            item.Garantie = data.Garantie;
-            item.MaschinenStatus = data.MaschinenStatus;
-            item.Zeichnungsnummer = data.Zeichnungsnummer;
 
             dbcontext.SaveChanges();
 
@@ -392,15 +286,8 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public bool UpdateUserDto(UserDto data, int id)
         {
-            var item = dbcontext.User.FirstOrDefault(x => x.UserID == id);
+            var item = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == id);
 
-            item.FirstName = data.FirstName;
-            item.FamilyName = data.FamilyName;
-            item.eMail = data.eMail;
-            item.Mobile = data.Mobile;
-            item.Phone = data.Phone;
-
-            item.Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Name == data.AbteilungName && x.Werk.Name == data.WerkName);
 
             dbcontext.SaveChanges();
 
@@ -410,10 +297,6 @@ namespace ProMan_BusinessLayer.DataProvider
         public bool UpdateWartungDto(WartungDto data, int id)
         {
             var item = dbcontext.Wartungen.FirstOrDefault(x => x.WartungID == id);
-
-            item.Beschreibung = data.Beschreibung;
-            item.WartungsInterval = data.WartungsInterval;
-            item.Status = data.Status;
 
             dbcontext.SaveChanges();
 

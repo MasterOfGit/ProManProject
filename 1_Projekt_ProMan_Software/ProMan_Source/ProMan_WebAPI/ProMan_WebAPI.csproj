@@ -111,7 +111,6 @@
     <Compile Include="Controllers\ReparaturController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WartungController.cs" />
-    <Compile Include="Controllers\WerkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

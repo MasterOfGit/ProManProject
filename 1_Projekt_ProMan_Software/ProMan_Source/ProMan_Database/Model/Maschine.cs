@@ -10,18 +10,14 @@ namespace ProMan_Database.Model
     public class Maschine
     {
         public int MaschineID { get; set; }
-
-        public int InventarNummer { get; set; }
-        public string Zeichnungsnummer { get; set; }
-        public virtual MaschineType Type { get; set; }
-        public virtual MaschineHersteller Hersteller { get; set; }
-        public DateTime? Baujahr { get; set; }
+        public ICollection<Technologie> Technologien { get; set; }
+        public string Hersteller { get; set; }
+        public string Version { get; set; }
+        public DateTime? Anschaffungsdatum { get; set; }
         public DateTime? Garantie { get; set; }
-        public MaschinenStatus MaschinenStatus { get; set; }
-        public Ruesten Ruesten { get; set; }
+        public string Zeichnungsnummer { get; set; }
+        public string Standort { get; set; }
 
-        public virtual Wartung Wartung { get; set; }
-        public virtual ICollection<Reparatur> Reparaturen { get; set; }
-
+        public EFImage Bild { get; set; }
     }
 }

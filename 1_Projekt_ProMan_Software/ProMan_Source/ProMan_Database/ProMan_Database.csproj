@@ -49,8 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Bauteilstatus.cs" />
-    <Compile Include="Enums\MaschinenStatus.cs" />
+    <Compile Include="Enums\Anrede.cs" />
+    <Compile Include="Enums\AufgabenGruppe.cs" />
+    <Compile Include="Enums\Bereichtyp.cs" />
+    <Compile Include="Enums\Fachtype.cs" />
+    <Compile Include="Enums\Fertigungstype.cs" />
+    <Compile Include="Enums\ProduktionStatus.cs" />
+    <Compile Include="Enums\ReparaturStatus.cs" />
+    <Compile Include="Enums\StatusArt.cs" />
+    <Compile Include="Enums\Technologie.cs" />
     <Compile Include="Migrations\201801061112415_0.0.1.cs" />
     <Compile Include="Migrations\201801061112415_0.0.1.Designer.cs">
       <DependentUpon>201801061112415_0.0.1.cs</DependentUpon>
@@ -61,23 +68,21 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Abteilung.cs" />
+    <Compile Include="Model\Arbeitsfolge.cs" />
+    <Compile Include="Model\Arbeitsplatz.cs" />
+    <Compile Include="Model\Audit.cs" />
     <Compile Include="Model\Bauteil.cs" />
+    <Compile Include="Model\EFImage.cs" />
     <Compile Include="Model\Fertigung.cs" />
     <Compile Include="Model\Fertigungslinie.cs" />
-    <Compile Include="Model\Hilfsmittel.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Maschine.cs" />
-    <Compile Include="Model\MaschineHersteller.cs" />
-    <Compile Include="Model\MaschineType.cs" />
-    <Compile Include="Model\MontageProgramm.cs" />
-    <Compile Include="Model\QualiMatrix.cs" />
+    <Compile Include="Model\Mitarbeiter.cs" />
+    <Compile Include="Model\Produktionsprogramm.cs" />
     <Compile Include="Model\Reparatur.cs" />
-    <Compile Include="Model\Ruesten.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Sonderaufgabe.cs" />
+    <Compile Include="Model\Supermarkt.cs" />
     <Compile Include="Model\Wartung.cs" />
-    <Compile Include="Model\Werk.cs" />
-    <Compile Include="Model\Werkstuecktraeger.cs" />
-    <Compile Include="Model\Werkzeug.cs" />
     <Compile Include="ProManContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

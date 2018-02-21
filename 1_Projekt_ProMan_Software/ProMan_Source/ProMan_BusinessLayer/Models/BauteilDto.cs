@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProMan_Database.Model
+namespace ProMan_BusinessLayer.Models
 {
-    public class Bauteil
+     public class BauteilDto
     {
-        public int BauteilID { get; set; }
+        public int ID { get; set; }
         public string Teilart { get; set; }
         public string Version { get; set; }
         public string Verwendungsort { get; set; }
-        public ICollection<Bauteil> Abhaengigkeiten { get; set; }
+        public List<BauteilDto> Abhaengigkeiten { get; set; }
     }
 }

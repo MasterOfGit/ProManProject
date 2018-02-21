@@ -33,23 +33,6 @@ namespace ProMan_BusinessLayer.DataProvider
             return item;
         }
 
-        public WerkDto GetWerkDto(int id)
-        {
-            List<AbteilungDto> tmp = new List<AbteilungDto>();
-            for (int i = 1; i < id + 2; i++)
-            {
-                tmp.Add(GetAbteilungDto(i));
-            }
-            WerkDto item = new WerkDto()
-            {
-                ID = id,
-                Name = $"Werk_{id}",
-                Ort = $"Ort_{id}",
-                Abteilungen = tmp,
-
-            };
-            return item;
-        }
 
         public FertigungDto GetFertigungsDto(int id)
         {
@@ -81,7 +64,6 @@ namespace ProMan_BusinessLayer.DataProvider
             {
                 ID = id,
                 Name = $"linie{id}",
-                Maschinen = tmp,
                 FertigungName = $"Fertigung{id}"
             };
 
@@ -144,12 +126,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return true;
         }
-
-        public bool SetWerkDto(WerkDto data)
-        {
-            return true;
-        }
-
         #endregion
 
         #region Update
@@ -188,10 +164,7 @@ namespace ProMan_BusinessLayer.DataProvider
             return true;
         }
 
-        public bool UpdateWerkDto(WerkDto data, int id)
-        {
-            return true;
-        }
+
 
         #endregion
 
@@ -201,13 +174,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return new WartungDto()
             {
-                ID= id,
-                Beschreibung = "Dies ist eine Wartung",
-                InventarNummer = 5,
-                Status = "OnGoing",
-                User = GetUserDto(0),
-                WartungsInterval = DateTime.Now,
-                Zeichnungsnummer = "123",
             };
         }
 
@@ -215,16 +181,6 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return new UserDto()
             {
-                ID = id,
-                FirstName = $"Hans_NR{id}",
-                FamilyName = "Peter",
-                Abteilung = "Schrauber",
-                Werk = "Kassel",
-                eMail = "123@xyz.de",
-                Phone = "0123/4567",
-                Mobile = "0456/1234567",
-                WerkName = $"Werk{id}",
-                AbteilungName = $"Abteilung{id}",
             };
         }
 
@@ -246,47 +202,11 @@ namespace ProMan_BusinessLayer.DataProvider
         {
             return new MaschineDto()
             {
-                ID = id,
-                InventarNummer = id,
-                Zeichnungsnummer = $"Maschine_{id}",
-                Baujahr = DateTime.Now.AddYears(-id),
-                Garantie = DateTime.Now.AddYears(id),
-                Hersteller = $"Herrsteller_{id}",
-                Type = $"Type_{id}",
-                MaschinenStatus = GetMaschinenStatus(id),
             };
         }
 
 
 
-        private ProMan_Database.Enums.MaschinenStatus GetMaschinenStatus(int id)
-        {
-            Random rnd = new Random(id);
-            ProMan_Database.Enums.MaschinenStatus result;
-
-            switch (rnd.Next(0, 4))
-            {
-                case 0:
-                    result = ProMan_Database.Enums.MaschinenStatus.Defekt;
-                    break;
-                case 1:
-                    result = ProMan_Database.Enums.MaschinenStatus.Fehler;
-                    break;
-                case 2:
-                    result = ProMan_Database.Enums.MaschinenStatus.Okay;
-                    break;
-                case 3:
-                    result = ProMan_Database.Enums.MaschinenStatus.Warnung;
-                    break;
-                case 4:
-                    result = ProMan_Database.Enums.MaschinenStatus.Wartung;
-                    break;
-                default:
-                    result = result = ProMan_Database.Enums.MaschinenStatus.Okay;
-                    break;
-            }
-            return result;
-        }
 
 
 

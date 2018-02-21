@@ -1,17 +1,17 @@
-﻿namespace ProMan_BusinessLayer.Models
+﻿using ProMan_Database.Enums;
+
+namespace ProMan_BusinessLayer.Models
 {
     public class UserDto
     {
         public int ID { get; set; }
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string FamilyName { get; set; }
-        public string Abteilung { get; set; }
-        public string Werk { get; set; }
+        public bool Active { get; set; }
+        public Anrede Namenszusatz { get; set; }
+        public string Vorname { get; set; }
+        public string Nachname { get; set; }
+        public string Festnetz { get; set; }
+        public string Mobil { get; set; }
         public string eMail { get; set; }
-        public string Phone { get; set; }
-        public string Mobile { get; set; }
-        public string AbteilungName { get; set; }
-        public string WerkName { get; set; }
+        public string Bemerkung { get; set; }
     }
 }
