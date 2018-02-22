@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
+using ProMan_BusinessLayer.Models.Maschinenfuehrer;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -547,6 +548,21 @@ namespace ProMan_BusinessLayer.DataProvider
             };
 
             return value;
+        }
+
+        public List<MFFertigungDto> GetMFFertigungDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public MFInstandhaltung GetMFInstandhaltung()
+        {
+            throw new NotImplementedException();
+        }
+
+        public MFLinieDto GetMFLinieDto()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

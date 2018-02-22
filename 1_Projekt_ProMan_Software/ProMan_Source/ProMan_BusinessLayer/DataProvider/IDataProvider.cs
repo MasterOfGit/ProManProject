@@ -1,5 +1,7 @@
 ﻿using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
+using ProMan_BusinessLayer.Models.Maschinenfuehrer;
+using System.Collections.Generic;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -40,5 +42,8 @@ namespace ProMan_BusinessLayer.DataProvider
         AdminPageFertigungslinieDto GetAdminPageFertigungslinieDto();
         AdminPageMaschineDto GetAdminPageMaschineDto();
 
+        List<MFFertigungDto> GetMFFertigungDto();
+        MFInstandhaltung GetMFInstandhaltung();
+        MFLinieDto GetMFLinieDto();
     }
 }

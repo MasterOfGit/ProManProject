@@ -11,5 +11,6 @@ namespace ProMan_Database.Model
         public string Ort { get; set; }
         public Fertigungstype Fertigungstype { get;set;}
         public ICollection<Fertigungslinie> Fertigungslinien { get; set; }
+        public virtual Abteilung Abteilung { get; set; }
     }
 }

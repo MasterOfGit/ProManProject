@@ -4,6 +4,7 @@ using System.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
 using System;
+using ProMan_BusinessLayer.Models.Maschinenfuehrer;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -307,30 +308,176 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public AdminPageUserDto GetAdminPageUserDto()
         {
-            throw new NotImplementedException();
+            var item = new AdminPageUserDto();
+            item.User = dbcontext.Mitarbeiter.Select(x => new UserDto()
+            {
+                Active = x.Active,
+                Bemerkung = x.Bemerkung,
+                eMail = x.eMail,
+                Festnetz = x.Festnetz,
+                ID = x.MitarbeiterID,
+                Mobil = x.Mobil,
+                Nachname = x.Nachname,
+                Namenszusatz = x.Namenszusatz,
+                Vorname = x.Vorname
+            }).ToList();
+            
+            return item;
         }
 
         public AdminPageAbteilungDto GetAdminPageAbteilungDto()
         {
-            throw new NotImplementedException();
+            var item = new AdminPageAbteilungDto();
+
+            item.Abteilungen = dbcontext.Abteilungen.Select(x => new AbteilungDto()
+            {
+                ID = x.AbteilungID,
+                Fertigungen = x.Fertigungen.Select(y => new FertigungDto()
+                {
+                    ID =y.FertigungID,
+                    Name = y.Bezeichnung,
+                    FertigungslinienAnzahl = y.Fertigungslinien.Count,                  
+                }).ToList(),
+                WerkName = x.Werk,
+                Name = x.Bezeichnung
+            }).ToList();
+
+            return item;
         }
 
         public AdminPageBauteilDto GetAdminPageBauteilDto()
         {
-            throw new NotImplementedException();
+            var item = new AdminPageBauteilDto();
+
+            item.Bauteile = dbcontext.Bauteile.Select(x => new BauteilDto()
+            {
+                ID = x.BauteilID,
+                Teilart = x.Teilart,
+                Version = x.Version,
+                Verwendungsort = x.Verwendungsort,
+               Abhaengigkeiten = dbcontext.Bauteile.Select(y => new BauteilDto()
+               {
+                   ID = y.BauteilID,
+                   Teilart = y.Teilart,
+                   Version = y.Version,
+                   Verwendungsort = y.Verwendungsort,
+               }).ToList() 
+            }).ToList();
+
+            return item;
         }
 
         public AdminPageFertigungDto GetAdminPageFertigungDto()
         {
-            throw new NotImplementedException();
+            var item = new AdminPageFertigungDto();
+            item.Fertigungen = dbcontext.Fertigungen.Select(x => new FertigungDto()
+            {
+                ID = x.FertigungID,
+                Name = x.Bezeichnung,
+                Fertigungslinien = x.Fertigungslinien.Select(y => new FertigungslinieDto()
+                {
+                    ID = y.FertigungslinieID,
+                    FertigungName = y.Bezeichnung,
+                    Arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
+                    {
+                        ID = z.ArbeitsfolgeID,
+                        ArbeitsfolgeName = z.ArbeitsfolgeName,
+                        Arbeitsplaene = z.Arbeitsplaene,
+                        Status = z.Status,
+                        Maschinen = z.Maschinen.Select(m => new MaschineDto()
+                        {
+                            ID = m.MaschineID,
+                            Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
+                            Garantie = m.Garantie.GetValueOrDefault(),
+                            Hersteller = m.Hersteller,
+                            Standort = m.Standort,
+                            Technologien = m.Technologien.ToList(),
+                            Version = m.Version,
+                            Zeichnungsnummer = m.Zeichnungsnummer
+                        }).ToList(),
+                    }).ToList()
+                }).ToList()
+            }).ToList();
+
+
+            return item;
         }
 
         public AdminPageFertigungslinieDto GetAdminPageFertigungslinieDto()
         {
-            throw new NotImplementedException();
+            var item = new AdminPageFertigungslinieDto();
+
+            item.Fertigungslinien = dbcontext.Fertigungslinien.Select(y => new FertigungslinieDto()
+            {
+                ID = y.FertigungslinieID,
+                FertigungName = y.Bezeichnung,
+                Arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
+                {
+                    ID = z.ArbeitsfolgeID,
+                    ArbeitsfolgeName = z.ArbeitsfolgeName,
+                    Arbeitsplaene = z.Arbeitsplaene,
+                    Status = z.Status,
+                    Maschinen = z.Maschinen.Select(m => new MaschineDto()
+                    {
+                        ID = m.MaschineID,
+                        Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
+                        Garantie = m.Garantie.GetValueOrDefault(),
+                        Hersteller = m.Hersteller,
+                        Standort = m.Standort,
+                        Technologien = m.Technologien.ToList(),
+                        Version = m.Version,
+                        Zeichnungsnummer = m.Zeichnungsnummer
+                    }).ToList(),
+                }).ToList()
+            }).ToList();
+
+            return item;
         }
 
         public AdminPageMaschineDto GetAdminPageMaschineDto()
+        {
+            var item = new AdminPageMaschineDto();
+            item.Maschinenen = dbcontext.Maschinen.Select(m => new MaschineDto()
+            {
+                ID = m.MaschineID,
+                Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
+                Garantie = m.Garantie.GetValueOrDefault(),
+                Hersteller = m.Hersteller,
+                Standort = m.Standort,
+                Technologien = m.Technologien.ToList(),
+                Version = m.Version,
+                Zeichnungsnummer = m.Zeichnungsnummer
+            }).ToList();
+            return item;
+        }
+
+        public List<MFFertigungDto> GetMFFertigungDto()
+        {
+            var item = dbcontext.Fertigungen.Select(x => new MFFertigungDto()
+            {
+                Abteilung = x.Abteilung.Bezeichnung,
+                Name = x.Bezeichnung,
+                Ort = x.Ort,
+                Werk = x.Abteilung.Werk,
+                AuditsCount = x.Fertigungslinien.Select(s => s.Sonderaufgaben.Select(a => a.Audits)).Count(),
+                WartungenCount = x.Fertigungslinien.Select(s => s.Sonderaufgaben.Select(w => w.Wartungen)).Count(),
+                ReparaturenCount = x.Fertigungslinien.Select(r => r.Reparaturen).Count(),
+                BauteileCount = x.Fertigungslinien.Select(u => u.Lager.Select(b => b.Iststueckzahl)).Count(),
+            }).ToList();
+
+            
+
+            return item;
+        }
+
+        public MFInstandhaltung GetMFInstandhaltung()
+        {
+            var item = new MFInstandhaltung();
+
+            return item;
+        }
+
+        public MFLinieDto GetMFLinieDto()
         {
             throw new NotImplementedException();
         }

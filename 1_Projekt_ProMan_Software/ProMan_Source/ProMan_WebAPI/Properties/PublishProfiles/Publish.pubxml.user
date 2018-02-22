@@ -28,16 +28,16 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/03/2014 20:33:56</publishTime>
+      <publishTime>03/08/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/ProMan_BusinessLayer.dll">
-      <publishTime>02/08/2018 18:41:40</publishTime>
+      <publishTime>02/21/2018 18:14:30</publishTime>
     </File>
     <File Include="bin/ProMan_Database.dll">
-      <publishTime>02/08/2018 18:41:40</publishTime>
+      <publishTime>02/21/2018 18:14:30</publishTime>
     </File>
     <File Include="bin/ProMan_WebAPI.dll">
-      <publishTime>02/08/2018 18:41:43</publishTime>
+      <publishTime>02/21/2018 18:14:33</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -97,7 +97,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>01/28/2018 13:14:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/08/2018 18:41:43</publishTime>
+      <publishTime>02/21/2018 18:14:33</publishTime>
     </File>
   </ItemGroup>
 </Project>
