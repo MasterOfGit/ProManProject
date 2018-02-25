@@ -74,9 +74,9 @@ $json = json_decode($result, TRUE);
                 <tr>
                   <td><?= $item['Zeichnungsnummer'] ?></td>
                   <td><?= $item['Hersteller'] ?></td>
-                  <td>not defined. Ist eine Liste!</td>
+                  <td><?= $item['Technologie'] ?></td>
                   <td><?= $item['Standort'] ?></td>
-                  <td>not defined. Gibt es nicht in der Datenbank!</td>
+                  <td><?= $item['Status'] ?></td>
                   <td><input type="button" value="Maschdaten bearbeiten"
                   onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
                 </tr>
