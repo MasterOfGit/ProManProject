@@ -117,12 +117,11 @@ namespace ProMan_Simulator.Model
                     SetValues.Add(new SetValuesHelper() { Label = "FertigungID", Value = "" });
                     break;
                 case ObjectDtos.MaschineDtoName:
-                    SetValues.Add(new SetValuesHelper() { Label = "InventarNummer", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Inventarnummer", Value = "" });
                     SetValues.Add(new SetValuesHelper() { Label = "Zeichnungsnummer", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "Type", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Version", Value = "" });
                     SetValues.Add(new SetValuesHelper() { Label = "Hersteller", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "Baujahr", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "Garantie", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Standort", Value = "" });
                     break;
                 case ObjectDtos.ReparaturDtoName:
                     SetValues.Add(new SetValuesHelper() { Label = "Start", Value = "" });
@@ -185,6 +184,16 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.MaschineDtoName:
                     _httphelper.HttpPost($"api/maschine", new MaschineDto()
                     {
+                        Inventarnummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Inventarnummer").Value,
+                        Zeichnungsnummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Zeichnungsnummer").Value,
+                        Version = SetValues.ToList().FirstOrDefault(x => x.Label == "Version").Value,
+                        Hersteller = SetValues.ToList().FirstOrDefault(x => x.Label == "Hersteller").Value,
+                        Standort = SetValues.ToList().FirstOrDefault(x => x.Label == "Standort").Value,
+                        Status = "1",
+                        Technologie = "1",
+                        Garantie = DateTime.Now,
+                        Anschaffungsdatum = DateTime.Now.AddDays(-10),
+
                     }).Wait();
                     break;
                 case ObjectDtos.ReparaturDtoName:

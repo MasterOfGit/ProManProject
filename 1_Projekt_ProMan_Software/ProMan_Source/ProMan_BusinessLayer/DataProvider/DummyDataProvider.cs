@@ -458,7 +458,7 @@ namespace ProMan_BusinessLayer.DataProvider
         public AdminPageMaschineDto GetAdminPageMaschineDto()
         {
             AdminPageMaschineDto value = new AdminPageMaschineDto();
-            value.Maschinenen = new List<MaschineDto>()
+            value.Maschinen = new List<MaschineDto>()
             {
                 new MaschineDto()
                 {
@@ -469,11 +469,7 @@ namespace ProMan_BusinessLayer.DataProvider
                     Standort = "Stand_1",
                     Version = "1",
                     Zeichnungsnummer = "123",
-                    Technologien = new List<ProMan_Database.Enums.Technologie>()
-                    {
-                        ProMan_Database.Enums.Technologie.drehen,
-                        ProMan_Database.Enums.Technologie.fraesen
-                    }
+                    Technologie = ProMan_Database.Enums.Technologie.drehen.ToString(),
 
                 },
                                 new MaschineDto()
@@ -485,11 +481,7 @@ namespace ProMan_BusinessLayer.DataProvider
                     Standort = "Stand_2",
                     Version = "2",
                     Zeichnungsnummer = "456",
-                    Technologien = new List<ProMan_Database.Enums.Technologie>()
-                    {
-                        ProMan_Database.Enums.Technologie.messen,
-                        ProMan_Database.Enums.Technologie.schleifen
-                    }
+                    Technologie = ProMan_Database.Enums.Technologie.schleifen.ToString(),
 
                 },
                                                 new MaschineDto()
@@ -501,10 +493,8 @@ namespace ProMan_BusinessLayer.DataProvider
                     Standort = "Stand_3",
                     Version = "3",
                     Zeichnungsnummer = "789",
-                    Technologien = new List<ProMan_Database.Enums.Technologie>()
-                    {
-                        ProMan_Database.Enums.Technologie.waschen,
-                    }
+                    Technologie = ProMan_Database.Enums.Technologie.waschen.ToString(),
+                    
 
                 },
             };

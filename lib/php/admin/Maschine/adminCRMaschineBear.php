@@ -9,12 +9,12 @@ echo "Anfrage : "  . $q . "<br>";
   <div class="jumbotron">
     <h1>Maschine bearbeiten</h1>
     <div class="jumbotron">
-      <form>
+      <form action="lib\php\admin\Maschine\adminCRMaschinen.php" method="post">
         <div class="form-group">
           <label for="inventarID">Inventarnummer</label>
-          <input type="text" class="form-control" id="inventarID" aria-describedby="userID" placeholder="Inventarnummer">
+          <input type="text" class="form-control" name="inventarID" id="inventarID" aria-describedby="userID" placeholder="Inventarnummer">
           <label for="technologie">Technologie</label>
-          <select class="form-control" id="technologie">
+          <select class="form-control" name="technologie" id="technologie">
             <option>Drehen</option>
             <option>Fräsen</option>
             <option>Rundschleifen</option>
@@ -24,9 +24,9 @@ echo "Anfrage : "  . $q . "<br>";
             <option>Schaben</option>
           </select>
           <label for="hersteller">Hersteller</label>
-          <input type="text" class="form-control" id="hersteller" aria-describedby="userID" placeholder="Hersteller">
+          <input type="text" class="form-control" name="hersteller" id="hersteller" aria-describedby="userID" placeholder="Hersteller">
           <label for="Status">Status</label>
-          <select class="form-control" id="bearbeitungsstand">
+          <select class="form-control" name="bearbeitungsstand" id="bearbeitungsstand">
             <option>Produktion</option>
             <option>Umbau</option>
             <option>Reperatur</option>
@@ -37,16 +37,16 @@ echo "Anfrage : "  . $q . "<br>";
             <option>Schrott</option>
             <option>Optimierung</option>
           </select>
-          <label for="bauteilVersion">Version</label>
-          <input type="text" class="form-control" id="bauteilVersion" aria-describedby="userID" placeholder="UserID">
-          <label for="bauteilZeichnungsnummer">Zeichnungsnummer</label>
-          <input type="text" class="form-control" id="bauteilZeichnungsnummer" aria-describedby="userID" placeholder="UserID">
+          <label for="maschienVersion">Version</label>
+          <input type="text" class="form-control" name="maschienVersion" id="maschienVersion" aria-describedby="userID" placeholder="UserID">
+          <label for="maschineZeichnungsnummer">Zeichnungsnummer</label>
+          <input type="text" class="form-control" name="maschineZeichnungsnummer" id="maschineZeichnungsnummer" aria-describedby="userID" placeholder="UserID">
           <label for="standort">Standort</label>
-          <input type="text" class="form-control" id="standort" aria-describedby="userID" placeholder="UserID">
+          <input type="text" class="form-control" name="bearbeitungsstand" id="standort" aria-describedby="userID" placeholder="UserID">
           <label for="anschaffungsdatum">Anschaffungsdatum</label>
-          <input type="date" class="form-control" id="anschaffungsdatum" aria-describedby="userID" placeholder="UserID">
+          <input type="date" class="form-control" name="anschaffungsdatum" id="anschaffungsdatum" aria-describedby="userID" placeholder="UserID">
           <label for="garantieBis">GarantieBis</label>
-          <input type="date" class="form-control" id="garantieBis" aria-describedby="userID" placeholder="UserID">
+          <input type="date" class="form-control" name="garantieBis" id="garantieBis" aria-describedby="userID" placeholder="UserID">
           <label for="maschinenBild">Maschinenbild</label>
           <img id="bauteilbild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image"> <br>
           <label for="maschinenBild">Bilddatei auswählen</label>
@@ -58,6 +58,7 @@ echo "Anfrage : "  . $q . "<br>";
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Löschen</button>
         <button type="button" 
 					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Ersetzen</button>
+          <input type="submit" name="savedb" value="GO" />
       </form>
     </div>
   </div>

@@ -31,13 +31,13 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>03/08/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/ProMan_BusinessLayer.dll">
-      <publishTime>02/21/2018 18:14:30</publishTime>
+      <publishTime>02/25/2018 15:02:40</publishTime>
     </File>
     <File Include="bin/ProMan_Database.dll">
-      <publishTime>02/21/2018 18:14:30</publishTime>
+      <publishTime>02/25/2018 14:58:14</publishTime>
     </File>
     <File Include="bin/ProMan_WebAPI.dll">
-      <publishTime>02/21/2018 18:14:33</publishTime>
+      <publishTime>02/25/2018 15:02:43</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -97,7 +97,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
       <publishTime>01/28/2018 13:14:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/21/2018 18:14:33</publishTime>
+      <publishTime>02/25/2018 14:58:30</publishTime>
     </File>
   </ItemGroup>
 </Project>

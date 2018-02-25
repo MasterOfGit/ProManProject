@@ -3,8 +3,33 @@ echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
 echo "Anfrage : "  . $q . "<br>";
 
+//post request
+if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['savedb']) and isset($_POST['inventarID']))
+{
+      SendFunction();
+}
+function SendFunction()
+  {
+      $data = array("Inventarnummer"=>$_POST['inventarID'],"Technologie"=>$_POST['technologie'],"Hersteller"=>$_POST['hersteller'],"Status"=>$_POST['bearbeitungsstand'],"Version"=>$_POST['maschienVersion'],"Zeichnungsnummer"=>$_POST['maschineZeichnungsnummer'],"Standort"=>$_POST['standort'],"Anschaffungsdatum"=>$_POST['anschaffungsdatum'],"Garantie"=>$_POST['garantieBis']);                                                                    
+      $data_string = json_encode($data);                                                                                   
+                                                               
+      $ch = curl_init();  
+      curl_setopt($ch,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");                                                                    
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+          'Content-Type: application/json',                                                                                
+          'Content-Length: ' . strlen($data_string))                                                                       
+      );  
+      curl_exec($ch);
+  }
+
+
+//get request
+
 $cSession = curl_init(); 
-curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageMaschine");
+curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageMaschine");
 curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
 curl_setopt($cSession,CURLOPT_HEADER, false); 
 $result=curl_exec($cSession);
@@ -45,7 +70,7 @@ $json = json_decode($result, TRUE);
                 </tr>
               </thead>
               <tbody>
-              <?php foreach($json['Maschinenen'] as $item) : ?>
+              <?php foreach($json['Maschinen'] as $item) : ?>
                 <tr>
                   <td><?= $item['Zeichnungsnummer'] ?></td>
                   <td><?= $item['Hersteller'] ?></td>

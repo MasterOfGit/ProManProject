@@ -5,6 +5,7 @@ using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
 using System;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
+using ProMan_Database.Enums;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -70,15 +71,18 @@ namespace ProMan_BusinessLayer.DataProvider
         public MaschineDto GetMaschineDto(int id)
         {
             var item = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == id);
+
             MaschineDto maschine = new MaschineDto()
             {
                 ID = item.MaschineID,
                 Zeichnungsnummer = item.Zeichnungsnummer,
-                Anschaffungsdatum = item.Anschaffungsdatum.GetValueOrDefault(),
-                Garantie = item.Garantie.GetValueOrDefault(),
+                Inventarnummer = item.Inventarnummer,
+                Anschaffungsdatum = item.Anschaffungsdatum,
+                Garantie = item.Garantie,
                 Standort = item.Standort,
                 Hersteller = item.Hersteller,
-                Technologien = item.Technologien.ToList(),
+                Technologie = item.Technologie.ToString(),
+                Status = item.Status.ToString(),
                 Version = item.Version
 
             };
@@ -124,8 +128,8 @@ namespace ProMan_BusinessLayer.DataProvider
             {
                 ID = item.WartungID,
                 Bereich = item.Bereich,
-                Beginntermin = item.Beginntermin.GetValueOrDefault(),
-                Endtermin = item.Endtermin.GetValueOrDefault(),
+                Beginntermin = item.Beginntermin,
+                Endtermin = item.Endtermin,
                 Aufgabe = item.Aufgabe
             };
             return wartung;
@@ -177,12 +181,22 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public bool SetMaschineDto(MaschineDto data)
         {
+            MaschinenStatus tmpMaschinenStatus;
+            Enum.TryParse(data.Status, out tmpMaschinenStatus);
+
+            Technologie tmpTechnologie;
+            Enum.TryParse(data.Technologie, out tmpTechnologie);
+
             dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
             {
                 Anschaffungsdatum = data.Anschaffungsdatum,
                 Garantie = data.Garantie,
                 Hersteller = data.Hersteller,
-                Technologien = data.Technologien,
+                Technologie = tmpTechnologie,
+                Status = tmpMaschinenStatus,
+                Inventarnummer = data.Inventarnummer,
+                Standort = data.Standort,
+                Version = data.Version,
                 Zeichnungsnummer = data.Zeichnungsnummer,
             });
 
@@ -387,11 +401,13 @@ namespace ProMan_BusinessLayer.DataProvider
                         Maschinen = z.Maschinen.Select(m => new MaschineDto()
                         {
                             ID = m.MaschineID,
-                            Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
-                            Garantie = m.Garantie.GetValueOrDefault(),
+                            Anschaffungsdatum = m.Anschaffungsdatum,
+                            Garantie = m.Garantie,
                             Hersteller = m.Hersteller,
                             Standort = m.Standort,
-                            Technologien = m.Technologien.ToList(),
+                            Technologie = m.Technologie.ToString(),
+                            Status = m.Status.ToString(),
+                            Inventarnummer = m.Inventarnummer,
                             Version = m.Version,
                             Zeichnungsnummer = m.Zeichnungsnummer
                         }).ToList(),
@@ -420,11 +436,13 @@ namespace ProMan_BusinessLayer.DataProvider
                     Maschinen = z.Maschinen.Select(m => new MaschineDto()
                     {
                         ID = m.MaschineID,
-                        Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
-                        Garantie = m.Garantie.GetValueOrDefault(),
+                        Anschaffungsdatum = m.Anschaffungsdatum,
+                        Garantie = m.Garantie,
                         Hersteller = m.Hersteller,
                         Standort = m.Standort,
-                        Technologien = m.Technologien.ToList(),
+                        Technologie = m.Technologie.ToString(),
+                        Inventarnummer = m.Inventarnummer,
+                        Status = m.Status.ToString(),
                         Version = m.Version,
                         Zeichnungsnummer = m.Zeichnungsnummer
                     }).ToList(),
@@ -437,14 +455,16 @@ namespace ProMan_BusinessLayer.DataProvider
         public AdminPageMaschineDto GetAdminPageMaschineDto()
         {
             var item = new AdminPageMaschineDto();
-            item.Maschinenen = dbcontext.Maschinen.Select(m => new MaschineDto()
+            item.Maschinen = dbcontext.Maschinen.Select(m => new MaschineDto()
             {
                 ID = m.MaschineID,
-                Anschaffungsdatum = m.Anschaffungsdatum.GetValueOrDefault(),
-                Garantie = m.Garantie.GetValueOrDefault(),
+                Anschaffungsdatum = m.Anschaffungsdatum,
+                Garantie = m.Garantie,
                 Hersteller = m.Hersteller,
                 Standort = m.Standort,
-                Technologien = m.Technologien.ToList(),
+                Technologie = m.Technologie.ToString(),
+                Status = m.Status.ToString(),
+                Inventarnummer = m.Inventarnummer,
                 Version = m.Version,
                 Zeichnungsnummer = m.Zeichnungsnummer
             }).ToList();

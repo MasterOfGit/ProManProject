@@ -8,7 +8,7 @@ namespace ProMan_BusinessLayer.Models.AdminPages
 {
     public class AdminPageMaschineDto
     {
-        public List<MaschineDto> Maschinenen { get; set; }
+        public List<MaschineDto> Maschinen { get; set; }
         public List<ProMan_Database.Enums.Technologie> Technologien
         {
             get

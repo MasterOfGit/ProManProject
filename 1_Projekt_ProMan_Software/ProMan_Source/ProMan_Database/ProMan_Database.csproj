@@ -54,17 +54,14 @@
     <Compile Include="Enums\Bereichtyp.cs" />
     <Compile Include="Enums\Fachtype.cs" />
     <Compile Include="Enums\Fertigungstype.cs" />
+    <Compile Include="Enums\MaschinenStatus.cs" />
     <Compile Include="Enums\ProduktionStatus.cs" />
     <Compile Include="Enums\ReparaturStatus.cs" />
     <Compile Include="Enums\StatusArt.cs" />
     <Compile Include="Enums\Technologie.cs" />
-    <Compile Include="Migrations\201801061112415_0.0.1.cs" />
-    <Compile Include="Migrations\201801061112415_0.0.1.Designer.cs">
-      <DependentUpon>201801061112415_0.0.1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802081731357_0.0.2.cs" />
-    <Compile Include="Migrations\201802081731357_0.0.2.Designer.cs">
-      <DependentUpon>201802081731357_0.0.2.cs</DependentUpon>
+    <Compile Include="Migrations\201802251353370_Initial.cs" />
+    <Compile Include="Migrations\201802251353370_Initial.Designer.cs">
+      <DependentUpon>201802251353370_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Abteilung.cs" />
@@ -91,15 +88,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801061112415_0.0.1.resx">
-      <DependentUpon>201801061112415_0.0.1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802081731357_0.0.2.resx">
-      <DependentUpon>201802081731357_0.0.2.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="MigrationHelp.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MigrationHelp.txt" />
+    <EmbeddedResource Include="Migrations\201802251353370_Initial.resx">
+      <DependentUpon>201802251353370_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
