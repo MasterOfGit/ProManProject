@@ -3,6 +3,16 @@ echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
 echo "Anfrage : "  . $q . "<br>";
 
+$cSession = curl_init(); 
+curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageMaschine");
+curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($cSession,CURLOPT_HEADER, false); 
+$result=curl_exec($cSession);
+
+curl_close($cSession);
+
+$json = json_decode($result, TRUE);
+
 ?>
 
 <div class="Maschinen">
@@ -35,23 +45,17 @@ echo "Anfrage : "  . $q . "<br>";
                 </tr>
               </thead>
               <tbody>
+              <?php foreach($json['Maschinenen'] as $item) : ?>
                 <tr>
-                  <td>19555455</td>
-                  <td>Scherer</td>
-                  <td>Fräsen</td>
-                  <td>Werk 12 Halle 10 Feld C3 HG</td>
-                  <td>Produktiv</td>
+                  <td><?= $item['Zeichnungsnummer'] ?></td>
+                  <td><?= $item['Hersteller'] ?></td>
+                  <td>not defined. Ist eine Liste!</td>
+                  <td><?= $item['Standort'] ?></td>
+                  <td>not defined. Gibt es nicht in der Datenbank!</td>
                   <td><input type="button" value="Maschdaten bearbeiten"
-							 onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
+                  onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
                 </tr>
-                <tr>
-                  <td>9998855</td>
-                  <td>Weisser</td>
-                  <td>Schleifen</td>
-                  <td>Werk 12 Halle 1 Feld A5 EG</td>
-                  <td>Produktiv</td>
-                  <td><input type="button" value="Maschdaten bearbeiten"  onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
-                </tr>
+                <?php endforeach ?>
               </tbody>
             </table>
             <br>

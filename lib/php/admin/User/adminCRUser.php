@@ -3,6 +3,18 @@ echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
 echo "Anfrage : "  . $q . "<br>";
 
+$cSession = curl_init(); 
+curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageUser");
+curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($cSession,CURLOPT_HEADER, false); 
+$result=curl_exec($cSession);
+
+curl_close($cSession);
+//step5
+//echo $result;
+
+$json = json_decode($result, TRUE);
+
 ?>
 
 <div class="User">
@@ -37,25 +49,18 @@ echo "Anfrage : "  . $q . "<br>";
                   <th>Aktiv</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody>              
+                <?php foreach($json['User'] as $item) : ?>
                 <tr>
-                  <td>dvc1278</td>
-                  <td>Anna</td>
-                  <td>Pitt</td>
-                  <td>anna.Pitt@proman.de</td>
-                  <td>0561/12535</td>
-                  <td><input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled></td>
+                  <td><?= $item['ID'] ?></td>
+                  <td><?= $item['Vorname'] ?></td>
+                  <td><?= $item['Nachname'] ?></td>
+                  <td><?= $item['eMail'] ?></td>
+                  <td><?= $item['Festnetz'] ?></td>
+                  <td><input class="form-check-input" type="checkbox" value=<?= $item['Active'] ?> id="defaultCheck2" disabled></td>
                   <td><input type="button" value="Bearbeiten"></td>
                 </tr>
-                <tr>
-                  <td>dvc2222</td>
-                  <td>Peter</td>
-                  <td>Müller</td>
-                  <td>peter.mueller@proman.de</td>
-                  <td>0561/884455</td>
-                  <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck5" disabled></td>
-                  <td><input type="button" value="Bearbeiten"></td>
-                </tr>
+                <?php endforeach ?>
               </tbody>
             </table>
           </div>

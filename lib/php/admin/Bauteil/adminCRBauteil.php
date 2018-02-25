@@ -3,6 +3,18 @@ echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
 echo "Anfrage : "  . $q . "<br>";
 
+$cSession = curl_init(); 
+curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageBauteil");
+curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($cSession,CURLOPT_HEADER, false); 
+$result=curl_exec($cSession);
+
+curl_close($cSession);
+//step5
+//echo $result;
+
+$json = json_decode($result, TRUE);
+
 ?>
 
 <div class="Bauteil">
@@ -32,22 +44,16 @@ echo "Anfrage : "  . $q . "<br>";
                 </tr>
               </thead>
               <tbody>
+              <?php foreach($json['Bauteile'] as $item) : ?>
                 <tr>
-                  <td>123 445 777</td>
-                  <td>AC</td>
-                  <td>Rohteil</td>
-                  <td>V.1.5</td>
-                  <td>NullSerie</td>
+                  <td>not defined. Gibt es nicht in der Datenbank!</td>
+                  <td><?= $item['ID'] ?></td>
+                  <td>not defined. Gibt es nicht in der Datenbank!</td>
+                  <td><?= $item['Version'] ?></td>
+                  <td><?= $item['Teilart'] ?></td>
                   <td><input type="button" value="Bauteildaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilBear.php?q=1111',myFunction1)" ></td>
                 </tr>
-                <tr>
-                  <td>123 445 777</td>
-                  <td>AD</td>
-                  <td>Rohteil</td>
-                  <td>V.1.0</td>
-                  <td>Produktiv</td>
-                  <td><input type="button" value="Bauteildaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilBear.php?q=1111',myFunction1)"></td>
-                </tr>
+                <?php endforeach ?>
               </tbody>
             </table>
             <input type="button" value="Neues Bauteil" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)">
