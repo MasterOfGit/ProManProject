@@ -1,9 +1,8 @@
 <?php
-//echo "PHP Datenabfrage<br>";
-//$q = $_REQUEST["q"];
-//echo "Anfrage : "  . $q . "<br>";
+echo "PHP Datenabfrage<br>";
+$q = $_REQUEST["q"];
+echo "Anfrage : "  . $q . "<br>";
 
-// Data load
 $cSession = curl_init(); 
 curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageUser");
 curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
@@ -17,9 +16,7 @@ curl_close($cSession);
 $json = json_decode($result, TRUE);
 
 
- 
-
-echo <<<'HOME1_HEADER'
+echo <<<DOC
 <div class="User">
   <div class="jumbotron">
     <div class="container">
@@ -27,9 +24,9 @@ echo <<<'HOME1_HEADER'
       <br>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home1">Registrierte User</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">Registrierungsanfragen</a></li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu2">Nachichten</a> </li>
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home30">Registrierte User</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu31">Registrierungsanfragen</a></li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu32">Nachichten</a> </li>
       </ul>
       
       <!-- Tab panes -->
@@ -52,38 +49,23 @@ echo <<<'HOME1_HEADER'
                   <th>Aktiv</th>
                 </tr>
               </thead>
-              <tbody>  
-HOME1_HEADER;
-
-  foreach($json['User'] as $item)
-				{
-				 
-				echo("<tr>");
-				echo("<td>{$item['ID']}</td>");
-				echo("<td>{$item['Vorname']}</td>");
-	  			echo("<td>{$item['Nachname']}</td>");
-				echo("<td>{$item['eMail'] }</td>");
-				echo("<td>{$item['Festnetz']}</td>");
-	  			echo("<td><input class='form-check-input' type='checkbox' value={$item['Active']} id='defaultCheck2' disabled><td>");
-				echo("<td><input type='button' value='Bearbeiten'></td>");
-				echo("</tr>");
-				};
-
-
-echo <<<HOME1_Footer
-			</tbody>
+              <tbody>              
+                <?php foreach($json['User'] as $item) : ?>
+                <tr>
+                  <td><?= $item['ID'] ?></td>
+                  <td><?= $item['Vorname'] ?></td>
+                  <td><?= $item['Nachname'] ?></td>
+                  <td><?= $item['eMail'] ?></td>
+                  <td><?= $item['Festnetz'] ?></td>
+                  <td><input class="form-check-input" type="checkbox" value=<?= $item['Active'] ?> id="defaultCheck2" disabled></td>
+                  <td><input type="button" value="Bearbeiten"></td>
+                </tr>
+                <?php endforeach ?>
+              </tbody>
             </table>
           </div>
         </div>
-HOME1_Footer;
-
-
-              
-
-
-
-echo <<<'MENU1_HEADER'
-        <div id="menu1" class="container tab-pane fade"><br>
+        <div id="menu31" class="container tab-pane fade"><br>
           <h3>Login Anfragen</h3>
           <div class="table-responsive-sm">
             <table class="table">
@@ -98,7 +80,7 @@ echo <<<'MENU1_HEADER'
                 </tr>
               </thead>
               <tbody>
-				<tr>
+                <tr>
                   <td>none</td>
                   <td>Michael</td>
                   <td>Pittler</td>
@@ -118,10 +100,7 @@ echo <<<'MENU1_HEADER'
             </table>
           </div>
         </div>
-MENU1_HEADER;
-
-echo <<<'MENU2_HEADER'
-<div id="menu2" class="container tab-pane fade"><br>
+        <div id="menu32" class="container tab-pane fade"><br>
           <h3>Nachichten</h3>
           <div class="table-responsive-sm">
             <table class="table">
@@ -135,8 +114,6 @@ echo <<<'MENU2_HEADER'
                 </tr>
               </thead>
               <tbody>
-
-
                 <tr>
                   <td>dvc1278</td>
                   <td>Anna</td>
@@ -152,5 +129,5 @@ echo <<<'MENU2_HEADER'
     </div>
   </div>
 </div>
-MENU2_HEADER;
+DOC;
 ?>

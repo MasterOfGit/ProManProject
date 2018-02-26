@@ -38,7 +38,8 @@ curl_close($cSession);
 
 $json = json_decode($result, TRUE);
 
-?>
+
+echo <<<'HOME1_HEADER'
 
 <div class="Maschinen">
   <div class="jumbotron">
@@ -47,13 +48,13 @@ $json = json_decode($result, TRUE);
       <br>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home40">Maschine bearbeiten</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu40">Maschinenverwendung</a></li>
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home1">Maschine bearbeiten</a>&nbsp;</li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">Maschinenverwendung</a></li>
       </ul>
       
       <!-- Tab panes -->
       <div class="tab-content">
-        <div id="home40" class="container tab-pane fade"><br>
+        <div id="home1" class="container tab-pane fade"><br>
            <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-success" type="submit">Search</button>
@@ -70,24 +71,37 @@ $json = json_decode($result, TRUE);
                 </tr>
               </thead>
               <tbody>
-              <?php foreach($json['Maschinen'] as $item) : ?>
-                <tr>
-                  <td><?= $item['Zeichnungsnummer'] ?></td>
-                  <td><?= $item['Hersteller'] ?></td>
-                  <td><?= $item['Technologie'] ?></td>
-                  <td><?= $item['Standort'] ?></td>
-                  <td><?= $item['Status'] ?></td>
-                  <td><input type="button" value="Maschdaten bearbeiten"
-                  onclick="loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111',myFunction1)"></td>
-                </tr>
-                <?php endforeach ?>
-              </tbody>
-            </table>
+			  
+HOME1_HEADER;
+              foreach($json['Maschinen'] as $item)
+				{
+				 
+				echo("<tr>");
+				echo("<td>{$item['Zeichnungsnummer']}</td>");
+				echo("<td>{$item['Hersteller']}</td>");
+	  			echo("<td>{$item['Technologie']}</td>");
+				echo("<td>{$item['Standort'] }</td>");
+				echo("<td>{$item['Status']}</td>");
+	  			echo("<td><input type='button' value='Maschdaten bearbeiten' onclick='loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111,myFunction1)'></td>");
+				echo("</tr>");
+				};
+					
+                  
+               
+                          
+echo <<<'HOME1_FOOTER'
+			</tbody>
+
+			</table>
             <br>
 			  <input type="button" value="Neue Maschine"  onclick="loadDoc('lib/php/admin/Maschine/adminCRMaschineBear.php?q=1111',myFunction1)">
           </div>
         </div>
-        <div id="menu40" class="container tab-pane active"><br>
+HOME1_FOOTER;
+
+echo <<<'MENU1_FOOTER'
+
+        <div id="menu1" class="container tab-pane active"><br>
           <h3>Maschinen</h3>
           <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -160,3 +174,6 @@ $json = json_decode($result, TRUE);
     </div>
   </div>
 </div>
+MENU1_FOOTER;
+
+?>
