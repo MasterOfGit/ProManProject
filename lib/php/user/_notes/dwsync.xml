@@ -2,12 +2,14 @@
 <dwsync>
 <file name="userCRFertigungLinien.php" server="C:/xampp/htdocs/proman/" local="131625719939729581" remote="131625719930000000" Dst="1" />
 <file name="userCRMaschinen.php" server="C:/xampp/htdocs/proman/" local="131631865155331778" remote="131631865150000000" Dst="1" />
-<file name="userCRFertigungLinien.php" server="192.168.178.26" local="131625719939729581" remote="131634253200000000" Dst="1" />
-<file name="userCRMaschinen.php" server="192.168.178.26" local="131631865155331778" remote="131634253200000000" Dst="1" />
-<file name="userContentRequestDetail.php" server="192.168.178.26" local="131628364800000000" remote="131634253200000000" Dst="1" />
-<file name="userContentRequestGesammt.php" server="192.168.178.26" local="131628364800000000" remote="131634253200000000" Dst="1" />
+<file name="userCRFertigungLinien.php" server="192.168.178.26" local="131625719939729581" remote="131641344600000000" Dst="1" />
+<file name="userCRMaschinen.php" server="192.168.178.26" local="131631865155331778" remote="131641344600000000" Dst="1" />
+<file name="userContentRequestDetail.php" server="192.168.178.26" local="131628364800000000" remote="131641344600000000" Dst="1" />
+<file name="userContentRequestGesammt.php" server="192.168.178.26" local="131628364800000000" remote="131641344600000000" Dst="1" />
 <file name="userContentRequestDetail.php" server="C:/xampp/htdocs/proman/" local="131628364800000000" remote="131628364800000000" Dst="1" />
 <file name="userContentRequestGesammt.php" server="C:/xampp/htdocs/proman/" local="131628364800000000" remote="131628364800000000" Dst="1" />
 <file name="userCRProduktionsplanung.php" server="C:/xampp/htdocs/proman/" local="131636805764766381" remote="131636805760000000" Dst="1" />
 <file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131636833560761262" remote="131636833560000000" Dst="1" />
+<file name="userCRProduktionsplanung.php" server="192.168.178.26" local="131636805764766381" remote="131641344600000000" Dst="1" />
+<file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131636833560761262" remote="131641344600000000" Dst="1" />
 </dwsync>

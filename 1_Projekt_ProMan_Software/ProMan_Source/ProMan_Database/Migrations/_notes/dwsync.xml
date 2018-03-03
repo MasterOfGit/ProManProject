@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="201801061112415_0.0.1.cs" server="192.168.178.26" local="131624030348924598" remote="131630301600000000" Dst="1" />
-<file name="201801061112415_0.0.1.Designer.cs" server="192.168.178.26" local="131624030348904588" remote="131630301600000000" Dst="1" />
-<file name="201801061112415_0.0.1.resx" server="192.168.178.26" local="131624030348944615" remote="131630301600000000" Dst="1" />
-<file name="Configuration.cs" server="192.168.178.26" local="131624030348954621" remote="131630301600000000" Dst="1" />
+<file name="201801061112415_0.0.1.cs" server="192.168.178.26" local="131624030348924598" remote="131641344000000000" Dst="1" />
+<file name="201801061112415_0.0.1.Designer.cs" server="192.168.178.26" local="131624030348904588" remote="131641344000000000" Dst="1" />
+<file name="201801061112415_0.0.1.resx" server="192.168.178.26" local="131624030348944615" remote="131641344000000000" Dst="1" />
+<file name="Configuration.cs" server="192.168.178.26" local="131624030348954621" remote="131641344000000000" Dst="1" />
 <file name="201801061112415_0.0.1.cs" server="C:/xampp/htdocs/proman/" local="131624030348924598" remote="131624030340000000" Dst="1" />
 <file name="201801061112415_0.0.1.Designer.cs" server="C:/xampp/htdocs/proman/" local="131624030348904588" remote="131624030340000000" Dst="1" />
 <file name="201801061112415_0.0.1.resx" server="C:/xampp/htdocs/proman/" local="131624030348944615" remote="131624030340000000" Dst="1" />
@@ -11,7 +11,10 @@
 <file name="201802081731357_0.0.2.cs" server="C:/xampp/htdocs/proman/" local="131628167984103605" remote="131628167980000000" Dst="1" />
 <file name="201802081731357_0.0.2.Designer.cs" server="C:/xampp/htdocs/proman/" local="131628167984093598" remote="131628167980000000" Dst="1" />
 <file name="201802081731357_0.0.2.resx" server="C:/xampp/htdocs/proman/" local="131628167984123621" remote="131628167980000000" Dst="1" />
-<file name="201802081731357_0.0.2.cs" server="192.168.178.26" local="131628167984103605" remote="131630301600000000" Dst="1" />
-<file name="201802081731357_0.0.2.Designer.cs" server="192.168.178.26" local="131628167984093598" remote="131630301600000000" Dst="1" />
-<file name="201802081731357_0.0.2.resx" server="192.168.178.26" local="131628167984123621" remote="131630301600000000" Dst="1" />
+<file name="201802081731357_0.0.2.cs" server="192.168.178.26" local="131628167984103605" remote="131641344000000000" Dst="1" />
+<file name="201802081731357_0.0.2.Designer.cs" server="192.168.178.26" local="131628167984093598" remote="131641344000000000" Dst="1" />
+<file name="201802081731357_0.0.2.resx" server="192.168.178.26" local="131628167984123621" remote="131641344000000000" Dst="1" />
+<file name="201802251353370_Initial.cs" server="192.168.178.26" local="131641178788529974" remote="131641344000000000" Dst="1" />
+<file name="201802251353370_Initial.Designer.cs" server="192.168.178.26" local="131641178788509964" remote="131641344000000000" Dst="1" />
+<file name="201802251353370_Initial.resx" server="192.168.178.26" local="131641178788539975" remote="131641344000000000" Dst="1" />
 </dwsync>
