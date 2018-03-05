@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProMan_Database.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,24 +10,34 @@ namespace ProMan_BusinessLayer.Models.AdminPages
     public class AdminPageMaschineDto
     {
         public List<MaschineDto> Maschinen { get; set; }
-        public List<ProMan_Database.Enums.Technologie> Technologien
-        {
+
+        public List<string> Technologien { get
+            {
+                return Enum.GetValues(typeof(Technologie))
+                .Cast<Technologie>()
+                .Select(v => v.ToString())
+                .ToList();
+            }
+            set{     
+            }
+                
+        }
+
+        public List<string> Stati {
             get
             {
-                return new List<ProMan_Database.Enums.Technologie>()
-                {
-                    ProMan_Database.Enums.Technologie.drehen,
-                    ProMan_Database.Enums.Technologie.fraesen,
-                    ProMan_Database.Enums.Technologie.messen,
-                    ProMan_Database.Enums.Technologie.schleifen,
-                    ProMan_Database.Enums.Technologie.waschen,
-                };
+                return Enum.GetValues(typeof(StatusArt))
+                .Cast<StatusArt>()
+                .Select(v => v.ToString())
+                .ToList();
             }
             set
-            {
-
-            }
+            { }
         }
+
+
+
+
 
     }
 }

@@ -14,5 +14,12 @@ namespace ProMan_BusinessLayer.Models
         public string Standort { get; set; }
         public DateTime? Anschaffungsdatum { get; set; }
         public DateTime? Garantie { get; set; }
+
+        //additional Data
+        public string AbteilungsName { get; set; }
+        public string FertigungsName { get; set; }
+        public string FertigungslinienName { get; set; }
+        public string Arbeitsfolge { get; set; }
+
     }
 }

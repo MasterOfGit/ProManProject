@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
+using System.Linq;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -297,7 +298,20 @@ namespace ProMan_BusinessLayer.DataProvider
                     }
                 }
             };
+            value.Abteilungsnamen = new List<string>();
+            value.Fertigungsnamen = new List<string>();
+            foreach (var item in value.Abteilungen)
+            {
+                if (!value.Abteilungsnamen.Contains(item.Name))
+                    value.Abteilungsnamen.Add(item.Name);
+                
+                foreach(var fert in item.Fertigungen)
+                {
+                    if (!value.Fertigungsnamen.Contains(fert.Name))
+                        value.Fertigungsnamen.Add(fert.Name);
+                }
 
+            }
 
             return value;
         }
@@ -471,6 +485,13 @@ namespace ProMan_BusinessLayer.DataProvider
                     Zeichnungsnummer = "123",
                     Technologie = ProMan_Database.Enums.Technologie.drehen.ToString(),
 
+                    AbteilungsName = "Abteilung_1",
+                    Arbeitsfolge = "1",
+                    FertigungslinienName = "Linie_1",
+                    FertigungsName = "Fertigung_1"
+
+
+
                 },
                                 new MaschineDto()
                 {
@@ -482,6 +503,10 @@ namespace ProMan_BusinessLayer.DataProvider
                     Version = "2",
                     Zeichnungsnummer = "456",
                     Technologie = ProMan_Database.Enums.Technologie.schleifen.ToString(),
+                    AbteilungsName = "Abteilung_1",
+                    Arbeitsfolge = "1",
+                    FertigungslinienName = "Linie_1",
+                    FertigungsName = "Fertigung_1"
 
                 },
                                                 new MaschineDto()
@@ -494,7 +519,11 @@ namespace ProMan_BusinessLayer.DataProvider
                     Version = "3",
                     Zeichnungsnummer = "789",
                     Technologie = ProMan_Database.Enums.Technologie.waschen.ToString(),
-                    
+                    AbteilungsName = "Abteilung_1",
+                    Arbeitsfolge = "1",
+                    FertigungslinienName = "Linie_1",
+                    FertigungsName = "Fertigung_1"
+
 
                 },
             };

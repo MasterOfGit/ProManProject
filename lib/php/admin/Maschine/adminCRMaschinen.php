@@ -74,17 +74,17 @@ echo <<<'HOME1_HEADER'
 			  
 HOME1_HEADER;
               foreach($json['Maschinen'] as $item)
-				{
-				 
-				echo("<tr>");
-				echo("<td>{$item['Zeichnungsnummer']}</td>");
-				echo("<td>{$item['Hersteller']}</td>");
-	  			echo("<td>{$item['Technologie']}</td>");
-				echo("<td>{$item['Standort'] }</td>");
-				echo("<td>{$item['Status']}</td>");
-	  			echo("<td><input type='button' value='Maschdaten bearbeiten' onclick='loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111,myFunction1)'></td>");
-				echo("</tr>");
-				};
+              {
+              
+              echo("<tr>");
+              echo("<td>{$item['Zeichnungsnummer']}</td>");
+              echo("<td>{$item['Hersteller']}</td>");
+              echo("<td>{$item['Technologie']}</td>");
+              echo("<td>{$item['Standort'] }</td>");
+              echo("<td>{$item['Status']}</td>");
+              echo("<td><input type='button' value='Maschdaten bearbeiten' onclick='loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111,myFunction1)'></td>");
+              echo("</tr>");
+              };
 					
                   
                

@@ -20,5 +20,7 @@ namespace ProMan_Database.Model
         public DateTime? Anschaffungsdatum { get; set; }
         public DateTime? Garantie { get; set; }     
         public EFImage Bild { get; set; }
+        public virtual Arbeitsfolge Arbeitsfolge { get; set; }
+
     }
 }

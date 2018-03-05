@@ -16,5 +16,7 @@ namespace ProMan_Database.Model
         public ICollection<Arbeitsplatz> Arbeitsplaetze { get; set; }
         public ICollection<Produktionsprogramm> Produktion { get; set; }
         public ICollection<Supermarkt> Lager { get; set; }
+
+        public virtual Fertigung Fertigung { get; set; }
     }
 }
