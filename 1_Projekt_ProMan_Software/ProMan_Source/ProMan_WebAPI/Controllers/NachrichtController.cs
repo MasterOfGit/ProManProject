@@ -7,34 +7,35 @@ using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
+    [RoutePrefix("nachricht")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class AbteilungController : BaseApiController
+    public class NachrichtController : BaseApiController
     {
-        // GET: api/Abteilung
+        // GET: api/Nachricht
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Abteilung/5
+        // GET: api/Nachricht/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetAbteilungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetNachrichtDto(id)));
         }
 
-        // POST: api/Abteilung
-        public void Post([FromBody]AbteilungDto value)
+        // POST: api/Nachricht
+        public void Post([FromBody]NachrichtDto value)
         {
-            dataprovider.SetAbteilungDto(value);
+            dataprovider.SetNachrichtDto(value);
         }
 
-        // PUT: api/Abteilung/5
-        public void Put(int id, [FromBody]AbteilungDto value)
+        // PUT: api/Nachricht/5
+        public void Put(int id, [FromBody]NachrichtDto value)
         {
-            dataprovider.UpdateAbteilungDto(value,id);
+            dataprovider.UpdateNachrichtDto(value,id);
         }
 
-        // DELETE: api/Abteilung/5
+        // DELETE: api/Nachricht/5
         public void Delete(int id)
         {
         }

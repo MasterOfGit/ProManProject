@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
+    /// <summary>
+    /// Interface to be implement to provide data
+    /// </summary>
     public interface IDataProvider
     {
         FertigungDto GetFertigungsDto(int id);
@@ -34,6 +37,10 @@ namespace ProMan_BusinessLayer.DataProvider
         AbteilungDto GetAbteilungDto(int id);
         bool SetAbteilungDto(AbteilungDto data);
         bool UpdateAbteilungDto(AbteilungDto data, int id);
+
+        NachrichtDto GetNachrichtDto(int id);
+        bool SetNachrichtDto(NachrichtDto data);
+        bool UpdateNachrichtDto(NachrichtDto data, int id);
 
         AdminPageUserDto GetAdminPageUserDto();
         AdminPageAbteilungDto GetAdminPageAbteilungDto();

@@ -584,6 +584,21 @@ namespace ProMan_BusinessLayer.DataProvider
             throw new NotImplementedException();
         }
 
+        public NachrichtDto GetNachrichtDto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SetNachrichtDto(NachrichtDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateNachrichtDto(NachrichtDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
     }
