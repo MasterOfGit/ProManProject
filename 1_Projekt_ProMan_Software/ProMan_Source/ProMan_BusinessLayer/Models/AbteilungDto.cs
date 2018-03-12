@@ -24,5 +24,24 @@ namespace ProMan_BusinessLayer.Models
 
         }
 
+
+        //addional data
+        public int FertigungslinieCount
+        {
+            get
+            {
+                int count = 0;
+                foreach(var item in Fertigungen)
+                {
+                    count += item.FertigungslinienAnzahl;
+                }
+
+                return count;
+            }
+            set { }
+        }
+        public int Maschinencount
+        { get; set; }
+
     }
 }

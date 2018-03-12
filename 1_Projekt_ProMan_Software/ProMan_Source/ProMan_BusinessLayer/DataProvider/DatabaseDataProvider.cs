@@ -320,6 +320,12 @@ namespace ProMan_BusinessLayer.DataProvider
             return true;
         }
 
+
+
+
+
+        #endregion
+
         public AdminPageUserDto GetAdminPageUserDto()
         {
             var item = new AdminPageUserDto();
@@ -335,10 +341,14 @@ namespace ProMan_BusinessLayer.DataProvider
                 Namenszusatz = x.Namenszusatz,
                 Vorname = x.Vorname
             }).ToList();
-            
+
             return item;
         }
 
+        /// <summary>
+        /// Returns the admin page data for Abteilung
+        /// </summary>
+        /// <returns></returns>
         public AdminPageAbteilungDto GetAdminPageAbteilungDto()
         {
             var item = new AdminPageAbteilungDto();
@@ -348,13 +358,16 @@ namespace ProMan_BusinessLayer.DataProvider
                 ID = x.AbteilungID,
                 Fertigungen = x.Fertigungen.Select(y => new FertigungDto()
                 {
-                    ID =y.FertigungID,
+                    ID = y.FertigungID,
                     Name = y.Bezeichnung,
-                    FertigungslinienAnzahl = y.Fertigungslinien.Count,                  
+                    FertigungslinienAnzahl = y.Fertigungslinien.Count,
                 }).ToList(),
                 WerkName = x.Werk,
                 Name = x.Bezeichnung
             }).ToList();
+
+            item.Abteilungsnamen = dbcontext.Abteilungen.Select(x => x.Bezeichnung).Distinct().ToList();
+            item.Fertigungsnamen = dbcontext.Fertigungen.Select(x => x.Bezeichnung).Distinct().ToList();
 
             return item;
         }
@@ -369,13 +382,13 @@ namespace ProMan_BusinessLayer.DataProvider
                 Teilart = x.Teilart,
                 Version = x.Version,
                 Verwendungsort = x.Verwendungsort,
-               Abhaengigkeiten = dbcontext.Bauteile.Select(y => new BauteilDto()
-               {
-                   ID = y.BauteilID,
-                   Teilart = y.Teilart,
-                   Version = y.Version,
-                   Verwendungsort = y.Verwendungsort,
-               }).ToList() 
+                Abhaengigkeiten = dbcontext.Bauteile.Select(y => new BauteilDto()
+                {
+                    ID = y.BauteilID,
+                    Teilart = y.Teilart,
+                    Version = y.Version,
+                    Verwendungsort = y.Verwendungsort,
+                }).ToList()
             }).ToList();
 
             return item;
@@ -452,6 +465,10 @@ namespace ProMan_BusinessLayer.DataProvider
             return item;
         }
 
+        /// <summary>
+        /// Gets the complete Data for the maschine admin page
+        /// </summary>
+        /// <returns></returns>
         public AdminPageMaschineDto GetAdminPageMaschineDto()
         {
             var item = new AdminPageMaschineDto();
@@ -466,7 +483,12 @@ namespace ProMan_BusinessLayer.DataProvider
                 Status = m.Status.ToString(),
                 Inventarnummer = m.Inventarnummer,
                 Version = m.Version,
-                Zeichnungsnummer = m.Zeichnungsnummer
+                Zeichnungsnummer = m.Zeichnungsnummer,
+                AbteilungsName = m.Arbeitsfolge.Fertigungslinie.Fertigung.Abteilung.Bezeichnung,
+                Arbeitsfolge = m.Arbeitsfolge.ArbeitsfolgeID.ToString(),
+                FertigungslinienName = m.Arbeitsfolge.Fertigungslinie.Bezeichnung,
+                FertigungsName = m.Arbeitsfolge.Fertigungslinie.Fertigung.Bezeichnung
+
             }).ToList();
             return item;
         }
@@ -485,7 +507,7 @@ namespace ProMan_BusinessLayer.DataProvider
                 BauteileCount = x.Fertigungslinien.Select(u => u.Lager.Select(b => b.Iststueckzahl)).Count(),
             }).ToList();
 
-            
+
 
             return item;
         }
@@ -502,6 +524,19 @@ namespace ProMan_BusinessLayer.DataProvider
             throw new NotImplementedException();
         }
 
-        #endregion
+        public NachrichtDto GetNachrichtDto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SetNachrichtDto(NachrichtDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateNachrichtDto(NachrichtDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

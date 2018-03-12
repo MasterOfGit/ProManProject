@@ -55,6 +55,7 @@
     <Compile Include="Enums\Fachtype.cs" />
     <Compile Include="Enums\Fertigungstype.cs" />
     <Compile Include="Enums\MaschinenStatus.cs" />
+    <Compile Include="Enums\NachrichtenTyp.cs" />
     <Compile Include="Enums\ProduktionStatus.cs" />
     <Compile Include="Enums\ReparaturStatus.cs" />
     <Compile Include="Enums\StatusArt.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Maschine.cs" />
     <Compile Include="Model\Mitarbeiter.cs" />
+    <Compile Include="Model\Nachricht.cs" />
     <Compile Include="Model\Produktionsprogramm.cs" />
     <Compile Include="Model\Reparatur.cs" />
     <Compile Include="Model\Sonderaufgabe.cs" />
@@ -84,7 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

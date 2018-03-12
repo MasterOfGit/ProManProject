@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-
-namespace ProMan_BusinessLayer.DataProvider
+﻿namespace ProMan_BusinessLayer.DataProvider
 {
+    /// <summary>
+    /// Factory object to switch between dummy and db data
+    /// </summary>
     public class DataProviderFactory
     {
         public IDataProvider data;
