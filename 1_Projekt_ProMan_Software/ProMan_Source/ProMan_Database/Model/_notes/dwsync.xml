@@ -8,14 +8,14 @@
 <file name="Maschine.cs" server="192.168.178.26" local="131641178788630044" remote="131641344000000000" Dst="1" />
 <file name="Reparatur.cs" server="192.168.178.26" local="131636809179129123" remote="131641344000000000" Dst="1" />
 <file name="Wartung.cs" server="192.168.178.26" local="131636809179289233" remote="131641344000000000" Dst="1" />
-<file name="Abteilung.cs" server="C:/xampp/htdocs/proman/" local="131628167984143622" remote="131628167980000000" Dst="1" />
-<file name="Bauteil.cs" server="C:/xampp/htdocs/proman/" local="131624030348994651" remote="131624030340000000" Dst="1" />
-<file name="Fertigung.cs" server="C:/xampp/htdocs/proman/" local="131624030349004667" remote="131624030340000000" Dst="1" />
-<file name="Fertigungslinie.cs" server="C:/xampp/htdocs/proman/" local="131624030349014664" remote="131624030340000000" Dst="1" />
-<file name="Login.cs" server="C:/xampp/htdocs/proman/" local="131624030349034684" remote="131624030340000000" Dst="1" />
-<file name="Maschine.cs" server="C:/xampp/htdocs/proman/" local="131624030349044681" remote="131624030340000000" Dst="1" />
-<file name="Reparatur.cs" server="C:/xampp/htdocs/proman/" local="131624030349094718" remote="131624030340000000" Dst="1" />
-<file name="Wartung.cs" server="C:/xampp/htdocs/proman/" local="131624030349124747" remote="131624030340000000" Dst="1" />
+<file name="Abteilung.cs" server="C:/xampp/htdocs/proman/" local="131636809178408639" remote="131636809170000000" Dst="1" />
+<file name="Bauteil.cs" server="C:/xampp/htdocs/proman/" local="131636809178638808" remote="131636809170000000" Dst="1" />
+<file name="Fertigung.cs" server="C:/xampp/htdocs/proman/" local="131641178788590035" remote="131641178780000000" Dst="1" />
+<file name="Fertigungslinie.cs" server="C:/xampp/htdocs/proman/" local="131636809178818919" remote="131636809170000000" Dst="1" />
+<file name="Login.cs" server="C:/xampp/htdocs/proman/" local="131636809178858952" remote="131636809170000000" Dst="1" />
+<file name="Maschine.cs" server="C:/xampp/htdocs/proman/" local="131641178788630044" remote="131641178780000000" Dst="1" />
+<file name="Reparatur.cs" server="C:/xampp/htdocs/proman/" local="131636809179129123" remote="131636809170000000" Dst="1" />
+<file name="Wartung.cs" server="C:/xampp/htdocs/proman/" local="131636809179289233" remote="131636809170000000" Dst="1" />
 <file name="Arbeitsfolge.cs" server="192.168.178.26" local="131636809178458673" remote="131641344000000000" Dst="1" />
 <file name="Arbeitsplatz.cs" server="192.168.178.26" local="131636809178518713" remote="131641344000000000" Dst="1" />
 <file name="Audit.cs" server="192.168.178.26" local="131636809178568749" remote="131641344000000000" Dst="1" />
@@ -24,4 +24,12 @@
 <file name="Produktionsprogramm.cs" server="192.168.178.26" local="131636809179059073" remote="131641344000000000" Dst="1" />
 <file name="Sonderaufgabe.cs" server="192.168.178.26" local="131636809179179165" remote="131641344000000000" Dst="1" />
 <file name="Supermarkt.cs" server="192.168.178.26" local="131636809179229193" remote="131641344000000000" Dst="1" />
+<file name="Arbeitsfolge.cs" server="C:/xampp/htdocs/proman/" local="131636809178458673" remote="131636809170000000" Dst="1" />
+<file name="Arbeitsplatz.cs" server="C:/xampp/htdocs/proman/" local="131636809178518713" remote="131636809170000000" Dst="1" />
+<file name="Audit.cs" server="C:/xampp/htdocs/proman/" local="131636809178568749" remote="131636809170000000" Dst="1" />
+<file name="EFImage.cs" server="C:/xampp/htdocs/proman/" local="131636809180630128" remote="131636809180000000" Dst="1" />
+<file name="Mitarbeiter.cs" server="C:/xampp/htdocs/proman/" local="131636809178999039" remote="131636809170000000" Dst="1" />
+<file name="Produktionsprogramm.cs" server="C:/xampp/htdocs/proman/" local="131636809179059073" remote="131636809170000000" Dst="1" />
+<file name="Sonderaufgabe.cs" server="C:/xampp/htdocs/proman/" local="131636809179179165" remote="131636809170000000" Dst="1" />
+<file name="Supermarkt.cs" server="C:/xampp/htdocs/proman/" local="131636809179229193" remote="131636809170000000" Dst="1" />
 </dwsync>

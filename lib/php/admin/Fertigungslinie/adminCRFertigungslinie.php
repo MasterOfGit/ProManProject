@@ -1,7 +1,7 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST[ "q" ];
-echo "Anfrage : " . $q . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST[ "q" ];
+//echo "Anfrage : " . $q . "<br>";
 
 ?>
 
@@ -12,19 +12,17 @@ echo "Anfrage : " . $q . "<br>";
 			<br>
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
-				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Fertigungslinie anlegen</a>&nbsp;</li>
-				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu100">Fertigungslinien anzeigen</a>
-				</li>
-				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Fertigungsgrafik</a>
+				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home1">Fertigungslinien</a>&nbsp;</li>
+				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">Fertigungsliniengrafik</a>
 				</li>
 			</ul>
 
 			<!-- Tab panes -->
 			<div class="tab-content">
 
-				<div id="home100" class="container tab-pane fade"><br>
+				<div id="home1" class="container tab-pane fade"><br>
 					<form class="form-inline" action="/action_page.php">
-<label for="fertigung">Fertigungslinie</label>
+						<label for="fertigung">Fertigungslinie</label>
 						<select id="fertigung">
 							<option>Fertigunglinie_1</option>
 							<option>Fertigunglinie_2</option>
@@ -47,8 +45,7 @@ echo "Anfrage : " . $q . "<br>";
 							<option>Schaldradrad_2</option>
 							<option>Schaldradrad_3</option>
 						</select>
-						
-						MEHRERE TEILENUMMERM PRO FERTIGUNGSLINIE ????
+
 					</form>
 					<div class="table-responsive-sm">
 						<table class="table">
@@ -57,6 +54,8 @@ echo "Anfrage : " . $q . "<br>";
 									<th>Arbeitsfolge</th>
 									<th>Maschine</th>
 									<th>Technologie</th>
+									<th>Fertigungstype</th>
+									<th>Teilenummer</th>
 									<th>Arbeitsplan</th>
 								</tr>
 							</thead>
@@ -76,9 +75,15 @@ echo "Anfrage : " . $q . "<br>";
 										Drehen
 									</td>
 									<td>
+										Grünfertigung
+									</td>
+									<td>
+										Festrad_1
+									</td>
+									<td>
 										Rohteil drehen
 									</td>
-										<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
@@ -94,10 +99,16 @@ echo "Anfrage : " . $q . "<br>";
 										</select>
 									</td>
 									<td>
-									Fräsen
+										Fräsen
 									</td>
 									<td>
-									Verzahnung fräsen
+										Grünfertigung
+									</td>
+									<td>
+										Festrad_1
+									</td>
+									<td>
+										Verzahnung fräsen
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 										<input type="button" value="Verschieben" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -116,6 +127,12 @@ echo "Anfrage : " . $q . "<br>";
 									</td>
 									<td>
 										Entgraten
+									</td>
+									<td>
+										Grünfertigung
+									</td>
+									<td>
+										Festrad_1
 									</td>
 									<td>
 										Verzahnung entgraten
@@ -139,6 +156,12 @@ echo "Anfrage : " . $q . "<br>";
 										Waschen
 									</td>
 									<td>
+										Grünfertigung
+									</td>
+									<td>
+										Festrad_1
+									</td>
+									<td>
 										none
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -160,6 +183,12 @@ echo "Anfrage : " . $q . "<br>";
 										Messen
 									</td>
 									<td>
+										Grünfertigung
+									</td>
+									<td>
+										Festrad_1
+									</td>
+									<td>
 										none
 									</td>
 									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
@@ -170,81 +199,35 @@ echo "Anfrage : " . $q . "<br>";
 						</table>
 						<div>
 							<input type="button" value="Neu Arbeitsfolge hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-						</div>
-						<br>
-						<div>
 							<input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 							<input type="button" value="Reset" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 						</div>
+						<br>
+						<div>
+							<input type="button" value="Neu Fertigungslinie anlegen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+							<input type="button" value="Fertigungslinie löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+							</divv>
+							<br>
+							<div>
+
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div id="menu100" class="container tab-pane fade"><br>
+
+				<div id="menu1" class="container tab-pane fade"><br>
 					<form class="form-inline" action="/action_page.php">
-<label for="fertigung">Fertigungslinie</label>
-						<select id="fertigung">
-							<option>Fertigunglinie_1</option>
-							<option>Fertigunglinie_2</option>
-							<option>Fertigunglinie_3</option>
-						</select>
+
 
 					</form>
-					<div class="table-responsive-sm">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Fertigungslinie</th>
-									<th>Maschine</th>
-									
-								</tr>
-
-							</thead>
-							<tbody>
-								<tr>
-									
-									<td>Fertigung_1</td>
-									<td>Maschine_1</td>
-
-									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-								<tr>
-									
-									<td>Fertigung_1</td>
-									<td>Maschine_3</td>
-
-									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-								<tr>
-									
-									<td>Fertigung_1</td>
-									<td>Maschine_7</td>
-
-									<td><input type="button" value="Bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-
-							
-							</tbody>
-						</table>
-
-					</div>
-				</div>
-
-				<div id="menu101" class="container tab-pane fade"><br>
-					<form class="form-inline" action="/action_page.php">
-						
-						
-					</form>
-					<canvas id="myCanvas" width="400" height="500" style="border:1px solid #d3d3d3;">
+					<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
 						Your browser does not support the HTML5 canvas tag.</canvas>
+				
 
 
-						<input type="button" value="Grafik generierren" onclick="createCanvas()">
+
+					<input type="button" value="Grafik generierren" onclick="createCanvas()">
 
 				</div>
 			</div>

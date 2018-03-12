@@ -1,9 +1,10 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST[ "q" ];
-echo "Anfrage : " . $q . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST[ "q" ];
+//echo "Anfrage : " . $q . "<br>";
 
-?>
+
+echo <<<DATA
 
 <div class="Instandhaltung">
 	<div class="jumbotron">
@@ -291,9 +292,36 @@ echo "Anfrage : " . $q . "<br>";
 				</div>
 
 				<div id="menu102" class="container tab-pane fade"><br>
+					
 					<form class="form-inline" action="/action_page.php">
-
-						<input type="button" value="Neuen Auftrag erstellen" onclick="loadDoc('lib/php/inst/instCRAuftragAnzeigen.php?q=1111',myFunction1)">
+					<lable>Auftragnummer</lable><br>
+					<input type="text"><br>
+					<lable>Abteilung</lable><br>
+					<input type="text"><br>
+					<lable>Fachrichtung</lable><br>
+					<select id="Fachrichtung">
+							<option>elektrisch</option>
+							<option>mechanisch</option>
+							<option>unbekannt</option>
+					</select><br>
+					<lable>Fachbereich</lable><br>
+					<select id="Fachbereich">
+							<option>intern</option>
+							<option>extern</option>
+					</select><br>
+					<lable>Maschine</lable><br>
+					<input type="text"><br>
+					<lable>Standort</lable><br>
+					<input type="text"><br>
+					<lable>Problemthema</lable><br>
+					<input type="text"><br>
+					<lable>Problembeschreibung</lable><br>
+					<input type="text"><br>
+					<br>
+					
+					
+					
+					<input type="button" value="Neuen Auftrag erstellen" onclick="loadDoc('lib/php/inst/instCRAuftragAnzeigen.php?q=1111',myFunction1)">
 
 					</form>
 
@@ -302,3 +330,7 @@ echo "Anfrage : " . $q . "<br>";
 		</div>
 	</div>
 </div>
+
+DATA;
+
+?>

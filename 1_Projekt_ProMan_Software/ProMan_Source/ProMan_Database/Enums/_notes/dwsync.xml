@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="MaschinenStatus.cs" server="192.168.178.26" local="131641178788499951" remote="131641344000000000" Dst="1" />
-<file name="MaschinenStatus.cs" server="C:/xampp/htdocs/proman/" local="131624030348874568" remote="131624030340000000" Dst="1" />
+<file name="MaschinenStatus.cs" server="C:/xampp/htdocs/proman/" local="131641178788499951" remote="131641178780000000" Dst="1" />
 <file name="Anrede.cs" server="192.168.178.26" local="131636809180680188" remote="131641344000000000" Dst="1" />
 <file name="AufgabenGruppe.cs" server="192.168.178.26" local="131636809177988365" remote="131641344000000000" Dst="1" />
 <file name="Bereichtyp.cs" server="192.168.178.26" local="131636809180650156" remote="131641344000000000" Dst="1" />
@@ -11,4 +11,13 @@
 <file name="ReparaturStatus.cs" server="192.168.178.26" local="131636809178238526" remote="131641344000000000" Dst="1" />
 <file name="StatusArt.cs" server="192.168.178.26" local="131636809178288571" remote="131641344000000000" Dst="1" />
 <file name="Technologie.cs" server="192.168.178.26" local="131636809178348617" remote="131641344000000000" Dst="1" />
+<file name="Anrede.cs" server="C:/xampp/htdocs/proman/" local="131636809180680188" remote="131636809180000000" Dst="1" />
+<file name="AufgabenGruppe.cs" server="C:/xampp/htdocs/proman/" local="131636809177988365" remote="131636809170000000" Dst="1" />
+<file name="Bereichtyp.cs" server="C:/xampp/htdocs/proman/" local="131636809180650156" remote="131636809180000000" Dst="1" />
+<file name="Fachtype.cs" server="C:/xampp/htdocs/proman/" local="131636809178078428" remote="131636809170000000" Dst="1" />
+<file name="Fertigungstype.cs" server="C:/xampp/htdocs/proman/" local="131636809178128491" remote="131636809170000000" Dst="1" />
+<file name="ProduktionStatus.cs" server="C:/xampp/htdocs/proman/" local="131636809178178495" remote="131636809170000000" Dst="1" />
+<file name="ReparaturStatus.cs" server="C:/xampp/htdocs/proman/" local="131636809178238526" remote="131636809170000000" Dst="1" />
+<file name="StatusArt.cs" server="C:/xampp/htdocs/proman/" local="131636809178288571" remote="131636809170000000" Dst="1" />
+<file name="Technologie.cs" server="C:/xampp/htdocs/proman/" local="131636809178348617" remote="131636809170000000" Dst="1" />
 </dwsync>

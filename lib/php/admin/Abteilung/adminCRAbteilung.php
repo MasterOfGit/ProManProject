@@ -1,7 +1,7 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST["q"];
+//echo "Anfrage : "  . $q . "<br>";
 
 ?>
 
@@ -12,9 +12,8 @@ echo "Anfrage : "  . $q . "<br>";
 			<br>
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
-				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Abteilung anlegen</a>&nbsp;</li>
-				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu100">Abteilung anzeigen</a>
-				</li>
+				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home100">Abteilung</a>&nbsp;</li>
+
 				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu101">Abteilungsgrafik</a>
 				</li>
 			</ul>
@@ -60,7 +59,7 @@ echo "Anfrage : "  . $q . "<br>";
 								<tr>
 									<td>
 										<select>
-											<option >Fertigung_1</option>
+											<option>Fertigung_1</option>
 											<option>Fertigung_2</option>
 											<option selected>Fertigung_3</option>
 											<option>Fertigung_4</option>
@@ -69,35 +68,42 @@ echo "Anfrage : "  . $q . "<br>";
 									</td>
 									</td>
 									<td>5</td>
-									<td><input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-
+									<td>
+										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
+
 								</tr>
-								
-																
+
+
 							</tbody>
 						</table>
 						<br>
 						<div>
 							<input type="button" value="Neu Fertigung hinzufügen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 						</div>
-						<br>
 						<div>
 							<input type="button" value="Alles Speicher" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 							<input type="button" value="Reset" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 						</div>
+						<br>
+						<div>
+							<input type="button" value="Neu Abteilung anlegen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+							<input type="button" value="Abteilung löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+						</div>
+						<br>
+
 					</div>
 				</div>
 
 				<div id="menu100" class="container tab-pane fade"><br>
-				  <form class="form-inline" action="/action_page.php">
-				    <label for="abteilung">Abteilung</label>
-				    <select id="abteilung">
+					<form class="form-inline" action="/action_page.php">
+						<label for="abteilung">Abteilung</label>
+						<select id="abteilung">
 							<option>Abteilung_1</option>
 							<option>Abteilung_2</option>
 							<option>Abteilung_3</option>
 						</select>
-</form>
+					</form>
 					<div class="table-responsive-sm">
 						<table class="table">
 							<thead>
@@ -120,7 +126,7 @@ echo "Anfrage : "  . $q . "<br>";
 										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
-								
+
 								<tr>
 									<td>Abteilung_1</td>
 									<td>Fertigung_3</td>
@@ -131,8 +137,8 @@ echo "Anfrage : "  . $q . "<br>";
 										<input type="button" value="Löschen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
 									</td>
 								</tr>
-								
-									
+
+
 							</tbody>
 						</table>
 
@@ -147,6 +153,7 @@ echo "Anfrage : "  . $q . "<br>";
 					<canvas id="myCanvas" width="400" height="500" style="border:1px solid #d3d3d3;">
 						Your browser does not support the HTML5 canvas tag.</canvas>
 				
+
 
 
 

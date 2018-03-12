@@ -1,3 +1,7 @@
 main {
 	min-width: 500px;
 }
+
+.unsichtbar{
+	display: none;
+}

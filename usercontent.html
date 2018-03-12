@@ -28,12 +28,23 @@
           <li> <a id="datekw">none</a> </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bereiche<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li> <a href="#" onclick="loadDoc('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">Abteilungübersicht</a></li>
-              <li> <a href="#" onclick="loadDoc('lib/php/user/userContentRequestDetail.php?q=2222',myFunction1)">Linienübersicht</a></li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/User/adminCRUser.php?q=1111',myFunction1)">User</a> </li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/Abteilung/adminCRAbteilung.php?q=2222',myFunction1)">Abteilung</a> </li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/Fertigung/adminCRFertigung.php?q=2222',myFunction1)">Fertigung</a> </li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/Fertigungslinie/adminCRFertigungslinie.php?q=2222',myFunction1)">Fertigungslinie</a> </li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/Maschine/adminCRMaschinen.php?q=2222',myFunction1)">Maschinen</a> </li>
+              <li> <a href="#" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteil.php?q=2222',myFunction1)">Bauteile</a> </li>
+              <li role="separator" class="divider"></li>
+              <li> <a href="#" onclick="loadDoc('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">Abteilungsstatus</a></li>
+              <li> <a href="#" onclick="loadDoc('lib/php/user/userContentRequestDetail.php?q=2222',myFunction1)">Fertigungslinienstatus</a></li>
+              <li role="separator" class="divider"></li>
               <li> <a href="#" onclick="loadDoc('lib/php/inst/instCRAuftrag.php?q=2222',myFunction1)">Instandhaltung</a></li>
+              <li role="separator" class="divider"></li>
               <li> <a href="#" onclick="loadDoc('lib/php/user/userCRProduktionsplanung.php?q=2222',myFunction1)">Produktionsplanung</a></li>
-			  <li> <a href="#" onclick="loadDoc('lib/php/user/userCRSonderaufgaben.php?q=2222',myFunction1)">Sonderaufgaben</a></li>
-			  <li><a href="login.html">Logout</a></li>
+              <li role="separator" class="divider"></li>
+              <li> <a href="#" onclick="loadDoc('lib/php/user/userCRSonderaufgaben.php?q=2222',myFunction1)">Sonderaufgaben</a></li>
+              <li role="separator" class="divider"></li>
+              <li> <a href="login.html">Logout</a> </li>
             </ul>
           </li>
         </ul>
@@ -54,19 +65,19 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
           <li><a href="start.html">Home</a></li>
-          <li class="active">Login</li>
+          <li><a href="login.html">Login</a></li>
+          <li class="active">Administrator</li>
         </ol>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bottomFixedNavbar1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Statusmeldung</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information<span class="caret"></span></a>
+          <li> <a href="#">Systemstatus : OK</a> </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kommunikation<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">info1</a></li>
-              <li><a href="#">info2</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">info3</a></li>
+              <li><a href="#">eMail</a></li>
+              <li><a href="#">Anrufe</a></li>
+              <li><a href="#">Kurznachichten</a></li>
             </ul>
           </li>
         </ul>

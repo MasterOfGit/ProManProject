@@ -1,10 +1,11 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST["q"];
-echo "Abfragenummer : "  . $q . "<br>";
-echo "phpDateiName : "  . __FILE__ . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST["q"];
+//echo "Abfragenummer : "  . $q . "<br>";
+//echo "phpDateiName : "  . __FILE__ . "<br>";
 
-?>
+echo <<<DATA
+
 <div class="Sonderaufgaben">
   <div class="jumbotron">
     <div class="container">
@@ -191,3 +192,7 @@ echo "phpDateiName : "  . __FILE__ . "<br>";
     </div>
   </div>
 </div>
+
+DATA;
+
+?>

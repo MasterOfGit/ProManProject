@@ -1,7 +1,7 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST["q"];
+//echo "Anfrage : "  . $q . "<br>";
 
 //post request
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['savedb']) and isset($_POST['inventarID']))
@@ -68,12 +68,39 @@ echo <<<'HOME1_HEADER'
                   <th>Technologie</th>
                   <th>Standort</th>
                   <th>Status</th>
+				  <th></th>
                 </tr>
               </thead>
               <tbody>
 			  
+			  	<tr>
+                  <td>Maschine_1</td>
+                  <td>Scherre</td>
+                  <td>Drehen</td>
+                  <td>Werk 1 Halle 5 Feld D6</td>
+                  <td>Prouktiv</td>
+				  <td><input type="button" value="Maschine bearbeiten"  onclick="loadDoc('lib/php/admin/Maschine/adminCRMaschineBear.php?q=1111',myFunction1)"></td>
+                </tr>
+				
+				<tr>
+                  <td>Maschin_11232</td>
+                  <td>Weisser</td>
+                  <td>Schleifen</td>
+                  <td>Werk 16 Halle 1 Feld A7</td>
+                  <td>ImAufbau</td>
+				  <td><input type="button" value="Maschine bearbeiten"  onclick="loadDoc('lib/php/admin/Maschine/adminCRMaschineBear.php?q=1111',myFunction1)"></td>
+                </tr> 
+				<tr>
+                  <td>Maschin_888</td>
+                  <td>Weisser</td>
+                  <td>Schleifen</td>
+                  <td>Werk 16 Halle 3 Feld E1</td>
+                  <td>Umbau</td>
+				  <td><input type="button" value="Maschine bearbeiten"  onclick="loadDoc('lib/php/admin/Maschine/adminCRMaschineBear.php?q=1111',myFunction1)"></td>
+                </tr> 
+			  
 HOME1_HEADER;
-              foreach($json['Maschinen'] as $item)
+   /*           foreach($json['Maschinen'] as $item)
 				{
 				 
 				echo("<tr>");
@@ -85,10 +112,8 @@ HOME1_HEADER;
 	  			echo("<td><input type='button' value='Maschdaten bearbeiten' onclick='loadDoc('lib/php/admin/adminContentRequestMaschineBear.php?q=1111,myFunction1)'></td>");
 				echo("</tr>");
 				};
-					
-                  
-               
-                          
+	*/				
+
 echo <<<'HOME1_FOOTER'
 			</tbody>
 
@@ -159,7 +184,7 @@ echo <<<'MENU1_FOOTER'
                   <td>Schleifen</td>
                   <td></td>
                   <td>Neu</td>
-                  <td>Abteilung_17</td>
+                  <td></td>
                   <td>Hardfertigung</td>
 				  <td></td>	   
                   <td>Festrad_4</td>
@@ -168,6 +193,7 @@ echo <<<'MENU1_FOOTER'
                 </tr>
               </tbody>
             </table>
+			<input type="button" value="Neue Maschinen Verwendung anlegen" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST["q"];
-echo "Abfragenummer : "  . $q . "<br>";
-echo "phpDateiName : "  . __FILE__ . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST["q"];
+//echo "Abfragenummer : "  . $q . "<br>";
+//echo "phpDateiName : "  . __FILE__ . "<br>";
 
-?>
+echo <<<DATA
+
 <div class="produktionsprogramm">
   <div class="jumbotron">
     <div class="container">
@@ -13,7 +14,7 @@ echo "phpDateiName : "  . __FILE__ . "<br>";
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home800">Produktionsprogramm</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menue801">Supermarkt</a></li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menue801">Lagerbestand</a></li>
 		 
       </ul>
       
@@ -205,3 +206,6 @@ echo "phpDateiName : "  . __FILE__ . "<br>";
 
   </div>
 </div>	
+DATA;
+
+?>

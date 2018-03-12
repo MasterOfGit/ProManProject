@@ -1,7 +1,7 @@
 <?php
-echo "PHP Datenabfrage<br>";
-$q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
+//echo "PHP Datenabfrage<br>";
+//$q = $_REQUEST["q"];
+//echo "Anfrage : "  . $q . "<br>";
 
 $cSession = curl_init(); 
 curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageBauteil");
@@ -41,10 +41,37 @@ $json = json_decode($result, TRUE);
                   <th>Bearbeitungsstand</th>
                   <th>Version</th>
                   <th>Status</th>
-                </tr>
+                  <th></th>
+				  </tr>
               </thead>
               <tbody>
-              <?php foreach($json['Bauteile'] as $item) : ?>
+				 <tr>
+                  <td>123 123 423</td>
+                  <td>AB</td>
+                  <td>vorgedeht</td>
+                  <td>1.1.1</td>
+                  <td>serie</td>
+					 <td><input type="button" value="Bauteil bearbeiten" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)"></td>
+                </tr>  
+				   <tr>
+                  <td>123 123 423</td>
+                  <td>DD</td>
+                  <td>vorgedeht</td>
+                  <td>1.2</td>
+                  <td>nullserie</td>
+					   <td><input type="button" value="Bauteil bearbeiten" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)"></td>
+                </tr> 
+				     <tr>
+                  <td>123 123 423</td>
+                  <td>XX</td>
+                  <td>vorgedeht</td>
+                  <td>1.0</td>
+                  <td>protoyp</td>
+						 <td><input type="button" value="Bauteil bearbeiten" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)"></td>
+                </tr> 
+				  
+				  
+              <!--<?php foreach($json['Bauteile'] as $item) : ?>
                 <tr>
                   <td>not defined. Gibt es nicht in der Datenbank!</td>
                   <td><?= $item['ID'] ?></td>
@@ -53,12 +80,13 @@ $json = json_decode($result, TRUE);
                   <td><?= $item['Teilart'] ?></td>
                   <td><input type="button" value="Bauteildaten bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilBear.php?q=1111',myFunction1)" ></td>
                 </tr>
-                <?php endforeach ?>
+                <?php endforeach ?>-->
               </tbody>
             </table>
             <input type="button" value="Neues Bauteil" onclick="loadDoc('lib/php/admin/Bauteil/adminCRBauteilBear.php?q=1111',myFunction1)">
           </div>
         </div>
+		  
         <div id="menu40" class="container tab-pane active"><br>
           <h3>Maschinen</h3>
           <form class="form-inline" action="/action_page.php">
@@ -116,7 +144,8 @@ $json = json_decode($result, TRUE);
 				
               </tbody>
             </table>
-          </div>
+          <input type="button" value="Neue Bauteil Verwendung anlegen" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)"></td>
+			</div>
         </div>
       </div>
     </div>
