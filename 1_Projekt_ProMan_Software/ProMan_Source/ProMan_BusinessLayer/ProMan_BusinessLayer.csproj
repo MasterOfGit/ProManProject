@@ -66,6 +66,7 @@
     <Compile Include="Models\FertigungDto.cs" />
     <Compile Include="Models\FertigungslinieDto.cs" />
     <Compile Include="Models\MaschineDto.cs" />
+    <Compile Include="Models\Maschinenfuehrer\MFAbteilungOverviewDto.cs" />
     <Compile Include="Models\Maschinenfuehrer\MFFertigungDto.cs" />
     <Compile Include="Models\Maschinenfuehrer\MFInstandhaltung.cs" />
     <Compile Include="Models\Maschinenfuehrer\MFLinieDto.cs" />

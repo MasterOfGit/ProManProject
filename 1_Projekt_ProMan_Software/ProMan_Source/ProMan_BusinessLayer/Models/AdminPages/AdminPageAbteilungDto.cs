@@ -1,14 +1,38 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 
 namespace ProMan_BusinessLayer.Models.AdminPages
 {
     public class AdminPageAbteilungDto
     {
-        public List<AbteilungDto> Abteilungen { get; set; }
+        public List<ExtendedAdminAbteilungenDto> Abteilungen { get; set; }
 
-        public List<string> Abteilungsnamen { get; set; }
-        public List<string> Fertigungsnamen { get; set; }
+        public List<string> Abteilungsnamen
+        {
+            get
+            {
+                return Abteilungen.Select(x => x.Name).Distinct().ToList();
+            }
+            set
+            {
+            }
+        }
+
 
     }
+
+    public class ExtendedAdminAbteilungenDto : AbteilungDto
+    {
+        public List<string> Fertigungsnamen 
+        {
+            get
+            {
+                return Fertigungen.Select(x => x.Name).Distinct().ToList();
+            }
+            set
+            {
+            }
+        }
+    }
+
 }

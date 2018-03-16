@@ -51,6 +51,7 @@ namespace ProMan_BusinessLayer.DataProvider
 
         List<MFFertigungDto> GetMFFertigungDto();
         MFInstandhaltung GetMFInstandhaltung();
-        MFLinieDto GetMFLinieDto();
+        MFAbteilungOverviewDto GetMFAbteilungOverviewDto(int id);
+        MFLinieDto GetMFLinieDto(int id);
     }
 }
