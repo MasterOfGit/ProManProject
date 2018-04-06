@@ -28,7 +28,7 @@ namespace ProMan_WebAPI.Controllers
                 case "MFAbteilungOverviewDto":
                     returnvalue = JToken.FromObject(dataprovider.GetMFAbteilungOverviewDto(1));
                     break;
-                case "GetMFLinieDto":
+                case "MFLinieDto":
                     returnvalue = JToken.FromObject(dataprovider.GetMFLinieDto(1));
                     break;
                 default:

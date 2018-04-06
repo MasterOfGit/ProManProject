@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ProMan_Database.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ProMan_Database.Model
 {
@@ -12,10 +10,23 @@ namespace ProMan_Database.Model
     {
         public int LoginID { get; set; }
         public DateTime? LastLogin { get; set; }
+
+        //[ForeignKey("Mitarbeiter")]
+        //public int MitarbeiterID { get; set; }
+        //public virtual Mitarbeiter Mitarbeiter { get; set; }
+
         [Index(IsUnique = true)]
+        [Required]
         [StringLength(100)]
         public string Username { get; set; }
+        [Required]
         [StringLength(100)]
         public string Password { get; set; }
+        [Required]
+        public AufgabenGruppe LoginType { get; set; }
+
+
+        
+
     }
 }

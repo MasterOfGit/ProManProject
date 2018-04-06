@@ -14,7 +14,6 @@ namespace ProMan_Database.Model
         public DateTime? Endtermin { get; set; }
         [StringLength(100)]
         public string Aufgabe { get; set; }
-        [StringLength(100)]
         public int Abschlussnote { get; set; }
         [StringLength(100)]
         public string Bereich { get; set; }

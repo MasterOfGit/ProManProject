@@ -23,6 +23,7 @@ namespace ProMan_Database.Model
         public string Bemerkung { get; set; }
 
         public EFImage Passbild { get; set; }
+
         public Login Login { get; set; }
 
         public virtual ICollection<Nachricht> Nachrichten { get; set; }

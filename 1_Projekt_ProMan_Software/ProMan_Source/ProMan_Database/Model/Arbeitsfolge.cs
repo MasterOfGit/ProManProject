@@ -1,6 +1,7 @@
 ﻿using ProMan_Database.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace ProMan_Database.Model
     public class Arbeitsfolge
     {
         public int ArbeitsfolgeID { get; set; }
+
+        [StringLength(450)]
         [Index(IsUnique = true)]
         public string ArbeitsfolgeName { get; set; }
         public ICollection<Maschine> Maschinen { get; set; }

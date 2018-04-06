@@ -569,6 +569,78 @@ namespace ProMan_BusinessLayer.DataProvider
             return item;
         }
 
+        public LoginDto GetLoginDto(int id)
+        {
+            var item = dbcontext.Logins.FirstOrDefault(x => x.LoginID == id);
+
+            var mitarbeiter = dbcontext.Mitarbeiter.FirstOrDefault(x => x.Login.LoginID == id);
+
+            return new LoginDto()
+            {
+                //AnzeigeName = $"{mitarbeiter.Namenszusatz} {mitarbeiter.Nachname}",
+                AnzeigeName = item.Username,
+                LoginName = item.Username,
+                Password = item.Password,
+                LoginType = item.LoginType.ToString()
+            };
+        }
+
+        public LoginDto GetLoginDto(string username, string password)
+        {
+            var item = dbcontext.Logins.FirstOrDefault(x => x.Username == username && x.Password == password);
+            var mitarbeiter = dbcontext.Mitarbeiter.FirstOrDefault(x => x.Login.LoginID == item.LoginID);
+            item.LastLogin = DateTime.Now;
+
+            dbcontext.SaveChanges();
+
+            return new LoginDto()
+            {
+                //AnzeigeName = $"{mitarbeiter.Namenszusatz} {mitarbeiter.Nachname}",
+                AnzeigeName = item.Username,
+                LoginName = item.Username,
+                Password = item.Password,
+                LoginType = item.LoginType.ToString()
+            };
+        }
+
+        public bool SetLoginDto(LoginDto data)
+        {
+            AufgabenGruppe tmp;
+
+            Enum.TryParse(data.LoginType, out tmp);
+
+            dbcontext.Logins.Add(new ProMan_Database.Model.Login()
+            {
+                Username = data.LoginName,
+                Password = data.Password,
+                LoginType = tmp,
+            });
+
+            dbcontext.SaveChanges();
+            return true;
+
+        }
+
+        public bool UpdateLoginDto(LoginDto data, int id)
+        {
+            var item = dbcontext.Logins.FirstOrDefault(x => x.LoginID == id);
+
+            AufgabenGruppe tmp;
+
+            Enum.TryParse(data.LoginType, out tmp);
+
+            dbcontext.Logins.Add(new ProMan_Database.Model.Login()
+            {
+                Username = data.LoginName,
+                Password = data.Password,
+                LoginType = tmp,
+            });
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
         #endregion
     }
 }

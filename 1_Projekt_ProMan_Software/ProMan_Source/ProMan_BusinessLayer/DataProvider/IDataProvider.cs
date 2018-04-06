@@ -42,6 +42,11 @@ namespace ProMan_BusinessLayer.DataProvider
         bool SetNachrichtDto(NachrichtDto data);
         bool UpdateNachrichtDto(NachrichtDto data, int id);
 
+        LoginDto GetLoginDto(int id);
+        LoginDto GetLoginDto(string username, string password);
+        bool SetLoginDto(LoginDto data);
+        bool UpdateLoginDto(LoginDto data, int id);
+
         AdminPageUserDto GetAdminPageUserDto();
         AdminPageAbteilungDto GetAdminPageAbteilungDto();
         AdminPageBauteilDto GetAdminPageBauteilDto();

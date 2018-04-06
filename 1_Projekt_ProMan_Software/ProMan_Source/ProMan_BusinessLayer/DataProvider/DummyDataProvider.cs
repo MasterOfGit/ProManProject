@@ -4,6 +4,7 @@ using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
 using System.Linq;
+using ProMan_Database.Enums;
 
 namespace ProMan_BusinessLayer.DataProvider
 {
@@ -718,6 +719,40 @@ namespace ProMan_BusinessLayer.DataProvider
             var item = new MFInstandhaltung();
 
             return item;
+        }
+
+        public LoginDto GetLoginDto(int id)
+        {
+            return new LoginDto()
+            {
+                AnzeigeName = "Herr Login",
+                LoginName = "Login",
+                Password = "*****",
+                LoginType = AufgabenGruppe.Administrator.ToString()
+
+            };
+        }
+
+        public LoginDto GetLoginDto(string username, string password)
+        {
+            return new LoginDto()
+            {
+                AnzeigeName = "Herr Login",
+                LoginName = username,
+                Password = password,
+                LoginType = AufgabenGruppe.Administrator.ToString()
+
+            };
+        }
+
+        public bool SetLoginDto(LoginDto data)
+        {
+            return true;
+        }
+
+        public bool UpdateLoginDto(LoginDto data, int id)
+        {
+            return true;
         }
 
 

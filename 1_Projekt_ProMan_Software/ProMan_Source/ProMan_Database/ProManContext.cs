@@ -9,6 +9,7 @@ namespace ProMan_Database
         public ProManContext()
     : base("ProManDB")
         {
+            
         }
         public DbSet<Abteilung> Abteilungen { get; set; }
         public DbSet<Arbeitsfolge> Arbeitsfolgen { get; set; }
