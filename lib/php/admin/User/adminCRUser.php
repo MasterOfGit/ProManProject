@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="de">
+<body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
 <?php
 //echo "PHP Datenabfrage<br>";
 //$q = $_REQUEST["q"];
@@ -5,7 +14,7 @@
 
 // Data load
 $cSession = curl_init(); 
-curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/adminPage/?identifier=AdminPageUser");
+curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
 curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
 curl_setopt($cSession,CURLOPT_HEADER, false); 
 $result=curl_exec($cSession);
@@ -17,7 +26,7 @@ curl_close($cSession);
 $json = json_decode($result, TRUE);
 
 
- 
+
 
 echo <<<'HOME1_HEADER'
 <div class="User">
@@ -36,10 +45,7 @@ echo <<<'HOME1_HEADER'
       <div class="tab-content">
         <div id="home30" class="container tab-pane active"><br>
           <h3>Alle User</h3>
-          <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
+        
           <div class="table-responsive-sm">
             <table class="table">
               <thead>
@@ -64,8 +70,12 @@ HOME1_HEADER;
 	  			echo("<td>{$item['Nachname']}</td>");
 				echo("<td>{$item['eMail'] }</td>");
 				echo("<td>{$item['Festnetz']}</td>");
+	  
 	  			echo("<td><input class='form-check-input' type='checkbox' value={$item['Active']} id='defaultCheck2' disabled><td>");
-				echo("<td><input type='button' value='Bearbeiten'></td>");
+	  
+	  			//value = {$item['ID']};
+				echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$item['ID']});'></td>");
+	  
 				echo("</tr>");
 				};
 
@@ -154,3 +164,9 @@ echo <<<'MENU2_HEADER'
 </div>
 MENU2_HEADER;
 ?>
+
+ <input type="button" onclick="testbuttonaction('UserID');" value="Testbutton"> 
+</body>
+
+
+</html>

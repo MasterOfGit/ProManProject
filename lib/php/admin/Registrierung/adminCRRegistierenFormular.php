@@ -1,3 +1,4 @@
+
 <?php
 echo "PHP Datenabfrage<br>";
 $q = $_REQUEST[ "q" ];
@@ -6,9 +7,8 @@ echo "Anfrage : " . $q . "<br>";
 ?>
 
 <div class="jumbotron">
-	<h1>Registrieren </h1>
 	<div class="jumbotron">
-		<h1>Bitte geben sie ihre Daten ein !!</h1>
+		<h3>Bitte geben sie ihre Daten ein !!</h3>
 		<form>
 			<div class="form-group">
 
@@ -66,11 +66,17 @@ echo "Anfrage : " . $q . "<br>";
 
 			</div>
 
-			<button type="button" 
-					class="btn btn-primary" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)">
+		<button type="button" 
+					class="btn btn-primary" onclick="saveData('http://zoomnation.selfhost.eu:8080/ProManAPI/api/User', 'TESTDATEN');">
 				Senden</button>
+			
+					
 			<button type="reset" class="btn btn-primary">alles löschen</button>
 
 		</form>
 	</div>
 </div>
+
+
+									
+								
