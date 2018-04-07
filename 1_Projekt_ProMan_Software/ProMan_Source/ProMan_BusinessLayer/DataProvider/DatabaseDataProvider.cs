@@ -220,6 +220,8 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public bool SetUserDto(UserDto data)
         {
+            var userlogin = dbcontext.Logins.FirstOrDefault(x => x.LoginID == data.LoginId);
+
             dbcontext.Mitarbeiter.Add(new ProMan_Database.Model.Mitarbeiter()
             {
                 Vorname = data.Vorname,
@@ -228,6 +230,9 @@ namespace ProMan_BusinessLayer.DataProvider
                 Festnetz = data.Festnetz,
                 Mobil = data.Mobil,
                 Bemerkung = data.Bemerkung,
+                Active = data.Active,
+                Namenszusatz = data.Namenszusatz,
+                Login = userlogin,
             }
                 );
 
@@ -493,17 +498,90 @@ namespace ProMan_BusinessLayer.DataProvider
         }
 
 
-
-
-
         public NachrichtDto GetNachrichtDto(int id)
         {
-            throw new NotImplementedException();
+            var item = dbcontext.Nachrichten.FirstOrDefault(x => x.NachrichtID == id);
+
+            NachrichtDto nachricht = new NachrichtDto()
+            {
+                ID = item.NachrichtID,
+                Betreff = item.Betreff,
+                Gelesen = item.Gelesen,
+                SendDate = item.SendDate.Value,
+                Text = item.Text,
+                Type = item.Type,
+                From = new UserDto()
+                {
+                    Vorname = item.From.Vorname,
+                    Nachname = item.From.Nachname,
+                    eMail = item.From.eMail
+                },
+                To = new UserDto()
+                {
+                    Vorname = item.To.Vorname,
+                    Nachname = item.To.Nachname,
+                    eMail = item.To.eMail
+                },
+
+            };
+
+            return nachricht;
+
+        }
+        public List<NachrichtDto> GetNarichtenFromUser(int UserID, DateTime fromDate)
+        {
+            var items = dbcontext.Nachrichten.Where(x => x.From.MitarbeiterID == UserID);
+
+            List<NachrichtDto> nachrichten = new List<NachrichtDto>();
+
+            foreach(var item in items)
+            {
+                nachrichten.Add(new NachrichtDto()
+                {
+                    ID = item.NachrichtID,
+                    Betreff = item.Betreff,
+                    Gelesen = item.Gelesen,
+                    SendDate = item.SendDate.Value,
+                    Text = item.Text,
+                    Type = item.Type,
+                    From = new UserDto()
+                    {
+                        Vorname = item.From.Vorname,
+                        Nachname = item.From.Nachname,
+                        eMail = item.From.eMail
+                    },
+                    To = new UserDto()
+                    {
+                        Vorname = item.To.Vorname,
+                        Nachname = item.To.Nachname,
+                        eMail = item.To.eMail
+                    },
+
+                });
+            }
+            return nachrichten;
         }
 
         public bool SetNachrichtDto(NachrichtDto data)
         {
-            throw new NotImplementedException();
+            var userfrom = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.From.ID);
+            var userto = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.To.ID);
+
+            dbcontext.Nachrichten.Add(new ProMan_Database.Model.Nachricht()
+            {
+                Betreff = data.Betreff,
+                Gelesen = false,
+                Text = data.Text,
+                SendDate = data.SendDate,
+                Type = data.Type,
+                From = userfrom,
+                To = userto,
+                
+            });
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool UpdateNachrichtDto(NachrichtDto data, int id)
@@ -603,7 +681,7 @@ namespace ProMan_BusinessLayer.DataProvider
             };
         }
 
-        public bool SetLoginDto(LoginDto data)
+        public int SetLoginDto(LoginDto data)
         {
             AufgabenGruppe tmp;
 
@@ -617,7 +695,9 @@ namespace ProMan_BusinessLayer.DataProvider
             });
 
             dbcontext.SaveChanges();
-            return true;
+
+
+            return dbcontext.Logins.FirstOrDefault(x => x.Username == data.LoginName && x.LoginType == tmp).LoginID;
 
         }
 

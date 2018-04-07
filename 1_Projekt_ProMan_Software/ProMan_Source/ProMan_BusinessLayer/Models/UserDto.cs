@@ -13,5 +13,6 @@ namespace ProMan_BusinessLayer.Models
         public string Mobil { get; set; }
         public string eMail { get; set; }
         public string Bemerkung { get; set; }
+        public int LoginId { get; set; }
     }
 }

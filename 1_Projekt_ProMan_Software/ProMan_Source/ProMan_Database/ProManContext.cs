@@ -22,6 +22,7 @@ namespace ProMan_Database
         public DbSet<Login> Logins { get; set; }
         public DbSet<Maschine> Maschinen { get; set; }
         public DbSet<Mitarbeiter> Mitarbeiter { get; set; }
+        public DbSet<Nachricht> Nachrichten { get; set; }
         public DbSet<Produktionsprogramm> Produktionsprogramme { get; set; }
         public DbSet<Reparatur> Reparaturen { get; set; }
         public DbSet<Sonderaufgabe> Sonderaufgaben { get; set; }

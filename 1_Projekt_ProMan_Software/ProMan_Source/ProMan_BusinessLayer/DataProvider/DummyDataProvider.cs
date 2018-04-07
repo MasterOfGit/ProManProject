@@ -594,7 +594,46 @@ namespace ProMan_BusinessLayer.DataProvider
 
         public NachrichtDto GetNachrichtDto(int id)
         {
-            throw new NotImplementedException();
+            return new NachrichtDto()
+            {
+                Betreff = "Hallo Betreff",
+                Text = "Hallo Text",
+                Gelesen = false,
+                ID = id,
+                From = GetUserDto(1),
+                To = GetUserDto(2),
+                SendDate = DateTime.Now,
+                Type = NachrichtenTyp.EMail
+            };
+        }
+
+        public List<NachrichtDto> GetNarichtenFromUser(int UserID, DateTime fromDate)
+        {
+            return new List<NachrichtDto>()
+            {
+                            new NachrichtDto()
+                            {
+                                Betreff = "Hallo Betreff",
+                                Text = "Hallo Text",
+                                Gelesen = false,
+                                ID = UserID,
+                                From = GetUserDto(1),
+                                To = GetUserDto(2),
+                                SendDate = DateTime.Now,
+                                Type = NachrichtenTyp.EMail
+                            },
+                         new NachrichtDto()
+                        {
+                            Betreff = "Hallo Betreff2",
+                            Text = "Hallo Text2",
+                            Gelesen = false,
+                            ID = UserID,
+                            From = GetUserDto(1),
+                            To = GetUserDto(2),
+                            SendDate = DateTime.Now,
+                            Type = NachrichtenTyp.EMail
+                        }
+        };
         }
 
         public bool SetNachrichtDto(NachrichtDto data)
@@ -646,9 +685,9 @@ namespace ProMan_BusinessLayer.DataProvider
                         ReparaturenCount = 1,
                         WartungenCount = 0
                     }
-                },         
+                },
             };
-                
+
             return item;
 
         }
@@ -745,9 +784,9 @@ namespace ProMan_BusinessLayer.DataProvider
             };
         }
 
-        public bool SetLoginDto(LoginDto data)
+        public int SetLoginDto(LoginDto data)
         {
-            return true;
+            return 1;
         }
 
         public bool UpdateLoginDto(LoginDto data, int id)

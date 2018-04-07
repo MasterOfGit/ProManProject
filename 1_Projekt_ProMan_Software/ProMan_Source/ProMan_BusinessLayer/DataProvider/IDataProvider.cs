@@ -1,6 +1,7 @@
 ﻿using ProMan_BusinessLayer.Models;
 using ProMan_BusinessLayer.Models.AdminPages;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
+using System;
 using System.Collections.Generic;
 
 namespace ProMan_BusinessLayer.DataProvider
@@ -39,12 +40,13 @@ namespace ProMan_BusinessLayer.DataProvider
         bool UpdateAbteilungDto(AbteilungDto data, int id);
 
         NachrichtDto GetNachrichtDto(int id);
+        List<NachrichtDto> GetNarichtenFromUser(int UserID, DateTime fromDate);
         bool SetNachrichtDto(NachrichtDto data);
         bool UpdateNachrichtDto(NachrichtDto data, int id);
 
         LoginDto GetLoginDto(int id);
         LoginDto GetLoginDto(string username, string password);
-        bool SetLoginDto(LoginDto data);
+        int SetLoginDto(LoginDto data);
         bool UpdateLoginDto(LoginDto data, int id);
 
         AdminPageUserDto GetAdminPageUserDto();

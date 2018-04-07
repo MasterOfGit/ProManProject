@@ -10,6 +10,7 @@
         public const string UserDtoName = "User";
         public const string ReparaturDtoName = "Reparatur";
         public const string WartungDtoName = "Wartung";
+        public const string LoginDtoName = "Login";
 
         public const string AdminPageAbteilung = "AdminPageAbteilung";
         public const string AdminPageBauteil = "AdminPageBauteil";

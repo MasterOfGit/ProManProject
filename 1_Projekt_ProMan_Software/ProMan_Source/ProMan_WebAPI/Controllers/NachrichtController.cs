@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -21,6 +22,15 @@ namespace ProMan_WebAPI.Controllers
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetNachrichtDto(id)));
+        }
+
+        // GET: api/Nachricht/5
+        public IHttpActionResult Get(int UserID,DateTime? fromDate)
+        {
+            if (fromDate == null)
+                fromDate = DateTime.Now.AddDays(-7);
+                
+            return Ok(JToken.FromObject(dataprovider.GetNachrichtDto(UserID)));
         }
 
         // POST: api/Nachricht

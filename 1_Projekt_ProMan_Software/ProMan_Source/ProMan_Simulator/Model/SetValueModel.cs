@@ -147,6 +147,11 @@ namespace ProMan_Simulator.Model
                     SetValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
                     SetValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
                     break;
+                case ObjectDtos.LoginDtoName:
+                    SetValues.Add(new SetValuesHelper() { Label = "Username", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "Passwort", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "UserType", Value = "" });
+                    break;
                 default:                   
                     SetValues.Add(new SetValuesHelper() { Label = "Test", Value = "Content" });
                     SetValues.Add(new SetValuesHelper() { Label = "Test2", Value = "Content2" });
@@ -213,6 +218,15 @@ namespace ProMan_Simulator.Model
                     _httphelper.HttpPost($"api/wartung", new WartungDto()
                     {
                 
+                    }).Wait();
+                    break;
+                case ObjectDtos.LoginDtoName:
+                    _httphelper.HttpPost($"api/login", new LoginDto()
+                    {
+                        AnzeigeName = SetValues.ToList().FirstOrDefault(x => x.Label == "Username").Value,
+                        LoginName = SetValues.ToList().FirstOrDefault(x => x.Label == "Username").Value,
+                        Password = SetValues.ToList().FirstOrDefault(x => x.Label == "Passwort").Value,
+                        LoginType = SetValues.ToList().FirstOrDefault(x => x.Label == "UserType").Value,
                     }).Wait();
                     break;
                 default:

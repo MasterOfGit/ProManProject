@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using ProMan_WebAPI.Base;
 using ProMan_BusinessLayer.Models;
 using Newtonsoft.Json.Linq;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("login")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LoginController : BaseApiController
     {
         // GET api/<controller>
@@ -34,9 +32,9 @@ namespace ProMan_WebAPI.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]LoginDto value)
+        public IHttpActionResult Post([FromBody]LoginDto value)
         {
-            dataprovider.SetLoginDto(value);
+            return Ok(dataprovider.SetLoginDto(value));
         }
 
         // PUT api/<controller>/5

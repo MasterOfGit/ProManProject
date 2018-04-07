@@ -215,6 +215,12 @@ namespace ProMan_Simulator.Model
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
+                case ObjectDtos.LoginDtoName:
+                    {
+                        var item = _httphelper.HttpGet<LoginDto>($"api/login/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
                 #endregion
                 #region adminpages
                 case ObjectDtos.AdminPageAbteilung:
