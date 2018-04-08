@@ -49,10 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataProvider\DatabaseDataProvider.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseDataProvider.cs" />
     <Compile Include="DataProvider\DataProviderFactory.cs" />
-    <Compile Include="DataProvider\DummyDataProvider.cs" />
-    <Compile Include="DataProvider\IDataProvider.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseCreateData.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseDelete.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseGetList.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseGetSingle.cs" />
+    <Compile Include="DataProvider\DBData\DatabaseUpdate.cs" />
+    <Compile Include="DataProvider\DummyData\DummyDelete.cs" />
+    <Compile Include="DataProvider\DummyData\DummyGetList.cs" />
+    <Compile Include="DataProvider\DummyData\DummyCreateData.cs" />
+    <Compile Include="DataProvider\DummyData\DummyDataProvider.cs" />
+    <Compile Include="DataProvider\DummyData\DummyGetSingle.cs" />
+    <Compile Include="DataProvider\DummyData\DummyUpdate.cs" />
+    <Compile Include="DataProvider\Interfaces\IDataProvider.cs" />
+    <Compile Include="DataProvider\Interfaces\IDeleteDataProvider.cs" />
+    <Compile Include="DataProvider\Interfaces\ICreateDataProvider.cs" />
+    <Compile Include="DataProvider\Interfaces\IGetListDataProvider.cs" />
+    <Compile Include="DataProvider\Interfaces\IGetSingleProvider.cs" />
+    <Compile Include="DataProvider\Interfaces\IUpdateDataProvider.cs" />
     <Compile Include="Models\AbteilungDto.cs" />
     <Compile Include="Models\AdminPages\AdminPageAbteilungDto.cs" />
     <Compile Include="Models\AdminPages\AdminPageBauteilDto.cs" />

@@ -14,27 +14,27 @@ namespace ProMan_WebAPI.Controllers
     {
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<ReparaturDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetReparaturDto(); ;
         }
 
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetReparaturDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetReparaturDto(id)));
         }
 
         // POST api/<controller>
         public void Post([FromBody]ReparaturDto value)
         {
-            dataprovider.SetReparaturDto(value);
+            dataprovider.CreateDataProvider.SetReparaturDto(value);
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]ReparaturDto value)
         {
-            dataprovider.UpdateReparaturDto(value, id);
+            dataprovider.UpdateDataProvider.UpdateReparaturDto(value, id);
         }
 
         // DELETE api/<controller>/5

@@ -22,22 +22,22 @@ namespace ProMan_WebAPI.Controllers
             switch (identifier)
             {
                 case "AdminPageAbteilung":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageAbteilungDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageAbteilungDto());
                     break;
                 case "AdminPageBauteil":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageBauteilDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageBauteilDto());
                     break;
                 case "AdminPageFertigung":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageFertigungDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageFertigungDto());
                     break;
                 case "AdminPageFertigungslinie":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageFertigungslinieDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageFertigungslinieDto());
                     break;
                 case "AdminPageMaschine":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageMaschineDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageMaschineDto());
                     break;
                 case "AdminPageUser":
-                    returnvalue = JToken.FromObject(dataprovider.GetAdminPageUserDto());
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetAdminPageUserDto());
                     break;
                 default:
                     break;

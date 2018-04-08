@@ -11,27 +11,27 @@ namespace ProMan_WebAPI.Controllers
     public class AbteilungController : BaseApiController
     {
         // GET: api/Abteilung
-        public IEnumerable<string> Get()
+        public IEnumerable<AbteilungDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetAbteilungDto();
         }
 
         // GET: api/Abteilung/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetAbteilungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetAbteilungDto(id)));
         }
 
         // POST: api/Abteilung
         public void Post([FromBody]AbteilungDto value)
         {
-            dataprovider.SetAbteilungDto(value);
+            dataprovider.CreateDataProvider.SetAbteilungDto(value);
         }
 
         // PUT: api/Abteilung/5
         public void Put(int id, [FromBody]AbteilungDto value)
         {
-            dataprovider.UpdateAbteilungDto(value,id);
+            dataprovider.UpdateDataProvider.UpdateAbteilungDto(value,id);
         }
 
         // DELETE: api/Abteilung/5

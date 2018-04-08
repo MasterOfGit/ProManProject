@@ -13,9 +13,9 @@ namespace ProMan_WebAPI.Controllers
     {
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<FertigungslinieDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetFertigungslinieDto();
         }
 
         // GET api/<controller>/5
@@ -23,19 +23,19 @@ namespace ProMan_WebAPI.Controllers
         {
 
 
-            return Ok(JToken.FromObject(dataprovider.GetFertigungslinieDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungslinieDto(id)));
         }
 
         // POST api/<controller>
         public void Post([FromBody]FertigungslinieDto value)
         {
-            dataprovider.SetFertigungslinieDto(value);
+            dataprovider.CreateDataProvider.SetFertigungslinieDto(value);
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]FertigungslinieDto value)
         {
-            dataprovider.UpdateFertigungslinieDto(value, id);
+            dataprovider.UpdateDataProvider.UpdateFertigungslinieDto(value, id);
         }
 
         // DELETE api/<controller>/5

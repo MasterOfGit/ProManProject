@@ -42,12 +42,12 @@ namespace ProMan_Test
 
         public void SetTest()
         {
-            dataprovider.SetFertigungsDto(fertDto);
-            dataprovider.SetFertigungslinieDto(fertlinieDto);
-            dataprovider.SetMaschineDto(maschdto);
-            dataprovider.SetUserDto(userDto);
-            dataprovider.SetWartungDto(wartDto);
-            dataprovider.SetReparaturDto(repaDto);
+            dataprovider.CreateDataProvider.SetFertigungsDto(fertDto);
+            dataprovider.CreateDataProvider.SetFertigungslinieDto(fertlinieDto);
+            dataprovider.CreateDataProvider.SetMaschineDto(maschdto);
+            dataprovider.CreateDataProvider.SetUserDto(userDto);
+            dataprovider.CreateDataProvider.SetWartungDto(wartDto);
+            dataprovider.CreateDataProvider.SetReparaturDto(repaDto);
 
         } 
 

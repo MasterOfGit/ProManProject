@@ -11,27 +11,27 @@ namespace ProMan_WebAPI.Controllers
     public class FertigungController : BaseApiController
     {
         // GET: api/Fertigung
-        public IEnumerable<string> Get()
+        public IEnumerable<FertigungDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetFertigungsDto();
         }
 
         // GET: api/Fertigung/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetFertigungsDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungsDto(id)));
         }
 
         // POST api/<controller>
         public void Post([FromBody]FertigungDto value)
         {
-            dataprovider.SetFertigungsDto(value);
+            dataprovider.CreateDataProvider.SetFertigungsDto(value);
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]FertigungDto value)
         {
-            dataprovider.UpdateFertigungsDto(value, id);
+            dataprovider.UpdateDataProvider.UpdateFertigungsDto(value, id);
         }
 
         // DELETE: api/Fertigung/5
