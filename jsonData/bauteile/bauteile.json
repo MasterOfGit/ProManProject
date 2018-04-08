@@ -1,0 +1,43 @@
+{
+	"bauteile":
+	[
+		{
+			"bauteileID"			:	1,
+			"bauteinNummer"			:	"120 150 115",
+			"bauteilIndex"			:	"A",
+			"bauteilVersiom"		:	"3.1",
+			"bauteilArt"			:	"Zahnrad",
+			"bauteilStatus"			:	"Serienteil",
+			"bauteilIDNachfolger"	:	null
+		},
+		{
+			"bauteileID"			:	2,
+			"bauteinNummer"			:	"323 855 115",
+			"bauteilIndex"			:	"B",
+			"bauteilVersiom"		:	"1.4",
+			"bauteilArt"			:	"Zahnrad",
+			"bauteilStatus"			:	"Vorserie",
+			"bauteilIDNachfolger"	:	null
+		},
+		{
+			"bauteileID"			:	3,
+			"bauteinNummer"			:	"323 855 115",
+			"bauteilIndex"			:	"AX",
+			"bauteilVersiom"		:	"1.0",
+			"bauteilArt"			:	"Zahnrad",
+			"bauteilStatus"			:	"Auslauf",
+			"bauteilIDNachfolger"	: 	"111 111 111"
+		},
+		{
+			"bauteileID"			:	4,
+			"bauteinNummer"			:	"111 111 111",
+			"bauteilIndex"			:	"X",
+			"bauteilVersiom"		:	"0.0",
+			"bauteilArt"			:	"Zahnrad",
+			"bauteilStatus"			:	"Neuteil",
+			"bauteilIDNachfolger"	: 	null
+			
+		}
+		
+	]
+}

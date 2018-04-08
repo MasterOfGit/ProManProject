@@ -3,143 +3,166 @@
 //$q = $_REQUEST["q"];
 //echo "Anfrage : "  . $q . "<br>";
 
+// Data load
 $ch1 = curl_init();
+$ch2 = curl_init();
+//$ch3 = curl_init();
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageBauteil");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
+
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
+
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
-$result=curl_exec($ch1);
-$json = json_decode( $result, TRUE );
-curl_close( $ch1 );
+$bauteile=curl_exec($ch1);
+curl_close($ch1);
 
-print_r($result);
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteileVerwendung.json");
+curl_setopt($ch2, CURLOPT_HEADER, 0);
+curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
+$bauteilVerwendung=curl_exec($ch2);
+curl_close($ch2);
+
+
+// Testausgabe
+//print_r($bauteile);
+//echo("<br>");
+//echo("<br>");
+//print_r($userLogin);
+//echo("<br>");
+//echo("<br>");
+//print_r($userAnfragen);
+	
+// Unwandlung von json in Array	
+$jsonbauteile = json_decode($bauteile, TRUE);
+$jsonbauteilVerwendung = json_decode($bauteilVerwendung, TRUE);
+
+//print_r($jsonbauteile);
+//echo("<br>");
+//echo("<br>");
+//print_r($bauteilVerwendung);
 echo <<<'HOME1_HEADER'
-<div class="Bauteil">
-	<div class="jumbotron">
-		<div class="container">
-			<h2>Bauteil</h2>
-			<br>
-			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-				<li class="nav-item"> 
-					<a class="nav-link active" data-toggle="tab" href="#home1">Bauteie bearbeiten</a>&nbsp;</li>
-				<li class="nav-item"> 
-					<a class="nav-link" data-toggle="tab" href="#menu1">Bauteilverwendung</a>
-				</li>
-			</ul>
+<div class="User">
+  	<div class="jumbotron">
+    	<div class="container">
 
-			<!-- Tab panes -->
-			<div class="tab-content">
-				<div id="home1" class="container tab-pane fade aktive"><br>
-					
-					<div class="table-responsive-sm">
+			<ul class="nav nav-tabs">
+			  <li class="active">
+			  	<a data-toggle="tab" href="#home1">Bauteil bearbeiten</a>
+			  </li>
+			  <li>
+			    <a data-toggle="tab" href="#menu1">Bauteilverwendung</a>
+			  </li>
+			 
+
+		   
+			 <!-- Tab panes -->
+			 <div class="tab-content">
+					<div id="home1" class="tab-pane fade in active"><br>
+
+					  <div class="table-responsive-sm">
 						<table class="table">
-							<thead>
-								<tr>
-									<th>Teilenummer</th>
-									<th>Index</th>
-									<th>Version</th>
-									<th>Verwendungsort</th>
-									<th>Abhaengigkkeit</th>
-									<th></th>
-								</tr>
-							</thead>
-						<tbody>
-
+						  <thead>
+							<tr>
+							  <th>BauteilID</th>
+							  <th>Bauteinummer</th>
+							  <th>Index</th>
+							  <th>Version</th>
+							  <th>Bauteilart</th>
+							  <th>Status</th>
+							  <th>Nachvolger</th>
+							</tr>
+						  </thead>
+						  <tbody>  
 HOME1_HEADER;
 
-foreach($json['Bauteile'] as $item)
-	{
-	echo("<tr>");
-	echo("<td>{$item['ID']}</td>");
-	echo("<td>{$item['Teilart']}</td>");
-	echo("<td>{$item['Version']}</td>");
-	echo("<td>{$item['Verwendungsort'] }</td>");
-	echo("<td>{$item['Abhaengigkeiten']}</td>");
-	
-	echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$item['ID']});'></td>");
-	echo("</tr>");
-	};
+				foreach($jsonbauteile['bauteile'] as $bauteil)
+				{
+				 
+					echo("<tr>");
+					echo("<td>{$bauteil['bauteileID']}</td>");
+					echo("<td>{$bauteil['bauteinNummer']}</td>");
+					echo("<td>{$bauteil['bauteilIndex']}</td>");
+					echo("<td>{$bauteil['bauteilVersiom']}</td>");
+					echo("<td>{$bauteil['bauteilArt'] }</td>");
+					echo("<td>{$bauteil['bauteilStatus']}</td>");
+					echo("<td>{$bauteil['bauteilIDNachfolger']}</td>");
+					echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$bauteil['bauteileID']});'></td>");
+				echo("</tr>");
+				};
+				echo("<td><input type='button' value='Neues Bauteil anlegen'  onclick='testbuttonaction();'></td>");
 
-echo <<<'HOME1_Footer'
 
-					</tbody>
-					</table>
-				  </div>
-				</div>
-HOME1_Footer;
+echo <<<HOME1_FOOTER
+						 </tbody>
+            		  </table>
+          		   </div>
+        		</div>
+		
+HOME1_FOOTER;
+
+			  
 
 echo <<<'MENU1_HEADER'
-<div id="menu1" class="container tab-pane"><br>
-					<h3>Maschinen</h3>
-					<form class="form-inline" action="/action_page.php">
-						<input class="form-control mr-sm-2" type="text" placeholder="Search">
-						<button class="btn btn-success" type="submit">Search</button>
-					</form>
-					<div class="table-responsive-sm">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Fertigungslinie</th>
-									<th>Teilenummer</th>
-									<th>Index</th>
-									<th>MaschinenID</th>
-									<th>Technologie</th>
-									<th>Bearbeitung</th>
-									<th>Bear.Schritt</th>
-									<th>GType</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Festrad 3</td>
-									<td>123 445 777</td>
-									<td>BB</td>
-									<td>112254</td>
-									<td>HardDrehen</td>
-									<td>PlanF 10a</td>
-									<td>1</td>
-									<td>5.Gang Getrieb 1254as8</td>
-									<td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-								<tr>
-									<td>Festrad 3</td>
-									<td>123 445 777</td>
-									<td>AD</td>
-									<td>125545</td>
-									<td>Verz.Schleifen</td>
-									<td>VZ Aussen</td>
-									<td>2</td>
-									<td>5.Gang Getrieb 1254as8</td>
-									<td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>123 445 777</td>
-									<td>NEU</td>
-									<td></td>
-									<td>Verz.Schleifen</td>
-									<td>VZ Aussen</td>
-									<td>2</td>
-									<td>5.Gang Getrieb 1254as99</td>
-									<td><input type="button" value="Verw. bearbeiten" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)">
-									</td>
-								</tr>
-
-							</tbody>
-						</table>
-						<input type="button" value="Neue Bauteil Verwendung anlegen" onclick="loadDoc('lib/php/admin/adminContentRequestBauteilVerwBear.php?q=1111',myFunction1)">
-						</td>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+			     <div id="menu1" class="tab-pane fade">           
+				  <div class="table-responsive-sm">
+					<table class="table">
+					  <thead>
+						<tr>
+						  <th>BauteilID</th>
+						  <th>Bauteilnummer</th>
+						  <th>Index</th>
+						  <th>Version</th>
+						  <th>Fertigungslinie</th>
+						  <th>Technologie</th>
+						  <th>Bearbeitungsschritt</th>
+						   <th>Verwendungszweck</th>
+						</tr>
+					  </thead>
+					  <tbody>
 MENU1_HEADER;
+
+				foreach($jsonbauteilVerwendung['bauteilVerwendung'] as $bauteilverwendung)
+				{
+					echo("<tr>");
+					foreach($jsonbauteile['bauteile'] as $bauteil)
+					{
+						
+						if($bauteilverwendung['bauteileID'] == $bauteil['bauteileID'])
+						{
+
+							echo("<td>{$bauteil['bauteileID']}</td>");
+							echo("<td>{$bauteil['bauteinNummer']}</td>");
+							echo("<td>{$bauteil['bauteilIndex']}</td>");
+							echo("<td>{$bauteil['bauteilVersiom']}</td>");
+						}
+					};
+						echo("<td>{$bauteilverwendung['fertingungsLinienID']}</td>");
+						echo("<td>{$bauteilverwendung['technologie']}</td>");
+						echo("<td>{$bauteilverwendung['bearbeitungsschritt']}</td>");
+						echo("<td>{$bauteilverwendung['verwendungsZweck']}</td>");
+						echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$bauteilverwendung['bauteileID']});'></td>");
+					
+				};
+					echo("</tr>");
+					echo("<td><input type='button' value='Neu Bauteil Verwendung anlegen'  onclick='testbuttonaction();'></td>");
+
+
+echo <<<'MENU1_FOOTER'
+							</tbody>
+							</table>
+							
+						  </div>
+						</div>
+			</div>
+	 </div>
+   </div>
+  </div>
+</div>
+MENU1_FOOTER;
+
 ?>
 
 
