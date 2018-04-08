@@ -26,10 +26,10 @@ namespace ProMan_WebAPI.Controllers
             switch (identifier)
             {
                 case "MFAbteilungOverviewDto":
-                    returnvalue = JToken.FromObject(dataprovider.GetMFAbteilungOverviewDto(1));
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetMFAbteilungOverviewDto(1));
                     break;
                 case "MFLinieDto":
-                    returnvalue = JToken.FromObject(dataprovider.GetMFLinieDto(1));
+                    returnvalue = JToken.FromObject(dataprovider.GetSingleProvider.GetMFLinieDto(1));
                     break;
                 default:
                     break;

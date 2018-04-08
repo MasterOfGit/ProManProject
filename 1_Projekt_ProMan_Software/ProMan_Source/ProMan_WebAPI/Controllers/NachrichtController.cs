@@ -13,15 +13,15 @@ namespace ProMan_WebAPI.Controllers
     public class NachrichtController : BaseApiController
     {
         // GET: api/Nachricht
-        public IEnumerable<string> Get()
+        public IEnumerable<NachrichtDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetNarichtenFromUser();
         }
 
         // GET: api/Nachricht/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetNachrichtDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetNachrichtDto(id)));
         }
 
         // GET: api/Nachricht/5
@@ -30,19 +30,19 @@ namespace ProMan_WebAPI.Controllers
             if (fromDate == null)
                 fromDate = DateTime.Now.AddDays(-7);
                 
-            return Ok(JToken.FromObject(dataprovider.GetNachrichtDto(UserID)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetNachrichtDto(UserID)));
         }
 
         // POST: api/Nachricht
         public void Post([FromBody]NachrichtDto value)
         {
-            dataprovider.SetNachrichtDto(value);
+            dataprovider.CreateDataProvider.SetNachrichtDto(value);
         }
 
         // PUT: api/Nachricht/5
         public void Put(int id, [FromBody]NachrichtDto value)
         {
-            dataprovider.UpdateNachrichtDto(value,id);
+            dataprovider.UpdateDataProvider.UpdateNachrichtDto(value,id);
         }
 
         // DELETE: api/Nachricht/5

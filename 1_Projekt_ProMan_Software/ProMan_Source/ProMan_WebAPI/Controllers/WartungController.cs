@@ -14,28 +14,28 @@ namespace ProMan_WebAPI.Controllers
     {
 
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<WartungDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return dataprovider.GetListDataProvider.GetWartungDto();
         }
 
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
 
-            return Ok(JToken.FromObject(dataprovider.GetWartungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetWartungDto(id)));
         }
 
         // POST api/<controller>
         public void Post([FromBody]WartungDto value)
         {
-            dataprovider.SetWartungDto(value);
+            dataprovider.CreateDataProvider.SetWartungDto(value);
         }
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]WartungDto value)
         {
-            dataprovider.UpdateWartungDto(value,id);
+            dataprovider.UpdateDataProvider.UpdateWartungDto(value,id);
         }
 
         // DELETE api/<controller>/5

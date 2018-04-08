@@ -1,4 +1,7 @@
-﻿namespace ProMan_BusinessLayer.DataProvider
+﻿using ProMan_BusinessLayer.DataProvider.DBData;
+using ProMan_BusinessLayer.DataProvider.DummyData;
+
+namespace ProMan_BusinessLayer.DataProvider
 {
     /// <summary>
     /// Factory object to switch between dummy and db data
