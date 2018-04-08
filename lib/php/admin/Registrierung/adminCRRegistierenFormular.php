@@ -67,12 +67,40 @@ echo "Anfrage : " . $q . "<br>";
 			</div>
 
 		<button type="button" 
-					class="btn btn-primary" onclick="saveData('http://zoomnation.selfhost.eu:8080/ProManAPI/api/User', 'TESTDATEN');">
-				Senden</button>
+					class="btn btn-primary" 
+				    onclick="saveData(userurl,userdata);">
+		Senden User</button>
+			
+		<button type="button" 
+					class="btn btn-primary" 
+				    onclick="saveData(loginurl,logindata);">
+		Senden Login</button>
 			
 					
 			<button type="reset" class="btn btn-primary">alles löschen</button>
 
+			<script>
+			var userurl = "http://zoomnation.selfhost.eu:8080/ProManAPI/api/User";
+			var userdata = JSON.stringify({
+				"Active": true,
+				"Namenszusatz": "1",
+				"Vorname": "Frank",
+				"Nachname": "Test",
+				"Festnetz": "0123/122",
+				"Mobil": "0123/122",
+				"eMail": "test@mail.de",
+				"Bemerkung": "test"
+				});
+
+			 var loginurl = "http://zoomnation.selfhost.eu:8080/ProManAPI/api/login";
+	
+			 var logindata = JSON.stringify({
+				"AnzeigeName":"dvc4eee",
+				"LoginName":"dvc4eee",
+				"Password":"passwort",
+				"LoginType":"Administrator"
+		});	
+			</script>
 		</form>
 	</div>
 </div>

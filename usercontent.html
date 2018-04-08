@@ -28,15 +28,17 @@
           <li> <a id="datekw">none</a> </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bereiche<span class="caret"></span></a>
             <ul class="dropdown-menu">
-				<li> <a href="#" onclick="loadData('lib/php/admin/Registrierung/adminCRRegistierenFormular.php?q=1111',FunctionUser)">Registrieren</a> </li>
-              <li> <a href="#" onclick="loadData('lib/php/admin/User/adminCRUser.php?q=1111',FunctionUser)">User</a> </li>
+			  <li> <a href="#" onclick="loadData('lib/php/admin/Registrierung/adminCRRegistierenFormular.php?q=1111',FunctionRegisterUser)">Registrieren</a> </li>
+              
+				<li> <a href="#" onclick="loadData('lib/php/admin/User/adminCRUser.php?q=222',FunctionUser)">User</a> </li>
 					
               <li> <a href="#" onclick="loadData('lib/php/admin/Abteilung/adminCRAbteilung.php?q=2222',FunctionAbteilung)">Abteilung</a> </li>
 				
               <li> <a href="#" onclick="loadData('lib/php/admin/Fertigung/adminCRFertigung.php?q=2222',myFunction1)">Fertigung</a> </li>
+				
               <li> <a href="#" onclick="loadData('lib/php/admin/Fertigungslinie/adminCRFertigungslinie.php?q=2222',myFunction1)">Fertigungslinie</a> </li>
               <li> <a href="#" onclick="loadData('lib/php/admin/Maschine/adminCRMaschinen.php?q=2222',myFunction1)">Maschinen</a> </li>
-              <li> <a href="#" onclick="loadData('lib/php/admin/Bauteil/adminCRBauteil.php?q=2222',myFunction1)">Bauteile</a> </li>
+              <li> <a href="#" onclick="loadData('lib/php/admin/Bauteil/adminCRBauteil.php?q=2222',FunctionBauteil)">Bauteile</a> </li>
               <li role="separator" class="divider"></li>
               <li> <a href="#" onclick="loadData('lib/php/user/userContentRequestGesammt.php?q=1111',myFunction1)">Abteilungsstatus</a></li>
               <li> <a href="#" onclick="loadData('lib/php/user/userContentRequestDetail.php?q=2222',myFunction1)">Fertigungslinienstatus</a></li>
@@ -98,8 +100,8 @@
 	
 <script src="lib/js/helpers.js"></script>
 	
-<script src="lib/js/receivedata.js"></script>
-<script src="lib/js/requestdata.js"></script>
+<script src="lib/js/connectDB.js"></script>
+
 <script src="lib/js/buttonaction.js"></script>
 <script> 
     currentDate();   

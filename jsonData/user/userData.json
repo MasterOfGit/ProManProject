@@ -1,0 +1,81 @@
+{
+	"users":
+	[
+		{	"userID"		:	1253,
+		 	"userAnrede"	:	"Herr",
+		 	"userVorname"	:	"Markus",
+		 	"userNachname"	:	"Kessler",
+		 	"userPosition"	: 	"Administrator",
+		 	"userBild"		: 	"/user/Bilder/1253.pnp",
+		 	"userLand"		: 	"Deutschland",
+		 	"userWerk"		: 	"Werk_1",
+		 	"userAbteilung"	:	"1788_2",
+		 	"userEmail"		:	"mk@proman.de",
+		 	"userFestnetzNr":	"0561/123456",
+		 	"userMobilNr"	:	"0171/123456",
+		 	"userBemerkung"	:	"keine"
+		
+		},
+		
+		{	"userID"		:	88546,
+		 	"userAnrede"	:	"Herr",
+		 	"userVorname"	:	"Sebastian",
+		 	"userNachname"	:	"Mueller",
+		 	"userPosition"	: 	"Anlagenfuehrer",
+		 	"userBild"		: 	"/user/Bilder/88546.pnp",
+		 	"userLand"		: 	"Deutschland",
+		 	"userWerk"		: 	"Werk_3",
+		 	"userAbteilung"	:	"1600_1",
+		 	"userEmail"		:	"sm@proman.de",
+		 	"userFestnetzNr":	"0555/11111",
+		 	"userMobilNr"	:	"0171/11111",
+		 	"userBemerkung"	:	"Sonderaufgaben Programierer"
+		
+		},
+		{	"userID"		:	55642,
+		 	"userAnrede"	:	"Frau Dr.",
+		 	"userVorname"	:	"Michaela",
+		 	"userNachname"	:	"Tanner",
+		 	"userPosition"	: 	"Anlagenfuehrer",
+		 	"userBild"		: 	"/user/Bilder/55642.png",
+		 	"userLand"		: 	"Deutschland",
+		 	"userWerk"		: 	"Werk_3",
+		 	"userAbteilung"	:	"1600_1",
+		 	"userEmail"		:	"mt@proman.de",
+		 	"userFestnetzNr":	"0555/11111",
+		 	"userMobilNr"	:	"0171/11111",
+		 	"userBemerkung"	:	"Sonderaufgaben Programierer"
+		},
+		{
+			"userID"		:	99999,
+		 	"userAnrede"	:	"Herr",
+		 	"userVorname"	:	"Frank",
+		 	"userNachname"	:	"Sander",
+		 	"userPosition"	: 	"Meister",
+		 	"userBild"		: 	"/user/Bilder/99999.png",
+		 	"userLand"		: 	"USA",
+		 	"userWerk"		: 	"Werk_10",
+		 	"userAbteilung"	:	"152",
+		 	"userEmail"		:	"fs@proman.de",
+		 	"userFestnetzNr":	"066666/11111",
+		 	"userMobilNr"	:	"0171/88888",
+		 	"userBemerkung"	:	null
+		},
+		{
+			"userID"		:	77777,
+		 	"userAnrede"	:	"Frau",
+		 	"userVorname"	:	"Nadine",
+		 	"userNachname"	:	"Michaeles",
+		 	"userPosition"	: 	"Sachbearbeiter",
+		 	"userBild"		: 	"/user/Bilder/77777.pnp",
+		 	"userLand"		: 	"Frankreich",
+		 	"userWerk"		: 	"Werk_8",
+		 	"userAbteilung"	:	"66_8",
+		 	"userEmail"		:	"nm@proman.de",
+		 	"userFestnetzNr":	"07777/22222",
+		 	"userMobilNr"	:	"0155/7987541",
+		 	"userBemerkung"	:	"kommissarischer Meister"
+		}		
+		
+		
+	]}

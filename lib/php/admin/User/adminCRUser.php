@@ -1,172 +1,230 @@
-<!DOCTYPE html>
-<html lang="de">
-<body>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
 <?php
 //echo "PHP Datenabfrage<br>";
 //$q = $_REQUEST["q"];
 //echo "Anfrage : "  . $q . "<br>";
 
 // Data load
-$cSession = curl_init(); 
-curl_setopt($cSession,CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
-curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
-curl_setopt($cSession,CURLOPT_HEADER, false); 
-$result=curl_exec($cSession);
+$ch1 = curl_init();
+$ch2 = curl_init();
+$ch3 = curl_init();
 
-curl_close($cSession);
-//step5
-//echo $result;
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
 
-$json = json_decode($result, TRUE);
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
 
+curl_setopt($ch1, CURLOPT_HEADER, 0);
+curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
+$userData=curl_exec($ch1);
+curl_close($ch1);
 
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userLogin.json");
+curl_setopt($ch2, CURLOPT_HEADER, 0);
+curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
+$userLogin=curl_exec($ch2);
+curl_close($ch2);
 
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+
+curl_setopt($ch3, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userAnfragen.json");
+curl_setopt($ch3, CURLOPT_HEADER, 0);
+curl_setopt($ch3,CURLOPT_RETURNTRANSFER,true);
+$userAnfragen=curl_exec($ch3);
+curl_close($ch3);
+
+// Testausgabe
+//print_r($userData);
+//echo("<br>");
+//echo("<br>");
+//print_r($userLogin);
+//echo("<br>");
+//echo("<br>");
+//print_r($userAnfragen);
+	
+// Unwandlung von json in Array	
+$jsonUserData = json_decode($userData, TRUE);
+$jsonUserLogin = json_decode($userLogin, TRUE);
+$jsonUserAnfrage = json_decode($userAnfragen, TRUE);
+
+//print_r($jsonUserLogin);
+//echo("<br>");
+//echo("<br>");
+//print_r($jsonUserData);
 echo <<<'HOME1_HEADER'
 <div class="User">
-  <div class="jumbotron">
-    <div class="container">
-      <h2>Usermenü</h2>
-      <br>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home1">Registrierte User</a>&nbsp;</li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">Registrierungsanfragen</a></li>
-        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu2">Nachichten</a> </li>
-      </ul>
-      
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div id="home30" class="container tab-pane active"><br>
-          <h3>Alle User</h3>
-        
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>UserID</th>
-                  <th>Vorname</th>
-                  <th>Nachname</th>
-                  <th>eMail</th>
-                  <th>Telefon</th>
-                  <th>Aktiv</th>
-                </tr>
-              </thead>
-              <tbody>  
+  	<div class="jumbotron">
+    	<div class="container">
+
+			<ul class="nav nav-tabs">
+			  <li class="active"><a data-toggle="tab" href="#home1">Registrierte User</a></li>
+			  <li><a data-toggle="tab" href="#menu1">Registrierungsanfragen</a></li>
+			  <li><a data-toggle="tab" href="#menu2">Nachichten</a></li>
+			</ul>
+
+		   
+			 <!-- Tab panes -->
+			 <div class="tab-content">
+					<div id="home1" class="tab-pane fade in active"><br>
+
+					  <div class="table-responsive-sm">
+						<table class="table">
+						  <thead>
+							<tr>
+							  <th>UserID</th>
+							  <th>Anrede</th>
+							  <th>Vorname</th>
+							  <th>Nachname</th>
+							  <th>eMail</th>
+							  <th>Telefon</th>
+							  <th>Aktiv</th>
+							</tr>
+						  </thead>
+						  <tbody>  
 HOME1_HEADER;
 
-  foreach($json['User'] as $item)
+				foreach($jsonUserData['users'] as $userdata)
 				{
 				 
 				echo("<tr>");
-				echo("<td>{$item['ID']}</td>");
-				echo("<td>{$item['Vorname']}</td>");
-	  			echo("<td>{$item['Nachname']}</td>");
-				echo("<td>{$item['eMail'] }</td>");
-				echo("<td>{$item['Festnetz']}</td>");
-	  
-	  			echo("<td><input class='form-check-input' type='checkbox' value={$item['Active']} id='defaultCheck2' disabled><td>");
-	  
+				echo("<td>{$userdata['userID']}</td>");
+				echo("<td>{$userdata['userAnrede']}</td>");
+				echo("<td>{$userdata['userVorname']}</td>");
+	  			echo("<td>{$userdata['userNachname']}</td>");
+				echo("<td>{$userdata['userEmail'] }</td>");
+				echo("<td>{$userdata['userFestnetzNr']}</td>");
+	  			
+				foreach($jsonUserLogin['logins'] as $userlogin)
+				{
+	  				if($userdata['userID'] == $userlogin['userID'] )
+					{
+						if($userlogin['userStatus'] == true)
+						{
+							echo("<td><input class='form-check-input' type='checkbox' id='defaultCheck2' checked disabled><td>");
+						}
+						else
+						{
+							echo("<td><input class='form-check-input' type='checkbox' id='defaultCheck2' disabled><td>");
+						}
+					
+						echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$userdata['userID']});'></td>");
+					}
+				};
 	  			//value = {$item['ID']};
-				echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$item['ID']});'></td>");
-	  
+		  
 				echo("</tr>");
 				};
 
 
-echo <<<HOME1_Footer
-			</tbody>
-            </table>
-          </div>
-        </div>
-HOME1_Footer;
+echo <<<HOME1_FOOTER
+						 </tbody>
+            		  </table>
+          		   </div>
+        		</div>
+		
+HOME1_FOOTER;
 
-
-              
-
-
+			  
 
 echo <<<'MENU1_HEADER'
-        <div id="menu1" class="container tab-pane fade"><br>
-          <h3>Login Anfragen</h3>
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>UserID</th>
-                  <th>Vorname</th>
-                  <th>Nachname</th>
-                  <th>eMail</th>
-                  <th>Telefon</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-				<tr>
-                  <td>none</td>
-                  <td>Michael</td>
-                  <td>Pittler</td>
-                  <td>Michael.Pittler@proman.de</td>
-                  <td>0561/88899</td>
-                  <td><input type="button" value="Bearbeiten"></td>
-                </tr>
-                <tr>
-                  <td>dvc87899</td>
-                  <td>Uwe</td>
-                  <td>Neu</td>
-                  <td>uwe.neu@proman.de</td>
-                  <td>0561/7777</td>
-                  <td><input type="button" value="Bearbeiten"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+			     <div id="menu1" class="tab-pane fade">           
+				  <div class="table-responsive-sm">
+					<table class="table">
+					  <thead>
+						<tr>
+						  <th>UserID</th>
+						  <th>Anrede</th>
+						  <th>Vorname</th>
+						  <th>Nachname</th>
+						  <th>eMail</th>
+						  <th>Telefon</th>
+						</tr>
+					  </thead>
+					  <tbody>
 MENU1_HEADER;
 
+				foreach($jsonUserData['users'] as $userdata)
+				{
+				foreach($jsonUserLogin['logins'] as $userlogin)
+				{
+	  				if(($userdata['userID'] == $userlogin['userID']) && ($userlogin['userStatus'] == false))
+					{
+						echo("<tr>");
+							echo("<td>{$userdata['userID']}</td>");
+							echo("<td>{$userdata['userAnrede']}</td>");
+							echo("<td>{$userdata['userVorname']}</td>");
+							echo("<td>{$userdata['userNachname']}</td>");
+							echo("<td>{$userdata['userEmail'] }</td>");
+							echo("<td>{$userdata['userFestnetzNr']}</td>");
+							echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$userdata['userID']});'></td>");
+					}	
+				};
+	  			  
+						echo("</tr>");
+				};
+
+
+echo <<<'MENU1_FOOTER'
+							</tbody>
+							</table>
+						  </div>
+						</div>
+MENU1_FOOTER;
+
+			  
+			  
 echo <<<'MENU2_HEADER'
-<div id="menu2" class="container tab-pane fade"><br>
-          <h3>Nachichten</h3>
-          <div class="table-responsive-sm">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>UserID</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Aktiv</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
+				<div id="menu2" class="tab-pane fade">
+					 <div class="table-responsive-sm">
+						<table class="table">
+						  <thead>
+							<tr>
+							  <th>UserID</th>
+							  <th>Vorname</th>
+							  <th>Nachname</th>
+							  <th>Grund</th>
+							  <th>Nachicht</th>
+							</tr>
+						  </thead>
+						  <tbody>
+MENU2_HEADER;
 
+						foreach($jsonUserAnfrage['userAnfragen'] as $useranfragen)
+						{	
+				
+						echo("<tr>");
+							echo("<td>{$useranfragen['userID']}</td>");
+							
+							foreach($jsonUserData['users'] as $userdata)
+							{
+								if($userdata['userID'] == $useranfragen['userID'])
+								   {
+									echo("<td>{$userdata['userAnrede']}</td>");
+									echo("<td>{$userdata['userVorname']}</td>");
+									echo("<td>{$userdata['userNachname']}</td>");
+								   }
+							};
+							
+							echo("<td>{$useranfragen['userGrund']}</td>");
+							echo("<td>{$useranfragen['userNachicht']}</td>");
+							echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$useranfragen['userID']});'></td>");
+							
+					
+						echo("</tr>");
+				};
 
-                <tr>
-                  <td>dvc1278</td>
-                  <td>Anna</td>
-                  <td>Pitt</td>
-                  <td><input class="form-check-input" type="checkbox" checked value="" id="defaultCheck2" disabled></td>
-                  <th><button>Nachicht ansehen</button></th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+echo <<<'HOME2_FOOTER'
+						</tbody>
+            		</table>
+          		</div>
+        	</div>
+		</div>
+	 </div>
+   </div>
   </div>
 </div>
-MENU2_HEADER;
+
+HOME2_FOOTER;
+
 ?>
 
- <input type="button" onclick="testbuttonaction('UserID');" value="Testbutton"> 
-</body>
-
-
-</html>

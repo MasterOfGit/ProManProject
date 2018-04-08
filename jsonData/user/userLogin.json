@@ -1,0 +1,47 @@
+{
+	"logins":
+	[
+		{
+			"userID"		:	"1253",
+			"userLastLogin"	:	"17-05-2018",
+			"userStatus"	:	true,
+			"userbereich"	: 	"Administrator",
+			"userKennung"	:	"dvc1253a",
+			"userpasswort"	:	"pw"
+		 	
+		},
+		{
+			"userID"		:	"88546",
+			"userLastLogin"	:	"01-01-2018",
+			"userStatus"	:	true,
+			"userbereich"	: 	"Sachbearbeiter",
+			"userKennung"	:	"dvc88546b",
+		 	"userpasswort"	:	"pw"
+		},
+		{
+			"userID"		:	"55642",
+			"userLastLogin"	:	"01-03-2017",
+			"userStatus"	:	false,
+			"userbereich"	: 	"Meister",
+			"userKennung"	:	"dvc55642b",
+		 	"userpasswort"	:	"pw"
+		},
+		{
+			"userID"		:	"99999",
+			"userLastLogin"	:	null,
+			"userStatus"	:	false,
+			"userbereich"	: 	"Maschinenfuehrer",
+			"userKennung"	:	null,
+		 	"userpasswort"	:	null
+		},
+		{
+			"userID"		:	"77777",
+			"userLastLogin"	:	null,
+			"userStatus"	:	false,
+			"userbereich"	: 	"Gruppensprecher",
+			"userKennung"	:	null,
+		 	"userpasswort"	:	null
+		}
+		
+	]
+}

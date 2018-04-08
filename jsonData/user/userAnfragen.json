@@ -1,0 +1,34 @@
+{
+	"userAnfragen":
+	[
+		{
+			"userID"			: 	99999,
+			"userGrund"			:	"registrierung",
+			"userNachicht"		:	"User wünsch registrierung bearbeitung",
+			"userAnfragenStatus"	: 	"inArbeit"
+		},
+		
+		{
+			"userID"			: 	77777,
+			"userGrund"			:	"registrierung",
+			"userNachicht"		:	"User wünsch registrierung bearbeitung",
+			"userAnfragenStatus"	: 	"inArbeit"
+		},
+		
+		{
+			"userID"			: 	1253,
+			"userGrund"			:	"Passwort ändern",
+			"userNachicht"		:	"User wünsch neues Passort",
+			"userAnfragenStatus"	: 	"erledigt"
+		},
+		
+		{
+			"userID"			: 	55642,
+			"userGrund"			:	"Userkonto Löschung",
+			"userNachicht"		:	"User wünsch löschung des Userkonto",
+			"userAnfragenStatus"	: 	"inArbeit"
+		}
+		
+		
+	]
+}
