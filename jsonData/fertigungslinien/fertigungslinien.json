@@ -1,0 +1,101 @@
+ 
+	{
+			"fertigungslinie": 
+			[
+					{
+					"fertigungslinieID": 1,
+						"arbeitsfolgen": 
+						[
+						{
+						"arbeitsfolgeID": 1,
+						"maschineID": 1,
+						"technologie": "Drehen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 1,
+						"arbeitplan": "Rohteil drehen"
+						}, 
+						{
+						"arbeitsfolgeID": 2,
+						"maschineID": 2,
+						"technologie": "Fräsen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 1,
+						"arbeitplan": "Verzahnung Fräsen"
+						}, 
+						{
+						"arbeitsfolgeID": 3,
+						"maschineID": 3,
+						"technologie": "Entgraten",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 1,
+						"arbeitplan": "Verzahnung entgraten"
+						}, 
+						{
+						"arbeitsfolgeID": 4,
+						"maschineID": 4,
+						"technologie": "Waschen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 1,
+						"arbeitplan": "none"
+						}, 
+						{
+						"arbeitsfolgeID": 5,
+						"maschineID": 5,
+						"technologie": "Messen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 1,
+						"arbeitplan": "none"
+						}
+						]
+					}, 
+					{
+					"fertigungslinieID": 2,
+						"arbeitsfolgen": 
+						[
+						{
+						"arbeitsfolgeID": 1,
+						"maschineID": 17,
+						"technologie": "Drehen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 3,
+						"arbeitplan": "Rohteil drehen"
+						}, 
+						{
+						"arbeitsfolgeID": 2,
+						"maschineID": 18,
+						"technologie": "Fräsen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 3,
+						"arbeitplan": "Verzahnung Fräsen"
+						}, 
+						{
+						"arbeitsfolgeID": 3,
+						"maschineID": 19,
+						"technologie": "Entgraten",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 3,
+						"arbeitplan": "Verzahnung entgraten"
+						}, 
+						{
+						"arbeitsfolgeID": 4,
+						"maschineID": 20,
+						"technologie": "Waschen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 3,
+						"arbeitplan": "none"
+						}, 
+						{
+						"arbeitsfolgeID": 5,
+						"maschineID": 21,
+						"technologie": "Messen",
+						"fertigungstyp": "Grünfertigung",
+						"bauteilID": 3,
+						"arbeitplan": "none"
+						}
+						]
+					}
+
+			]
+	}
+
+

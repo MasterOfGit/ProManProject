@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="MFFertigungDto.cs" server="192.168.178.26" local="131641178788369870" remote="131641344000000000" Dst="1" />
-<file name="MFInstandhaltung.cs" server="192.168.178.26" local="131641178788379877" remote="131641344000000000" Dst="1" />
-<file name="MFLinieDto.cs" server="192.168.178.26" local="131641178788389880" remote="131641344000000000" Dst="1" />
-<file name="MFFertigungDto.cs" server="C:/xampp/htdocs/proman/" local="131641178788369870" remote="131641178780000000" Dst="1" />
-<file name="MFInstandhaltung.cs" server="C:/xampp/htdocs/proman/" local="131641178788379877" remote="131641178780000000" Dst="1" />
-<file name="MFLinieDto.cs" server="C:/xampp/htdocs/proman/" local="131641178788389880" remote="131641178780000000" Dst="1" />
+<file name="MFFertigungDto.cs" server="192.168.178.26" local="131641178788369870" remote="131676888600000000" Dst="2" />
+<file name="MFInstandhaltung.cs" server="192.168.178.26" local="131641178788379877" remote="131676888600000000" Dst="2" />
+<file name="MFLinieDto.cs" server="192.168.178.26" local="131665625364516953" remote="131676888600000000" Dst="2" />
+<file name="MFFertigungDto.cs" server="C:/xampp/htdocs/proman/" local="131641178788369870" remote="131641142780000000" Dst="2" />
+<file name="MFInstandhaltung.cs" server="C:/xampp/htdocs/proman/" local="131641178788379877" remote="131641142780000000" Dst="2" />
+<file name="MFLinieDto.cs" server="C:/xampp/htdocs/proman/" local="131665625364516953" remote="131665625360000000" Dst="2" />
+<file name="MFAbteilungOverviewDto.cs" server="192.168.178.26" local="131665625364486933" remote="131676888600000000" Dst="2" />
+<file name="MFAbteilungOverviewDto.cs" server="C:/xampp/htdocs/proman/" local="131665625364486933" remote="131665625360000000" Dst="2" />
 </dwsync>

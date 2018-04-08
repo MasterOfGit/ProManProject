@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="BaseTest.cs" server="C:/xampp/htdocs/proman/" local="131624030349595063" remote="131624030340000000" Dst="1" />
-<file name="ITest.cs" server="C:/xampp/htdocs/proman/" local="131624030349605058" remote="131624030340000000" Dst="1" />
-<file name="MaschinenTest.cs" server="C:/xampp/htdocs/proman/" local="131636809179679499" remote="131636809170000000" Dst="1" />
-<file name="BaseTest.cs" server="192.168.178.26" local="131624030349595063" remote="131641344000000000" Dst="1" />
-<file name="ITest.cs" server="192.168.178.26" local="131624030349605058" remote="131641344000000000" Dst="1" />
-<file name="MaschinenTest.cs" server="192.168.178.26" local="131636809179679499" remote="131641344000000000" Dst="1" />
+<file name="BaseTest.cs" server="C:/xampp/htdocs/proman/" local="131624030349595063" remote="131623994340000000" Dst="2" />
+<file name="ITest.cs" server="C:/xampp/htdocs/proman/" local="131624030349605058" remote="131623994340000000" Dst="2" />
+<file name="MaschinenTest.cs" server="C:/xampp/htdocs/proman/" local="131636809179679499" remote="131636773170000000" Dst="2" />
+<file name="BaseTest.cs" server="192.168.178.26" local="131624030349595063" remote="131676888600000000" Dst="2" />
+<file name="ITest.cs" server="192.168.178.26" local="131624030349605058" remote="131676888600000000" Dst="2" />
+<file name="MaschinenTest.cs" server="192.168.178.26" local="131636809179679499" remote="131676888600000000" Dst="2" />
 </dwsync>
