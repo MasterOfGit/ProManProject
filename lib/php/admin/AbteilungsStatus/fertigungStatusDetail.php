@@ -3,8 +3,34 @@
 //$q = $_REQUEST["q"];
 //echo "Abfragenummer : "  . $q . "<br>";
 //echo "phpDateiName : "  . __FILE__ . "<br>";
+$ch1 = curl_init();
 
 
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+
+curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilungsstatus/fertigungStatusDetail.json" );
+curl_setopt( $ch1, CURLOPT_HEADER, 0 );
+curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
+$fertigungLinienStatus = curl_exec( $ch1 );
+curl_close( $ch1 );
+
+// Testausgabe
+//echo($maschinen);
+
+// Unwandlung von json in Array	
+$jsonfertigungLinienStatus = json_decode($fertigungLinienStatus, TRUE);
+print_r($jsonfertigungLinienStatus);
+
+
+
+foreach($jsonfertigungLinienStatus['fertigungslinienstatus'] as $fertigunglinie)
+{
+//echo($fertigung['kennzahlen']['linienverfügkarkeit']);
+//if($fertigung['fertigungsID'] == 2)
+//{	
+//	echo("AUSSGABE :" . $fertigung['fertigungsname']);	
+//}
+	
 echo <<<DATA
 <h1>Fertigungsübersicht</h1>
 
@@ -12,15 +38,16 @@ echo <<<DATA
   <div class="jumbotron">
     <div class="container-fluid">
       <div class="row">
-        <h2>Fertigungslinie_1</h2>
+        <div class="row">
+		<div class="col-sm-2"> {$fertigunglinie['fertigungslinienname']}</div>
+		</div>
       </div>
 	    <div class="row">
-          <div class="col-sm-2">Ansprechpartner: 0561 555 111</div>
-		  <div class="col-sm-2">Werk: Kassel</div>
-          <div class="col-sm-2">Halle: 12a</div>
-          <div class="col-sm-2">Ort: Feld C4</div>
-          <div class="col-sm-4">Aktuelle Schicht: A3</div>
-        </div>
+        <div class="col-sm-2">{$fertigunglinie['abteilungsdaten']['ansprechpartner']}</div>
+        <div class="col-sm-2">Tel: {$fertigunglinie['abteilungsdaten']['telefon']}</div>
+        <div class="col-sm-2">Werk : {$fertigunglinie['abteilungsdaten']['werk']}</div>
+        <div class="col-sm-4">aktuelle Schicht: {$fertigunglinie['abteilungsdaten']['aktuelleSchicht']}</div>
+      </div>
 		<div class="row">
 		<br>
 		</div>
@@ -105,7 +132,8 @@ echo <<<DATA
   </div>
 </div>
 
+
 DATA;
-			  
-			  
+};
+
 ?>

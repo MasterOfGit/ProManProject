@@ -1,0 +1,40 @@
+{
+	"fertigungslinienstatus"	:
+	[
+		{
+			"fertigungslinienID"	:	1,
+			"fertigungslinienname"	:	"Fertigungslinie_1",
+			"produktionsdaten"	:
+			{
+				"teilenummernzahl" 		:	5
+				
+				
+			},
+			"abteilungsdaten"	:
+			{
+				"Baujahr" 	:	2010
+				
+			},
+			"schichtAufgaben"	:
+			{
+				
+			},
+			"informationen"	:
+			{
+				
+			},
+			"abteilungsdaten"	:
+			{
+				"werk" 	:	14,
+				"halle"	:	3,
+				"feld"	:	"5a",
+				"ansprechpartner"	:	"Michael Meister",
+				"telefon"			:	"0561/123456",
+				"aktuelleSchicht"	:	"3a"
+			}
+			
+		}
+		
+		
+	]
+}
