@@ -46,6 +46,7 @@ echo <<<'HOME1_HEADER'
 							<thead>
 								<tr>
 									<th>FertigungsID</th>
+									<th>Fertigungslinienname</th>
 									<th>Arbeitfolge</th>
 									<th>Maschine</th>
 									<th>Technologie</th>
@@ -63,6 +64,7 @@ HOME1_HEADER;
 							
 							foreach($fertigungslinie['arbeitsfolgen'] as $arbeitsfolge) 
 								{ 	echo("<td>{$fertigungslinie['fertigungslinieID']}</td>");
+								 	echo("<td>{$fertigungslinie['fertigunglinenname']}</td>");
 										echo("<td>{$arbeitsfolge['arbeitsfolgeID']}</td>"); 
 										echo("<td>{$arbeitsfolge['maschineID']}</td>");
 										echo("<td>{$arbeitsfolge['technologie']}</td>");
@@ -70,7 +72,7 @@ HOME1_HEADER;
 										echo("<td>{$arbeitsfolge['bauteilID']}</td>");
 										echo("<td>{$arbeitsfolge['arbeitplan']}</td>");
 
-										echo("<td><input type='button' value='löschen'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='lÃ¶schen'  onclick='testbuttonaction();'></td>");
 										echo("<td><input type='button' value='verschieben'  onclick='testbuttonaction();'></td>");
 								echo("</tr>");
 								};
@@ -80,7 +82,7 @@ echo("<td><input type='button' value='Neue Arbeitfolge'  onclick='testbuttonacti
 echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
 echo("<td><input type='button' value='Reset'  onclick='testbuttonaction();'></td>");
 echo("<td><input type='button' value='Neu Fertigungslinie'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Fertigunglinie löschen'  onclick='testbuttonaction();'></td>");
+echo("<td><input type='button' value='Fertigunglinie lÃ¶schen'  onclick='testbuttonaction();'></td>");
 
 
 echo <<<'HOME1_FOOTER'

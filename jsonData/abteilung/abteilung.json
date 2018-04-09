@@ -1,0 +1,47 @@
+{
+	"abteilungen" :	
+	[
+			{	
+			"abteilungsID"		:	1,
+		 	"abteilunngsname"	:	"Abteilung_1",
+		 	
+		 	"fertigungen"	:
+		 	[
+				{
+					"fertigungsID"	:	1,
+					"fertigungsname"	:	"Fertigung_1"		
+				},
+				{	
+					"fertigungsID"	:	5,
+					"fertigungsname"	:	"Fertigung_5"							
+				}
+				
+			]
+			},
+			{	
+			"abteilungsID"		:	2,
+		 	"abteilunngsname"	:	"Abteilung_2",
+		 	
+		 	"fertigungen"	:
+		 	[
+				{
+					"fertigungsID"	:	7,
+					"fertigungsname"	:	"Fertigung_7"		
+				},
+				{	
+					"fertigungsID"	:	4,
+					"fertigungsname"	:	"Fertigung_4"		
+					
+				},
+				{	
+					"fertigungsID"	:	8,
+					"fertigungsname"	:	"Fertigung_8"		
+					
+				}
+				
+			]
+		}
+		
+		
+	]
+}

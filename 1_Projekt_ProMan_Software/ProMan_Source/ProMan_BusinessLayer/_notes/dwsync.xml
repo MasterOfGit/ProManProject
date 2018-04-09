@@ -3,7 +3,7 @@
 <file name="App.config" server="C:/xampp/htdocs/proman/" local="131624030348664431" remote="131623994340000000" Dst="2" />
 <file name="packages.config" server="C:/xampp/htdocs/proman/" local="131624030348814525" remote="131623994340000000" Dst="2" />
 <file name="ProMan_BusinessLayer.csproj" server="C:/xampp/htdocs/proman/" local="131675510176619075" remote="131675510170000000" Dst="2" />
-<file name="App.config" server="192.168.178.26" local="131624030348664431" remote="131676888600000000" Dst="2" />
-<file name="packages.config" server="192.168.178.26" local="131624030348814525" remote="131676888600000000" Dst="2" />
-<file name="ProMan_BusinessLayer.csproj" server="192.168.178.26" local="131675510176619075" remote="131676888600000000" Dst="2" />
+<file name="App.config" server="192.168.178.26" local="131624030348664431" remote="131677648200000000" Dst="2" />
+<file name="packages.config" server="192.168.178.26" local="131624030348814525" remote="131677648200000000" Dst="2" />
+<file name="ProMan_BusinessLayer.csproj" server="192.168.178.26" local="131676897292671604" remote="131677648200000000" Dst="2" />
 </dwsync>

@@ -4,6 +4,7 @@
 			[
 					{
 					"fertigungslinieID": 1,
+					"fertigunglinenname"	: "Festrad_1",	
 						"arbeitsfolgen": 
 						[
 						{
@@ -50,6 +51,7 @@
 					}, 
 					{
 					"fertigungslinieID": 2,
+					"fertigunglinenname"	: "Festrad_2",	
 						"arbeitsfolgen": 
 						[
 						{

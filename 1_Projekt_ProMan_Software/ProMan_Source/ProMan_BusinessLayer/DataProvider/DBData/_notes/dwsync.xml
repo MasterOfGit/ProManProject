@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="DatabaseCreateData.cs" server="192.168.178.26" local="131676897292251324" remote="131677648200000000" Dst="2" />
+<file name="DatabaseDataProvider.cs" server="192.168.178.26" local="131676897292261330" remote="131677648200000000" Dst="2" />
+<file name="DatabaseDelete.cs" server="192.168.178.26" local="131676897292271340" remote="131677648200000000" Dst="2" />
+<file name="DatabaseGetList.cs" server="192.168.178.26" local="131676897292281334" remote="131677648200000000" Dst="2" />
+<file name="DatabaseGetSingle.cs" server="192.168.178.26" local="131676897292301351" remote="131677648200000000" Dst="2" />
+<file name="DatabaseUpdate.cs" server="192.168.178.26" local="131676897292311348" remote="131677648200000000" Dst="2" />
+</dwsync>

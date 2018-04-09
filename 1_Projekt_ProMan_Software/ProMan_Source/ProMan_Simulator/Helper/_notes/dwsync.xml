@@ -5,9 +5,9 @@
 <file name="SerializeHelper.cs" server="C:/xampp/htdocs/proman/" local="131624030349374904" remote="131623994340000000" Dst="2" />
 <file name="WindowService.cs" server="C:/xampp/htdocs/proman/" local="131628380502885547" remote="131628344500000000" Dst="2" />
 <file name="SetValuesHelper.cs" server="C:/xampp/htdocs/proman/" local="131628380502865537" remote="131628344500000000" Dst="2" />
-<file name="HttpHelper.cs" server="192.168.178.26" local="131628380502845545" remote="131676888600000000" Dst="2" />
-<file name="ObjectDtos.cs" server="192.168.178.26" local="131676508788783349" remote="131676888600000000" Dst="2" />
-<file name="SerializeHelper.cs" server="192.168.178.26" local="131624030349374904" remote="131676888600000000" Dst="2" />
-<file name="SetValuesHelper.cs" server="192.168.178.26" local="131628380502865537" remote="131676888600000000" Dst="2" />
-<file name="WindowService.cs" server="192.168.178.26" local="131628380502885547" remote="131676888600000000" Dst="2" />
+<file name="HttpHelper.cs" server="192.168.178.26" local="131628380502845545" remote="131677648800000000" Dst="2" />
+<file name="ObjectDtos.cs" server="192.168.178.26" local="131676508788783349" remote="131677648800000000" Dst="2" />
+<file name="SerializeHelper.cs" server="192.168.178.26" local="131624030349374904" remote="131677648800000000" Dst="2" />
+<file name="SetValuesHelper.cs" server="192.168.178.26" local="131628380502865537" remote="131677648800000000" Dst="2" />
+<file name="WindowService.cs" server="192.168.178.26" local="131628380502885547" remote="131677648800000000" Dst="2" />
 </dwsync>
