@@ -6,4 +6,5 @@
 <file name="userAnfragen.json" server="192.168.178.26" local="131676445301129236" remote="131677648800000000" Dst="2" />
 <file name="userLogin.json" server="192.168.178.26" local="131676412735437637" remote="131677648800000000" Dst="2" />
 <file name="userData.json" server="192.168.178.26" local="131676419278612113" remote="131677648800000000" Dst="2" />
+<file name="userData.json" server="C:/xampp/htdocs/proman/" local="131676419278612113" remote="131676419270000000" Dst="2" />
 </dwsync>
