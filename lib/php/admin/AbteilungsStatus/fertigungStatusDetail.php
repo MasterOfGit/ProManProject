@@ -19,7 +19,7 @@ curl_close( $ch1 );
 
 // Unwandlung von json in Array	
 $jsonfertigungLinienStatus = json_decode($fertigungLinienStatus, TRUE);
-print_r($jsonfertigungLinienStatus);
+//print_r($jsonfertigungLinienStatus);
 
 
 
@@ -56,18 +56,28 @@ echo <<<DATA
         <div class="col-sm-6">
           <lable for="a1">Produktionsdaten:</lable>
           <ul id="a1" class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Aktuelle Teilenummer <span class="badge badge-primary badge-pill"><a href="../inArbeit.html" style="color:white">125 554 55 AC</a></span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Aktuelle Stückzahl <span class="badge badge-primary badge-pill">Ist : 250</span> <span class="badge badge-primary badge-pill">Soll : 500</span></li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Nächste Teilnummer<span class="badge badge-primary badge-pill">125 554 55 AD</span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Nächste Stückzahl<span class="badge badge-primary badge-pill">Soll 600</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> Aktuelle Teilenummer <span class="badge badge-primary badge-pill">
+			{$fertigunglinie['produktionsdaten']['teilenummerAktuell']}
+			{$fertigunglinie['produktionsdaten']['teileIndexAktuell']}
+			</span> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> Aktuelle Stückzahl <span class="badge badge-primary badge-pill">Ist : 
+			{$fertigunglinie['produktionsdaten']['stueckzahlIst']}</span> <span class="badge badge-primary badge-pill">Soll : {$fertigunglinie['produktionsdaten']['stueckzahlSoll']}</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> Nächste Teilnummer<span class="badge badge-primary badge-pill">
+			{$fertigunglinie['produktionsdaten']['teilenummerNaechste']} 
+			{$fertigunglinie['produktionsdaten']['teileIndexNaechste']}
+			</span> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> Nächste Stückzahl<span class="badge badge-primary badge-pill">Soll 
+			{$fertigunglinie['produktionsdaten']['stueckzahlNaechste']}</span></li>
           </ul>
         </div>
         <div class="row">
           <div class="col-sm-6">
             <lable for="aufgaben">Aufgaben in dieser Schicht:</lable>
             <ul id="aufgaben" class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Reperaturen <span class="badge badge-primary badge-pill">offene 0</span> </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen <span class="badge badge-primary badge-pill">offene 5</span> </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"> Reperaturen <span class="badge badge-primary badge-pill">offene 
+			  {$fertigunglinie['schichtAufgaben']['reperaturen']}</span> </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen <span class="badge badge-primary badge-pill">offene {$fertigunglinie['schichtAufgaben']['wartungen']}</span> </li>
+			  <li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen <span class="badge badge-primary badge-pill">offene {$fertigunglinie['schichtAufgaben']['audits']}</span> </li>
             </ul>
           </div>
         </div>
@@ -76,29 +86,38 @@ echo <<<DATA
         <div class="col-sm-6">
           <lable for="a1">Maschinendaten:</lable>
           <ul id="a1" class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Baujahr <span class="badge badge-primary badge-pill"><a href="../inArbeit.html" style="color:white">2010</a></span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Garantie <span class="badge badge-primary badge-pill">bis 2012</span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Sonderumbauten<span class="badge badge-primary badge-pill">1</span> </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center"> Zeichnungsnummer<span class="badge badge-primary badge-pill">as 5455 78a v1.1</span> </li>
-          </ul>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> Maschinenzahl <span class="badge badge-primary badge-pill">{$fertigunglinie['maschinendaten']['maschineanzahl']}</span> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> geplannte Umbauten <span class="badge badge-primary badge-pill">{$fertigunglinie['maschinendaten']['geplannteUmbauten']}</span> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"> geplannte Optimierungen <span class="badge badge-primary badge-pill">{$fertigunglinie['maschinendaten']['geplannteOpimierungen']}</span> </li>
+           
         </div>
         <div class="row">
           <div class="col-sm-6">
             <lable for="aufgaben">Informationen:</lable>
             <ul id="aufgaben" class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Reperaturen 
-				  <span class="badge badge-primary badge-info" style="background: blue">Historie 25</span>
-				  <span class="badge badge-primary badge-pill" style="background: red">offene 2</span> 
-				  <span class="badge badge-primary badge-pillstyle=" style="background: green">erledigt 2</span>
-				
-			</li>
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen 
-			      <span class="badge badge-primary badge-info" style="background: blue">Historie 25</span>
-			      <span class="badge badge-primary badge-pill">offene 2</span> 
-				  <span class="badge badge-primary badge-pill">erledigt 2</span> 
+              
+			    <li class="list-group-item d-flex justify-content-between align-items-center"> Reperaturen 
+				  <span class="badge badge-primary badge-info" style="background: blue">Historie {$fertigunglinie['informationen']['reperarturenHistorie']}</span>
+				  <span class="badge badge-primary badge-pill" style="background: red">offene {$fertigunglinie['informationen']['reperaturenOffen']}</span> 
+				  <span class="badge badge-primary badge-pillstyle=" style="background: green">erledigt {$fertigunglinie['informationen']['repeaturenErledigt']}</span>
 				</li>
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Audits <span class="badge badge-primary badge-pill">offene 2</span> <span class="badge badge-primary badge-pill">erledigt 2</span> </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center"> Optimierrungen <span class="badge badge-primary badge-pill">offene 2</span> <span class="badge badge-primary badge-pill">erledigt 2</span> </li>
+				
+				  <li class="list-group-item d-flex justify-content-between align-items-center"> Wartungen 
+				  <span class="badge badge-primary badge-info" style="background: blue">Historie {$fertigunglinie['informationen']['wartungHistorie']}</span>
+				  <span class="badge badge-primary badge-pill" style="background: red">offene {$fertigunglinie['informationen']['reperaturenOffen']}</span> 
+				  <span class="badge badge-primary badge-pillstyle=" style="background: green">erledigt {$fertigunglinie['informationen']['repeaturenErledigt']}</span>
+				</li>
+				
+				 <li class="list-group-item d-flex justify-content-between align-items-center"> Audits 
+				   <span class="badge badge-primary badge-pill" style="background: red">offene {$fertigunglinie['informationen']['auditsOffen']}</span> 
+				  <span class="badge badge-primary badge-pillstyle=" style="background: green">erledigt {$fertigunglinie['informationen']['auditsErledigt']}</span>
+				</li>
+             
+         		<li class="list-group-item d-flex justify-content-between align-items-center"> Optimierungen 
+				   <span class="badge badge-primary badge-pill" style="background: red">offene {$fertigunglinie['informationen']['optimierungenOffen']}</span> 
+				  <span class="badge badge-primary badge-pillstyle=" style="background: green">erledigt {$fertigunglinie['informationen']['optimierungenErledigt']}</span>
+				</li>
+             
             </ul>
           </div>
         </div>

@@ -1,0 +1,46 @@
+{
+	"instandhaltungsauftraege"	:
+	[
+		{
+			"instandhaltungID"	:	1,
+			"abteilung"			: 	5,
+			"fachrichtung"		:	"mechanisch",
+			"fachbereich"		:	"intern",	
+			"machinenIventarnummer"		:	"94055455",
+			"thema"				:	"Pumpen problem",
+			"fehlertext"			:	"Die pumpe läuft aus",
+			"auftragsstatus"	:	"offen"
+		},
+		{
+			"instandhaltungID"	:	2,
+			"abteilung"			: 	8,
+			"fachrichtung"		:	"elektrisch",
+			"fachbereich"		:	"intern",	
+			"machinenIventarnummer"		:	"885542",
+			"thema"				:	"Sensor Problem",
+			"fehlertext"			:	"Teilefluss auf Band gestört",
+			"auftragsstatus"	:	"angenommen"
+		},
+		{
+			"instandhaltungID"	:	10,
+			"abteilung"			: 	77,
+			"fachrichtung"		:	"mechanisch",
+			"fachbereich"		:	"extern",	
+			"machinenIventarnummer"		:	"94055455",
+			"thema"				:	"Pumpen problem",
+			"fehlertext"			:	"Die pumpe läuft aus",
+			"auftragsstatus"	:	"offen"
+		},
+		{
+			"instandhaltungID"	:	56,
+			"abteilung"			: 	22,
+			"fachrichtung"		:	"mechanisch",
+			"fachbereich"		:	"intern",	
+			"machinenIventarnummer"		:	"94055455",
+			"thema"				:	"Pumpen problem",
+			"fehlertext"			:	"Die pumpe läuft aus",
+			"auftragsstatus"	:	"erledigt"
+		}
+		
+	]
+}

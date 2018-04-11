@@ -1,0 +1,23 @@
+{
+	"wartungen"	:
+	[
+		{
+			"wartungsID"	:	1,
+			"abteilung"		:	1255,
+			"fertigung"		:	15,
+			"fertigungslinie"	:	12,
+			"maschine"		:	125255,
+			"terminturnus"	:	"wöchentlich",
+			"status"		:	"offen"
+		},
+		{
+			"wartungsID"	:	2,
+			"abteilung"		:	100,
+			"fertigung"		:	5,
+			"fertigungslinie"	:	5,
+			"maschine"		:	99955,
+			"terminturnus"	:	"monatlich",
+			"status"		:	"offen"
+		}
+	]
+}

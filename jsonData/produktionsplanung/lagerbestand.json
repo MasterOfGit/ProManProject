@@ -1,0 +1,33 @@
+{
+	"lagerbestaende"	:
+	[
+		{
+		"bauteilID"			:	12,
+		"bauteilname"		:	"125552555",
+		"bauteilindex"		:	"A",
+		"bauteilverwendung"	:	"Getriebe 15ab7",
+		"minBestand"		:	500,
+		"istBestand"		:	250,
+		"lagerplatz"		:	"7c2a"	
+		},
+		{
+		"bauteilID"			:	4,
+		"bauteilname"		:	"8854552",
+		"bauteilindex"		:	"A",
+		"bauteilverwendung"	:	"Getriebe 15a88",
+		"minBestand"		:	500,
+		"istBestand"		:	250,
+		"lagerplatz"		:	"10a225b"
+		},
+		{
+		"bauteilID"			:	12,
+		"bauteilname"		:	"125552555",
+		"bauteilindex"		:	"B",
+		"bauteilverwendung"	:	"Getriebe 15ab7",
+		"minBestand"		:	500,
+		"istBestand"		:	250,
+		"lagerplatz"		:	"1s85"
+		}
+		
+	]
+}

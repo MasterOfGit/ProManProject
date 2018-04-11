@@ -6,22 +6,41 @@
 			"fertigungslinienname"	:	"Fertigungslinie_1",
 			"produktionsdaten"	:
 			{
-				"teilenummernzahl" 		:	5
-				
-				
+				"teilenummerAktuell" 		:	"111 111 111",
+				"teileIndexAktuell" 		:	"A",
+				"stueckzahlSoll"			:	800,
+				"stueckzahlIst"				:	150,
+				"teilenummerNaechste" 		:	"111 111 111",
+				"teileIndexNaechste" 		:	"b",
+				"stueckzahlNaechste"		:	700
 			},
-			"abteilungsdaten"	:
+			
+			"maschinendaten"	:
 			{
-				"Baujahr" 	:	2010
+				"maschineanzahl" 	:	10,
+				"geplannteUmbauten"	:	1,
+				"geplannteOpimierungen"	: 0
 				
 			},
 			"schichtAufgaben"	:
 			{
+				"reperaturen"	:	2,
+				"wartungen"		:	1,
+				"audits"		:	0
 				
 			},
 			"informationen"	:
 			{
-				
+				"repeaturenErledigt"	:	2,
+				"reperaturenOffen"		:	0,
+				"reperarturenHistorie"	:	77,
+				"wartungErledigt"	:	2,
+				"wartungOffen"		:	0,
+				"wartungHistorie"	:	77,
+				"auditsErledigt"	:	2,
+				"auditsOffen"		:	0,
+				"optimierungenErledigt"	:	2,
+				"optimierungenOffen"		:	0
 			},
 			"abteilungsdaten"	:
 			{

@@ -1,0 +1,30 @@
+{
+	"produktionsplan"	:
+	[
+		{
+		"folgenummer"		:	1,
+		"bauteilname"		:	"125552555",
+		"bauteilindex"		:	"A",
+		"bauteilverwendung"	:	"Getriebe 15ab7",
+		"prodMenge"			:	500,
+		"status"			:	"inArbeit"	
+		},
+		{
+		"folgenummer"		:	2,
+		"bauteilname"		:	"125552555",
+		"bauteilindex"		:	"B",
+		"bauteilverwendung"	:	"Getriebe 15ab8",
+		"prodMenge"			:	700,
+		"status"			:	"offen"	
+		},
+		{
+		"folgenummer"		:	3,
+		"bauteilname"		:	"125552555",
+		"bauteilindex"		:	"A",
+		"bauteilverwendung"	:	"Getriebe 15ab7",
+		"prodMenge"			:	500,
+		"status"			:	"erledigt"	
+		}
+		
+	]
+}
