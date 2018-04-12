@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="App.config" server="192.168.178.26" local="131675510176649092" remote="131677648200000000" Dst="2" />
-<file name="packages.config" server="192.168.178.26" local="131624030349234808" remote="131677648800000000" Dst="2" />
-<file name="ProManContext.cs" server="192.168.178.26" local="131676508788723294" remote="131677648800000000" Dst="2" />
-<file name="ProMan_Database.csproj" server="192.168.178.26" local="131675510176954336" remote="131677648800000000" Dst="2" />
+<file name="App.config" server="192.168.178.26" local="131675510176649092" remote="131679399600000000" Dst="2" />
+<file name="packages.config" server="192.168.178.26" local="131624030349234808" remote="131679399600000000" Dst="2" />
+<file name="ProManContext.cs" server="192.168.178.26" local="131676508788723294" remote="131679399600000000" Dst="2" />
+<file name="ProMan_Database.csproj" server="192.168.178.26" local="131675510176954336" remote="131679399600000000" Dst="2" />
 <file name="App.config" server="C:/xampp/htdocs/proman/" local="131675510176649092" remote="131675510170000000" Dst="2" />
 <file name="packages.config" server="C:/xampp/htdocs/proman/" local="131624030349234808" remote="131623994340000000" Dst="2" />
 <file name="ProMan_Database.csproj" server="C:/xampp/htdocs/proman/" local="131675510176954336" remote="131675510170000000" Dst="2" />
 <file name="ProManContext.cs" server="C:/xampp/htdocs/proman/" local="131676508788723294" remote="131676508780000000" Dst="2" />
 <file name="MigrationHelp.txt" server="C:/xampp/htdocs/proman/" local="131628167984083588" remote="131628131980000000" Dst="2" />
-<file name="MigrationHelp.txt" server="192.168.178.26" local="131628167984083588" remote="131677648200000000" Dst="2" />
+<file name="MigrationHelp.txt" server="192.168.178.26" local="131628167984083588" remote="131679399600000000" Dst="2" />
 </dwsync>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Abteilung.cs" server="192.168.178.26" local="131653538946044278" remote="131677648200000000" Dst="2" />
-<file name="Bauteil.cs" server="192.168.178.26" local="131653538946114319" remote="131677648200000000" Dst="2" />
-<file name="Fertigung.cs" server="192.168.178.26" local="131653538946134338" remote="131677648200000000" Dst="2" />
-<file name="Fertigungslinie.cs" server="192.168.178.26" local="131653538946194378" remote="131677648200000000" Dst="2" />
-<file name="Login.cs" server="192.168.178.26" local="131675510176829255" remote="131677648200000000" Dst="2" />
-<file name="Maschine.cs" server="192.168.178.26" local="131653538946234420" remote="131677648200000000" Dst="2" />
-<file name="Reparatur.cs" server="192.168.178.26" local="131653538946344478" remote="131677648200000000" Dst="2" />
-<file name="Wartung.cs" server="192.168.178.26" local="131653538946364486" remote="131677648800000000" Dst="2" />
+<file name="Abteilung.cs" server="192.168.178.26" local="131653538946044278" remote="131679399600000000" Dst="2" />
+<file name="Bauteil.cs" server="192.168.178.26" local="131653538946114319" remote="131679399600000000" Dst="2" />
+<file name="Fertigung.cs" server="192.168.178.26" local="131653538946134338" remote="131679399600000000" Dst="2" />
+<file name="Fertigungslinie.cs" server="192.168.178.26" local="131653538946194378" remote="131679399600000000" Dst="2" />
+<file name="Login.cs" server="192.168.178.26" local="131675510176829255" remote="131679399600000000" Dst="2" />
+<file name="Maschine.cs" server="192.168.178.26" local="131653538946234420" remote="131679399600000000" Dst="2" />
+<file name="Reparatur.cs" server="192.168.178.26" local="131653538946344478" remote="131679399600000000" Dst="2" />
+<file name="Wartung.cs" server="192.168.178.26" local="131653538946364486" remote="131679399600000000" Dst="2" />
 <file name="Abteilung.cs" server="C:/xampp/htdocs/proman/" local="131653538946044278" remote="131653502940000000" Dst="2" />
 <file name="Bauteil.cs" server="C:/xampp/htdocs/proman/" local="131653538946114319" remote="131653502940000000" Dst="2" />
 <file name="Fertigung.cs" server="C:/xampp/htdocs/proman/" local="131653538946134338" remote="131653502940000000" Dst="2" />
@@ -16,14 +16,14 @@
 <file name="Maschine.cs" server="C:/xampp/htdocs/proman/" local="131653538946234420" remote="131653502940000000" Dst="2" />
 <file name="Reparatur.cs" server="C:/xampp/htdocs/proman/" local="131653538946344478" remote="131653502940000000" Dst="2" />
 <file name="Wartung.cs" server="C:/xampp/htdocs/proman/" local="131653538946364486" remote="131653502940000000" Dst="2" />
-<file name="Arbeitsfolge.cs" server="192.168.178.26" local="131675510176779179" remote="131677648200000000" Dst="2" />
-<file name="Arbeitsplatz.cs" server="192.168.178.26" local="131636809178518713" remote="131677648200000000" Dst="2" />
-<file name="Audit.cs" server="192.168.178.26" local="131675510176799195" remote="131677648200000000" Dst="2" />
-<file name="EFImage.cs" server="192.168.178.26" local="131636809180630128" remote="131677648200000000" Dst="2" />
-<file name="Mitarbeiter.cs" server="192.168.178.26" local="131675510176884287" remote="131677648200000000" Dst="2" />
-<file name="Produktionsprogramm.cs" server="192.168.178.26" local="131636809179059073" remote="131677648200000000" Dst="2" />
-<file name="Sonderaufgabe.cs" server="192.168.178.26" local="131636809179179165" remote="131677648200000000" Dst="2" />
-<file name="Supermarkt.cs" server="192.168.178.26" local="131636809179229193" remote="131677648200000000" Dst="2" />
+<file name="Arbeitsfolge.cs" server="192.168.178.26" local="131675510176779179" remote="131679399600000000" Dst="2" />
+<file name="Arbeitsplatz.cs" server="192.168.178.26" local="131636809178518713" remote="131679399600000000" Dst="2" />
+<file name="Audit.cs" server="192.168.178.26" local="131675510176799195" remote="131679399600000000" Dst="2" />
+<file name="EFImage.cs" server="192.168.178.26" local="131636809180630128" remote="131679399600000000" Dst="2" />
+<file name="Mitarbeiter.cs" server="192.168.178.26" local="131675510176884287" remote="131679399600000000" Dst="2" />
+<file name="Produktionsprogramm.cs" server="192.168.178.26" local="131636809179059073" remote="131679399600000000" Dst="2" />
+<file name="Sonderaufgabe.cs" server="192.168.178.26" local="131636809179179165" remote="131679399600000000" Dst="2" />
+<file name="Supermarkt.cs" server="192.168.178.26" local="131636809179229193" remote="131679399600000000" Dst="2" />
 <file name="Arbeitsfolge.cs" server="C:/xampp/htdocs/proman/" local="131675510176779179" remote="131675510170000000" Dst="2" />
 <file name="Arbeitsplatz.cs" server="C:/xampp/htdocs/proman/" local="131636809178518713" remote="131636773170000000" Dst="2" />
 <file name="Audit.cs" server="C:/xampp/htdocs/proman/" local="131675510176799195" remote="131675510170000000" Dst="2" />
@@ -32,6 +32,6 @@
 <file name="Produktionsprogramm.cs" server="C:/xampp/htdocs/proman/" local="131636809179059073" remote="131636773170000000" Dst="2" />
 <file name="Sonderaufgabe.cs" server="C:/xampp/htdocs/proman/" local="131636809179179165" remote="131636773170000000" Dst="2" />
 <file name="Supermarkt.cs" server="C:/xampp/htdocs/proman/" local="131636809179229193" remote="131636773170000000" Dst="2" />
-<file name="Nachricht.cs" server="192.168.178.26" local="131653538946304446" remote="131677648200000000" Dst="2" />
+<file name="Nachricht.cs" server="192.168.178.26" local="131653538946304446" remote="131679399600000000" Dst="2" />
 <file name="Nachricht.cs" server="C:/xampp/htdocs/proman/" local="131653538946304446" remote="131653502940000000" Dst="2" />
 </dwsync>
