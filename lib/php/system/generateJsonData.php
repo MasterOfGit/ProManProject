@@ -1,9 +1,16 @@
 <?php
+loadAbteilung();
+loadBauteil();
+loadFertigung();
+loadFertigungslinie();
+loadMaschinen();
+loadUserData();
 
-//$url = "fertigungslinien.json";
-////$url2 = "save.json";
+	
+//$url_in = "fertigungslinien.json";
+//$url_out = "save.json";
 //
-//$file = file_get_contents($url, FILE_USE_INCLUDE_PATH);
+//$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
 //
 //$jsoninput = json_decode($file, TRUE);
 //
@@ -21,74 +28,174 @@
 //
 //file_put_contents($url, $b);
 
+
+
 // json Dateien laden
 
-function loaduserLogin(){
-	
-};
+// Abteilung
+function loadAbteilung()
+{
 
-function loaduserData(){
-	
-};
-function loaduserAnfragea(){
-	
-};
-function loadwartungen(){
-	
-};
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=AdminPageAbteilung";
+$url_out = "abteilung.json";
 
-function loadaudits(){
-	
-};
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
 
-function loadproduktionsplanung(){
-	
-};
+$jsoninput = json_decode($file, TRUE);
 
-function loadlagerbestend(){
-	
-};
-function loadmaschinenverwendung(){
-	
-};
+$b = json_encode($jsoninput);
 
-function loadmaschinen(){
+file_put_contents($url_out, $b);
 	
-};
+}
 
-function loadinstandhaltung(){
-	
-};
+function loadBauteil()
+{
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=AdminPageBauteil";
+$url_out = "bauteile.json";
 
-function loadfertigungslinie(){
-	
-};
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
 
-function loadfertigung(){
-	
-};
+$jsoninput = json_decode($file, TRUE);
 
-function loadbauteiverwendung(){
-	
-};
+$b = json_encode($jsoninput);
 
-function loadbauteil(){
+file_put_contents($url_out, $b);
 	
-};
+}
 
-function loadfertigunggststusdeteils()){
+function loadFertigung()
+{
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=AdminPageFertigung";
+$url_out = "fertigungen.json";
+
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
+
+$jsoninput = json_decode($file, TRUE);
+
+$b = json_encode($jsoninput);
+
+file_put_contents($url_out, $b);	
+}
+
+function loadFertigungslinie()
+{
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=o	AdminPageFertigungslinie";
+$url_out = "fertigungslinien.json";
+
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
+
+$jsoninput = json_decode($file, TRUE);
+
+$b = json_encode($jsoninput);
+
+file_put_contents($url_out, $b);		
+}
+
+function loadMaschinen()
+{
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=AdminPageMaschine";
+$url_out = "maschinen.json";
+
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
+
+$jsoninput = json_decode($file, TRUE);
+
+$b = json_encode($jsoninput);
+
+file_put_contents($url_out, $b);	
+}
+
+function loadUserData()
+{
+$url_in = "http://zoomnation.selfhost.eu:8080/ProManAPIDummy/api/AdminPage/?identifier=AdminPageUser";
+$url_out = "userdata.json";
+
+$file = file_get_contents($url_in, FILE_USE_INCLUDE_PATH);
+
+$jsoninput = json_decode($file, TRUE);
+
+$b = json_encode($jsoninput);
+
+file_put_contents($url_out, $b);	
+}
+
+
+
+
+// OFFEN
+
+function loadUserLogin()
+{
 	
-};
+}
+
+
+function loadUserAnfragen(){
+	
+}
+
+
+
+function loadWartungen(){
+	
+}
+
+
+
+function loadAudits(){
+	
+}
+
+
+
+function loadProduktionsplanung(){
+	
+}
+
+function loadLagerbestend(){
+	
+}
+
+
+function loadMaschinenverwendung(){
+	
+}
+
+
+
+
+
+function loadInstandhaltung(){
+	
+}
+
+
+
+
+
+
+
+function loadBauteiverwendung(){
+	
+}
+
+
+
+
+
+function loadfertigunggststusdeteils(){
+	
+}
+
 
 function loadabteilungfertigungsstatus(){
 	
-};
+}
 
-function loaduserData(){
-	
-};
 
-function loadabteilung(){
-	
-};
+
+
+
+
 ?>

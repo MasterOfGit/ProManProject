@@ -92,7 +92,7 @@ HOME1_HEADER;
 					echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$bauteil['bauteileID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input type='button' value='Neues Bauteil anlegen'  onclick='testbuttonaction();'></td>");
+				echo("<td><input type='button' value='Neues Bauteil anlegen'  onclick='createBauteil();'></td>");
 
 
 echo <<<HOME1_FOOTER
