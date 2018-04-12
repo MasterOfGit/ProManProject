@@ -16,7 +16,7 @@ namespace ProMan_Database.Model
 
         public Nachricht Antwort { get; set; }
 
-        public bool Gelesen { get; set; }
+        public NachrichtenStatus NachrichtenStatus { get; set; }
 
         [StringLength(255)]
         public string Betreff { get; set; }
@@ -25,6 +25,7 @@ namespace ProMan_Database.Model
         public string Text { get; set; }
 
         public NachrichtenTyp Type { get; set; }
+
 
     }
 }

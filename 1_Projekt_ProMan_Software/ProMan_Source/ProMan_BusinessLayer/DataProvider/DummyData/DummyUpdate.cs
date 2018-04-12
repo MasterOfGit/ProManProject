@@ -8,6 +8,10 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
     
     {
         #region Update
+        public bool UpdateBauteilDto(BauteilDto data, int id)
+        {
+            return true;
+        }
 
         public bool UpdateFertigungsDto(FertigungDto data, int id)
         {

@@ -15,6 +15,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             return false;
         }
 
+        public bool DeleteBauteilDto(int id)
+        {
+            return false;
+        }
+
         public bool DeleteBauteilVerwendungDto(int id)
         {
             return false;

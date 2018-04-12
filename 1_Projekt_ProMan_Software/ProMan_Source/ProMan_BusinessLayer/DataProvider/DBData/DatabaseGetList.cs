@@ -13,6 +13,31 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         private DatabaseGetSingle singleget = new DatabaseGetSingle();
         private ProManContext dbcontext = new ProManContext();
 
+        public List<BauteilDto> GetBauteilDto()
+        {
+            var items = dbcontext.Bauteile;
+            List<BauteilDto> returnlist = new List<BauteilDto>();
+
+            foreach (var item in items)
+            {
+                returnlist.Add(
+                    new BauteilDto()
+                    {
+                        bauteileID = item.BauteilID,
+                        bauteilIDNachfolger = item.NachfolderId,
+                        bauteilStatus = item.Status,
+                        bauteilIndex = item.Index,
+                        bauteilVersion = item.Version,
+                        bauteilNummer = item.Nummer,
+                        bauteilArt = item.Teilart
+                    });
+            }
+            return returnlist;
+        }
+
+
+
+
         public List<AbteilungDto> GetAbteilungDto()
         {
             var items = dbcontext.Abteilungen;
@@ -139,7 +164,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     ID = item.NachrichtID,
                     Betreff = item.Betreff,
-                    Gelesen = item.Gelesen,
+                    NachrichtenStatus = item.NachrichtenStatus.ToString(),
                     SendDate = item.SendDate.Value,
                     Text = item.Text,
                     Type = item.Type,
@@ -174,7 +199,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     ID = item.NachrichtID,
                     Betreff = item.Betreff,
-                    Gelesen = item.Gelesen,
+                    NachrichtenStatus = item.NachrichtenStatus.ToString(),
                     SendDate = item.SendDate.Value,
                     Text = item.Text,
                     Type = item.Type,
@@ -277,7 +302,47 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<AuditDto> GetAuditDto()
         {
-            throw new NotImplementedException();
+            var items = dbcontext.Audits;
+            List<AuditDto> returnlist = new List<AuditDto>();
+
+            foreach (var item in items)
+            {
+                returnlist.Add(new AuditDto()
+                {
+                    auditID = item.AuditID,
+                    terminturnus = item.Turnus.ToString(),
+                    auditart = item.AuditArt,
+                    status = item.Status.ToString(),
+                    termin = item.Endtermin.Value,
+                    beurteilung = item.Bewertung,
+                    abteilung = item.Abteilung.AbteilungID,
+                    nacharbeiten = item.Aufgabe,
+                    
+                });
+            }
+
+            return returnlist;
+        }
+
+        public List<UserAnfrageDto> GetUserAnfrageDto()
+        {
+            var items = dbcontext.Nachrichten;
+            List<UserAnfrageDto> returnlist = new List<UserAnfrageDto>();
+
+            foreach (var item in items)
+            {
+                returnlist.Add(new UserAnfrageDto()
+                {
+                    userId = item.From.MitarbeiterID,
+                    userAnfrageStatus = item.NachrichtenStatus.ToString(),
+                    userGrund = item.Betreff,
+                    userNachricht = item.Text
+
+                });
+            };
+
+            return returnlist;
+
         }
 
         public List<BauteilVerwendungDto> GetBauteilVerwendungDto()
@@ -305,9 +370,6 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             throw new NotImplementedException();
         }
 
-        public List<UserAnfrageDto> GetUserAnfrageDto()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProMan_Database.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,9 +15,14 @@ namespace ProMan_Database.Model
         public DateTime? Endtermin { get; set; }
         [StringLength(100)]
         public string Aufgabe { get; set; }
-        public int Abschlussnote { get; set; }
+        public string Bewertung { get; set; }
         [StringLength(100)]
         public string Bereich { get; set; }
         public ICollection<Mitarbeiter> Zuständigkeit { get; set; }
+        public Turnus Turnus { get; set; }
+        public StatusArt Status { get; set; }
+        public Abteilung Abteilung { get; set; }
+        public string AuditArt { get; set; }
+
     }
 }

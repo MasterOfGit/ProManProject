@@ -544,7 +544,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 Betreff = "Hallo Betreff",
                 Text = "Hallo Text",
-                Gelesen = false,
+                NachrichtenStatus = "Gelesen",
                 ID = id,
                 From = GetUserDto(1),
                 To = GetUserDto(2),
@@ -561,7 +561,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                             {
                                 Betreff = "Hallo Betreff",
                                 Text = "Hallo Text",
-                                Gelesen = false,
+                                NachrichtenStatus = "Gelesen",
                                 ID = UserID,
                                 From = GetUserDto(1),
                                 To = GetUserDto(2),
@@ -572,7 +572,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                         {
                             Betreff = "Hallo Betreff2",
                             Text = "Hallo Text2",
-                            Gelesen = false,
+                            NachrichtenStatus = "Gelesen",
                             ID = UserID,
                             From = GetUserDto(1),
                             To = GetUserDto(2),
@@ -838,7 +838,15 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             };
         }
 
-       
+        public BauteilDto GetBauteilDto(int id)
+        {
+            return new BauteilDto()
+            {
+                bauteileID = id,
+            };
+        }
+
+
 
         #endregion
     }

@@ -10,6 +10,12 @@
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        bool DeleteBauteilDto(int id);
+        /// <summary>
+        /// Deletes a object of type 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         bool DeleteFertigungsDto(int id);
         /// <summary>
         /// Deletes a object of type 

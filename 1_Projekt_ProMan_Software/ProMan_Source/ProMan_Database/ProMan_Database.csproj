@@ -55,6 +55,7 @@
     <Compile Include="Enums\Fachtype.cs" />
     <Compile Include="Enums\Fertigungstype.cs" />
     <Compile Include="Enums\MaschinenStatus.cs" />
+    <Compile Include="Enums\NachrichtenStatus.cs" />
     <Compile Include="Enums\NachrichtenTyp.cs" />
     <Compile Include="Enums\ProduktionStatus.cs" />
     <Compile Include="Enums\ReparaturStatus.cs" />
@@ -69,6 +70,10 @@
     <Compile Include="Migrations\201804061832404_0.1.0.cs" />
     <Compile Include="Migrations\201804061832404_0.1.0.Designer.cs">
       <DependentUpon>201804061832404_0.1.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804122005587_0.2.0.cs" />
+    <Compile Include="Migrations\201804122005587_0.2.0.Designer.cs">
+      <DependentUpon>201804122005587_0.2.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Abteilung.cs" />
@@ -107,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804061832404_0.1.0.resx">
       <DependentUpon>201804061832404_0.1.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804122005587_0.2.0.resx">
+      <DependentUpon>201804122005587_0.2.0.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

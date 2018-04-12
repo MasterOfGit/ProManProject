@@ -16,7 +16,7 @@ namespace ProMan_BusinessLayer.Models
 
         public NachrichtDto Antwort { get; set; }
 
-        public bool Gelesen { get; set; }
+        public string NachrichtenStatus { get; set; }
 
         public string Betreff { get; set; }
 

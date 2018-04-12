@@ -8,6 +8,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 {
     public class DummyGetList : IGetListDataProvider
     {
+        public List<BauteilDto> GetBauteilDto()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<AbteilungDto> GetAbteilungDto()
         {
             throw new NotImplementedException();

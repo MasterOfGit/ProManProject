@@ -9,6 +9,7 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
     {
         bool UpdateFertigungsDto(FertigungDto data, int id);
         bool UpdateFertigungslinieDto(FertigungslinieDto data, int id);
+        bool UpdateBauteilDto(BauteilDto data, int id);
         bool UpdateMaschineDto(MaschineDto data, int id);
         bool UpdateReparaturDto(ReparaturDto data, int id);
         bool UpdateUserDto(UserDto data, int id);

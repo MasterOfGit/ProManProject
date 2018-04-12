@@ -8,36 +8,36 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class AbteilungController : BaseApiController
+    public class BauteilController : BaseApiController
     {
         // GET: api/Abteilung
-        public IEnumerable<AbteilungDto> Get()
+        public IEnumerable<BauteilDto> Get()
         {
-            return dataprovider.GetListDataProvider.GetAbteilungDto();
+            return dataprovider.GetListDataProvider.GetBauteilDto();
         }
 
         // GET: api/Abteilung/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetAbteilungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilDto(id)));
         }
 
         // POST: api/Abteilung
-        public void Post([FromBody]AbteilungDto value)
+        public void Post([FromBody]BauteilDto value)
         {
-            dataprovider.CreateDataProvider.SetAbteilungDto(value);
+            dataprovider.CreateDataProvider.SetBauteilDto(value);
         }
 
         // PUT: api/Abteilung/5
-        public void Put(int id, [FromBody]AbteilungDto value)
+        public void Put(int id, [FromBody]BauteilDto value)
         {
-            dataprovider.UpdateDataProvider.UpdateAbteilungDto(value,id);
+            dataprovider.UpdateDataProvider.UpdateBauteilDto(value, id);
         }
 
         // DELETE: api/Abteilung/5
         public void Delete(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteAbteilungDto(id);
+            dataprovider.DeleteDataProvider.DeleteBauteilDto(id);
         }
     }
 }

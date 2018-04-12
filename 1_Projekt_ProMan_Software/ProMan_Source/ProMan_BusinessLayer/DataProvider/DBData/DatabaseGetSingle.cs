@@ -16,6 +16,25 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         #region gets
 
+
+
+        public BauteilDto GetBauteilDto(int id)
+        {
+            var item = dbcontext.Bauteile.FirstOrDefault(x => x.BauteilID == id);
+
+            return new BauteilDto()
+            {
+                bauteileID = item.BauteilID,
+                bauteilIDNachfolger = item.NachfolderId,
+                bauteilStatus = item.Status,
+                bauteilIndex = item.Index,
+                bauteilVersion = item.Version,
+                bauteilNummer = item.Nummer,
+                bauteilArt = item.Teilart
+            };
+
+        }
+
         public AbteilungDto GetAbteilungDto(int id)
         {
             var item = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == id);
@@ -165,7 +184,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             {
                 ID = item.NachrichtID,
                 Betreff = item.Betreff,
-                Gelesen = item.Gelesen,
+                NachrichtenStatus = item.NachrichtenStatus.ToString(),
                 SendDate = item.SendDate.Value,
                 Text = item.Text,
                 Type = item.Type,
@@ -447,9 +466,27 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             return item;
         }
 
+
+
+        #endregion
+
+        #endregion
+
         public AuditDto GetAuditDto(int id)
         {
-            throw new NotImplementedException();
+            var item = dbcontext.Audits.FirstOrDefault(x => x.AuditID == id);
+
+            return new AuditDto()
+            {
+                auditID = item.AuditID,
+                terminturnus = item.Turnus.ToString(),
+                auditart = item.AuditArt,
+                status = item.Status.ToString(),
+                termin = item.Endtermin.Value,
+                beurteilung = item.Bewertung,
+                abteilung = item.Abteilung.AbteilungID,
+                nacharbeiten = item.Aufgabe,
+            };
         }
 
         public BauteilVerwendungDto GetBauteilVerwendungDto(int id)
@@ -479,11 +516,15 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public UserAnfrageDto GetUserAnfrageDto(int id)
         {
-            throw new NotImplementedException();
+            var item = dbcontext.Nachrichten.FirstOrDefault(x => x.NachrichtID == id);
+
+            return new UserAnfrageDto()
+            {
+                userId = item.From.MitarbeiterID,
+                userAnfrageStatus = item.NachrichtenStatus.ToString(),
+                userGrund = item.Betreff,
+                userNachricht = item.Text
+            };
         }
-
-        #endregion
-
-        #endregion
     }
 }

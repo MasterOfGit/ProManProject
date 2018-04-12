@@ -14,7 +14,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         #region set/create
 
 
-        public bool SetAbteilungDto(AbteilungDto data)
+        public int SetAbteilungDto(AbteilungDto data)
         {
             var werk = dbcontext.Werk.FirstOrDefault(x => x.Name == data.WerkName);
             dbcontext.Abteilungen.Add(new ProMan_Database.Model.Abteilung()
@@ -25,10 +25,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             });
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
-        public bool SetFertigungsDto(FertigungDto data)
+        public int SetFertigungsDto(FertigungDto data)
         {
             dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung()
             {
@@ -37,10 +37,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
-        public bool SetFertigungslinieDto(FertigungslinieDto data)
+        public int SetFertigungslinieDto(FertigungslinieDto data)
         {
             dbcontext.Fertigungslinien.Add(new ProMan_Database.Model.Fertigungslinie()
             {
@@ -51,10 +51,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
-        public bool SetMaschineDto(MaschineDto data)
+        public int SetMaschineDto(MaschineDto data)
         {
             MaschinenStatus tmpMaschinenStatus;
             Enum.TryParse(data.status, out tmpMaschinenStatus);
@@ -77,11 +77,11 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
 
         }
 
-        public bool SetReparaturDto(ReparaturDto data)
+        public int SetReparaturDto(ReparaturDto data)
         {
             dbcontext.Reparaturen.Add(new ProMan_Database.Model.Reparatur()
             {
@@ -90,10 +90,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
-        public bool SetUserDto(UserDto data)
+        public int SetUserDto(UserDto data)
         {
             var userlogin = dbcontext.Logins.FirstOrDefault(x => x.LoginID == data.LoginId);
 
@@ -113,10 +113,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
-        public bool SetWartungDto(WartungDto data)
+        public int SetWartungDto(WartungDto data)
         {
             dbcontext.Wartungen.Add(new ProMan_Database.Model.Wartung()
             {
@@ -124,7 +124,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
 
         public int SetLoginDto(LoginDto data)
@@ -151,15 +151,18 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         }
 
-        public bool SetNachrichtDto(NachrichtDto data)
+        public int SetNachrichtDto(NachrichtDto data)
         {
             var userfrom = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.From.userID);
             var userto = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.To.userID);
+            NachrichtenStatus tmp;
+
+            Enum.TryParse(data.NachrichtenStatus, out tmp);
 
             dbcontext.Nachrichten.Add(new ProMan_Database.Model.Nachricht()
             {
                 Betreff = data.Betreff,
-                Gelesen = false,
+                NachrichtenStatus = tmp,
                 Text = data.Text,
                 SendDate = data.SendDate,
                 Type = data.Type,
@@ -170,48 +173,9 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.SaveChanges();
 
-            return true;
+            return 1;
         }
-
-        int ICreateDataProvider.SetFertigungsDto(FertigungDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetFertigungslinieDto(FertigungslinieDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetMaschineDto(MaschineDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetReparaturDto(ReparaturDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetUserDto(UserDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetWartungDto(WartungDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetAbteilungDto(AbteilungDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        int ICreateDataProvider.SetNachrichtDto(NachrichtDto data)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public int SetAuditDto(AuditDto data)
         {
@@ -244,6 +208,11 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         }
 
         public int SetUserAnfrageDto(UserAnfrageDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetBauteilDto(BauteilDto data)
         {
             throw new NotImplementedException();
         }

@@ -13,6 +13,17 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         ProManContext dbcontext = new ProManContext();
         #region updates
 
+        public bool UpdateBauteilDto(BauteilDto data, int id)
+        {
+
+
+
+
+            dbcontext.SaveChanges();
+
+            return true;
+        }
+
         public bool UpdateAbteilungDto(AbteilungDto data, int id)
         {
 

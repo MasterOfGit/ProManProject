@@ -14,6 +14,11 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// Returns a list of all Fertigungsobjects
         /// </summary>
         /// <returns></returns>
+        List<BauteilDto> GetBauteilDto();
+        /// <summary>
+        /// Returns a list of all Fertigungsobjects
+        /// </summary>
+        /// <returns></returns>
         List<FertigungDto> GetFertigungsDto();
         /// <summary>
         /// Returns a list of allFertigungslinieobjects

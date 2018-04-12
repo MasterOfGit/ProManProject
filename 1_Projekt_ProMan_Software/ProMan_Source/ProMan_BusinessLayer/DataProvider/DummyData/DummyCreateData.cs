@@ -87,6 +87,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             return 0;
         }
+
+        public int SetBauteilDto(BauteilDto data)
+        {
+            return 0;
+        }
         #endregion
     }
 }

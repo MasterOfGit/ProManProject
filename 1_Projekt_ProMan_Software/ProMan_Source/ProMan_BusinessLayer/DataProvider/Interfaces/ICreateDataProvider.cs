@@ -12,6 +12,12 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
+        int SetBauteilDto(BauteilDto data);
+        /// <summary>
+        /// Creates a new Fertigungs object in the datastructure
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         int SetFertigungsDto(FertigungDto data);
         /// <summary>
         /// Creates a new Fertigungs object in the datastructure

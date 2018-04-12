@@ -48,6 +48,7 @@ namespace ProMan_WebAPI.Controllers
         // DELETE: api/Nachricht/5
         public void Delete(int id)
         {
+            dataprovider.DeleteDataProvider.DeleteNachrichtDto(id);
         }
     }
 }

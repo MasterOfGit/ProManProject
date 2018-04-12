@@ -277,7 +277,26 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool DeleteUserAnfrageDto(int id)
         {
-            throw new NotImplementedException();
+            var item = dbcontext.Nachrichten.FirstOrDefault(x => x.NachrichtID == id);
+            if (item == null)
+            {
+                return false;
+            }
+
+
+            //try to remove it. If it is locked, an exception will be thrown
+            try
+            {
+                dbcontext.Nachrichten.Remove(item);
+                dbcontext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+            return true;
         }
 
         public bool DeleteProduktionsplanDto(int id)
@@ -288,6 +307,30 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         public bool DeleteMaschineVerwendungDto(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public bool DeleteBauteilDto(int id)
+        {
+            var item = dbcontext.Bauteile.FirstOrDefault(x => x.BauteilID == id);
+            if (item == null)
+            {
+                return false;
+            }
+
+
+            //try to remove it. If it is locked, an exception will be thrown
+            try
+            {
+                dbcontext.Bauteile.Remove(item);
+                dbcontext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+            return true;
         }
     }
 }

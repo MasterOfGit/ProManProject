@@ -37,6 +37,7 @@ namespace ProMan_WebAPI.Controllers
         // DELETE: api/Fertigung/5
         public void Delete(int id)
         {
+            dataprovider.DeleteDataProvider.DeleteFertigungsDto(id);
         }
     }
 }

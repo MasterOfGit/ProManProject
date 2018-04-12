@@ -42,6 +42,7 @@ namespace ProMan_WebAPI.Controllers
         // DELETE: api/User/5
         public void Delete(int id)
         {
+            dataprovider.DeleteDataProvider.DeleteUserDto(id);
         }
     }
 }
