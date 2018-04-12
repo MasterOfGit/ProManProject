@@ -9,7 +9,7 @@ namespace ProMan_Test
 
         FertigungDto fertDto = new FertigungDto()
         {
-            ID = 1
+            fertigungsID = 1
         };
 
         FertigungslinieDto fertlinieDto = new FertigungslinieDto()

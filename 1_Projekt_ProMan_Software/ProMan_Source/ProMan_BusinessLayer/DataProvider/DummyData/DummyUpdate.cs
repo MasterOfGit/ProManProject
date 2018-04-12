@@ -53,6 +53,41 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             return true;
         }
 
+        public bool UpdateAuditDto(AuditDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateBauteilVerwendungDto(BauteilVerwendungDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateLagerBestandDto(LagerBestandDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateMaschineVerwendungDto(MaschineVerwendungDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateProduktionsplanDto(ProduktionsplanDto data, int id)
+        {
+            return true;
+        }
+
+        public bool UpdateUserAnfrageDto(UserAnfrageDto data, int id)
+        {
+            return true;
+        }
+
 
 
         #endregion

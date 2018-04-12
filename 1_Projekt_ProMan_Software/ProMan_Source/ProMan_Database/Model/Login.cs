@@ -25,6 +25,8 @@ namespace ProMan_Database.Model
         [Required]
         public AufgabenGruppe LoginType { get; set; }
 
+        public UserStatus UserStatus { get; set; }
+
 
         
 

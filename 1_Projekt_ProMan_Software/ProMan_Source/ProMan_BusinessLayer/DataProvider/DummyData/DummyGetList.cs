@@ -13,6 +13,16 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             throw new NotImplementedException();
         }
 
+        public List<AuditDto> GetAuditDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<BauteilVerwendungDto> GetBauteilVerwendungDto()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<FertigungDto> GetFertigungsDto()
         {
             throw new NotImplementedException();
@@ -23,12 +33,27 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             throw new NotImplementedException();
         }
 
+        public List<InstandhaltungsAuftragDto> GetInstandhaltungsAuftragDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<LagerBestandDto> GetLagerBestandDto()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<LoginDto> GetLoginDto()
         {
             throw new NotImplementedException();
         }
 
         public List<MaschineDto> GetMaschineDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MaschineVerwendungDto> GetMaschineVerwendungDto()
         {
             throw new NotImplementedException();
         }
@@ -48,7 +73,17 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             throw new NotImplementedException();
         }
 
+        public List<ProduktionsplanDto> GetProduktionsplanDto()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ReparaturDto> GetReparaturDto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<UserAnfrageDto> GetUserAnfrageDto()
         {
             throw new NotImplementedException();
         }

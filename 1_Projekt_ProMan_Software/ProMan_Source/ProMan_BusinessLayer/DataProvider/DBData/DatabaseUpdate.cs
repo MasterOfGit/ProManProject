@@ -99,18 +99,53 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             AufgabenGruppe tmp;
 
-            Enum.TryParse(data.LoginType, out tmp);
+            Enum.TryParse(data.userbereich, out tmp);
 
             dbcontext.Logins.Add(new ProMan_Database.Model.Login()
             {
-                Username = data.LoginName,
-                Password = data.Password,
+                Username = data.userKennung,
+                Password = data.userpasswort,
                 LoginType = tmp,
             });
 
             dbcontext.SaveChanges();
 
             return true;
+        }
+
+        public bool UpdateAuditDto(AuditDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateBauteilVerwendungDto(BauteilVerwendungDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateLagerBestandDto(LagerBestandDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateMaschineVerwendungDto(MaschineVerwendungDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateProduktionsplanDto(ProduktionsplanDto data, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateUserAnfrageDto(UserAnfrageDto data, int id)
+        {
+            throw new NotImplementedException();
         }
 
 

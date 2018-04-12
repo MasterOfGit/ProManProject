@@ -11,7 +11,7 @@ namespace ProMan_BusinessLayer.Models.AdminPages
         {
             get
             {
-                return Fertigungen.Select(x => x.Name).Distinct().ToList();
+                return Fertigungen.Select(x => x.fertigungsname).Distinct().ToList();
             }
             set
             {
@@ -26,7 +26,7 @@ namespace ProMan_BusinessLayer.Models.AdminPages
         {
             get
             {
-                return Fertigungslinien.Select(x => x.Name).Distinct().ToList();
+                return fertigungslinien.Select(x => x.fertigunglinenname).Distinct().ToList();
             }
             set
             {

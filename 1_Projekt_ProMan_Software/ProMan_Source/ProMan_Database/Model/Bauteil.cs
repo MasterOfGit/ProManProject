@@ -16,6 +16,14 @@ namespace ProMan_Database.Model
         public string Version { get; set; }
         [StringLength(100)]
         public string Verwendungsort { get; set; }
+
+        public int NachfolderId { get; set; }
+        public string Index { get; set;}
+
+        public string Status { get; set; }
+        public string Nummer { get; set; }
+
+
         public ICollection<Bauteil> Abhaengigkeiten { get; set; }
     }
 }

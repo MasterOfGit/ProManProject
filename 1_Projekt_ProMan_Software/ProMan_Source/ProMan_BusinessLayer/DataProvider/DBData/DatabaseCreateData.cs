@@ -16,10 +16,11 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool SetAbteilungDto(AbteilungDto data)
         {
+            var werk = dbcontext.Werk.FirstOrDefault(x => x.Name == data.WerkName);
             dbcontext.Abteilungen.Add(new ProMan_Database.Model.Abteilung()
             {
-                Bezeichnung = data.Name,
-                Werk = data.WerkName,
+                Bezeichnung = data.abteilungsname,
+                Werk = werk,
 
             });
             dbcontext.SaveChanges();
@@ -31,7 +32,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung()
             {
-                Bezeichnung = data.Name,
+                Bezeichnung = data.fertigungsname,
             });
 
             dbcontext.SaveChanges();
@@ -43,7 +44,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             dbcontext.Fertigungslinien.Add(new ProMan_Database.Model.Fertigungslinie()
             {
-                Bezeichnung = data.Name,
+                Bezeichnung = data.fertigunglinenname,
             }
             )
             ;
@@ -56,20 +57,20 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         public bool SetMaschineDto(MaschineDto data)
         {
             MaschinenStatus tmpMaschinenStatus;
-            Enum.TryParse(data.Status, out tmpMaschinenStatus);
+            Enum.TryParse(data.status, out tmpMaschinenStatus);
 
             Technologie tmpTechnologie;
-            Enum.TryParse(data.Technologie, out tmpTechnologie);
+            Enum.TryParse(data.technologie, out tmpTechnologie);
 
             dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
             {
                 Anschaffungsdatum = data.Anschaffungsdatum,
                 Garantie = data.Garantie,
-                Hersteller = data.Hersteller,
+                Hersteller = data.hersteller,
                 Technologie = tmpTechnologie,
                 Status = tmpMaschinenStatus,
-                Inventarnummer = data.Inventarnummer,
-                Standort = data.Standort,
+                Inventarnummer = data.maschinenInventarNummer,
+                Standort = data.standort,
                 Version = data.Version,
                 Zeichnungsnummer = data.Zeichnungsnummer,
             });
@@ -98,14 +99,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             dbcontext.Mitarbeiter.Add(new ProMan_Database.Model.Mitarbeiter()
             {
-                Vorname = data.Vorname,
-                Nachname = data.Nachname,
-                eMail = data.eMail,
-                Festnetz = data.Festnetz,
-                Mobil = data.Mobil,
-                Bemerkung = data.Bemerkung,
-                Active = data.Active,
-                Namenszusatz = data.Namenszusatz,
+                Vorname = data.userVorname,
+                Nachname = data.userNachname,
+                eMail = data.userEmail,
+                Festnetz = data.userFestnetzNr,
+                Mobil = data.userMobilNr,
+                Bemerkung = data.userBemerkung,
+                Active = data.userActive,
+                Namenszusatz = data.userAnrede,
                 Login = userlogin,
             }
                 );
@@ -129,27 +130,31 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         public int SetLoginDto(LoginDto data)
         {
             AufgabenGruppe tmp;
-
-            Enum.TryParse(data.LoginType, out tmp);
+            UserStatus tmp2;
+            Enum.TryParse(data.userbereich, out tmp);
+            Enum.TryParse(data.userStatus, out tmp2);
 
             dbcontext.Logins.Add(new ProMan_Database.Model.Login()
             {
-                Username = data.LoginName,
-                Password = data.Password,
+                Username = data.userKennung,
+                Password = data.userpasswort,
                 LoginType = tmp,
+                LastLogin = DateTime.Now,
+                UserStatus = tmp2,
+                
             });
 
             dbcontext.SaveChanges();
 
 
-            return dbcontext.Logins.FirstOrDefault(x => x.Username == data.LoginName && x.LoginType == tmp).LoginID;
+            return dbcontext.Logins.FirstOrDefault(x => x.Username == data.userKennung && x.LoginType == tmp).LoginID;
 
         }
 
         public bool SetNachrichtDto(NachrichtDto data)
         {
-            var userfrom = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.From.ID);
-            var userto = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.To.ID);
+            var userfrom = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.From.userID);
+            var userto = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.To.userID);
 
             dbcontext.Nachrichten.Add(new ProMan_Database.Model.Nachricht()
             {
@@ -166,6 +171,81 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             dbcontext.SaveChanges();
 
             return true;
+        }
+
+        int ICreateDataProvider.SetFertigungsDto(FertigungDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetFertigungslinieDto(FertigungslinieDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetMaschineDto(MaschineDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetReparaturDto(ReparaturDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetUserDto(UserDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetWartungDto(WartungDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetAbteilungDto(AbteilungDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        int ICreateDataProvider.SetNachrichtDto(NachrichtDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetAuditDto(AuditDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetBauteilVerwendungDto(BauteilVerwendungDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetLagerBestandDto(LagerBestandDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetMaschineVerwendungDto(MaschineVerwendungDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetProduktionsplanDto(ProduktionsplanDto data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int SetUserAnfrageDto(UserAnfrageDto data)
+        {
+            throw new NotImplementedException();
         }
 
 

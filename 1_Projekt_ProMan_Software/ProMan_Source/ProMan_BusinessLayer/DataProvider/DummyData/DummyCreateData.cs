@@ -8,49 +8,84 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
     {
         #region set
 
-        public bool SetFertigungsDto(FertigungDto data)
+        public int SetFertigungsDto(FertigungDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetFertigungslinieDto(FertigungslinieDto data)
+        public int SetFertigungslinieDto(FertigungslinieDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetMaschineDto(MaschineDto data)
+        public int SetMaschineDto(MaschineDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetReparaturDto(ReparaturDto data)
+        public int SetReparaturDto(ReparaturDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetUserDto(UserDto data)
+        public int SetUserDto(UserDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetWartungDto(WartungDto data)
+        public int SetWartungDto(WartungDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetAbteilungDto(AbteilungDto data)
+        public int SetAbteilungDto(AbteilungDto data)
         {
-            return true;
+            return 0;
         }
 
-        public bool SetNachrichtDto(NachrichtDto data)
+        public int SetNachrichtDto(NachrichtDto data)
         {
-            return true;
+            return 0;
         }
 
         public int SetLoginDto(LoginDto data)
         {
-            return 1;
+            return 0;
+        }
+
+        public int SetAuditDto(AuditDto data)
+        {
+            return 0;
+        }
+
+        public int SetBauteilVerwendungDto(BauteilVerwendungDto data)
+        {
+            return 0;
+        }
+
+        public int SetInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data)
+        {
+            return 0;
+        }
+
+        public int SetLagerBestandDto(LagerBestandDto data)
+        {
+            return 0;
+        }
+
+        public int SetMaschineVerwendungDto(MaschineVerwendungDto data)
+        {
+            return 0;
+        }
+
+        public int SetProduktionsplanDto(ProduktionsplanDto data)
+        {
+            return 0;
+        }
+
+        public int SetUserAnfrageDto(UserAnfrageDto data)
+        {
+            return 0;
         }
         #endregion
     }

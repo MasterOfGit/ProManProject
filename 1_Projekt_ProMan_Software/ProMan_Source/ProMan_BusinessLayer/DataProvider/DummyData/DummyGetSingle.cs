@@ -26,8 +26,8 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 
             AbteilungDto item = new AbteilungDto()
             {
-                ID = id,
-                Name = $"Abteilung{id}",
+                abteilungsID = id,
+                abteilungsname = $"Abteilung{id}",
                 Fachbereich = $"Fachbereich{id}",
                 WerkName = $"Werk{id}",
                 Fertigungen = ferttmp,
@@ -48,10 +48,10 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 
             FertigungDto item = new FertigungDto()
             {
-                ID = id,
-                Name = $"Fertigung{id}",
-                AbteilungName = $"Abteilung{id}",
-                Fertigungslinien = tmp
+                fertigungsID = id,
+                fertigungsname = $"Fertigung{id}",
+                //AbteilungName = $"Abteilung{id}",
+                fertigungslinien = tmp
             };
             return item;
         }
@@ -66,9 +66,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 
             FertigungslinieDto item = new FertigungslinieDto()
             {
-                ID = id,
-                Name = $"linie{id}",
-                FertigungName = $"Fertigung{id}"
+                fertigungslinieID = id,
+                //fertigunglinenname = $"linie{id}",
+                fertigunglinenname = $"Fertigung{id}"
             };
 
             return item;
@@ -99,10 +99,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             return new LoginDto()
             {
-                AnzeigeName = "Herr Login",
-                LoginName = "Login",
-                Password = "*****",
-                LoginType = AufgabenGruppe.Administrator.ToString()
+                userID = id,
+                userKennung = "Herr Login",
+                userpasswort = "*****",
+                userbereich = AufgabenGruppe.Administrator.ToString(),
+                userLastLogin = DateTime.Now,
+                userStatus = "aktiv",
 
             };
         }
@@ -111,10 +113,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             return new LoginDto()
             {
-                AnzeigeName = "Herr Login",
-                LoginName = username,
-                Password = password,
-                LoginType = AufgabenGruppe.Administrator.ToString()
+                userID = 1,
+                userKennung = username,
+                userpasswort = password,
+                userbereich = AufgabenGruppe.Administrator.ToString(),
+                userLastLogin = DateTime.Now,
+                userStatus = "aktiv",
 
             };
         }
@@ -133,16 +137,16 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 new ExtendedAdminAbteilungenDto()
                 {
-                    ID = 1,
-                    Name = "Fertigung_1",
+                    abteilungsID = 1,
+                    abteilungsname = "Fertigung_1",
                     WerkName = "Werk_1",
                     Fertigungen = new List<FertigungDto>()
                     {
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_1",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_1",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
                                 new FertigungslinieDto(),
@@ -150,9 +154,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                         },
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_2",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_2",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
                                 new FertigungslinieDto(),
@@ -160,9 +164,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                         },
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_3",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_3",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
 
@@ -173,16 +177,16 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                 },
                 new ExtendedAdminAbteilungenDto()
                 {
-                    ID = 1,
-                    Name = "Fertigung_2",
+                    abteilungsID = 1,
+                    abteilungsname = "Fertigung_2",
                     WerkName = "Werk_1",
                     Fertigungen = new List<FertigungDto>()
                     {
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_10",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_10",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
                                 new FertigungslinieDto(),
@@ -190,9 +194,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                         },
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_20",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_20",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
                                 new FertigungslinieDto(),
@@ -200,9 +204,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                         },
                         new FertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_30",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_30",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto(),
 
@@ -222,24 +226,33 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 new BauteilDto()
                 {
-                    ID = 1,
-                    Teilart = "Bauteil_1",
-                    Version = "1.0",
-                    Verwendungsort = "hier"
+                    bauteileID = 1,
+                    bauteilArt = "Bauteil_1",
+                    bauteilVersion = "1.0",
+                    bauteilIndex = "A",
+                    bauteilIDNachfolger = 2,
+                    bauteilStatus = "aktiv",
+                    bauteilNummer = "111 222 333",
                 },
                 new BauteilDto()
                 {
-                    ID = 2,
-                    Teilart = "Bauteil_2",
-                    Version = "1.2",
-                    Verwendungsort = "dort"
+                    bauteileID = 2,
+                    bauteilArt = "Bauteil_2",
+                    bauteilVersion = "2.0",
+                    bauteilIndex = "A",
+                    bauteilIDNachfolger = 3,
+                    bauteilStatus = "aktiv",
+                    bauteilNummer = "111 222 333",
                 },
                 new BauteilDto()
                 {
-                    ID = 1,
-                    Teilart = "Bauteil_3",
-                    Version = "1.3",
-                    Verwendungsort = "da hinten"
+                    bauteileID = 3,
+                    bauteilArt = "Bauteil_3",
+                    bauteilVersion = "1.3",
+                    bauteilIndex = "A",
+                    bauteilIDNachfolger = 3,
+                    bauteilStatus = "aktiv",
+                    bauteilNummer = "111 222 333",
                 }
             };
             return value;
@@ -252,92 +265,102 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     {
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_1",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 1,
+                            fertigungsname = "Fertigung_1",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie1_1"
+                                    fertigungslinieID = 1,
+                                    fertigunglinenname = "Fertigungslinie1_1"
                                 },
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie1_2"
+                                    fertigungslinieID = 2,
+                                    fertigunglinenname = "Fertigungslinie1_2"
                                 },
                             }
                         },
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_2",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 2,
+                            fertigungsname = "Fertigung_2",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie2_1"
+                                    fertigungslinieID = 3,
+                                    fertigunglinenname = "Fertigungslinie2_1"
                                 },
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie2_2"
+                                    fertigungslinieID = 4,
+                                    fertigunglinenname = "Fertigungslinie2_2"
                                 },
                             }
                         },
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_3",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 3,
+                            fertigungsname = "Fertigung_3",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
 
                                 {
-                                    Name = "Fertigungslinie3_1"
+                                    fertigungslinieID = 5,
+                                    fertigunglinenname = "Fertigungslinie3_1"
                                 },
 
                             }
                         },
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_10",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 4,
+                            fertigungsname = "Fertigung_10",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie10_1"
+                                    fertigungslinieID = 5,
+                                    fertigunglinenname = "Fertigungslinie10_1"
                                 },
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie10_2"
+                                    fertigungslinieID = 6,
+                                    fertigunglinenname = "Fertigungslinie10_2"
                                 },
                             }
                         },
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_20",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 5,
+                            fertigungsname = "Fertigung_20",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie20_1"
+                                    fertigungslinieID = 7,
+                                    fertigunglinenname = "Fertigungslinie20_1"
                                 },
                                 new FertigungslinieDto()
                                 {
-                                    Name = "Fertigungslinie20_2"
+                                    fertigungslinieID = 8,
+                                    fertigunglinenname = "Fertigungslinie20_2"
                                 },
                             }
                         },
                         new ExtendedAdminFertigungDto()
                         {
-                            ID = 1,
-                            Name = "Fertigung_30",
-                            Fertigungslinien = new List<FertigungslinieDto>()
+                            fertigungsID = 6,
+                            fertigungsname = "Fertigung_30",
+                            fertigungslinien = new List<FertigungslinieDto>()
                             {
                                 new FertigungslinieDto()
 
                                 {
-                                    Name = "Fertigungslinie30_1"
+                                    fertigungslinieID = 9,
+                                    fertigunglinenname = "Fertigungslinie30_1"
                                 },
 
                             }
@@ -353,9 +376,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 new FertigungslinieDto()
                 {
-                    ID = 1,
-                    Name = "linie_1",
-                    Arbeitsfolgen = new List<ArbeitsfolgeDto>()
+                    fertigungslinieID = 1,
+                    fertigunglinenname = "linie_1",
+                    arbeitsfolgen = new List<ArbeitsfolgeDto>()
                     {
                         new ArbeitsfolgeDto()
                         {
@@ -375,9 +398,9 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                 },
                                 new FertigungslinieDto()
                 {
-                    ID = 2,
-                    Name = "linie_2",
-                    Arbeitsfolgen = new List<ArbeitsfolgeDto>()
+                    fertigungslinieID = 2,
+                    fertigunglinenname = "linie_2",
+                    arbeitsfolgen = new List<ArbeitsfolgeDto>()
                     {
                         new ArbeitsfolgeDto()
                         {
@@ -407,53 +430,63 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 new MaschineDto()
                 {
-                    ID = 1,
+                    maschinenID = 1,
                     Anschaffungsdatum = DateTime.Now.AddDays(-10),
                     Garantie = DateTime.Now.AddDays(10),
-                    Hersteller = "Masch_1",
-                    Standort = "Stand_1",
+                    hersteller = "Masch_1",
+                    standort = "Stand_1",
                     Version = "1",
                     Zeichnungsnummer = "123",
-                    Technologie = ProMan_Database.Enums.Technologie.drehen.ToString(),
+                    technologie = ProMan_Database.Enums.Technologie.drehen.ToString(),
 
                     AbteilungsName = "Abteilung_1",
                     Arbeitsfolge = "1",
                     FertigungslinienName = "Linie_1",
-                    FertigungsName = "Fertigung_1"
+                    FertigungsName = "Fertigung_1",
+                    abteilungsId =1,
+                    maschinenInventarNummer = "111 222 333",
+                    status = "aktiv"
 
 
 
                 },
                                 new MaschineDto()
                 {
-                    ID = 1,
+                    maschinenID = 1,
                     Anschaffungsdatum = DateTime.Now.AddDays(-20),
                     Garantie = DateTime.Now.AddDays(20),
-                    Hersteller = "Masch_2",
-                    Standort = "Stand_2",
+                    hersteller = "Masch_2",
+                    standort = "Stand_2",
                     Version = "2",
                     Zeichnungsnummer = "456",
-                    Technologie = ProMan_Database.Enums.Technologie.schleifen.ToString(),
+                    technologie = ProMan_Database.Enums.Technologie.schleifen.ToString(),
                     AbteilungsName = "Abteilung_1",
                     Arbeitsfolge = "1",
                     FertigungslinienName = "Linie_1",
-                    FertigungsName = "Fertigung_1"
+                    FertigungsName = "Fertigung_1",
+                    abteilungsId =1,
+                    maschinenInventarNummer = "111 222 333",
+                    status = "aktiv"
 
                 },
                                                 new MaschineDto()
                 {
-                    ID = 1,
+                    maschinenID = 1,
                     Anschaffungsdatum = DateTime.Now.AddDays(-30),
                     Garantie = DateTime.Now.AddDays(30),
-                    Hersteller = "Masch_3",
-                    Standort = "Stand_3",
+                    hersteller = "Masch_3",
+                    standort = "Stand_3",
                     Version = "3",
                     Zeichnungsnummer = "789",
-                    Technologie = ProMan_Database.Enums.Technologie.waschen.ToString(),
+                    technologie = ProMan_Database.Enums.Technologie.waschen.ToString(),
                     AbteilungsName = "Abteilung_1",
                     Arbeitsfolge = "1",
                     FertigungslinienName = "Linie_1",
-                    FertigungsName = "Fertigung_1"
+                    FertigungsName = "Fertigung_1",
+                    abteilungsId =1,
+                    maschinenInventarNummer = "111 222 333",
+                    status = "aktiv"
+                    
 
 
                 },
@@ -470,30 +503,31 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 new UserDto()
                 {
-                    Active = true,
-                    Bemerkung = "Projektleiter",
-                    Nachname = "Molkenthin",
-                    Vorname = "Thomas",
-                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
-                    ID = 3
+                    userActive = true,
+                    userBemerkung = "Projektleiter",
+                    userNachname = "Molkenthin",
+                    userVorname = "Thomas",
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userID = 3,
+                    
                 },
                                                 new UserDto()
                 {
-                    Active = true,
-                    Bemerkung = "Projektadmin",
-                    Nachname = "Kessler",
-                    Vorname = "Markus",
-                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
-                    ID = 3
+                    userActive = true,
+                    userBemerkung = "Projektadmin",
+                    userNachname = "Kessler",
+                    userVorname = "Markus",
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userID = 3
                 },
                 new UserDto()
                 {
-                    Active = true,
-                    Bemerkung = "Projektmitarbeiter",
-                    Nachname = "Molkenthin",
-                    Vorname = "Sebastian",
-                    Namenszusatz = ProMan_Database.Enums.Anrede.Herr,
-                    ID = 3
+                    userActive = true,
+                    userBemerkung = "Projektmitarbeiter",
+                    userNachname = "Molkenthin",
+                    userVorname = "Sebastian",
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userID = 3
                 },
             };
 
@@ -548,15 +582,105 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         };
         }
 
-        public bool SetNachrichtDto(NachrichtDto data)
+
+        public AuditDto GetAuditDto(int id)
         {
-            throw new NotImplementedException();
+            return new AuditDto()
+            {
+                auditID = 1,
+                abteilung = 1,
+                auditart = "Irgendwas",
+                beurteilung = "Gut",
+                nacharbeiten = "nein",
+                status = "erledigt",
+                termin = DateTime.Now,
+                terminturnus = "monatlich"
+            };
         }
 
-        public bool UpdateNachrichtDto(NachrichtDto data, int id)
+        public BauteilVerwendungDto GetBauteilVerwendungDto(int id)
         {
-            throw new NotImplementedException();
+            return new BauteilVerwendungDto()
+                {
+                bauteileID = 1,
+                bearbeitungen = "irgendwas",
+                bearbeitungsschritt = 2,
+                fertingungsLinienID = 1,
+                technologie = "fräsen",
+                verwendungsZweck = "Auto"
+
+
+            };
         }
+
+        public InstandhaltungsAuftragDto GetInstandhaltungsAuftragDto(int id)
+        {
+            return new InstandhaltungsAuftragDto()
+            {
+                abteilung = 1,
+                auftragsstatus = "offen",
+                fachbereich = "werk",
+                fachrichtung = "maschine",
+                fehlertext = "Hier ist ein Fehler für dich",
+                machinenIventarnummer = "111 222 333",
+                instandhaltungID = 1,
+                thema = "Kaput gemacht"
+            };
+        }
+
+        public LagerBestandDto GetLagerBestandDto(int id)
+        {
+            return new LagerBestandDto()
+            {
+                bauteilID = 1,
+                bauteilindex = "A",
+                bauteilname = "111 222 333",
+                bauteilverwendung = "Dinge",
+                istBestand = 500,
+                lagerplatz = "Regal",
+                minBestand = 300
+            };
+        }
+
+        public MaschineVerwendungDto GetMaschineVerwendungDto(int id)
+        {
+            return new MaschineVerwendungDto()
+            {
+                abteilungID = 1,
+                arbeitsfolge = 2,
+                bauteileID = 3,
+                fertigungID = 4,
+                fertigungslinieID = 5,
+                maschinenID = 6
+            };
+        }
+
+        public ProduktionsplanDto GetProduktionsplanDto(int id)
+        {
+            return new ProduktionsplanDto()
+            {
+                bauteilindex = "A",
+                bauteilname = "111 222 333",
+                bauteilverwendung = "Auto",
+                folgenummer = 2,
+                prodMenge = 500,
+                status = "offen"
+                
+            };
+        }
+
+        public UserAnfrageDto GetUserAnfrageDto(int id)
+        {
+            return new UserAnfrageDto()
+            {
+                userId = 1,
+                userAnfrageStatus = "offen",
+                userGrund = "Nerven",
+                userNachricht = "Hier ist eine Spam Nachricht"
+            };
+        }
+
+
 
 
 
@@ -632,22 +756,22 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                 Ort = "Alpha",
                 Verantwortlicher = new UserDto()
                 {
-                    Nachname = "Heinrich",
-                    Vorname = "Dieter",
-                    Festnetz = "0123/456790"
+                    userNachname = "Heinrich",
+                    userVorname = "Dieter",
+                    userFestnetzNr = "0123/456790"
                 },
                 Maschinen = new List<MaschineDto>()
                 {
                     new MaschineDto()
                     {
-                        Inventarnummer = "123",
+                        maschinenInventarNummer = "123",
                         Zeichnungsnummer = "as 5455 78a v1.1",
                         Anschaffungsdatum = DateTime.Now.AddYears(-5),
                         Garantie = DateTime.Now.AddYears(2),
                     },
                                         new MaschineDto()
                     {
-                        Inventarnummer = "456",
+                        maschinenInventarNummer = "456",
                         Zeichnungsnummer = "as 5455 78a v1.2",
                         Anschaffungsdatum = DateTime.Now.AddYears(-3),
                         Garantie = DateTime.Now.AddYears(6),
@@ -700,7 +824,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                 ID = id,
                 Status = "Finish",
                 Dauer = new DateTime().AddHours(id),
-                InventarNummer = 1,
+                InventarNummer = "1",
                 Start = DateTime.Now.AddHours(-id),
                 User = GetUserDto(0),
                 Zeichnungsnummer = $"Reparatur_{id}"
@@ -713,6 +837,8 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
             };
         }
+
+       
 
         #endregion
     }

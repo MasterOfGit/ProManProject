@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProMan_Database.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,5 +20,8 @@ namespace ProMan_Database.Model
         public string Bereich { get; set; }
         public ICollection<Mitarbeiter> Zuständigkeit { get; set; }
         public Maschine Maschine { get; set; }
+        public StatusArt Status { get; set; }
+        public Turnus Turnus { get; set; }
+
     }
 }

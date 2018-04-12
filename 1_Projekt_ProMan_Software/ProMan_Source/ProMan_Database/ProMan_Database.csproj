@@ -60,6 +60,8 @@
     <Compile Include="Enums\ReparaturStatus.cs" />
     <Compile Include="Enums\StatusArt.cs" />
     <Compile Include="Enums\Technologie.cs" />
+    <Compile Include="Enums\Turnus.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Migrations\201802251353370_Initial.cs" />
     <Compile Include="Migrations\201802251353370_Initial.Designer.cs">
       <DependentUpon>201802251353370_Initial.cs</DependentUpon>
@@ -86,6 +88,7 @@
     <Compile Include="Model\Sonderaufgabe.cs" />
     <Compile Include="Model\Supermarkt.cs" />
     <Compile Include="Model\Wartung.cs" />
+    <Compile Include="Model\Werk.cs" />
     <Compile Include="ProManContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

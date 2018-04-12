@@ -8,8 +8,8 @@ namespace ProMan_BusinessLayer.Models
 {
     public class AbteilungDto
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int abteilungsID { get; set; }
+        public string abteilungsname { get; set; }
         public string Fachbereich { get; set; }
         public List<FertigungDto> Fertigungen { get; set; }
         public List<UserDto> User { get; set; }

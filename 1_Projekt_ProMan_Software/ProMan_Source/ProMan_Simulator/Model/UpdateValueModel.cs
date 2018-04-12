@@ -129,7 +129,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.AbteilungDtoName:
                     {
                         var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.Name });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.abteilungsname });
                         tmpUpdateValues.Add(new SetValuesHelper() { Label = "Fachbereich", Value = item.Fachbereich });
                         tmpUpdateValues.Add(new SetValuesHelper() { Label = "WerkName", Value = item.WerkName });
                         break;
@@ -137,16 +137,15 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungDtoName:
                     {
                         var item = _httphelper.HttpGet<FertigungDto>($"api/fertigung/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.Name });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "AbteilungName", Value = item.AbteilungName });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.fertigungsname });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "AbteilungName", Value = item.abteilungName });
                         break;
                     }
                 case ObjectDtos.FertigungslinieDtoName:
                     {
                         var item = _httphelper.HttpGet<FertigungslinieDto>($"api/fertigungslinie/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.Name });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "FertigungName", Value = item.FertigungName });
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "FertigungID", Value = "" });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.fertigunglinenname });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "FertigungID", Value = item.fertigungslinieID.ToString() });
                         break;
                     }
                 case ObjectDtos.MaschineDtoName:
@@ -215,7 +214,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPut($"api/abteilung/{_id}", new AbteilungDto()
                     {
-                        Name = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        abteilungsname = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                         Fachbereich = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Fachbereich").Value,
                         WerkName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "WerkName").Value,
                     }).Wait();
@@ -223,15 +222,14 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungDtoName:
                     _httphelper.HttpPut($"api/fertigung/{_id}", new FertigungDto()
                     {
-                        Name = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        AbteilungName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "AbteilungName").Value,
+                        fertigungsname = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        abteilungName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "AbteilungName").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.FertigungslinieDtoName:
                     _httphelper.HttpPut($"api/fertigungslinie/{_id}", new FertigungslinieDto()
                     {
-                        Name = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        FertigungName = UpdateValues.ToList().FirstOrDefault(x => x.Label == "FertigungName").Value,
+                        fertigunglinenname = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.MaschineDtoName:

@@ -9,7 +9,7 @@ namespace ProMan_BusinessLayer.Models
         public DateTime Dauer { get; set; }
         public string Status { get; set; }
         public UserDto User { get; set; }
-        public int InventarNummer { get; set; }
+        public string InventarNummer { get; set; }
         public string Zeichnungsnummer { get; set; }
     }
 }

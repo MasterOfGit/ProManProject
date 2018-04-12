@@ -28,6 +28,7 @@ namespace ProMan_Database
         public DbSet<Sonderaufgabe> Sonderaufgaben { get; set; }
         public DbSet<Supermarkt> Supermaerkte { get; set; }
         public DbSet<Wartung> Wartungen { get; set; }
+        public DbSet<Werk> Werk { get; set; }
 
     }
 }

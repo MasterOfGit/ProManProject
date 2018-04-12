@@ -167,7 +167,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPost($"api/abteilung", new AbteilungDto()
                     {
-                        Name = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        abteilungsname = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                         Fachbereich = SetValues.ToList().FirstOrDefault(x => x.Label == "Fachbereich").Value,
                         WerkName = SetValues.ToList().FirstOrDefault(x => x.Label == "WerkName").Value,
                     }).Wait();
@@ -175,27 +175,26 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungDtoName:
                     _httphelper.HttpPost($"api/fertigung", new FertigungDto()
                     {
-                        Name = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        AbteilungName = SetValues.ToList().FirstOrDefault(x => x.Label == "AbteilungName").Value,
+                        fertigungsname = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        abteilungName = SetValues.ToList().FirstOrDefault(x => x.Label == "AbteilungName").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.FertigungslinieDtoName:
                     _httphelper.HttpPost($"api/fertigungslinie", new FertigungslinieDto()
                     {
-                        Name = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
-                        FertigungName = SetValues.ToList().FirstOrDefault(x => x.Label == "FertigungName").Value,
+                        fertigunglinenname = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.MaschineDtoName:
                     _httphelper.HttpPost($"api/maschine", new MaschineDto()
                     {
-                        Inventarnummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Inventarnummer").Value,
+                        maschinenInventarNummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Inventarnummer").Value,
                         Zeichnungsnummer = SetValues.ToList().FirstOrDefault(x => x.Label == "Zeichnungsnummer").Value,
                         Version = SetValues.ToList().FirstOrDefault(x => x.Label == "Version").Value,
-                        Hersteller = SetValues.ToList().FirstOrDefault(x => x.Label == "Hersteller").Value,
-                        Standort = SetValues.ToList().FirstOrDefault(x => x.Label == "Standort").Value,
-                        Status = "1",
-                        Technologie = "1",
+                        hersteller = SetValues.ToList().FirstOrDefault(x => x.Label == "Hersteller").Value,
+                        standort = SetValues.ToList().FirstOrDefault(x => x.Label == "Standort").Value,
+                        status = "1",
+                        technologie = "1",
                         Garantie = DateTime.Now,
                         Anschaffungsdatum = DateTime.Now.AddDays(-10),
 
@@ -223,10 +222,9 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.LoginDtoName:
                     _httphelper.HttpPost($"api/login", new LoginDto()
                     {
-                        AnzeigeName = SetValues.ToList().FirstOrDefault(x => x.Label == "Username").Value,
-                        LoginName = SetValues.ToList().FirstOrDefault(x => x.Label == "Username").Value,
-                        Password = SetValues.ToList().FirstOrDefault(x => x.Label == "Passwort").Value,
-                        LoginType = SetValues.ToList().FirstOrDefault(x => x.Label == "UserType").Value,
+                        userKennung = SetValues.ToList().FirstOrDefault(x => x.Label == "Username").Value,
+                        userpasswort = SetValues.ToList().FirstOrDefault(x => x.Label == "Passwort").Value,
+                        userbereich = SetValues.ToList().FirstOrDefault(x => x.Label == "UserType").Value,
                     }).Wait();
                     break;
                 default:

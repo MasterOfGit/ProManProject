@@ -1,12 +1,10 @@
 ﻿using ProMan_BusinessLayer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProMan_BusinessLayer.DataProvider.Interfaces
 {
+    /// <summary>
+    /// Interface to update a single object in the datastructure
+    /// </summary>
     public interface IUpdateDataProvider
     {
         bool UpdateFertigungsDto(FertigungDto data, int id);
@@ -18,5 +16,13 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         bool UpdateAbteilungDto(AbteilungDto data, int id);
         bool UpdateNachrichtDto(NachrichtDto data, int id);
         bool UpdateLoginDto(LoginDto data, int id);
+
+        bool UpdateAuditDto(AuditDto data, int id);
+        bool UpdateBauteilVerwendungDto(BauteilVerwendungDto data, int id);
+        bool UpdateInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data, int id);
+        bool UpdateLagerBestandDto(LagerBestandDto data, int id);
+        bool UpdateMaschineVerwendungDto(MaschineVerwendungDto data, int id);
+        bool UpdateProduktionsplanDto(ProduktionsplanDto data, int id);
+        bool UpdateUserAnfrageDto(UserAnfrageDto data, int id);
     }
 }

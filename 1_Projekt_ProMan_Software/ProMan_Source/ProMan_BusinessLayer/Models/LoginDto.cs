@@ -8,9 +8,12 @@ namespace ProMan_BusinessLayer.Models
 {
     public class LoginDto
     {
-        public string AnzeigeName { get; set; }
-        public string LoginName { get; set; }
-        public string Password { get; set; }
-        public string LoginType { get; set; }
+        public int userID { get; set; }
+        public DateTime userLastLogin { get; set; }
+        public string userStatus { get; set;}
+        public string userbereich { get; set; }
+        public string userKennung { get; set; }
+        public string userpasswort { get; set; }
+       
     }
 }

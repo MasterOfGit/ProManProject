@@ -15,9 +15,9 @@ namespace ProMan_Database.Model
         [StringLength(100)]
         public string Bezeichnung { get; set; }
         [StringLength(100)]
-        public string Werk { get; set; }
-        [StringLength(100)]
         public string Ort { get; set; }
         public ICollection<Fertigung> Fertigungen { get; set; }
+
+        public Werk Werk { get; set; }
     }
 }

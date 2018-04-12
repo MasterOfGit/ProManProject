@@ -26,6 +26,8 @@ namespace ProMan_Database.Model
 
         public Login Login { get; set; }
 
+        public Abteilung Abteilung { get; set; }
+
         public virtual ICollection<Nachricht> Nachrichten { get; set; }
 
         
