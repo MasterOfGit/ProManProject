@@ -107,7 +107,7 @@ HOME1_HEADER;
 							echo("<td><input class='form-check-input' type='checkbox' id='defaultCheck2' disabled><td>");
 						}
 					
-						echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$userdata['userID']});'></td>");
+						echo("<td><input type='button' value='Bearbeiten'  onclick='changeRegistUser({$userdata['userID']});'></td>");
 					}
 				};
 	  			//value = {$item['ID']};
@@ -156,7 +156,7 @@ MENU1_HEADER;
 							echo("<td>{$userdata['userNachname']}</td>");
 							echo("<td>{$userdata['userEmail'] }</td>");
 							echo("<td>{$userdata['userFestnetzNr']}</td>");
-							echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$userdata['userID']});'></td>");
+							echo("<td><input type='button' value='Bearbeiten'  onclick='changeNewRegistUser({$userdata['userID']});'></td>");
 					}	
 				};
 	  			  

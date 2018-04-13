@@ -6,10 +6,10 @@
 <file name="SetValueWindow.xaml.cs" server="C:/xampp/htdocs/proman/" local="131628380503105701" remote="131628344500000000" Dst="2" />
 <file name="UpdateValueWindow.xaml" server="C:/xampp/htdocs/proman/" local="131628380503125711" remote="131628344500000000" Dst="2" />
 <file name="UpdateValueWindow.xaml.cs" server="C:/xampp/htdocs/proman/" local="131628380503135712" remote="131628344500000000" Dst="2" />
-<file name="MainWindow.xaml" server="192.168.178.26" local="131628380503015637" remote="131679399600000000" Dst="2" />
-<file name="MainWindow.xaml.cs" server="192.168.178.26" local="131628380503045648" remote="131679399600000000" Dst="2" />
-<file name="SetValueWindow.xaml" server="192.168.178.26" local="131628380503075675" remote="131679399600000000" Dst="2" />
-<file name="SetValueWindow.xaml.cs" server="192.168.178.26" local="131628380503105701" remote="131679399600000000" Dst="2" />
-<file name="UpdateValueWindow.xaml" server="192.168.178.26" local="131628380503125711" remote="131679399600000000" Dst="2" />
-<file name="UpdateValueWindow.xaml.cs" server="192.168.178.26" local="131628380503135712" remote="131679399600000000" Dst="2" />
+<file name="MainWindow.xaml" server="192.168.178.26" local="131628380503015637" remote="131680820400000000" Dst="2" />
+<file name="MainWindow.xaml.cs" server="192.168.178.26" local="131628380503045648" remote="131680820400000000" Dst="2" />
+<file name="SetValueWindow.xaml" server="192.168.178.26" local="131628380503075675" remote="131680820400000000" Dst="2" />
+<file name="SetValueWindow.xaml.cs" server="192.168.178.26" local="131628380503105701" remote="131680820400000000" Dst="2" />
+<file name="UpdateValueWindow.xaml" server="192.168.178.26" local="131628380503125711" remote="131680820400000000" Dst="2" />
+<file name="UpdateValueWindow.xaml.cs" server="192.168.178.26" local="131628380503135712" remote="131680820400000000" Dst="2" />
 </dwsync>

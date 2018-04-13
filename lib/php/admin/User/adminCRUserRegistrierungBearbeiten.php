@@ -2,9 +2,9 @@
 echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
 echo "Anfrage : "  . $q . "<br>";
-//$q= 1253;
+$q= 1253;
 $ch1 = curl_init();
-
+$ch2 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
@@ -18,8 +18,21 @@ curl_close($ch1);
 // Testausgabe
 //echo($maschinen);
 
+
+
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userLogin.json");
+
+curl_setopt($ch2, CURLOPT_HEADER, 0);
+curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
+$userLogin=curl_exec($ch2);
+curl_close($ch2);
+
+// Testausgabe
+//echo($maschinen);
+
 // Unwandlung von json in Array	
 $jsonUserData = json_decode($userData, TRUE);
+$jsonuserLogin = json_decode($userLogin, TRUE);
 
 
 echo <<<HEADER
@@ -29,11 +42,33 @@ echo <<<HEADER
     <div class="jumbotron">
       <form>
         <div class="form-group">
-         
+        		 
 HEADER;
 		  foreach($jsonUserData['users'] as $userdata)
 				{
 				
+			  	foreach($jsonuserLogin['logins'] as $login)
+				{
+					if($login['userID'] == $userdata['userID'])
+					{
+						echo("<label for='userLastLogin'>LastLogin</label>");
+						echo("<input type='text' class='form-control' id='userLastLogin' aria-describedby='userLastLogin' placeholder='LastLogin' value=''>");
+						
+						echo("<label for='userStatus'>Status</label>");
+						echo("<input type='text' class='form-control' id='userStatus' aria-describedby='userStatus' placeholder='Status' value=''>");
+						
+						echo("<label for='userbereich'>Userbereich</label>");
+						echo("<input type='text' class='form-control' id='userbereich' aria-describedby='userbereich' placeholder='Userbereich' value=''>");
+						
+						echo("<label for='userKennung'>Userkennung</label>");
+						echo("<input type='text' class='form-control' id='userKennung' aria-describedby='userKennung' placeholder='Userkennung' value=''>");
+						
+						echo("<label for='userpasswort'>Userpasswort</label>");
+						echo("<input type='text' class='form-control' id='userpasswort' aria-describedby='userpasswort' placeholder='Userpasswort' value=''>");
+					};
+					
+				};
+			  	
 //				if($userdata['userID'] == $_POST[p] )
 					if($userdata['userID'] == $q )
 					{
@@ -46,6 +81,9 @@ HEADER;
 						
 						$userbild .= $userdata['userBild'];
 							
+						echo("<label for='userID'>UserID</label>");
+						echo("<input type='text' class='form-control' id='anrede' aria-describedby='userID' placeholder='UserID' value={$userdata['userID']}>");
+						
 						
 						echo("<label for='userID'>UserID</label>");
 						echo("<input type='text' class='form-control' id='anrede' aria-describedby='userID' placeholder='UserID' value={$userdata['userID']}>");
@@ -86,7 +124,7 @@ HEADER;
            
 echo <<<FOOTER
 		</div>
-<button type="button" class="btn btn-primary" onclick="saveUserData('data')"> Speichern</button>
+<button type="button" class="btn btn-primary" onclick="saveNewRegistrierung('data')"> Speichern</button>
 <input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
 	      </form>
     </div>

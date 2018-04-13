@@ -49,7 +49,80 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div id="daten">Keine Daten vorhanden !!</div>
+        <div class="jumbotron">
+	<div id="daten">		
+	<div class="jumbotron">
+		<h3>Bitte geben sie ihre Daten ein !!</h3>
+		
+			<div class="form-group">
+
+				<label for="userID">UserID (falls bekannt)</label>
+				<input type="text" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">
+
+				<label for="anrede">Anrede</label>
+				<select class="form-control" id="anrede">
+					<option>Herr</option>
+					<option>Frau</option>
+					<option>Dr.</option>
+					<option>Prof.</option>
+					<option>Prof.Dr.</option>
+				</select>
+
+				<label for="position">Position</label>
+				<select class="form-control" id="position">
+					<option>Administrator</option>
+					<option>Maschinenführer</option>
+					<option>Instandhalter</option>
+					<option>Gruppensprecher</option>
+					<option>Meister</option>
+					<option>Sachbearbeiter</option>
+				</select>
+				<br>
+
+
+				<img id="bild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image">
+				<label for="bilddatei">Bilddatei auswählen</label>
+				<input type="file" id="bilddatei" name="bilddatei" multiple>
+
+				<label for="vorname">Vorname</label>
+				<input type="text" class="form-control" id="vorname" aria-describedby="userID" placeholder="Vorname">
+				<label for="nachname">Nachname</label>
+				<input type="text" class="form-control" id="nachname" aria-describedby="userID" placeholder="Nachname">
+
+				<label for="werk">Werk</label>
+				<input type="text" class="form-control" id="werk" aria-describedby="Werk" placeholder="Werk">
+
+				<label for="abteilung">Abteilung</label>
+				<input type="text" class="form-control" id="Abteilung" aria-describedby="userID" placeholder="Abteilung">
+
+				<label for="eMail">eMail</label>
+				<input type="email" class="form-control" id="email" aria-describedby="eMail" placeholder="eMail">
+
+				<label for="telfest">Festnetz</label>
+				<input type="tel" class="form-control" id="telfest" aria-describedby="Festnetz" placeholder="Festnetz">
+
+				<label for="mobil">Mobil</label>
+				<input type="tel" class="form-control" id="mobil" aria-describedby="Mobil" placeholder="Mobil">
+
+				<label for="bemerkung">Bemerkung</label>
+				<input type="text" class="form-control" id="bemerkung" aria-describedby="Bemerkung" placeholder="Bemerkung">
+
+
+			</div>
+
+		
+			
+		<button type="button" 
+					class="btn btn-primary" 
+				    onclick="saveNewRegistrierung('data');">
+		Senden Login</button>
+		<button type="reset" class="btn btn-primary">Reset</button>
+
+		
+		
+	</div>
+</div>
+</div>
       </div>
     </div>
     <hr>
@@ -71,14 +144,7 @@
       <div class="collapse navbar-collapse" id="bottomFixedNavbar1">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Statusmeldung</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">info1</a></li>
-              <li><a href="#">info2</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">info3</a></li>
-            </ul>
-          </li>
+          
         </ul>
       </div>
       <!-- /.navbar-collapse --> 
@@ -93,10 +159,6 @@
 <script src="lib/js/bootstrap.js"></script> 
 <script src="lib/js/helpers.js"></script> 
 <script src="lib/js/connectDB.js"></script> 
-<script> 
-    currentDate();
-	loadDoc("lib/php/admin/Registrierung/adminCRRegistierenFormular.php?q=1111",myFunction1);
-	//alert("Master Skipt");
-</script>
+<script src="lib/js/dbbuttonaction.js"> </script>
 </body>
 </html>
