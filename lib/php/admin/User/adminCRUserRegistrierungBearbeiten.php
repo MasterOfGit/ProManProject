@@ -1,8 +1,8 @@
 <?php
-echo "PHP Datenabfrage<br>";
+//echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
-$q= 1253;
+//echo "Anfrage : "  . $q . "<br>";
+//$q= 1253;
 $ch1 = curl_init();
 $ch2 = curl_init();
 
@@ -40,36 +40,30 @@ echo <<<HEADER
   <div class="jumbotron">
     <h1>User bearbeiten</h1>
     <div class="jumbotron">
-      <form>
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+	  <form>
         <div class="form-group">
         		 
 HEADER;
-		  foreach($jsonUserData['users'] as $userdata)
+		echo("<label for='userLastLogin'>LastLogin</label>");
+		echo("<input type='text' class='form-control' id='userLastLogin' aria-describedby='userLastLogin' placeholder='LastLogin' value=''>");
+						
+		echo("<label for='userStatus'>Status</label>");
+		echo("<input type='text' class='form-control' id='userStatus' aria-describedby='userStatus' placeholder='Status' value=''>");
+						
+		echo("<label for='userbereich'>Userbereich</label>");
+		echo("<input type='text' class='form-control' id='userbereich' aria-describedby='userbereich' placeholder='Userbereich' value=''>");
+						
+		echo("<label for='userKennung'>Userkennung</label>");
+		echo("<input type='text' class='form-control' id='userKennung' aria-describedby='userKennung' placeholder='Userkennung' value=''>");
+						
+		echo("<label for='userpasswort'>Userpasswort</label>");
+		echo("<input type='text' class='form-control' id='userpasswort' aria-describedby='userpasswort' placeholder='Userpasswort' value=''>");
+
+				foreach($jsonUserData['users'] as $userdata)
 				{
 				
-			  	foreach($jsonuserLogin['logins'] as $login)
-				{
-					if($login['userID'] == $userdata['userID'])
-					{
-						echo("<label for='userLastLogin'>LastLogin</label>");
-						echo("<input type='text' class='form-control' id='userLastLogin' aria-describedby='userLastLogin' placeholder='LastLogin' value=''>");
-						
-						echo("<label for='userStatus'>Status</label>");
-						echo("<input type='text' class='form-control' id='userStatus' aria-describedby='userStatus' placeholder='Status' value=''>");
-						
-						echo("<label for='userbereich'>Userbereich</label>");
-						echo("<input type='text' class='form-control' id='userbereich' aria-describedby='userbereich' placeholder='Userbereich' value=''>");
-						
-						echo("<label for='userKennung'>Userkennung</label>");
-						echo("<input type='text' class='form-control' id='userKennung' aria-describedby='userKennung' placeholder='Userkennung' value=''>");
-						
-						echo("<label for='userpasswort'>Userpasswort</label>");
-						echo("<input type='text' class='form-control' id='userpasswort' aria-describedby='userpasswort' placeholder='Userpasswort' value=''>");
-					};
-					
-				};
-			  	
-//				if($userdata['userID'] == $_POST[p] )
 					if($userdata['userID'] == $q )
 					{
 						$userbild = "http://zoomnation.selfhost.eu" ;
@@ -81,9 +75,6 @@ HEADER;
 						
 						$userbild .= $userdata['userBild'];
 							
-						echo("<label for='userID'>UserID</label>");
-						echo("<input type='text' class='form-control' id='anrede' aria-describedby='userID' placeholder='UserID' value={$userdata['userID']}>");
-						
 						
 						echo("<label for='userID'>UserID</label>");
 						echo("<input type='text' class='form-control' id='anrede' aria-describedby='userID' placeholder='UserID' value={$userdata['userID']}>");
@@ -113,9 +104,7 @@ HEADER;
 						echo("<label for='festnetz'>Festnetz</label>");
 						echo("<input type='text' class='form-control' id='festnetz' aria-describedby='email' placeholder='Festnetz' value={$userdata['userFestnetzNr']}>");
 						
-						echo("<label for='mobil'>Festnetz</label>");
-						echo("<input type='text' class='form-control' id='mobil' aria-describedby='mobil' placeholder='Mobil' value={$userdata['userMobilNr']}>");
-						
+											
 						echo("<label for='mobil'>Bemerkung</label>");
 						echo("<input type='text' class='form-control' id='bemerkung' aria-describedby='bemerkung' placeholder='none' value={$userdata['userBemerkung']}>");
 		       
@@ -129,6 +118,8 @@ echo <<<FOOTER
 	      </form>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 FOOTER;

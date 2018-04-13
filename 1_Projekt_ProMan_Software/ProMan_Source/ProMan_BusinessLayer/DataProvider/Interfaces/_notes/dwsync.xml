@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="ICreateDataProvider.cs" server="192.168.178.26" local="131680336197792254" remote="131680820400000000" Dst="2" />
+<file name="ICreateDataProvider.cs" server="192.168.178.26" local="131680914569788539" remote="131680916400000000" Dst="2" />
 <file name="IDataProvider.cs" server="192.168.178.26" local="131676897292571537" remote="131680820400000000" Dst="2" />
-<file name="IDeleteDataProvider.cs" server="192.168.178.26" local="131680336197812282" remote="131680820400000000" Dst="2" />
-<file name="IGetListDataProvider.cs" server="192.168.178.26" local="131680336197842290" remote="131680820400000000" Dst="2" />
-<file name="IGetSingleProvider.cs" server="192.168.178.26" local="131680336197872310" remote="131680820400000000" Dst="2" />
-<file name="IUpdateDataProvider.cs" server="192.168.178.26" local="131680336197902330" remote="131680820400000000" Dst="2" />
+<file name="IDeleteDataProvider.cs" server="192.168.178.26" local="131680914569808543" remote="131680916400000000" Dst="2" />
+<file name="IGetListDataProvider.cs" server="192.168.178.26" local="131680914569828560" remote="131680916400000000" Dst="2" />
+<file name="IGetSingleProvider.cs" server="192.168.178.26" local="131680914569868586" remote="131680916400000000" Dst="2" />
+<file name="IUpdateDataProvider.cs" server="192.168.178.26" local="131680914569898606" remote="131680916400000000" Dst="2" />
 <file name="ICreateDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131680336197792254" remote="131680336190000000" Dst="2" />
 <file name="IDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131676897292571537" remote="131676897290000000" Dst="2" />
 <file name="IDeleteDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131680336197812282" remote="131680336190000000" Dst="2" />

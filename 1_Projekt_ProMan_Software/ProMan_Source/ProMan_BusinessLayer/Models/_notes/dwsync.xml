@@ -23,7 +23,7 @@
 <file name="AuditDto.cs" server="C:/xampp/htdocs/proman/" local="131680336197992393" remote="131680336190000000" Dst="2" />
 <file name="BauteilDto.cs" server="C:/xampp/htdocs/proman/" local="131680336198012400" remote="131680336190000000" Dst="2" />
 <file name="LoginDto.cs" server="192.168.178.26" local="131680336198202530" remote="131680820400000000" Dst="2" />
-<file name="NachrichtDto.cs" server="192.168.178.26" local="131653538945984235" remote="131680820400000000" Dst="2" />
+<file name="NachrichtDto.cs" server="192.168.178.26" local="131680914569918620" remote="131680916400000000" Dst="2" />
 <file name="LoginDto.cs" server="C:/xampp/htdocs/proman/" local="131680336198202530" remote="131680336190000000" Dst="2" />
 <file name="NachrichtDto.cs" server="C:/xampp/htdocs/proman/" local="131653538945984235" remote="131653502940000000" Dst="2" />
 <file name="BauteilVerwendungDto.cs" server="192.168.178.26" local="131680336198042426" remote="131680820400000000" Dst="2" />

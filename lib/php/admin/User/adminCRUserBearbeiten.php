@@ -1,7 +1,7 @@
 <?php
-echo "PHP Datenabfrage<br>";
+//echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
+//echo "Anfrage : "  . $q . "<br>";
 //$q= 1253;
 $ch1 = curl_init();
 
@@ -27,6 +27,8 @@ echo <<<HEADER
   <div class="jumbotron">
     <h1>User bearbeiten</h1>
     <div class="jumbotron">
+	 <div class="row">
+      <div class="col-md-6 col-md-offset-3">
       <form>
         <div class="form-group">
          
@@ -91,6 +93,8 @@ echo <<<FOOTER
 	      </form>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 FOOTER;
