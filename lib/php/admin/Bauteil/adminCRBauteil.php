@@ -89,10 +89,10 @@ HOME1_HEADER;
 					echo("<td>{$bauteil['bauteilArt'] }</td>");
 					echo("<td>{$bauteil['bauteilStatus']}</td>");
 					echo("<td>{$bauteil['bauteilIDNachfolger']}</td>");
-					echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$bauteil['bauteileID']});'></td>");
-				echo("</tr>");
+					echo("<td><input type='button' value='Bearbeiten'  onclick='editBauteil( {$bauteil['bauteileID']} );'></td>");
+					echo("</tr>");
 				};
-				echo("<td><input type='button' value='Neues Bauteil anlegen'  onclick='createBauteil();'></td>");
+				echo("<td><input type='button' value='Neues Bauteil'  onclick='editBauteil(0);'></td>");
 
 
 echo <<<HOME1_FOOTER
@@ -115,6 +115,7 @@ echo <<<'MENU1_HEADER'
 						  <th>Bauteilnummer</th>
 						  <th>Index</th>
 						  <th>Version</th>
+						  <th>BauteilsverwendungsID</th>
 						  <th>Fertigungslinie</th>
 						  <th>Technologie</th>
 						  <th>Bearbeitungsschritt</th>
@@ -139,15 +140,16 @@ MENU1_HEADER;
 							echo("<td>{$bauteil['bauteilVersiom']}</td>");
 						}
 					};
+						echo("<td>{$bauteilverwendung['bauteilverwendungsID']}</td>");
 						echo("<td>{$bauteilverwendung['fertingungsLinienID']}</td>");
 						echo("<td>{$bauteilverwendung['technologie']}</td>");
 						echo("<td>{$bauteilverwendung['bearbeitungsschritt']}</td>");
 						echo("<td>{$bauteilverwendung['verwendungsZweck']}</td>");
-						echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({$bauteilverwendung['bauteileID']});'></td>");
+						echo("<td><input type='button' value='Bearbeiten'  onclick='editBauteilVerwendung({$bauteilverwendung['bauteileID']});'></td>");
 					
 				};
 					echo("</tr>");
-					echo("<td><input type='button' value='Neu Bauteil Verwendung anlegen'  onclick='testbuttonaction();'></td>");
+					echo("<td><input type='button' value='Neu Bauteil Verwendung anlegen'  onclick='editBauteilVerwendung(0);'></td>");
 
 
 echo <<<'MENU1_FOOTER'
