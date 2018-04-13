@@ -10,13 +10,13 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class FertigungController : BaseApiController
     {
-        // GET: api/Fertigung
+        // GET: api/<controller>
         public IEnumerable<FertigungDto> Get()
         {
             return dataprovider.GetListDataProvider.GetFertigungsDto();
         }
 
-        // GET: api/Fertigung/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungsDto(id)));
@@ -34,7 +34,7 @@ namespace ProMan_WebAPI.Controllers
             dataprovider.UpdateDataProvider.UpdateFertigungsDto(value, id);
         }
 
-        // DELETE: api/Fertigung/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteFertigungsDto(id);

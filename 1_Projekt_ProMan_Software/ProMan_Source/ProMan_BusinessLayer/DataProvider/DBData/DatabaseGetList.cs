@@ -35,9 +35,6 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             return returnlist;
         }
 
-
-
-
         public List<AbteilungDto> GetAbteilungDto()
         {
             var items = dbcontext.Abteilungen;
@@ -151,7 +148,6 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
             return returnlist;
         }
-
 
         public List<NachrichtDto> GetNarichtenFromUser()
         {

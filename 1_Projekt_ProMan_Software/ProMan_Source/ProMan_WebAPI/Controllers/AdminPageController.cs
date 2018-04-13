@@ -9,13 +9,13 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AdminPageController : BaseApiController
     {
-        // GET: api/AdminPage
+        // GET: api/<controller>
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/AdminPage/?identifier=
+        // GET: api/<controller>/?identifier=
         public IHttpActionResult Get(string identifier)
         {
             JToken returnvalue = null;
@@ -48,17 +48,17 @@ namespace ProMan_WebAPI.Controllers
 
         }
 
-        // POST: api/AdminPage
+        // POST: api/<controller>
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/AdminPage/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/AdminPage/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
         }
