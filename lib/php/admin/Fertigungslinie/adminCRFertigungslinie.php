@@ -72,7 +72,7 @@ HOME1_HEADER;
 										echo("<td>{$arbeitsfolge['bauteilID']}</td>");
 										echo("<td>{$arbeitsfolge['arbeitplan']}</td>");
 
-										echo("<td><input type='button' value='löschen'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='Löschen'  onclick='deleteArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 										echo("<td><input type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 								echo("</tr>");
 								};
