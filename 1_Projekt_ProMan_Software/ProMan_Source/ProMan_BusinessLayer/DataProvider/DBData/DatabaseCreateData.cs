@@ -179,8 +179,64 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetAuditDto(AuditDto data)
         {
-            throw new NotImplementedException();
+            var abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == data.abteilung);
+            StatusArt tmp1;
+            Turnus tmp2;
+            Enum.TryParse(data.status, out tmp1);
+            
+
+            Enum.TryParse(data.terminturnus, out tmp2);
+            dbcontext.Audits.Add(new ProMan_Database.Model.Audit()
+            {
+                AuditArt = data.auditart,
+                Bewertung = data.beurteilung,
+                Status = tmp1,
+                Turnus = tmp2,
+                Abteilung = abteilung,
+                Aufgabe = data.nacharbeiten,
+                Beginntermin = data.termin
+            });
+            dbcontext.SaveChanges();
+
+            return 1;
+            
         }
+
+
+
+        public int SetUserAnfrageDto(UserAnfrageDto data)
+        {
+            var user = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.userId);
+            NachrichtenStatus tmp1;
+            Enum.TryParse(data.userAnfrageStatus, out tmp1);
+
+            dbcontext.Nachrichten.Add(new ProMan_Database.Model.Nachricht()
+            {
+                NachrichtenStatus = tmp1,
+                From = user,
+                Text = data.userNachricht,
+                Betreff = data.userGrund
+            });
+            dbcontext.SaveChanges();
+
+            return 1;
+        }
+
+        public int SetBauteilDto(BauteilDto data)
+        {
+            dbcontext.Bauteile.Add(new ProMan_Database.Model.Bauteil()
+            {
+                NachfolderId = data.bauteilIDNachfolger,
+                Index = data.bauteilIndex,
+                Nummer = data.bauteilNummer,
+                Status = data.bauteilStatus,
+                Version = data.bauteilVersion,
+            });
+            dbcontext.SaveChanges();
+
+            return 1;
+        }
+
 
         public int SetBauteilVerwendungDto(BauteilVerwendungDto data)
         {
@@ -206,18 +262,6 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             throw new NotImplementedException();
         }
-
-        public int SetUserAnfrageDto(UserAnfrageDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SetBauteilDto(BauteilDto data)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         #endregion
 

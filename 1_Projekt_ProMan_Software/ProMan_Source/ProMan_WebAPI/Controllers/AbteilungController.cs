@@ -10,31 +10,31 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AbteilungController : BaseApiController
     {
-        // GET: api/Abteilung
+        // GET: api/<controller>
         public IEnumerable<AbteilungDto> Get()
         {
             return dataprovider.GetListDataProvider.GetAbteilungDto();
         }
 
-        // GET: api/Abteilung/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetAbteilungDto(id)));
         }
 
-        // POST: api/Abteilung
+        // POST: api/<controller>
         public void Post([FromBody]AbteilungDto value)
         {
             dataprovider.CreateDataProvider.SetAbteilungDto(value);
         }
 
-        // PUT: api/Abteilung/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]AbteilungDto value)
         {
             dataprovider.UpdateDataProvider.UpdateAbteilungDto(value,id);
         }
 
-        // DELETE: api/Abteilung/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteAbteilungDto(id);

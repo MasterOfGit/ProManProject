@@ -14,13 +14,13 @@ namespace ProMan_WebAPI.Controllers
     {
 
 
-        // GET: api/User
+        // GET: api/<controller>
         public IEnumerable<UserDto> Get()
         {
             return dataprovider.GetListDataProvider.GetUserDto();
         }
 
-        // GET: api/User/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
 
@@ -39,7 +39,7 @@ namespace ProMan_WebAPI.Controllers
             dataprovider.UpdateDataProvider.UpdateUserDto(value, id);
         }
 
-        // DELETE: api/User/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteUserDto(id);

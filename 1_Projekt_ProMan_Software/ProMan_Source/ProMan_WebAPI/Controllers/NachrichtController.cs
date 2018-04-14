@@ -12,19 +12,19 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class NachrichtController : BaseApiController
     {
-        // GET: api/Nachricht
+        // GET: api/<controller>
         public IEnumerable<NachrichtDto> Get()
         {
             return dataprovider.GetListDataProvider.GetNarichtenFromUser();
         }
 
-        // GET: api/Nachricht/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetNachrichtDto(id)));
         }
 
-        // GET: api/Nachricht/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int UserID,DateTime? fromDate)
         {
             if (fromDate == null)
@@ -33,19 +33,19 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetNachrichtDto(UserID)));
         }
 
-        // POST: api/Nachricht
+        // POST: api/<controller>
         public void Post([FromBody]NachrichtDto value)
         {
             dataprovider.CreateDataProvider.SetNachrichtDto(value);
         }
 
-        // PUT: api/Nachricht/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]NachrichtDto value)
         {
             dataprovider.UpdateDataProvider.UpdateNachrichtDto(value,id);
         }
 
-        // DELETE: api/Nachricht/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteNachrichtDto(id);

@@ -10,31 +10,31 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProduktionsplanController : BaseApiController
     {
-        // GET: api/Audit
+        // GET: api/<controller>
         public IEnumerable<ProduktionsplanDto> Get()
         {
             return dataprovider.GetListDataProvider.GetProduktionsplanDto();
         }
 
-        // GET: api/Audit/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetProduktionsplanDto(id)));
         }
 
-        // POST: api/Audit
+        // POST: api/<controller>
         public void Post([FromBody]ProduktionsplanDto value)
         {
             dataprovider.CreateDataProvider.SetProduktionsplanDto(value);
         }
 
-        // PUT: api/Audit/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]ProduktionsplanDto value)
         {
             dataprovider.UpdateDataProvider.UpdateProduktionsplanDto(value, id);
         }
 
-        // PUT: api/Audit/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]List<ProduktionsplanDto> value)
         {
             foreach (var item in value)

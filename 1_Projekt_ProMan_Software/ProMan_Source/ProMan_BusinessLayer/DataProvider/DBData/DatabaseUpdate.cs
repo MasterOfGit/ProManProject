@@ -15,7 +15,15 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateBauteilDto(BauteilDto data, int id)
         {
+            var bauteil = dbcontext.Bauteile.FirstOrDefault(x => x.BauteilID == id);
 
+            bauteil.NachfolderId = data.bauteilIDNachfolger;
+            bauteil.Index = data.bauteilIndex;
+            bauteil.Nummer = data.bauteilNummer;
+            bauteil.Status = data.bauteilStatus;
+            bauteil.Version = data.bauteilVersion;
+
+            dbcontext.SaveChanges();
 
 
 
@@ -126,7 +134,25 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateAuditDto(AuditDto data, int id)
         {
-            throw new NotImplementedException();
+            var audit = dbcontext.Audits.FirstOrDefault(x => x.AuditID == id);
+            var abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == data.abteilung);
+            StatusArt tmp1;
+            Turnus tmp2;
+            Enum.TryParse(data.status, out tmp1);
+
+
+            Enum.TryParse(data.terminturnus, out tmp2);
+            audit.AuditArt = data.auditart;
+            audit.Bewertung = data.beurteilung;
+            audit.Status = tmp1;
+            audit.Turnus = tmp2;
+            //audit.Abteilung = abteilung;
+            audit.Aufgabe = data.nacharbeiten;
+            audit.Beginntermin = data.termin;
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
         public bool UpdateBauteilVerwendungDto(BauteilVerwendungDto data, int id)
@@ -156,7 +182,19 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateUserAnfrageDto(UserAnfrageDto data, int id)
         {
-            throw new NotImplementedException();
+            var useranfrage = dbcontext.Nachrichten.FirstOrDefault(x => x.NachrichtID == id);
+
+            var user = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.userId);
+            NachrichtenStatus tmp1;
+            Enum.TryParse(data.userAnfrageStatus, out tmp1);
+
+            useranfrage.NachrichtenStatus = tmp1;
+            useranfrage.Text = data.userNachricht;
+            useranfrage.Betreff = data.userGrund;
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
 

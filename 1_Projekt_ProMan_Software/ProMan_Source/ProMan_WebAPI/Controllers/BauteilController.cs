@@ -10,31 +10,31 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BauteilController : BaseApiController
     {
-        // GET: api/Abteilung
+        // GET: api/<controller>
         public IEnumerable<BauteilDto> Get()
         {
             return dataprovider.GetListDataProvider.GetBauteilDto();
         }
 
-        // GET: api/Abteilung/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilDto(id)));
         }
 
-        // POST: api/Abteilung
+        // POST: api/<controller>
         public void Post([FromBody]BauteilDto value)
         {
             dataprovider.CreateDataProvider.SetBauteilDto(value);
         }
 
-        // PUT: api/Abteilung/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]BauteilDto value)
         {
             dataprovider.UpdateDataProvider.UpdateBauteilDto(value, id);
         }
 
-        // DELETE: api/Abteilung/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteBauteilDto(id);

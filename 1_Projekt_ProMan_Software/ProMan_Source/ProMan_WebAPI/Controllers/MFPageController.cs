@@ -13,13 +13,13 @@ namespace ProMan_WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MFPageController : BaseApiController
     {
-        // GET: api/MFPage
+        // GET: api/<controller>
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/MFPage/?identifier=
+        // GET: api/<controller>/?identifier=
         public IHttpActionResult Get(string identifier)
         {
             JToken returnvalue = null;
@@ -40,23 +40,23 @@ namespace ProMan_WebAPI.Controllers
 
         }
 
-        // GET: api/MFPage/5
+        // GET: api/<controller>/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/MFPage
+        // POST: api/<controller>
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/MFPage/5
+        // PUT: api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/MFPage/5
+        // DELETE: api/<controller>/5
         public void Delete(int id)
         {
         }
