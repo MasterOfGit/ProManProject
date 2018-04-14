@@ -23,6 +23,36 @@ $jsonmaschineverwendung = json_decode($maschineverwendung, TRUE);
 
 
 echo <<<HEADER
+
+
+<script>
+function createData()
+{
+
+
+		var data = JSON.stringify(
+		{
+	
+			"maschinenID"				:	$("#maschinenID").val(),
+
+			"bauteileID"				:	$("#bauteileID").val(),
+
+			"abteilungID"				:	$("#abteilungID").val(),
+
+			"fertigungID"				:	$("#fertigungID").val(),
+
+			"fertigungslinieID"			:	$("#fertigungslinieID").val(),
+
+			"arbeitsfolge"	 			:	$("#arbeitsfolge").val()			
+		}
+);
+
+saveMaschineVerwendung(data);
+
+alert("createData saveMaschineVerwendung");
+
+};
+</script>
 <div class="maschineverwendungbearbeiten">
  
     <div class="jumbotron">
@@ -92,7 +122,7 @@ HEADER;
 			  		}
 echo <<<FOOTER
 		</div>
-<button type="button" class="btn btn-primary" onclick="saveMaschine('data')"> Speichern</button>
+<button type="button" class="btn btn-primary" onclick="createData();"> Speichern</button>
 <input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
 	      </form>
     </div>

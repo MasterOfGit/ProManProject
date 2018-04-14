@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Unbenanntes Dokument</title>
+<script src="lib/js/jquery-1.11.3.min.js"></script> 
+<script src="lib/js/dbbuttonaction.js"></script>
+<script src="lib/js/bootstrap.js"></script>	
+	
+	</head>
+
+<body>
+
+	<h1>Teste</h1>
+	<input class="c1" type="text" id="text1" value="text1">
+	<input type="text" id="text2" value="text2">
+	<input type="text" id="text3" value="30">
+	<br>
+	
+	<input type="button" value="Button" onClick="funk1();">
+	
+	<script>
+		
+	function funk1()
+	{
+	var dataarray = [[1,2,3],[4,5,6],[7,8,9]]
+	var datajson = JSON.stringify({
+
+		
+			"maschinenID"		:	1,
+
+			"bauteileID"			:	4,
+
+			"abteilungID"		:	11,
+
+			"fertigungID"		:	8,
+
+			"fertigungslinieID"	:	7,
+
+			"arbeitsfolge"		:	3
+
+
+	});
+	var data = 
+		[
+			{
+			"text1"	: $("#text1").val(),
+			"text2"	: $("#text2").val(),
+			"text3"	: $("#text3").val()
+			}
+		];
+	
+	testbuttondata(dataarray);
+	testbuttondata(datajson);
+	
+	testbuttondata(JSON.stringify(data));
+	
+	//var obj = JSON.parse(text);	
+	};	
+	</script>
+	
+	
+		
+	
+	
+	
+	
+	
+
+	
+</body>
+
+</html>

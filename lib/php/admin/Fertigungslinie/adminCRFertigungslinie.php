@@ -58,7 +58,8 @@ echo <<<'HOME1_HEADER'
 							<tbody>
 HOME1_HEADER;
 			
-							
+						
+
 						foreach($jsonfertigungslinien['fertigungslinie'] as $fertigungslinie) 
 						{	echo("<tr>");
 							

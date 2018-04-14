@@ -23,6 +23,40 @@ $jsonbauteilverwendung = json_decode($bauteilverwendung, TRUE);
 
 
 echo <<<HEADER
+
+<script>
+function createData()
+{
+
+
+		var data = JSON.stringify(
+		{
+	
+			"bauteilverwendungsID"			:	$("#bauteilverwendungsID").val(),
+
+			"fertingungsLinienID"			:	$("#fertingungsLinienID").val(),
+
+			"bauteileID"					:	$("#bauteileID").val(),
+
+			"technologie"					:	$("#technologie").val(),
+
+			"bearbeitungen"					:	$("#bearbeitungen").val(),
+
+			"bearbeitungsschritt"	 		:	$("#bearbeitungsschritt").val(),
+			
+			"verwendungsZweck"				:	$("#verwendungsZweck").val()
+		}
+);
+
+saveBauteilVerwendung(data);
+
+alert("createData saveBauteilVerwendung");
+
+};
+</script>
+
+
+
 <div class="bautelbearbeiten">
   <div class="jumbotron">
     <div class="jumbotron">
@@ -91,25 +125,10 @@ HEADER;
 			  		}
 			  		
 
-		  
-				
-		  foreach($jsonbauteilverwendung['bauteilVerwendung'] as $bauteilverwendung)
-				{
-				// Neues Bauteil
-			  	if( $bauteilverwendung['bauteileID'] == $q)
-					{
-						
-						
-					
-
-					}
-
-		  
-				};
-           
+		           
 echo <<<FOOTER
 		</div>
-<button type="button" class="btn btn-primary" onclick="saveBauteilVerwendung('data')"> Speichern</button>
+<button type="button" class="btn btn-primary" onclick="createData()"> Speichern</button>
 <input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
 	      </form>
     </div>
