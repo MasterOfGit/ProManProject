@@ -72,27 +72,30 @@ HOME1_HEADER;
 										echo("<td>{$arbeitsfolge['bauteilID']}</td>");
 										echo("<td>{$arbeitsfolge['arbeitplan']}</td>");
 
-										echo("<td><input type='button' value='lÃ¶schen'  onclick='testbuttonaction();'></td>");
-										echo("<td><input type='button' value='verschieben'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='löschen'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 								echo("</tr>");
 								};
+						 echo("<td><input type='button' value='neue Arbeitsfolge'  onclick='newArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
 						 
 						};
-echo("<td><input type='button' value='Neue Arbeitfolge'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Reset'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Neu Fertigungslinie'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Fertigunglinie lÃ¶schen'  onclick='testbuttonaction();'></td>");
 
+				echo("</tbody>");
+			echo("</table>");
+			echo("<br>");
+echo("<br>");
+echo("<td><input type='button' value='Alles Speichern'  onclick='saveFertigungslinie();'></td>");
+echo("<br>");
+echo("<br>");
+echo("<td><input type='button' value='Neu Fertigungslinie'  onclick='newFertigungslinie();'></td>");
 
 echo <<<'HOME1_FOOTER'
-							</tbody>
-						</table>
+						
 					</div>
 				</div>
 HOME1_FOOTER;
 						 
-echo("test");
+
 						 
 echo <<<'MENU1_HEADER'
 <div id="menu1" class="container tab-pane fade"><br>

@@ -1,65 +1,98 @@
 <?php
-echo "PHP Datenabfrage<br>";
+//echo "PHP Datenabfrage<br>";
 $q = $_REQUEST["q"];
-echo "Anfrage : "  . $q . "<br>";
+//echo "Anfrage : "  . $q . "<br>";
+//$q= 0;
+$ch1 = curl_init();
 
-?>
 
-<div class="Maschine bearbeiten">
-  <div class="jumbotron">
-    <h1>Maschine bearbeiten</h1>
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
+
+curl_setopt($ch1, CURLOPT_HEADER, 0);
+curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
+$maschine=curl_exec($ch1);
+curl_close($ch1);
+
+// Testausgabe
+//echo($bauteil);
+
+// Unwandlung von json in Array	
+$jsonmaschine = json_decode($maschine, TRUE);
+
+
+echo <<<HEADER
+<div class="maschinebearbeiten">
+ 
     <div class="jumbotron">
-      <form action="lib\php\admin\Maschine\adminCRMaschinen.php" method="post">
+	 <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      <form>
         <div class="form-group">
-          <label for="inventarID">Inventarnummer</label>
-          <input type="text" class="form-control" name="inventarID" id="inventarID" aria-describedby="userID" placeholder="Inventarnummer">
-          <label for="technologie">Technologie</label>
-          <select class="form-control" name="technologie" id="technologie">
-            <option>Drehen</option>
-            <option>Fräsen</option>
-            <option>Rundschleifen</option>
-            <option>Verzahnungsschleifen</option>
-            <option>Planschleifen</option>
-            <option>Räumen</option>
-            <option>Schaben</option>
-          </select>
-          <label for="hersteller">Hersteller</label>
-          <input type="text" class="form-control" name="hersteller" id="hersteller" aria-describedby="userID" placeholder="Hersteller">
-          <label for="Status">Status</label>
-          <select class="form-control" name="bearbeitungsstand" id="bearbeitungsstand">
-            <option>Produktion</option>
-            <option>Umbau</option>
-            <option>Reperatur</option>
-            <option>Wartung</option>
-            <option>Ersatz</option>
-            <option>NullSerie</option>
-            <option>Sonstige</option>
-            <option>Schrott</option>
-            <option>Optimierung</option>
-          </select>
-          <label for="maschienVersion">Version</label>
-          <input type="text" class="form-control" name="maschienVersion" id="maschienVersion" aria-describedby="userID" placeholder="UserID">
-          <label for="maschineZeichnungsnummer">Zeichnungsnummer</label>
-          <input type="text" class="form-control" name="maschineZeichnungsnummer" id="maschineZeichnungsnummer" aria-describedby="userID" placeholder="UserID">
-          <label for="standort">Standort</label>
-          <input type="text" class="form-control" name="bearbeitungsstand" id="standort" aria-describedby="userID" placeholder="UserID">
-          <label for="anschaffungsdatum">Anschaffungsdatum</label>
-          <input type="date" class="form-control" name="anschaffungsdatum" id="anschaffungsdatum" aria-describedby="userID" placeholder="UserID">
-          <label for="garantieBis">GarantieBis</label>
-          <input type="date" class="form-control" name="garantieBis" id="garantieBis" aria-describedby="userID" placeholder="UserID">
-          <label for="maschinenBild">Maschinenbild</label>
-          <img id="bauteilbild" src="http://via.placeholder.com/150x150" width="150" height="150" class="img-rounded img-responsive" alt="Placeholder image"> <br>
-          <label for="maschinenBild">Bilddatei auswählen</label>
-          <input type="file" id="maschinenBild" name="maschinenBild" multiple>
-        </div>
-        <button type="button" 
-					class="btn btn-primary" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Speichern</button>
-        <button type="button" 
-					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Löschen</button>
-        <button type="button" 
-					class="btn btn-danger" onclick="loadDoc('lib/php/admin/adminContentRequestRegistierenAntwort.php?q=2222',myFunction1)"> Ersetzen</button>
-          <input type="submit" name="savedb" value="GO" />
-      </form>
+         
+HEADER;
+		  foreach($jsonmaschine['maschinen'] as $maschine)
+				{
+				// Neues Bauteil
+			  	if( $maschine['maschinenID'] == $q)
+					{
+										
+						echo("<label for='maschinenID'>maschinenID</label>");
+						echo("<input readonly type='text' class='form-control' id='maschinenID' aria-describedby='userID' placeholder='' value={$maschine['maschinenID']}>");
+						echo("<label for='bauteinNummer'>bauteinNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteinNummer' aria-describedby='bauteinNummer' placeholder='' value={$maschine['maschinenInventarNummer']}>");
+						echo("<label for='maschinenInventarNummer'>maschinenInventarNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteilIndex' aria-describedby='maschinenInventarNummer' placeholder='' value={$maschine['hersteller']}>");
+						echo("<label for='hersteller'>hersteller</label>");
+						echo("<input type='text' class='form-control' id='hersteller' aria-describedby='hersteller' placeholder='' value={$maschine['technologie']}>");
+						echo("<label for='technologie'>technologie</label>");
+						echo("<input type='text' class='form-control' id='technologie' aria-describedby='userID' placeholder='' value={$maschine['standort']}>");
+						echo("<label for='standort'>standort</label>");
+						echo("<input type='text' class='form-control' id='standort' aria-describedby='standort' placeholder='' value={$maschine['abteilung']}>");
+						echo("<label for='abteilung'>abteilung</label>");
+						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value={$maschine['status']}>");
+
+					}
+			  	};
+           		if( $q == 0) //neues Bauteil
+					{
+				  		foreach($jsonmaschine['maschinen'] as $maschine)
+						{	$maschineidmax = 0;
+							if($maschine['maschinenID']>$maschineidmax)
+							{
+								$maschineidmax = $maschine['maschinenID'];
+								
+							}
+						 	$maschineidmax++;
+						}
+						
+				  		echo("<label for='maschinenID'>maschinenID</label>");
+						echo("<input readonly type='text' class='form-control' id='maschinenID' aria-describedby='userID' placeholder='' value=$maschineidmax>");
+						echo("<label for='bauteinNummer'>bauteinNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteinNummer' aria-describedby='bauteinNummer' placeholder='' value=0>");
+						echo("<label for='maschinenInventarNummer'>maschinenInventarNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteilIndex' aria-describedby='maschinenInventarNummer' placeholder='' value=0>");
+						echo("<label for='hersteller'>hersteller</label>");
+						echo("<input type='text' class='form-control' id='hersteller' aria-describedby='hersteller' placeholder='' value=0>");
+						echo("<label for='technologie'>technologie</label>");
+						echo("<input type='text' class='form-control' id='technologie' aria-describedby='userID' placeholder='' value=0>");
+						echo("<label for='standort'>standort</label>");
+						echo("<input type='text' class='form-control' id='standort' aria-describedby='standort' placeholder='' value=0>");
+						echo("<label for='abteilung'>abteilung</label>");
+						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value=0>");
+						
+			  		}
+echo <<<FOOTER
+		</div>
+<button type="button" class="btn btn-primary" onclick="saveMaschine('data')"> Speichern</button>
+<input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
+	      </form>
     </div>
   </div>
 </div>
+</div>
+
+
+FOOTER;
+?>

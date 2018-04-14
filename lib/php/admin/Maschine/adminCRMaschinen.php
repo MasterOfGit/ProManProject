@@ -88,10 +88,10 @@ HOME1_HEADER;
 					echo("<td>{$maschine['standort'] }</td>");
 					echo("<td>{$maschine['abteilung']}</td>");
 					echo("<td>{$maschine['status']}</td>");
-					echo("<td><input type='button' value='Bearbeiten'  onclick='testbuttonaction({maschine['maschinenID']});'></td>");
+					echo("<td><input type='button' value='Bearbeiten'  onclick='editMaschine({$maschine['maschinenID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input type='button' value='Neues Maschine anlegen'  onclick='testbuttonaction();'></td>");
+				echo("<td><input type='button' value='Neues Maschine anlegen'  onclick='editMaschine();'></td>");
 
 
 echo <<<HOME1_FOOTER
@@ -144,14 +144,14 @@ MENU1_HEADER;
 						echo("<td>{$maschinenverwendung['fertigungID']}</td>");
 						echo("<td>{$maschinenverwendung['arbeitsfolge']}</td>");
 						echo("<td><input type='button' value='Bearbeiten'  
-						onclick='testbuttonaction({$maschinen['maschinenID']});'></td>");
+						onclick='editMaschineVerwendung({$maschinen['maschinenID']});'></td>");
 						};
 					};
 				};
 						
 						echo("</tr>");
 				
-				echo("<td><input type='button' value='Neues Maschine anlegen'  onclick='testbuttonaction();'></td>");
+				echo("<td><input type='button' value='Neues Maschineverwendung anlegen'  onclick='editMaschineVerwendung();'></td>");
 
 
 echo <<<'MENU1_FOOTER'
