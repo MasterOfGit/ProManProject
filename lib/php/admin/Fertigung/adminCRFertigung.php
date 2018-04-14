@@ -24,7 +24,7 @@ $jsonfertigungen = json_decode($fertigungen, TRUE);
 
 //print_r($jsonfertigungslinien);
 
-echo <<<'HOME1_HEADER'
+echo <<<HOME1_HEADER
 <div class="Fetigung">
 	<div class="jumbotron">
 		<div class="container">
@@ -67,28 +67,30 @@ HOME1_HEADER;
 										echo("<td>{$fertigungslinie['fertigungslinienname']}</td>");
 										echo("<td>{$fertigungslinie['fertigungstyp']}</td>");
 										echo("<td>{$fertigungslinie['maschinenzahl']}</td>");
-										echo("<td><input type='button' value='loeschen'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='loeschen'  onclick='deleteFertigung({$fertigung['fertigungsID']});'></td>");
 										
 								echo("</tr>");
 								};
-						 
+						 echo("<td><input type='button' value='Fertigungslinie hinzufügen'  onclick='editFertigung({$fertigung['fertigungsID']});'></td>");
 						};
-echo("<td><input type='button' value='Fertigungslinie hinzufügen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Reset'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Neu Fertigung anlegen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Diese Fertigung löschen'  onclick='testbuttonaction();'></td>");
+							echo("</tbody>");
+						 echo("</table>");
 
 
-echo <<<'HOME1_FOOTER'
-							</tbody>
-						</table>
-					</div>
+echo("<br>");
+echo("<input type='button' value='Neu Fertigung anlegen'  onclick='newFertigung();'>");
+echo("<br>");
+echo("<br>");
+echo("<input type='button' value='Alles Speichern'  onclick='saveFertigungen();'>");
+
+
+
+
+echo <<<FOOTER
+</div>
 				</div>
-HOME1_FOOTER;
 
-						 
-echo <<<'MENU1_HEADER'
+
 <div id="menu1" class="container tab-pane fade"><br>
 					<form class="form-inline" action="/action_page.php">
 					</form>
@@ -101,6 +103,6 @@ echo <<<'MENU1_HEADER'
       </div>	
 	</div>
 </div>
+FOOTER;
 
-MENU1_HEADER;
 ?>

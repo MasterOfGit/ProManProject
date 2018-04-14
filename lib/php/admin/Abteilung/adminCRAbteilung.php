@@ -63,22 +63,22 @@ HOME1_HEADER;
 										echo("<td>{$abteilung['abteilunngsname']}</td>");
 										echo("<td>{$fertigung['fertigungsID']}</td>"); 
 										echo("<td>{$fertigung['fertigungsname']}</td>");	
-										echo("<td><input type='button' value='loeschen'  onclick='testbuttonaction();'></td>");
+										echo("<td><input type='button' value='loeschen'  onclick='deleteAbteilung({$abteilung['abteilungsID']});'></td>");
 										
 								echo("</tr>");
 								};
-						 
+						 echo("<td><input type='button' value='Neu Fertigung hinzufügen'  onclick='editAbteilung({$abteilung['abteilungsID']});'></td>");
 						};
-echo("<td><input type='button' value='Neu Fertigung hinzufügen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Reset'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Neu Abteilung anlegen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Diese Abteilung löschen'  onclick='testbuttonaction();'></td>");
+			echo("</tbody>");
+			echo("</table>");
+			echo("<br>");
+echo("<br>");
+echo("<td><input type='button' value='Neu Abteilung hinzufügen'  onclick='newAbteilung();'></td>");
+echo("<td><input type='button' value='Alles Speichern'  onclick='saveAbteilungen();'></td>");
 
 
 echo <<<'HOME1_FOOTER'
-							</tbody>
-						</table>
+						
 					</div>
 				</div>
 HOME1_FOOTER;

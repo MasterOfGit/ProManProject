@@ -77,7 +77,7 @@ HOME1_HEADER;
 										echo("<td><input type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 								echo("</tr>");
 								};
-						 echo("<td><input type='button' value='neue Arbeitsfolge'  onclick='newArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
+						 echo("<td><input type='button' value='neue Arbeitsfolge'  onclick='editNewArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
 						 
 						};
 
