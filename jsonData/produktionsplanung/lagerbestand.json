@@ -8,7 +8,7 @@
 		"bauteilverwendung"	:	"Getriebe 15ab7",
 		"minBestand"		:	500,
 		"istBestand"		:	250,
-		"lagerplatz"		:	"7c2a"	
+		"lagerplatz"		:	"10"	
 		},
 		{
 		"bauteilID"			:	4,
@@ -17,7 +17,7 @@
 		"bauteilverwendung"	:	"Getriebe 15a88",
 		"minBestand"		:	500,
 		"istBestand"		:	250,
-		"lagerplatz"		:	"10a225b"
+		"lagerplatz"		:	"20"
 		},
 		{
 		"bauteilID"			:	12,
@@ -26,7 +26,7 @@
 		"bauteilverwendung"	:	"Getriebe 15ab7",
 		"minBestand"		:	500,
 		"istBestand"		:	250,
-		"lagerplatz"		:	"1s85"
+		"lagerplatz"		:	"30"
 		}
 		
 	]

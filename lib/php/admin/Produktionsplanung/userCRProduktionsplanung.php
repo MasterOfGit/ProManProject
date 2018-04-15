@@ -29,6 +29,9 @@ $jsonlagerbestand = json_decode($lagerbestand, TRUE);
 //print_r($jsonfertigungslinien);
 
 echo <<<'HOME1_HEADER'
+
+
+
 <div class="Produktionsplanung">
 	<div class="jumbotron">
 		<div class="container">
@@ -70,15 +73,15 @@ HOME1_HEADER;
 								echo("<td>{$prodschritt['bauteilverwendung']}</td>");
 								echo("<td>{$prodschritt['prodMenge']}</td>");
 								echo("<td>{$prodschritt['status']}</td>");
-								echo("<td><input type='button' value='Verschieben'  onclick='testbuttonaction();'></td>");
-						 		echo("<td><input type='button' value='Löschen'  onclick='testbuttonaction();'></td>");
-						 		echo("<td><input type='button' value='Status ändern'  onclick='testbuttonaction();'></td>");
+								echo("<td><input type='button' value='Verschieben'  onclick='moveProduktionplanSchritte({$prodschritt['folgenummer']});'></td>");
+						 		echo("<td><input type='button' value='Löschen'  onclick='deleteProduktionplan({$prodschritt['folgenummer']});'></td>");
+						 		echo("<td><input type='button' value='Status ändern'  onclick='changeSchrittStatusProduktionplan({$prodschritt['folgenummer']});'></td>");
 						 
 						};
 echo("</tr>");
 echo("<div>");
-echo("<td><input type='button' value='Neue Produktionsmenge hinzufügen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
+echo("<td><input type='button' value='Neue Produktionsmenge hinzufügen'  onclick='editProduktionplanSchritt();'></td>");
+echo("<td><input type='button' value='Speichern'  onclick='saveProduktionplan();'></td>");
 echo("</div>");
 
 echo <<<'HOME1_FOOTER'
@@ -94,12 +97,13 @@ echo <<<MENU1_HEADER
 					<table class="table">
 							<thead>
 								<tr>
+									<th>Lagerort</th>
 									<th>Bauteiname</th>
 									<th>Bauteilindex</th>
 									<th>Verwendung</th>
 									<th>Minmenge</th>
 									<th>Sollmenge</th>
-									<th>Lagerort</th>
+									
 									
 								</tr>
 							</thead>
@@ -109,22 +113,22 @@ MENU1_HEADER;
 							
 						foreach($jsonlagerbestand['lagerbestaende'] as $lagerbestand) 
 						{	echo("<tr>");
-							    echo("<td>{$lagerbestand['bauteilname']}</td>");
+							    echo("<td>{$lagerbestand['lagerplatz']}</td>");
+						 		echo("<td>{$lagerbestand['bauteilname']}</td>");
 								echo("<td>{$lagerbestand['bauteilindex']}</td>");
 								echo("<td>{$lagerbestand['bauteilverwendung']}</td>"); 
 								echo("<td>{$lagerbestand['minBestand']}</td>");
 								echo("<td>{$lagerbestand['istBestand']}</td>");
-								echo("<td>{$lagerbestand['lagerplatz']}</td>");
-								echo("<td><input type='button' value='Änder'  onclick='testbuttonaction();'></td>");
-						 		echo("<td><input type='button' value='Löschen'  onclick='testbuttonaction();'></td>");
+								echo("<td><input type='button' value='Änder'  onclick='editLagerort({$lagerbestand['lagerplatz']});'></td>");
+						 		echo("<td><input type='button' value='Löschen'  onclick='deleteLagerort({$lagerbestand['lagerplatz']});'></td>");
 						 		
 						 
 
 						};
 echo("</tr>");
 echo("<div>");
-echo("<td><input type='button' value='Neue Lagerort hinzufügen'  onclick='testbuttonaction();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='testbuttonaction();'></td>");
+echo("<td><input type='button' value='Neue Lagerort hinzufügen'  onclick='editLagerort(0);'></td>");
+echo("<td><input type='button' value='Speichern'  onclick='saveAllLagerort();'></td>");
 echo("</div>");
 
 echo <<<'MENU1_FOOTER'
