@@ -1,6 +1,6 @@
 <?php
 //echo "PHP Datenabfrage<br>";
-//$q = $_REQUEST["q"];
+$q = $_REQUEST["q"];
 //echo "Abfragenummer : "  . $q . "<br>";
 //echo "phpDateiName : "  . __FILE__ . "<br>";
 $ch1 = curl_init();
@@ -21,9 +21,39 @@ $jsoninstandhaltungsauftraege = json_decode($instandhaltungsauftraege, TRUE);
 //print_r($instandhaltungsauftraege);
 
 
-
-
 echo <<<Header1
+
+<script>
+function createData(q)
+{
+		// TODO: Neue instandhaltungID muss ermittelt werden
+
+		var data = JSON.stringify(
+		{
+	
+			"instandhaltungID"			:	1,
+
+			"abteilung"					: 	$("abteilungNew").val(),
+			
+			"fachrichtung"				:	$("fachrichtungNew").val(),
+
+			"fachbereich"				:	$("fachbereichNew").val(),	
+
+			"machinenIventarnummer"		:	$("machinenIventarnummerNew").val(),
+
+			"thema"						:	$("themaNew").val(),
+
+			"fehlertext"				:	$("fehlertextNew").val(),
+
+			"auftragsstatus"			:	"offen"
+		}
+);
+saveNewReperaturAuftrag(data);
+
+alert("createData saveNewReperaturAuftrag");
+
+};
+</script>
 
 <div class="Instandhaltung">
 	<div class="jumbotron">
@@ -44,7 +74,7 @@ echo <<<Header1
 			<!-- Tab panes -->
 			<div class="tab-content">
 
-				<div id="home1" class="container tab-pane fade"><br>
+				<div id="home1" class="container tab-pane fade in active"><br>
 					<form class="form-inline" action="/action_page.php">
 						<label for="abteilung">Abteilung</label>
 						<select id="abteilung">
@@ -100,10 +130,10 @@ Header1;
 									echo("</td>");
 								
 																		
-									echo("<td><input type='button' value='Ansehen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Ändern'  onclick='testbuttonaction();'></td>");
+									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									
 									
 									echo("</td>");
 								echo("</tr>");
@@ -114,8 +144,7 @@ echo <<<FOOTER1
 							</tbody>
 						</table>
 
-						<br>
-						<input type="button" value="Aktualisieren" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+						
 
 					</div>
 				</div>
@@ -177,11 +206,9 @@ HEADER2;
 									echo("<td>{$instandhaltungsauftrag['fehlertext']}<br>");
 									echo("</td>");
 								
-																		
-									echo("<td><input type='button' value='Ansehen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Ändern'  onclick='testbuttonaction();'></td>");
+									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
 									
 									echo("</td>");
 								echo("</tr>");
@@ -192,10 +219,7 @@ echo <<<FOOTER2
 							</tbody>
 						</table>
 
-						<br>
-						<input type="button" value="Aktualisieren" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
-
-					</div>
+										</div>
 				</div>
 FOOTER2;
 
@@ -256,11 +280,9 @@ HEADER3;
 									echo("<td>{$instandhaltungsauftrag['fehlertext']}<br>");
 									echo("</td>");
 								
-																		
-									echo("<td><input type='button' value='Ansehen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='testbuttonaction();'></td>");
-									echo("<td><input type='button' value='Ändern'  onclick='testbuttonaction();'></td>");
+									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
 									
 									echo("</td>");
 								echo("</tr>");
@@ -271,8 +293,7 @@ echo <<<FOOTER3
 							</tbody>
 						</table>
 
-						<br>
-						<input type="button" value="Aktualisieren" onclick="loadDoc('lib/php/admin/adminContentRequestMaschineVerwBear.php?q=1111',myFunction1)">
+						
 
 					</div>
 				</div>
@@ -281,35 +302,41 @@ FOOTER3;
 echo <<<HEADER4
 				<div id="menu3" class="container tab-pane fade"><br>
 					
-					<form class="form-inline" action="/action_page.php">
 					<lable>Auftragnummer</lable><br>
-					<input type="text"><br>
+					<input id="instandhaltungIDNew" type="text"><br>
+					
 					<lable>Abteilung</lable><br>
-					<input type="text"><br>
+					<input id="abteilungNew" type="text"><br>
+					
 					<lable>Fachrichtung</lable><br>
-					<select id="Fachrichtung">
+					<select id="fachrichtungNew">
 							<option>elektrisch</option>
 							<option>mechanisch</option>
 							<option>unbekannt</option>
 					</select><br>
+					
 					<lable>Fachbereich</lable><br>
-					<select id="Fachbereich">
+					<select id="fachbereichNew">
 							<option>intern</option>
 							<option>extern</option>
 					</select><br>
+					
 					<lable>Maschine</lable><br>
-					<input type="text"><br>
+					<input id="machinenIventarnummerNew" type="text"><br>
+					
 					<lable>Standort</lable><br>
-					<input type="text"><br>
+					<input id="themaNew" type="text"><br>
+					
 					<lable>Problemthema</lable><br>
-					<input type="text"><br>
+					<input id="fehlertextNew" type="text"><br>
+					
 					<lable>Problembeschreibung</lable><br>
-					<input type="text"><br>
+					<input id="auftragsstatusNew" type="text"><br>
 					<br>
 					
 					
 					
-					<input type="button" value="Neuen Auftrag erstellen" onclick="loadDoc('lib/php/inst/instCRAuftragAnzeigen.php?q=1111',myFunction1)">
+					<input type="button" value="Neuen Auftrag erstellen" onclick="createData(0)">
 
 					</form>
 
