@@ -6,7 +6,7 @@ $q = $_REQUEST["q"];
 $ch1 = curl_init();
 
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil/?identifier=AdminPageAbteilung");
 
 curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
 
@@ -34,11 +34,11 @@ function createData()
 	
 			"bauteileID"			:	$("#bauteileID").val(),
 
-			"bauteinNummer"			:	$("#bauteinNummer").val(),
+			"bauteilNummer"			:	$("#bauteilNummer").val(),
 
 			"bauteilIndex"			:	$("#bauteilIndex").val(),
 
-			"bauteilVersiom"		:	$("#bauteilVersiom").val(),
+			"bauteilVersion"		:	$("#bauteilVersion").val(),
 
 			"bauteilArt"			:	$("#bauteilArt").val(),
 
@@ -75,14 +75,14 @@ HEADER;
 						echo("<label for='bauteileID'>bauteileID</label>");
 						echo("<input readonly type='text' class='form-control' id='bauteileID' aria-describedby='userID' placeholder='' value={$bauteil['bauteileID']}>");
 					
-						echo("<label for='bauteinNummer'>bauteinNummer</label>");
-						echo("<input type='text' class='form-control' id='bauteinNummer' aria-describedby='bauteinNummer' placeholder='' value={$bauteil['bauteinNummer']}>");
+						echo("<label for='bauteilNummer'>bauteilNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteilNummer' aria-describedby='bauteilNummer' placeholder='' value={$bauteil['bauteilNummer']}>");
 					
 						echo("<label for='bauteilIndex'>bauteilIndex</label>");
 						echo("<input type='text' class='form-control' id='bauteilIndex' aria-describedby='bauteilIndex' placeholder='' value={$bauteil['bauteilIndex']}>");
 					
-						echo("<label for='bauteilVersiom'>bauteilVersiom</label>");
-						echo("<input type='text' class='form-control' id='bauteilVersiom' aria-describedby='bauteilVersiom' placeholder='' value={$bauteil['bauteilVersiom']}>");
+						echo("<label for='bauteilVersion'>bauteilVersion</label>");
+						echo("<input type='text' class='form-control' id='bauteilVersion' aria-describedby='bauteilVersion' placeholder='' value={$bauteil['bauteilVersion']}>");
 					
 						echo("<label for='bauteilArt'>bauteilArt</label>");
 						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='userID' placeholder='' value={$bauteil['bauteilArt']}>");
@@ -109,12 +109,12 @@ HEADER;
 						
 				  		echo("<label for='bauteileID'>bauteileID</label>");
 						echo("<input  readonly type='text' class='form-control' id='bauteileID' aria-describedby='userID' placeholder='' value=$bauteilidmax>");
-						echo("<label for='bauteinNummer'>bauteinNummer</label>");
-						echo("<input type='text' class='form-control' id='bauteinNummer' aria-describedby='bauteinNummer' placeholder='' value=0>");
+						echo("<label for='bauteilNummer'>bauteilNummer</label>");
+						echo("<input type='text' class='form-control' id='bauteilNummer' aria-describedby='bauteilNummer' placeholder='' value=0>");
 						echo("<label for='bauteilIndex'>bauteilIndex</label>");
 						echo("<input type='text' class='form-control' id='bauteilIndex' aria-describedby='bauteilIndex' placeholder='' value=0>");
-						echo("<label for='bauteilVersiom'>bauteilVersiom</label>");
-						echo("<input type='text' class='form-control' id='bauteilVersiom' aria-describedby='bauteilVersiom' placeholder='' value=0>");
+						echo("<label for='bauteilVersion'>bauteilVersion</label>");
+						echo("<input type='text' class='form-control' id='bauteilVersion' aria-describedby='bauteilVersion' placeholder='' value=0>");
 						echo("<label for='bauteilArt'>bauteilArt</label>");
 						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='userID' placeholder='' value=0>");
 						echo("<label for='bauteilStatus'>bauteilStatus</label>");

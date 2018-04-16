@@ -8,16 +8,17 @@ $ch1 = curl_init();
 $ch2 = curl_init();
 //$ch3 = curl_init();
 
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
 $bauteile=curl_exec($ch1);
+
 curl_close($ch1);
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
 
 curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteileVerwendung.json");
 curl_setopt($ch2, CURLOPT_HEADER, 0);
@@ -77,15 +78,15 @@ echo <<<'HOME1_HEADER'
 						  </thead>
 						  <tbody>  
 HOME1_HEADER;
-
-				foreach($jsonbauteile['bauteile'] as $bauteil)
+				
+				foreach($jsonbauteile as $bauteil)
 				{
 				 
 					echo("<tr>");
 					echo("<td>{$bauteil['bauteileID']}</td>");
-					echo("<td>{$bauteil['bauteinNummer']}</td>");
+					echo("<td>{$bauteil['bauteilNummer']}</td>");
 					echo("<td>{$bauteil['bauteilIndex']}</td>");
-					echo("<td>{$bauteil['bauteilVersiom']}</td>");
+					echo("<td>{$bauteil['bauteilVersion']}</td>");
 					echo("<td>{$bauteil['bauteilArt'] }</td>");
 					echo("<td>{$bauteil['bauteilStatus']}</td>");
 					echo("<td>{$bauteil['bauteilIDNachfolger']}</td>");
@@ -135,9 +136,9 @@ MENU1_HEADER;
 						{
 
 							echo("<td>{$bauteil['bauteileID']}</td>");
-							echo("<td>{$bauteil['bauteinNummer']}</td>");
+							echo("<td>{$bauteil['bauteilNummer']}</td>");
 							echo("<td>{$bauteil['bauteilIndex']}</td>");
-							echo("<td>{$bauteil['bauteilVersiom']}</td>");
+							echo("<td>{$bauteil['bauteilVersion']}</td>");
 						}
 					};
 						echo("<td>{$bauteilverwendung['bauteilverwendungsID']}</td>");
