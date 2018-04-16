@@ -98,6 +98,15 @@ namespace ProMan_Simulator.Model
             SetValues = new ObservableCollection<SetValuesHelper>();
             switch (_type)
             {
+                case ObjectDtos.BauteilDtoName:
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilNummer", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilIndex", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilArt", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilVersion", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilStatus", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "bauteilIDNachfolger", Value = "" });
+                    break;
+
                 case ObjectDtos.WerkDtoName:
                     SetValues.Add(new SetValuesHelper() { Label = "Name", Value = "" });
                     SetValues.Add(new SetValuesHelper() { Label = "Ort", Value = "" });
@@ -164,6 +173,18 @@ namespace ProMan_Simulator.Model
         {
             switch (_type)
             {
+                case ObjectDtos.BauteilDtoName:
+                    _httphelper.HttpPost($"api/bauteil", new BauteilDto()
+                    {
+                        bauteilNummer = SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilNummer").Value,
+                        bauteilIndex = SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilIndex").Value,
+                        bauteilArt = SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilArt").Value,
+                        bauteilVersion = SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilVersion").Value,
+                        bauteilStatus = SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilStatus").Value,
+                        bauteilIDNachfolger = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "bauteilIDNachfolger").Value),
+                    }).Wait();
+                    break;
+
                 case ObjectDtos.AbteilungDtoName:
                     _httphelper.HttpPost($"api/abteilung", new AbteilungDto()
                     {

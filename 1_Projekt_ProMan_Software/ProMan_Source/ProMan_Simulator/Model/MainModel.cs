@@ -174,29 +174,119 @@ namespace ProMan_Simulator.Model
             {
                 #region single objects
                 case ObjectDtos.AbteilungDtoName:
-                case ObjectDtos.ArbeitsfolgeDtoName:
-                case ObjectDtos.AuditDtoName:
-                case ObjectDtos.BauteilDtoName:
-                case ObjectDtos.BauteilVerwendungDtoName:
-                case ObjectDtos.FertigungDtoName:
-                case ObjectDtos.FertigungslinieDtoName:
-                case ObjectDtos.InstandhaltungsAuftragDtoName:
-                case ObjectDtos.LagerBestandDtoName:
-                case ObjectDtos.LoginDtoName:
-                case ObjectDtos.MaschineDtoName:
-                case ObjectDtos.MaschineVerwendungDtoName:
-                case ObjectDtos.NachrichtDtoName:
-                case ObjectDtos.ProduktionsplanDtoName:
-                case ObjectDtos.ReparaturDtoName:
-                case ObjectDtos.UserAnfrageDtoName:
-                case ObjectDtos.UserDtoName:
-                case ObjectDtos.WartungDtoName:
-                case ObjectDtos.WerkDtoName:
                     {
                         var item = _httphelper.HttpGet<AbteilungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
+                case ObjectDtos.ArbeitsfolgeDtoName:
+                    {
+                        var item = _httphelper.HttpGet<ArbeitsfolgeDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.AuditDtoName:
+                    {
+                        var item = _httphelper.HttpGet<AuditDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.BauteilDtoName:
+                    {
+                        var item = _httphelper.HttpGet<BauteilDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.BauteilVerwendungDtoName:
+                    {
+                        var item = _httphelper.HttpGet<BauteilVerwendungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.FertigungDtoName:
+                    {
+                        var item = _httphelper.HttpGet<FertigungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.FertigungslinieDtoName:
+                    {
+                        var item = _httphelper.HttpGet<FertigungslinieDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.InstandhaltungsAuftragDtoName:
+                    {
+                        var item = _httphelper.HttpGet<InstandhaltungsAuftragDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.LagerBestandDtoName:
+                    {
+                        var item = _httphelper.HttpGet<LagerBestandDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.LoginDtoName:
+                    {
+                        var item = _httphelper.HttpGet<LoginDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.MaschineDtoName:
+                    {
+                        var item = _httphelper.HttpGet<MaschineDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.MaschineVerwendungDtoName:
+                    {
+                        var item = _httphelper.HttpGet<MaschineVerwendungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.NachrichtDtoName:
+                    {
+                        var item = _httphelper.HttpGet<NachrichtDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.ProduktionsplanDtoName:
+                    {
+                        var item = _httphelper.HttpGet<ProduktionsplanDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.ReparaturDtoName:
+                    {
+                        var item = _httphelper.HttpGet<ReparaturDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.UserAnfrageDtoName:
+                    {
+                        var item = _httphelper.HttpGet<UserAnfrageDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.UserDtoName:
+                    {
+                        var item = _httphelper.HttpGet<UserDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                case ObjectDtos.WartungDtoName:
+                    {
+                        var item = _httphelper.HttpGet<WartungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                        Result = SerializeHelper.XmlSerialize(item);
+                        break;
+                    }
+                //case ObjectDtos.WerkDtoName:
+                //    {
+                //        var item = _httphelper.HttpGet<>($"api/{SelectedMode.ToLower()}/{ID}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
                 
 
                 #endregion
