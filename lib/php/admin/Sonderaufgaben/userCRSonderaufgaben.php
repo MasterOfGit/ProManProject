@@ -20,6 +20,7 @@ curl_close($ch1);
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
 curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/wartungen.json");
+
 curl_setopt($ch2, CURLOPT_HEADER, 0);
 curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
 $wartungen=curl_exec($ch2);
@@ -38,6 +39,8 @@ curl_close($ch2);
 // Unwandlung von json in Array	
 $jsonsaudits = json_decode($saudits, TRUE);
 $jsonwartungen = json_decode($wartungen, TRUE);
+
+//echo($wartungen);
 
 //print_r($jsonbauteile);
 //echo("<br>");

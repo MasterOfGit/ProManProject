@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="App.config" server="192.168.178.26" local="131676508788753314" remote="131682531600000000" Dst="2" />
-<file name="App.xaml" server="192.168.178.26" local="131624030349254833" remote="131682531600000000" Dst="2" />
-<file name="App.xaml.cs" server="192.168.178.26" local="131624030349264828" remote="131682531600000000" Dst="2" />
-<file name="HttpHelper.cs" server="192.168.178.26" local="131624030349394918" remote="131682531600000000" Dst="2" />
-<file name="MainWindow.xaml" server="192.168.178.26" local="131624030349404918" remote="131682531600000000" Dst="2" />
-<file name="MainWindow.xaml.cs" server="192.168.178.26" local="131624030349414925" remote="131682531600000000" Dst="2" />
-<file name="packages.config" server="192.168.178.26" local="131624030349705125" remote="131682531600000000" Dst="2" />
-<file name="ProMan_Simulator.csproj" server="192.168.178.26" local="131628380502985617" remote="131682531600000000" Dst="2" />
-<file name="App.config" server="C:/xampp/htdocs/proman/" local="131676508788753314" remote="131676508780000000" Dst="2" />
+<file name="App.config" server="192.168.178.26" local="131683775676565513" remote="131683802400000000" Dst="2" />
+<file name="App.xaml" server="192.168.178.26" local="131624030349254833" remote="131683802400000000" Dst="2" />
+<file name="App.xaml.cs" server="192.168.178.26" local="131624030349264828" remote="131683802400000000" Dst="2" />
+<file name="HttpHelper.cs" server="192.168.178.26" local="131624030349394918" remote="131683802400000000" Dst="2" />
+<file name="MainWindow.xaml" server="192.168.178.26" local="131624030349404918" remote="131683802400000000" Dst="2" />
+<file name="MainWindow.xaml.cs" server="192.168.178.26" local="131624030349414925" remote="131683802400000000" Dst="2" />
+<file name="packages.config" server="192.168.178.26" local="131624030349705125" remote="131683802400000000" Dst="2" />
+<file name="ProMan_Simulator.csproj" server="192.168.178.26" local="131628380502985617" remote="131683802400000000" Dst="2" />
+<file name="App.config" server="C:/xampp/htdocs/proman/" local="131683775676565513" remote="131683775670000000" Dst="2" />
 <file name="App.xaml" server="C:/xampp/htdocs/proman/" local="131624030349254833" remote="131623994340000000" Dst="2" />
 <file name="App.xaml.cs" server="C:/xampp/htdocs/proman/" local="131624030349264828" remote="131623994340000000" Dst="2" />
 <file name="HttpHelper.cs" server="C:/xampp/htdocs/proman/" local="131624030349394918" remote="131623994340000000" Dst="2" />

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131683624109800139" remote="131683624100000000" Dst="2" />
-<file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131683624109800139" remote="131683634400000000" Dst="2" />
+<file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131683806391083791" remote="131683806390000000" Dst="2" />
+<file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131683806391083791" remote="131683806000000000" Dst="2" />
 <file name="adminCRWartungBear.php" server="C:/xampp/htdocs/proman/" local="131683639990469041" remote="131683639990000000" Dst="2" />
-<file name="adminCRAuditsBear.php" server="192.168.178.26" local="131683638579852886" remote="131683639200000000" Dst="2" />
-<file name="adminCRWartungBear.php" server="192.168.178.26" local="131683639990469041" remote="131683639800000000" Dst="2" />
+<file name="adminCRAuditsBear.php" server="192.168.178.26" local="131683638579852886" remote="131683802400000000" Dst="2" />
+<file name="adminCRWartungBear.php" server="192.168.178.26" local="131683639990469041" remote="131683802400000000" Dst="2" />
 <file name="adminCRAuditsBear.php" server="C:/xampp/htdocs/proman/" local="131683638579852886" remote="131683638570000000" Dst="2" />
 <file name="saveAuditJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131683601782435757" remote="131683601780000000" Dst="2" />
-<file name="saveAuditJsonDatei.php" server="192.168.178.26" local="131683601782435757" remote="131683607400000000" Dst="2" />
-<file name="saveWartungJsonDatei.php" server="192.168.178.26" local="131683601464753977" remote="131683607400000000" Dst="2" />
+<file name="saveAuditJsonDatei.php" server="192.168.178.26" local="131683601782435757" remote="131683802400000000" Dst="2" />
+<file name="saveWartungJsonDatei.php" server="192.168.178.26" local="131683601464753977" remote="131683802400000000" Dst="2" />
+<file name="saveWartungJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131683601464753977" remote="131683601460000000" Dst="2" />
 </dwsync>
