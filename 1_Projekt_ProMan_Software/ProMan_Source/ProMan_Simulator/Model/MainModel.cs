@@ -174,91 +174,69 @@ namespace ProMan_Simulator.Model
             {
                 #region single objects
                 case ObjectDtos.AbteilungDtoName:
-                    {
-                        var item = _httphelper.HttpGet<AbteilungDto>($"api/abteilung/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
+                case ObjectDtos.ArbeitsfolgeDtoName:
+                case ObjectDtos.AuditDtoName:
+                case ObjectDtos.BauteilDtoName:
+                case ObjectDtos.BauteilVerwendungDtoName:
                 case ObjectDtos.FertigungDtoName:
-                    {
-                        var item = _httphelper.HttpGet<FertigungDto>($"api/fertigung/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
                 case ObjectDtos.FertigungslinieDtoName:
-                    {
-                        var item = _httphelper.HttpGet<FertigungslinieDto>($"api/fertigungslinie/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.MaschineDtoName:
-                    {
-                        var item = _httphelper.HttpGet<MaschineDto>($"api/maschine/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.UserDtoName:
-                    {
-                        var item = _httphelper.HttpGet<UserDto>($"api/user/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.ReparaturDtoName:
-                    {
-                        var item = _httphelper.HttpGet<ReparaturDto>($"api/reparatur/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.WartungDtoName:
-                    {
-                        var item = _httphelper.HttpGet<WartungDto>($"api/wartung/{ID}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
+                case ObjectDtos.InstandhaltungsAuftragDtoName:
+                case ObjectDtos.LagerBestandDtoName:
                 case ObjectDtos.LoginDtoName:
+                case ObjectDtos.MaschineDtoName:
+                case ObjectDtos.MaschineVerwendungDtoName:
+                case ObjectDtos.NachrichtDtoName:
+                case ObjectDtos.ProduktionsplanDtoName:
+                case ObjectDtos.ReparaturDtoName:
+                case ObjectDtos.UserAnfrageDtoName:
+                case ObjectDtos.UserDtoName:
+                case ObjectDtos.WartungDtoName:
+                case ObjectDtos.WerkDtoName:
                     {
-                        var item = _httphelper.HttpGet<LoginDto>($"api/login/{ID}").Result;
+                        var item = _httphelper.HttpGet<AbteilungDto>($"api/{SelectedMode.ToLower()}/{ID}").Result;
                         Result = SerializeHelper.XmlSerialize(item);
                         break;
                     }
+                
+
                 #endregion
                 #region adminpages
-                case ObjectDtos.AdminPageAbteilung:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageAbteilungDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageAbteilung}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.AdminPageBauteil:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageBauteilDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageBauteil}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.AdminPageFertigung:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageFertigungDto>($"api/adminpage/?identifier={ ObjectDtos.AdminPageFertigung}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.AdminPageFertigungslinie:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageFertigungslinieDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageFertigungslinie}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.AdminPageMaschine:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageMaschineDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageMaschine}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
-                case ObjectDtos.AdminPageUser:
-                    {
-                        var item = _httphelper.HttpGet<AdminPageUserDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageUser}").Result;
-                        Result = SerializeHelper.XmlSerialize(item);
-                        break;
-                    }
+                //case ObjectDtos.AdminPageAbteilung:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageAbteilungDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageAbteilung}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
+                //case ObjectDtos.AdminPageBauteil:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageBauteilDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageBauteil}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
+                //case ObjectDtos.AdminPageFertigung:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageFertigungDto>($"api/adminpage/?identifier={ ObjectDtos.AdminPageFertigung}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
+                //case ObjectDtos.AdminPageFertigungslinie:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageFertigungslinieDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageFertigungslinie}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
+                //case ObjectDtos.AdminPageMaschine:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageMaschineDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageMaschine}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
+                //case ObjectDtos.AdminPageUser:
+                //    {
+                //        var item = _httphelper.HttpGet<AdminPageUserDto>($"api/adminpage/?identifier={ObjectDtos.AdminPageUser}").Result;
+                //        Result = SerializeHelper.XmlSerialize(item);
+                //        break;
+                //    }
 
                 #endregion
                 default:
