@@ -18,7 +18,12 @@ namespace ProMan_Simulator.Views
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var model = DataContext as BaseModel;
-            model.RequestClose += () => { Close(); };
+            try
+            {
+                model.RequestClose += () => { Close(); };
+            }
+            catch
+            { }
         }
     }
 }

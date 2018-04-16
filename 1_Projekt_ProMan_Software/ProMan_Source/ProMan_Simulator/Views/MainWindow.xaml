@@ -23,6 +23,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="1"></RowDefinition>
         </Grid.RowDefinitions>
@@ -43,11 +44,12 @@
         <Label Grid.Row="0" Grid.Column="2" Content="Object" Style="{StaticResource baseStyle}"></Label>
         <ComboBox Name="SelectedMode" Grid.Row="0" Grid.Column="3" ItemsSource="{Binding Modes}" SelectedValue="{Binding SelectedMode}" SelectedIndex="0" Style="{StaticResource baseStyle}"></ComboBox>
         <Button Grid.Row="0" Grid.Column="4" Content="GetExecute" Style="{StaticResource baseStyle}" Command="{Binding GetButtonCommand}"></Button>
+        <Button Grid.Row="1" Grid.Column="4" Content="GetAllExecute" Style="{StaticResource baseStyle}" Command="{Binding GetAllButtonCommand}"></Button>
         <Button Grid.Row="0" Grid.Column="5" Content="SetExecute" Style="{StaticResource baseStyle}" Command="{Binding SetButtonCommand}"></Button>
         <Button Grid.Row="0" Grid.Column="6" Content="UpdateData" Style="{StaticResource baseStyle}" Command="{Binding UpdateDataButtonCommand}"></Button>
         <Button Grid.Row="0" Grid.Column="7" Content="StartTest" Style="{StaticResource baseStyle}" Command="{Binding StartTestButtonCommand}"></Button>
-        <Label Grid.Row="1" Grid.Column="0" Content="Result" Style="{StaticResource baseStyle}"></Label>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="10" BorderBrush="Black" BorderThickness="2">
+        <Label Grid.Row="2" Grid.Column="0" Content="Result" Style="{StaticResource baseStyle}"></Label>
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="10" BorderBrush="Black" BorderThickness="2">
             <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
                 <TextBlock Name="ResultData" Style="{StaticResource Result}" Text="{Binding Result}"></TextBlock>
             </ScrollViewer>
