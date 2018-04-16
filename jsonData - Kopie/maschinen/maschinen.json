@@ -1,0 +1,34 @@
+{
+"maschinen":
+	[
+		{
+			"maschinenID" :	1,
+			"maschinenInventarNummer"	: "12355545",
+			"hersteller"	:	"Scherrer",
+			"technologie"	:	"Drehen",
+			"standort"		:	"Werk1_Hall_5_Feld_10a",
+			"abteilung"		:   "1755",
+			"status"		:	"produktiv"
+		},
+		{
+			"maschinenID" :	2,
+			"maschinenInventarNummer"	: "777777",
+			"hersteller"	:	"Buderus",
+			"technologie"	:	"Schleifen",
+			"standort"		:	"Werk1_Halle_2_Feld_1d",
+			"abteilung"		:   "6655",
+			"status"		:	"neubau"
+		},
+		{
+			"maschinenID" :	8,
+			"maschinenInventarNummer"	: "554552",
+			"hersteller"	:	"Buderus",
+			"technologie"	:	"Schleifen",
+			"standort"		:	"Werk_2_Feld_1x",
+			"abteilung"		:   "8875",
+			"status"		:	"umbau"
+		}
+		
+		
+	]
+}

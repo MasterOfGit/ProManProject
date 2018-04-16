@@ -1,0 +1,59 @@
+{
+	"fertigungsstatus"	:
+	[
+		{
+			"fertigungsID"	:	1,
+			"fertigungsname"	:	"Fertigung_1",
+			"kennzahlen"	:
+			{
+				"teilenummernzahl" 		:	5,
+				"stueckzahlSoll"		: 	450,
+				"stueckzahlIst"			:	400,
+				"unbautenSoll"			:	3,
+				"umbautenIst"			:	1,
+				"reperaturen"			:	2,
+				"wartungen"				:	4,
+				"audits"					:	1,
+				"linienverfügkarkeit"	:	50
+				
+			},
+			"abteilungsdaten"	:
+			{
+				"werk" 	:	14,
+				"halle"	:	3,
+				"feld"	:	"5a",
+				"ansprechpartner"	:	"Michael Meister",
+				"telefon"			:	"0561/123456",
+				"aktuelleSchicht"	:	"3a"
+			}
+		},
+		
+		{
+			"fertigungsID"	:	2,
+			"fertigungsname"	:	"Fertigung_2",
+			"kennzahlen"	:
+			{
+				"teilenummernzahl" 		:	2,
+				"stueckzahlSoll"		: 	500,
+				"stueckzahlIst"			:	56,
+				"unbautenSoll"			:	1,
+				"umbautenIst"			:	1,
+				"reperaturen"			:	0,
+				"wartungen"				:	2,
+				"audits"					:	0,
+				"linienverfügkarkeit"	:	75
+				
+			},
+			"abteilungsdaten"	:
+			{
+				"werk" 	:	14,
+				"halle"	:	3,
+				"feld"	:	"5a",
+				"ansprechpartner"	:	"Michael Meister",
+				"telefon"			:	"0561/123456",
+				"aktuelleSchicht"	:	"3a"
+			}
+		}
+		
+	]
+}

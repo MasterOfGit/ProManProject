@@ -1,0 +1,32 @@
+{
+	"bauteilVerwendung"	: 
+	[
+		{
+			"bauteilverwendungsID"	:	1,
+			"fertingungsLinienID"	:	10,
+			"bauteileID"			:	1,
+			"technologie"			:	"Harddrehen",
+			"bearbeitungen"			:	"Planf_10a",
+			"bearbeitungsschritt"	:	7,
+			"verwendungsZweck"		:	"5Gang_Getriebe"		
+		},
+		{
+			"bauteilverwendungsID"	:	2,
+			"fertingungsLinienID"	:	12,
+			"bauteileID"			:	2,
+			"technologie"			:	"Fräsen",
+			"bearbeitungen"			:	"Verzahnung_10",
+			"bearbeitungsschritt"	:	5,
+			"verwendungsZweck"		:	"5Gang_Getriebe"		
+		},
+		{
+			"bauteilverwendungsID"	:	3,
+			"fertingungsLinienID"	:	5,
+			"bauteileID"			:	4,
+			"technologie"			:	"Schleifen",
+			"bearbeitungen"			:	"Verzahnung_5",
+			"bearbeitungsschritt"	:	4,
+			"verwendungsZweck"		:	"5Gang_Getriebe"		
+		}
+	]
+}

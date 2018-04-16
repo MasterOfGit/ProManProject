@@ -1,0 +1,22 @@
+{
+	"machinenVerwendung":
+	[
+		{
+			"maschinenID"		:	1,
+			"bauteileID"			:	4,
+			"abteilungID"		:	11,
+			"fertigungID"		:	8,
+			"fertigungslinieID"	:	7,
+			"arbeitsfolge"		:	3
+		},
+		{
+			"maschinenID"		:	2,
+			"bauteileID"		:	3,
+			"abteilungID"		:	5,
+			"fertigungID"		:	1,
+			"fertigungslinieID"	:	2,
+			"arbeitsfolge"		:	2
+		}
+	]
+	
+}

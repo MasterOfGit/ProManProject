@@ -1,0 +1,26 @@
+{
+	"audits"	:
+	[
+		{
+			"auditID"	:	1,
+			"abteilung"	:	"1545",
+			"auditart"	:	"SOS",
+			"termin"	:	"15.01.2018",
+			"status"	:	"erledigt",
+			"nacharbeit"	:	"keine",
+			"terminturnus"	:	"jährlich",
+			"beurteilung"	:	"90%(B)"
+		},
+		{
+			"auditID"	:	2,
+			"abteilung"	:	"778",
+			"auditart"	:	"SOS",
+			"termin"	:	"15.02.2018",
+			"status"	:	"inArbeit",
+			"nacharbeit"	:	"ja",
+			"terminturnus"	:	"jährlich",
+			"beurteilung"	:	"70%(NB)"
+		}
+	]
+
+}

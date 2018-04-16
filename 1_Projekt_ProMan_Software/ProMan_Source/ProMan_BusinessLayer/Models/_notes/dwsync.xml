@@ -25,7 +25,7 @@
 <file name="LoginDto.cs" server="192.168.178.26" local="131680336198202530" remote="131682531600000000" Dst="2" />
 <file name="NachrichtDto.cs" server="192.168.178.26" local="131680914569918620" remote="131682531600000000" Dst="2" />
 <file name="LoginDto.cs" server="C:/xampp/htdocs/proman/" local="131680336198202530" remote="131680336190000000" Dst="2" />
-<file name="NachrichtDto.cs" server="C:/xampp/htdocs/proman/" local="131653538945984235" remote="131653502940000000" Dst="2" />
+<file name="NachrichtDto.cs" server="C:/xampp/htdocs/proman/" local="131680914569918620" remote="131680914560000000" Dst="2" />
 <file name="BauteilVerwendungDto.cs" server="192.168.178.26" local="131680336198042426" remote="131682531600000000" Dst="2" />
 <file name="InstandhaltungsAuftragDto.cs" server="192.168.178.26" local="131680336198162503" remote="131682531600000000" Dst="2" />
 <file name="LagerBestandDto.cs" server="192.168.178.26" local="131680336198182514" remote="131682531600000000" Dst="2" />
