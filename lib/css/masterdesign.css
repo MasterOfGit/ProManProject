@@ -1,3 +1,19 @@
 main {
 	min-width: 500px;
 }
+body {
+	font-family: alegreya;
+	font-style: normal;
+	font-weight: 400;
+	font-size: large;
+}
+#daten {
+	background-color: #FFFFFF;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+#systemstatus {
+	color: #3079F9;
+}
