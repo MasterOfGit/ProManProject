@@ -133,7 +133,7 @@ echo <<<DATA
             <option value="Wartung">Wartung</option>
             <option value="Reperatur">Reperatur</option>
           </select>
-          <button type="button">Status ändern</button>
+          <button class='btn btn-primary' type="button">Status ändern</button>
         </div>
 		 <div class="col-sm-4">
           <lable for="status">Gesammtstatus dieser Fertigungslinie ändern:</lable>
@@ -144,7 +144,7 @@ echo <<<DATA
             <option value="Wartung">Wartung</option>
             <option value="Reperatur">Reperatur</option>
           </select>
-          <button type="button">Status ändern</button>
+          <button class='btn btn-primary' type="button">Status ändern</button>
         </div>
 	  </div>
     </div>

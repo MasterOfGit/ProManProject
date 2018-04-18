@@ -62,7 +62,8 @@ alert("createData saveNewReperaturAuftrag");
 			<br>
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
-				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home1">offen Auftrage</a>&nbsp;</li>
+				<li class="nav-item"> <a class="nav-link active" data-toggle="tab" 		href="#home1">offen Auftrage</a>&nbsp;
+				</li>
 				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu1">angenommene Aufträge</a>
 				</li>
 				<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#menu2">erledigte Auftrage</a>
@@ -74,7 +75,7 @@ alert("createData saveNewReperaturAuftrag");
 			<!-- Tab panes -->
 			<div class="tab-content">
 
-				<div id="home1" class="container tab-pane fade in active"><br>
+				<div id="home1" class="tab-pane fade in active"><br>
 					<form class="form-inline" action="/action_page.php">
 						<label for="abteilung">Abteilung</label>
 						<select id="abteilung">
@@ -130,9 +131,9 @@ Header1;
 									echo("</td>");
 								
 																		
-									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
 									
 									
 									echo("</td>");
@@ -206,9 +207,9 @@ HEADER2;
 									echo("<td>{$instandhaltungsauftrag['fehlertext']}<br>");
 									echo("</td>");
 								
-									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
 									
 									echo("</td>");
 								echo("</tr>");
@@ -280,9 +281,9 @@ HEADER3;
 									echo("<td>{$instandhaltungsauftrag['fehlertext']}<br>");
 									echo("</td>");
 								
-									echo("<td><input type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
-									echo("<td><input type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Ansehen'  onclick='editReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Annehmen'  onclick='acceptReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
+									echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteReperaturAuftrag({$instandhaltungsauftrag['instandhaltungID']});'></td>");
 									
 									echo("</td>");
 								echo("</tr>");
@@ -336,7 +337,7 @@ echo <<<HEADER4
 					
 					
 					
-					<input type="button" value="Neuen Auftrag erstellen" onclick="createData(0)">
+					<input class='btn btn-primary' type="button" value="Neuen Auftrag erstellen" onclick="createData(0)">
 
 					</form>
 

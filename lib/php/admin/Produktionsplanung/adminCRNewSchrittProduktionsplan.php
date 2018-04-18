@@ -82,7 +82,7 @@ HOME1_HEADER;
 						echo("<input readonly type='text' class='form-control' id='maschinenzahl' aria-describedby='maschinenzahl' placeholder='' value='inArbeit'>");
 					
 						echo("<br>");
-						echo("<td><input type='button' value='Speichern'  onclick='createData({$q});'></td>");
+						echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='createData({$q});'></td>");
 
 
 echo <<<'HOME1_FOOTER'

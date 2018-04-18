@@ -93,14 +93,14 @@ HOME1_HEADER;
 					echo("<td>{$wartung['terminturnus'] }</td>");
 					echo("<td>{$wartung['status']}</td>");
 
-					echo("<td><input type='button' value='Bearbeiten'  onclick='editWartung({$wartung['wartungsID']});'></td>");
-					echo("<td><input type='button' value='Status ändern'  onclick='aenderWartungStatus({$wartung['wartungsID']});'></td>");
-					echo("<td><input type='button' value='Löschen'  onclick='deleteWartung({$wartung['wartungsID']});'></td>");
-					echo("<td><input type='button' value='Verschieben'  onclick='moveWartungDatum({$wartung['wartungsID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editWartung({$wartung['wartungsID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Status ändern'  onclick='aenderWartungStatus({$wartung['wartungsID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteWartung({$wartung['wartungsID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Verschieben'  onclick='moveWartungDatum({$wartung['wartungsID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input type='button' value='Neu Wartung anlegen'  onclick='editWartung(0);'></td>");
-				echo("<td><input type='button' value='Speichern'  onclick='saveAllWartungen();'></td>");	
+				echo("<td><input class='btn btn-primary' type='button' value='Neu Wartung anlegen'  onclick='editWartung(0);'></td>");
+				echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='saveAllWartungen();'></td>");	
 
 
 echo <<<HOME1_FOOTER
@@ -146,14 +146,14 @@ MENU1_HEADER;
 					echo("<td>{$audit['terminturnus'] }</td>");
 					echo("<td>{$audit['beurteilung']}</td>");
 
-					echo("<td><input type='button' value='Bearbeiten'  onclick='editAudit({$wartung['wartungsID']});'></td>");
-					echo("<td><input type='button' value='Status ändern'  onclick='aenderAuditStatus({$audit['auditID']});'></td>");
-					echo("<td><input type='button' value='Löschen'  onclick='deleteAudit({$audit['auditID']});'></td>");
-					echo("<td><input type='button' value='Verschieben'  onclick='moveAuditDatum({$audit['auditID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editAudit({$wartung['wartungsID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Status ändern'  onclick='aenderAuditStatus({$audit['auditID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteAudit({$audit['auditID']});'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Verschieben'  onclick='moveAuditDatum({$audit['auditID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input type='button' value='Neu Audit anlegen'  onclick='editAudit();'></td>");
-				echo("<td><input type='button' value='Speichern'  onclick='saveAllAudit();'></td>");	
+				echo("<td><inputclass='btn btn-primary'  type='button' value='Neu Audit anlegen'  onclick='editAudit();'></td>");
+				echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='saveAllAudit();'></td>");	
 
 
 echo <<<'MENU1_FOOTER'
