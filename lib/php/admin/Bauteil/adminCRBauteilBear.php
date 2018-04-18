@@ -46,11 +46,8 @@ function createData()
 			
 			"bauteilIDNachfolger"	:	$("#bauteilIDNachfolger").val()
 		}
-);
-saveBauteil(data);
-
-alert("createData()");
-
+		);
+		saveBauteil(data);
 };
 </script>
 

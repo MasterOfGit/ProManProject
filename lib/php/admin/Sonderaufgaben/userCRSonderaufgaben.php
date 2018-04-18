@@ -8,18 +8,18 @@ $ch1 = curl_init();
 $ch2 = curl_init();
 //$ch3 = curl_init();
 
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/audit");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/audits.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/audits.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
 $saudits=curl_exec($ch1);
 curl_close($ch1);
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/wartung");
 
-curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/wartungen.json");
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/wartungen.json");
 
 curl_setopt($ch2, CURLOPT_HEADER, 0);
 curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
