@@ -23,21 +23,24 @@ namespace ProMan_WebAPI.Controllers
         }
 
         // POST: api/<controller>
-        public void Post([FromBody]BauteilDto value)
+        public IHttpActionResult Post([FromBody]BauteilDto value)
         {
             dataprovider.CreateDataProvider.SetBauteilDto(value);
+            return Ok();
         }
 
         // PUT: api/<controller>/5
-        public void Put(int id, [FromBody]BauteilDto value)
+        public IHttpActionResult Put(int id, [FromBody]BauteilDto value)
         {
             dataprovider.UpdateDataProvider.UpdateBauteilDto(value, id);
+            return Ok();
         }
 
         // DELETE: api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteBauteilDto(id);
+            return Ok();
         }
     }
 }

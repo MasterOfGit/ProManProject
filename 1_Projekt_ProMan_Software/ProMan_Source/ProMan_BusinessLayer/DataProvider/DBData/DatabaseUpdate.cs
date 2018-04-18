@@ -34,9 +34,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateAbteilungDto(AbteilungDto data, int id)
         {
+            var item = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == id);
 
-
-
+            item.Bezeichnung = data.abteilungsname;
+            item.Werk = dbcontext.Werk.FirstOrDefault(x => x.Name == data.WerkName);
 
             dbcontext.SaveChanges();
 
@@ -46,7 +47,13 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateReparaturDto(ReparaturDto data, int id)
         {
+            ReparaturStatus tmp1;
+            Enum.TryParse(data.Status, out tmp1);
             var item = dbcontext.Reparaturen.FirstOrDefault(x => x.ReparaturID == id);
+
+            item.Auftragstext = data.Dauer.ToString();
+            item.Status = tmp1;
+            
 
             dbcontext.SaveChanges();
 
@@ -56,6 +63,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         public bool UpdateFertigungsDto(FertigungDto data, int id)
         {
             var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
+
+            item.Bezeichnung = data.fertigungsname;
+            item.Abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Bezeichnung == data.abteilungName);
+
+
+            //TODO Fertigungslinien hinzufügen
+
+            //item.Fertigungslinien = dbcontext.Fertigungslinien.Where(
 
 
             dbcontext.SaveChanges();
@@ -67,6 +82,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
 
+            item.Bezeichnung = data.fertigunglinenname;
+
+            //TODO arbeitsfolgen
+
             dbcontext.SaveChanges();
 
             return true;
@@ -74,7 +93,18 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateMaschineDto(MaschineDto data, int id)
         {
+            MaschinenStatus tmp1;
+            Technologie tmp2;
+            Enum.TryParse(data.status, out tmp1);
+            Enum.TryParse(data.technologie, out tmp2);
+
             var item = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == id);
+
+            item.Hersteller = data.hersteller;
+            item.Inventarnummer = data.maschinenInventarNummer;
+            item.Standort = data.standort;
+            item.Status = tmp1;
+            item.Technologie = tmp2;
 
 
             dbcontext.SaveChanges();
@@ -86,6 +116,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             var item = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == id);
 
+            item.Vorname = data.userVorname;
+            item.Nachname = data.userNachname;
+            item.eMail = data.userEmail;
+            item.Festnetz = data.userFestnetzNr;
+            item.Mobil = data.userMobilNr;
+            item.Bemerkung = data.userBemerkung;
+            item.Active = data.userActive;
+            item.Namenszusatz = data.userAnrede;
 
             dbcontext.SaveChanges();
 
@@ -94,7 +132,15 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateWartungDto(WartungDto data, int id)
         {
+            StatusArt tmp1;
+            Turnus tmp2;
+            Enum.TryParse(data.status, out tmp1);
+            Enum.TryParse(data.terminturnus, out tmp2);
+
             var item = dbcontext.Wartungen.FirstOrDefault(x => x.WartungID == id);
+            item.Status = tmp1;
+            item.Maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.maschine);
+            item.Turnus = tmp2;
 
             dbcontext.SaveChanges();
 
@@ -103,7 +149,26 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateNachrichtDto(NachrichtDto data, int id)
         {
-            throw new NotImplementedException();
+
+            var userfrom = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.From.userID);
+            var userto = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.To.userID);
+            NachrichtenStatus tmp;
+
+            Enum.TryParse(data.NachrichtenStatus, out tmp);
+
+            var item = dbcontext.Nachrichten.FirstOrDefault(x => x.NachrichtID == id);
+
+            item.Betreff = data.Betreff;
+            item.NachrichtenStatus = tmp;
+            item.Text = data.Text;
+            item.SendDate = data.SendDate;
+            item.Type = data.Type;
+            item.From = userfrom;
+            item.To = userto;
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
 
