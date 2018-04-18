@@ -11,9 +11,9 @@ $ch2 = curl_init();
 $ch3 = curl_init();
 
 
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -77,7 +77,7 @@ echo <<<'HOME1_HEADER'
 						  <tbody>  
 HOME1_HEADER;
 
-				foreach($jsonmaschinen['maschinen'] as $maschine)
+				foreach($jsonmaschinen as $maschine)
 				{
 				 
 					echo("<tr>");

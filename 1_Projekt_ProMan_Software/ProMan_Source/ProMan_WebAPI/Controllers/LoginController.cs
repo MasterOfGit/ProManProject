@@ -38,15 +38,17 @@ namespace ProMan_WebAPI.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]LoginDto value)
+        public IHttpActionResult Put(int id, [FromBody]LoginDto value)
         {
             dataprovider.UpdateDataProvider.UpdateLoginDto(value,id);
+            return Ok();
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             dataprovider.DeleteDataProvider.DeleteLoginDto(id);
+            return Ok();
         }
     }
 }

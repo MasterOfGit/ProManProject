@@ -118,8 +118,16 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetWartungDto(WartungDto data)
         {
+            StatusArt tmp1;
+            Turnus tmp2;
+            Enum.TryParse(data.status, out tmp1);
+            Enum.TryParse(data.terminturnus, out tmp2);
+
             dbcontext.Wartungen.Add(new ProMan_Database.Model.Wartung()
             {
+                Status = tmp1,
+                Maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.maschine),
+                Turnus = tmp2,
             });
 
             dbcontext.SaveChanges();

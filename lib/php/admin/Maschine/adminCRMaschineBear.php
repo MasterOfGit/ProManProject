@@ -8,7 +8,8 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -66,7 +67,7 @@ alert("createData saveMaschine");
         <div class="form-group">
          
 HEADER;
-		  foreach($jsonmaschine['maschinen'] as $maschine)
+		  foreach($jsonmaschine as $maschine)
 				{
 				// Neues Bauteil
 			  	if( $maschine['maschinenID'] == $q)
@@ -97,18 +98,18 @@ HEADER;
 			  	};
            		if( $q == 0) //neues Bauteil
 					{
-				  		foreach($jsonmaschine['maschinen'] as $maschine)
-						{	$maschineidmax = 0;
-							if($maschine['maschinenID']>$maschineidmax)
-							{
-								$maschineidmax = $maschine['maschinenID'];
-								
-							}
-						 	$maschineidmax++;
-						}
+				  		//foreach($jsonmaschine['maschinen'] as $maschine)
+						//{	$maschineidmax = 0;
+						//	if($maschine['maschinenID']>$maschineidmax)
+						//	{
+						//		$maschineidmax = $maschine['maschinenID'];
+						//		
+						//	}
+						// 	$maschineidmax++;
+						//}
 						
 				  		echo("<label for='maschinenID'>maschinenID</label>");
-						echo("<input readonly type='text' class='form-control' id='maschinenID' aria-describedby='userID' placeholder='' value=$maschineidmax>");
+						echo("<input readonly type='text' class='form-control' id='maschinenID' aria-describedby='userID' placeholder='' value=0>");
 																					
 						echo("<label for='maschinenInventarNummer'>maschinenInventarNummer</label>");
 						echo("<input type='text' class='form-control' id='maschinenInventarNummer' aria-describedby='maschinenInventarNummer' placeholder='' value=0>");
