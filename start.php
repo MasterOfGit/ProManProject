@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -61,23 +62,28 @@
 		  </div>
 		  <div class="row">
 		    <h4 class="col-md-offset-4 col-md-4">Bitte geben sie bitte ihre Daten ein !!</h4>
+              
 		  </div> 
-         
-  <form action="/action_page.php">
+<?php
+if (isset($_GET['f'])) {
+    echo "<p class='fehler'>Login-Daten nicht korrekt</p>";
+}
+?>         
+  <form method="post" action="login.php">
 	  <div class="form-group">
-			<label for="email">Email address:</label>
-			<input  type="email" class="form-control" id="email">
+			<label for="userid">UserID:</label>
+			<input  type="text" class="form-control" name="userid" id="userid">
 	  </div>
 	  <div class="form-group">
 			<label for="pwd">Password:</label>
-			<input type="password" class="form-control" id="pwd">
+			<input type="password" class="form-control" name="pwd" id="pwd">
 	  </div>
 	  <div class="form-check">
 			<label class="form-check-label">
     	    <input class="form-check-input" type="checkbox"> Remember me
 			</label>
 	  </div>
-		  <button type="button" class="btn btn-primary btn" onclick="window.open('usercontent.html')" >Login</button>
+		  <button type="submit" class="btn btn-primary btn"  >Login</button>
 		  <button type="button" class="btn btn-success btn" onclick="window.open('registrieren.html')" >Registieren</button>	   
 </form> 
 		  
