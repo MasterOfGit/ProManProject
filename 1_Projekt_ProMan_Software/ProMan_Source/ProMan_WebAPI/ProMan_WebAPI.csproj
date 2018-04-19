@@ -105,6 +105,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Base\BaseApiController.cs" />
+    <Compile Include="Base\Logger.cs" />
     <Compile Include="Controllers\AbteilungController.cs" />
     <Compile Include="Controllers\AdminPageController.cs" />
     <Compile Include="Controllers\AuditController.cs" />

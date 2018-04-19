@@ -5,6 +5,7 @@ using System.Web.Http.Cors;
 using ProMan_BusinessLayer.DataProvider;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
+using System.IO;
 
 namespace ProMan_WebAPI.Controllers
 {
@@ -22,8 +23,6 @@ namespace ProMan_WebAPI.Controllers
         // GET api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-
-
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetMaschineDto(id)));
         }
 

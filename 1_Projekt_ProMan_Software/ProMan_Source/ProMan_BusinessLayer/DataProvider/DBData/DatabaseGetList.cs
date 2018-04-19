@@ -286,10 +286,10 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     wartungsID = item.WartungID,
                     terminturnus = item.Turnus.ToString(),
                     status = item.Status.ToString(),
-                    maschine = item.Maschine.MaschineID,
-                    fertigungslinie = item.Maschine.Arbeitsfolge.Fertigungslinie.FertigungslinieID,
-                    fertigung = item.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung.FertigungID,
-                    abteilung = item.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung.Abteilung.AbteilungID,
+                    maschine = item.Maschine?.MaschineID,
+                    fertigungslinie = item.Maschine.Arbeitsfolge?.Fertigungslinie?.FertigungslinieID,
+                    fertigung = item.Maschine.Arbeitsfolge?.Fertigungslinie?.Fertigung?.FertigungID,
+                    abteilung = item.Maschine.Arbeitsfolge?.Fertigungslinie?.Fertigung?.Abteilung?.AbteilungID,
                 });
             }
 

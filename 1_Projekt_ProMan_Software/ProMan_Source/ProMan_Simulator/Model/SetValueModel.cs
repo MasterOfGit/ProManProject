@@ -150,11 +150,13 @@ namespace ProMan_Simulator.Model
                     SetValues.Add(new SetValuesHelper() { Label = "Mobile", Value = "" });
                     break;
                 case ObjectDtos.WartungDtoName:
-                    SetValues.Add(new SetValuesHelper() { Label = "WartungsInterval", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "Status", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "Beschreibung", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "MaschineID", Value = "" });
-                    SetValues.Add(new SetValuesHelper() { Label = "UserID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "wartungsID", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "abteilung", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "fertigung", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "fertigungslinie", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "maschine", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "terminturnus", Value = "" });
+                    SetValues.Add(new SetValuesHelper() { Label = "status", Value = "" });
                     break;
                 case ObjectDtos.LoginDtoName:
                     SetValues.Add(new SetValuesHelper() { Label = "Username", Value = "" });
@@ -237,7 +239,13 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.WartungDtoName:
                     _httphelper.HttpPost($"api/wartung", new WartungDto()
                     {
-                
+                        wartungsID = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "wartungsID").Value),
+                        abteilung = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "abteilung").Value),
+                        fertigung = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "fertigung").Value),
+                        fertigungslinie = Convert.ToInt32(SetValues.ToList().FirstOrDefault(x => x.Label == "fertigungslinie").Value),
+                        maschine = Convert.ToInt32( SetValues.ToList().FirstOrDefault(x => x.Label == "maschine").Value),
+                        terminturnus = SetValues.ToList().FirstOrDefault(x => x.Label == "terminturnus").Value,
+                        status = SetValues.ToList().FirstOrDefault(x => x.Label == "status").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.LoginDtoName:
