@@ -78,11 +78,7 @@ if (isset($_GET['f'])) {
 			<label for="pwd">Password:</label>
 			<input type="password" class="form-control" name="pwd" id="pwd">
 	  </div>
-	  <div class="form-check">
-			<label class="form-check-label">
-    	    <input class="form-check-input" type="checkbox"> Remember me
-			</label>
-	  </div>
+	  
 		  <button type="submit" class="btn btn-primary btn"  >Login</button>
 		  <button type="button" class="btn btn-success btn" onclick="window.open('registrieren.html')" >Registieren</button>	   
 </form> 
