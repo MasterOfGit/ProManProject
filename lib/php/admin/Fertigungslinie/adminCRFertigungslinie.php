@@ -73,11 +73,11 @@ HOME1_HEADER;
 										echo("<td>{$arbeitsfolge['bauteilID']}</td>");
 										echo("<td>{$arbeitsfolge['arbeitplan']}</td>");
 
-										echo("<td><input type='button' value='Löschen'  onclick='deleteArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
-										echo("<td><input type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 								echo("</tr>");
 								};
-						 echo("<td><input type='button' value='neue Arbeitsfolge'  onclick='editNewArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='neue Arbeitsfolge'  onclick='editNewArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
 						 
 						};
 
@@ -85,10 +85,10 @@ HOME1_HEADER;
 			echo("</table>");
 			echo("<br>");
 echo("<br>");
-echo("<td><input type='button' value='Alles Speichern'  onclick='saveFertigungslinie();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Alles Speichern'  onclick='saveFertigungslinie();'></td>");
 echo("<br>");
 echo("<br>");
-echo("<td><input type='button' value='Neu Fertigungslinie'  onclick='newFertigungslinie();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Neu Fertigungslinie'  onclick='newFertigungslinie();'></td>");
 
 echo <<<'HOME1_FOOTER'
 						
@@ -104,7 +104,7 @@ echo <<<'MENU1_HEADER'
 					</form>
 					<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
 						Your browser does not support the HTML5 canvas tag.</canvas>
-					<input type="button" value="Grafik generierren" onclick="createCanvas()">
+					<input class='btn btn-primary' type="button" value="Grafik generierren" onclick="createCanvas()">
 
 			</div>
 		</div>

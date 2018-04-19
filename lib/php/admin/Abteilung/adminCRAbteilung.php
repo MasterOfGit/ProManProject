@@ -63,18 +63,18 @@ HOME1_HEADER;
 										echo("<td>{$abteilung['abteilunngsname']}</td>");
 										echo("<td>{$fertigung['fertigungsID']}</td>"); 
 										echo("<td>{$fertigung['fertigungsname']}</td>");	
-										echo("<td><input type='button' value='loeschen'  onclick='deleteAbteilung({$abteilung['abteilungsID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='loeschen'  onclick='deleteAbteilung({$abteilung['abteilungsID']});'></td>");
 										
 								echo("</tr>");
 								};
-						 echo("<td><input type='button' value='Neu Fertigung hinzufügen'  onclick='editAbteilung({$abteilung['abteilungsID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='Neu Fertigung hinzufügen'  onclick='editAbteilung({$abteilung['abteilungsID']});'></td>");
 						};
 			echo("</tbody>");
 			echo("</table>");
 			echo("<br>");
 echo("<br>");
-echo("<td><input type='button' value='Neu Abteilung hinzufügen'  onclick='newAbteilung();'></td>");
-echo("<td><input type='button' value='Alles Speichern'  onclick='saveAbteilungen();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Neu Abteilung hinzufügen'  onclick='newAbteilung();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Alles Speichern'  onclick='saveAbteilungen();'></td>");
 
 
 echo <<<'HOME1_FOOTER'
@@ -90,7 +90,7 @@ echo <<<'MENU1_HEADER'
 					</form>
 					<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
 						Your browser does not support the HTML5 canvas tag.</canvas>
-					<input type="button" value="Grafik generierren" onclick="createCanvas()">
+					<input class='btn btn-primary'  type="button" value="Grafik generierren" onclick="createCanvas()">
 
 			</div>
 		</div>

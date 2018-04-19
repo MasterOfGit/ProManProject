@@ -7,13 +7,21 @@ body {
 	font-weight: 400;
 	font-size: large;
 }
-#daten {
-	background-color: #FFFFFF;
-	padding-top: 2px;
-	padding-right: 2px;
-	padding-bottom: 2px;
-	padding-left: 2px;
-}
+
 #systemstatus {
 	color: #3079F9;
+}
+.jumbotron  {
+	background-color: #F7F7F7;
+	border: thin solid #7A7A7A;
+	border-radius: 5px;
+}
+.navbar-toggle {
+	background-color: #D54244;
+}
+
+.navbar  {
+	border: thin solid #000000;
+	background-color: #E5E5E5;
+	border-radius: 5px;
 }

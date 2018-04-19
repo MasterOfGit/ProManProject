@@ -133,7 +133,7 @@ HEADER;
 echo <<<FOOTER
 		</div>
 <button type="button" class="btn btn-primary" onclick="createData()"> Speichern</button>
-<input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
+<input class='btn btn-primary' type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
 	      </form>
     </div>
   </div>

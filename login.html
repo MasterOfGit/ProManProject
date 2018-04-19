@@ -33,7 +33,7 @@
           <li> <a id="datekw">none</a> </li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kontakt<span class="caret"></span></a>
             <ul class="dropdown-menu">
-			  <li><a href="start.html">Home</a></li>
+			  <li><a href="index.html">Home</a></li>
               <li><a href="adminkontakt.html">Admin Kontaktieren</a></li>
               <li><a href="impressum.html">Impressum</a></li>
             </ul>
@@ -60,33 +60,27 @@
            
 		  </div>
 		  <div class="row">
-          	<h3 class="col-md-offset-4 col-md-4">Bitte geben sie ihre Daten ein !!</h3>
+		    <h4 class="col-md-offset-4 col-md-4">Bitte geben sie bitte ihre Daten ein !!</h4>
 		  </div> 
-          <div class="row">
-			  <label class="col-md-offset-4 col-md-4" for="userID">UserID</label>
-          </div>
-		  <div class="row">
-			  <input class="col-md-offset-4 col-md-4" type="email" class="form-control" id="userID" aria-describedby="userID" placeholder="UserID">  
-		  </div>		  
-		  <div class="row">
-			  <label class="col-md-offset-4 col-md-4"  for="exampleInputPassword1">Password</label>
-		  </div>
-		  <div class="row">
-			  <input class="col-md-offset-4 col-md-4"  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		  </div>
-		  
-		 
-		  <div class="row">
          
-		   	<a class="btn btn-primary btn-lg col-md-offset-4 col-md-2" href="usercontent.html" role="button">Login</a>
-          
-          </div>
-		  <div class="row">
-                 
-			<a class="btn btn-primary btn-lg col-md-offset-4 col-md-2" href="registrieren.html"role="button">Registrierung</a>
-              
-          </div>
-        
+  <form action="/action_page.php">
+	  <div class="form-group">
+			<label for="email">Email address:</label>
+			<input  type="email" class="form-control" id="email">
+	  </div>
+	  <div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="pwd">
+	  </div>
+	  <div class="form-check">
+			<label class="form-check-label">
+    	    <input class="form-check-input" type="checkbox"> Remember me
+			</label>
+	  </div>
+		  <button type="button" class="btn btn-primary btn" onclick="window.open('usercontent.html')" >Login</button>
+		  <button type="button" class="btn btn-success btn" onclick="window.open('registrieren.html')" >Registieren</button>	   
+</form> 
+		  
         
       </div>
     </div>
@@ -100,7 +94,7 @@
      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
-          <li><a href="start.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li class="active">Login</li>
         </ol>
 

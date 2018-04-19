@@ -67,21 +67,21 @@ HOME1_HEADER;
 										echo("<td>{$fertigungslinie['fertigungslinienname']}</td>");
 										echo("<td>{$fertigungslinie['fertigungstyp']}</td>");
 										echo("<td>{$fertigungslinie['maschinenzahl']}</td>");
-										echo("<td><input type='button' value='loeschen'  onclick='deleteFertigung({$fertigung['fertigungsID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='loeschen'  onclick='deleteFertigung({$fertigung['fertigungsID']});'></td>");
 										
 								echo("</tr>");
 								};
-						 echo("<td><input type='button' value='Fertigungslinie hinzufügen'  onclick='editFertigung({$fertigung['fertigungsID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='Fertigungslinie hinzufügen'  onclick='editFertigung({$fertigung['fertigungsID']});'></td>");
 						};
 							echo("</tbody>");
 						 echo("</table>");
 
 
 echo("<br>");
-echo("<input type='button' value='Neu Fertigung anlegen'  onclick='newFertigung();'>");
+echo("<input class='btn btn-primary' type='button' value='Neu Fertigung anlegen'  onclick='newFertigung();'>");
 echo("<br>");
 echo("<br>");
-echo("<input type='button' value='Alles Speichern'  onclick='saveFertigungen();'>");
+echo("<input class='btn btn-primary' type='button' value='Alles Speichern'  onclick='saveFertigungen();'>");
 
 
 
@@ -96,7 +96,7 @@ echo <<<FOOTER
 					</form>
 					<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
 						Your browser does not support the HTML5 canvas tag.</canvas>
-					<input type="button" value="Grafik generierren" onclick="createCanvas()">
+					<input class='btn btn-primary' type="button" value="Grafik generierren" onclick="createCanvas()">
 
 			</div>
 		</div>

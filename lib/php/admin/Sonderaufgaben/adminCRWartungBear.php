@@ -120,7 +120,7 @@ HOME1_HEADER;
 						echo("<input  type='text' class='form-control' id='status' aria-describedby='status' placeholder='' value='{$status}'>");
 					
 						echo("<br>");
-						echo("<td><input type='button' value='Speichern'  onclick='createData({$q});'></td>");
+						echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='createData({$q});'></td>");
 
 
 echo <<<'HOME1_FOOTER'

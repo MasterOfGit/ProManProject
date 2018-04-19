@@ -81,7 +81,7 @@ HOME1_HEADER;
 					
 											
 						echo("<br>");
-						echo("<td><input type='button' value='Speichern'  onclick='createData({$q});'></td>");
+						echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='createData({$q});'></td>");
 
 
 echo <<<'HOME1_FOOTER'

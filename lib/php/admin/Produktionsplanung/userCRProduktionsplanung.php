@@ -73,15 +73,15 @@ HOME1_HEADER;
 								echo("<td>{$prodschritt['bauteilverwendung']}</td>");
 								echo("<td>{$prodschritt['prodMenge']}</td>");
 								echo("<td>{$prodschritt['status']}</td>");
-								echo("<td><input type='button' value='Verschieben'  onclick='moveProduktionplanSchritte({$prodschritt['folgenummer']});'></td>");
-						 		echo("<td><input type='button' value='Löschen'  onclick='deleteProduktionplan({$prodschritt['folgenummer']});'></td>");
-						 		echo("<td><input type='button' value='Status ändern'  onclick='changeSchrittStatusProduktionplan({$prodschritt['folgenummer']});'></td>");
+								echo("<td><input class='btn btn-primary' type='button' value='Verschieben'  onclick='moveProduktionplanSchritte({$prodschritt['folgenummer']});'></td>");
+						 		echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteProduktionplan({$prodschritt['folgenummer']});'></td>");
+						 		echo("<td><input class='btn btn-primary' type='button' value='Status ändern'  onclick='changeSchrittStatusProduktionplan({$prodschritt['folgenummer']});'></td>");
 						 
 						};
 echo("</tr>");
 echo("<div>");
-echo("<td><input type='button' value='Neue Produktionsmenge hinzufügen'  onclick='editProduktionplanSchritt();'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='saveProduktionplan();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Neue Produktionsmenge hinzufügen'  onclick='editProduktionplanSchritt();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='saveProduktionplan();'></td>");
 echo("</div>");
 
 echo <<<'HOME1_FOOTER'
@@ -119,16 +119,16 @@ MENU1_HEADER;
 								echo("<td>{$lagerbestand['bauteilverwendung']}</td>"); 
 								echo("<td>{$lagerbestand['minBestand']}</td>");
 								echo("<td>{$lagerbestand['istBestand']}</td>");
-								echo("<td><input type='button' value='Änder'  onclick='editLagerort({$lagerbestand['lagerplatz']});'></td>");
-						 		echo("<td><input type='button' value='Löschen'  onclick='deleteLagerort({$lagerbestand['lagerplatz']});'></td>");
+								echo("<td><input class='btn btn-primary' type='button' value='Änder'  onclick='editLagerort({$lagerbestand['lagerplatz']});'></td>");
+						 		echo("<td><input class='btn btn-primary' type='button' value='Löschen'  onclick='deleteLagerort({$lagerbestand['lagerplatz']});'></td>");
 						 		
 						 
 
 						};
 echo("</tr>");
 echo("<div>");
-echo("<td><input type='button' value='Neue Lagerort hinzufügen'  onclick='editLagerort(0);'></td>");
-echo("<td><input type='button' value='Speichern'  onclick='saveAllLagerort();'></td>");
+echo("<td><input  class='btn btn-primary' type='button' value='Neue Lagerort hinzufügen'  onclick='editLagerort(0);'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='saveAllLagerort();'></td>");
 echo("</div>");
 
 echo <<<'MENU1_FOOTER'
