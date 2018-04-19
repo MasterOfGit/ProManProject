@@ -43,7 +43,7 @@ function createData()
 
 			"standort"					:	$("#standort").val(),
 
-			"abteilung"	 				:	$("#abteilung").val(),
+			"abteilungsId"	 				:	$("#abteilung").val(),
 			
 			"status"					:	$("#status").val()
 		}
@@ -89,7 +89,7 @@ HEADER;
 						echo("<input type='text' class='form-control' id='standort' aria-describedby='standort' placeholder='' value={$maschine['standort']}>");
 					
 						echo("<label for='abteilung'>abteilung</label>");
-						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value={$maschine['abteilung']}>");
+						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value={$maschine['abteilungsId']}>");
 					
 						echo("<label for='status'>status</label>");
 						echo("<input type='text' class='form-control' id='status' aria-describedby='status' placeholder='' value={$maschine['status']}>");
