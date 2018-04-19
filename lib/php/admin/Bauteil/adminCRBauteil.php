@@ -8,8 +8,8 @@ $ch1 = curl_init();
 $ch2 = curl_init();
 //$ch3 = curl_init();
 
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
-curl_setopt($ch1, CURLOPT_URL, "http://localhost:8080/api/bauteil");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost:80/api/bauteil");
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
@@ -90,7 +90,7 @@ HOME1_HEADER;
 					echo("<td>{$bauteil['bauteilArt'] }</td>");
 					echo("<td>{$bauteil['bauteilStatus']}</td>");
 					echo("<td>{$bauteil['bauteilIDNachfolger']}</td>");
-					echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editBauteil( {$bauteil['bauteileID']} );'></td>");
+					echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editBauteil({$bauteil['bauteileID']});'></td>");
 					echo("</tr>");
 				};
 				echo("<td><input class='btn btn-primary' type='button' value='Neues Bauteil'  onclick='editBauteil(0);'></td>");

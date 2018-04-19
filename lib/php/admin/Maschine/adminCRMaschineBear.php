@@ -5,11 +5,9 @@ $q = $_REQUEST["q"];
 //$q= 0;
 $ch1 = curl_init();
 
-
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
-
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
 curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/maschine");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -17,11 +15,10 @@ $maschine=curl_exec($ch1);
 curl_close($ch1);
 
 // Testausgabe
-//echo($bauteil);
+
 
 // Unwandlung von json in Array	
 $jsonmaschine = json_decode($maschine, TRUE);
-
 
 echo <<<HEADER
 
@@ -29,7 +26,7 @@ echo <<<HEADER
 function createData()
 {
 
-
+		var givenId = $q;
 		var data = JSON.stringify(
 		{
 	
@@ -47,12 +44,15 @@ function createData()
 			
 			"status"					:	$("#status").val()
 		}
+
 );
 
-saveMaschine(data);
-
-alert("createData saveMaschine");
-
+		if(givenId==0)		{	
+			saveMaschine(data);		
+		}
+		else{
+			updateMaschine(data,givenId);
+		}
 };
 </script>
 

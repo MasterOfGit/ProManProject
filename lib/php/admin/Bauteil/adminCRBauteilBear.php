@@ -6,9 +6,10 @@ $q = $_REQUEST["q"];
 $ch1 = curl_init();
 
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil/?identifier=AdminPageAbteilung");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/bauteil");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -21,14 +22,13 @@ curl_close($ch1);
 // Unwandlung von json in Array	
 $jsonbauteil = json_decode($bauteil, TRUE);
 
-
 echo <<<HEADER
 
 <script>
 function createData()
 {
 
-		var givenId = "<?php echo $q; ?>";
+		var givenId = $q;
 		var data = JSON.stringify(
 		{
 	
@@ -49,10 +49,11 @@ function createData()
 		);
 		
 		if(givenId==0)		{		
-			updateBauteil(data,givenId);
+			saveBauteil(data);
 		}
 		else{
-			saveBauteil(data);
+			updateBauteil(data,givenId);
+			
 		}
 		
 };
@@ -70,14 +71,14 @@ function createData()
         <div class="form-group">
          
 HEADER;
-		  foreach($jsonbauteil['bauteile'] as $bauteil)
+		  foreach($jsonbauteil as $bauteil)
 				{
 				// Neues Bauteil
 			  	if( $bauteil['bauteileID'] == $q)
 					{
 										
 						echo("<label for='bauteileID'>bauteileID</label>");
-						echo("<input readonly type='text' class='form-control' id='bauteileID' aria-describedby='userID' placeholder='' value={$bauteil['bauteileID']}>");
+						echo("<input readonly type='text' class='form-control' id='bauteileID' aria-describedby='bauteileID' placeholder='' value={$bauteil['bauteileID']}>");
 					
 						echo("<label for='bauteilNummer'>bauteilNummer</label>");
 						echo("<input type='text' class='form-control' id='bauteilNummer' aria-describedby='bauteilNummer' placeholder='' value={$bauteil['bauteilNummer']}>");
@@ -89,7 +90,7 @@ HEADER;
 						echo("<input type='text' class='form-control' id='bauteilVersion' aria-describedby='bauteilVersion' placeholder='' value={$bauteil['bauteilVersion']}>");
 					
 						echo("<label for='bauteilArt'>bauteilArt</label>");
-						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='userID' placeholder='' value={$bauteil['bauteilArt']}>");
+						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='bauteilArt' placeholder='' value={$bauteil['bauteilArt']}>");
 						
 						echo("<label for='bauteilStatus'>bauteilStatus</label>");
 						echo("<input type='text' class='form-control' id='bauteilStatus' aria-describedby='bauteilStatus' placeholder='' value={$bauteil['bauteilStatus']}>");
@@ -112,7 +113,7 @@ HEADER;
 						}
 						
 				  		echo("<label for='bauteileID'>bauteileID</label>");
-						echo("<input  readonly type='text' class='form-control' id='bauteileID' aria-describedby='userID' placeholder='' value=$bauteilidmax>");
+						echo("<input  readonly type='text' class='form-control' id='bauteileID' aria-describedby='bauteileID' placeholder='' value=0>");
 						echo("<label for='bauteilNummer'>bauteilNummer</label>");
 						echo("<input type='text' class='form-control' id='bauteilNummer' aria-describedby='bauteilNummer' placeholder='' value=0>");
 						echo("<label for='bauteilIndex'>bauteilIndex</label>");
@@ -120,7 +121,7 @@ HEADER;
 						echo("<label for='bauteilVersion'>bauteilVersion</label>");
 						echo("<input type='text' class='form-control' id='bauteilVersion' aria-describedby='bauteilVersion' placeholder='' value=0>");
 						echo("<label for='bauteilArt'>bauteilArt</label>");
-						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='userID' placeholder='' value=0>");
+						echo("<input type='text' class='form-control' id='bauteilArt' aria-describedby='bauteilArt' placeholder='' value=0>");
 						echo("<label for='bauteilStatus'>bauteilStatus</label>");
 						echo("<input type='text' class='form-control' id='bauteilStatus' aria-describedby='bauteilStatus' placeholder='' value=0>");
 						echo("<label for='bauteilIDNachfolger'>bauteilIDNachfolger</label>");
