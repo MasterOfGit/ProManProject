@@ -8,8 +8,8 @@ $ch1 = curl_init();
 $ch2 = curl_init();
 //$ch3 = curl_init();
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
-
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
+curl_setopt($ch1, CURLOPT_URL, "http://localhost:8080/api/bauteil");
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);

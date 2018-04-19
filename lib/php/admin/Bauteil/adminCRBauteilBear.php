@@ -28,7 +28,7 @@ echo <<<HEADER
 function createData()
 {
 
-
+		var givenId = "<?php echo $q; ?>";
 		var data = JSON.stringify(
 		{
 	
@@ -47,7 +47,14 @@ function createData()
 			"bauteilIDNachfolger"	:	$("#bauteilIDNachfolger").val()
 		}
 		);
-		saveBauteil(data);
+		
+		if(givenId==0)		{		
+			updateBauteil(data,givenId);
+		}
+		else{
+			saveBauteil(data);
+		}
+		
 };
 </script>
 
