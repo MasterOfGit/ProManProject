@@ -82,7 +82,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
 
-            item.Bezeichnung = data.fertigunglinenname;
+            item.Bezeichnung = data.fertigungslinienname;
 
             //TODO arbeitsfolgen
 

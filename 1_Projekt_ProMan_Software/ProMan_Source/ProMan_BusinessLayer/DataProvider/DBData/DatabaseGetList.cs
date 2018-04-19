@@ -66,8 +66,12 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     fertigungsID = item.FertigungID,
                     fertigungsname = item.Bezeichnung,
+                    fertigungstyp = item.Fertigungstype.ToString(),
                     fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
                     {
+                        fertigungslinieID = x.FertigungslinieID,
+                        fertigungslinienname = x.Bezeichnung,
+                        maschinenanzahl = x.Arbeitsfolgen.Count,
                         arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                         {
                             ID = y.ArbeitsfolgeID,
@@ -90,7 +94,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 returnlist.Add(new FertigungslinieDto()
                 {
                     fertigungslinieID = item.FertigungslinieID,
-                    fertigunglinenname = item.Bezeichnung,
+                    fertigungslinienname = item.Bezeichnung,
+                    maschinenanzahl = item.Arbeitsfolgen.Count,
                     arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
                         ID = y.ArbeitsfolgeID,

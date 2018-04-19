@@ -205,7 +205,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungslinieDtoName:
                     _httphelper.HttpPost($"api/fertigungslinie", new FertigungslinieDto()
                     {
-                        fertigunglinenname = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        fertigungslinienname = SetValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.MaschineDtoName:

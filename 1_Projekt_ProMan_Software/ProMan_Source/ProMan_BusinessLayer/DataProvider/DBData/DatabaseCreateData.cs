@@ -20,7 +20,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             dbcontext.Abteilungen.Add(new ProMan_Database.Model.Abteilung()
             {
                 Bezeichnung = data.abteilungsname,
-                Werk = werk,
+                //Werk = werk,
 
             });
             dbcontext.SaveChanges();
@@ -30,9 +30,17 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetFertigungsDto(FertigungDto data)
         {
+            Fertigungstype tmpFertigungstype;
+            Enum.TryParse(data.fertigungstyp, out tmpFertigungstype);
+
+            if (tmpFertigungstype == null)
+                tmpFertigungstype = Fertigungstype.Gruenfertigung;
+
+            var abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Bezeichnung == data.abteilungName);
             dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung()
             {
                 Bezeichnung = data.fertigungsname,
+                Fertigungstype = tmpFertigungstype,
             });
 
             dbcontext.SaveChanges();
@@ -44,7 +52,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         {
             dbcontext.Fertigungslinien.Add(new ProMan_Database.Model.Fertigungslinie()
             {
-                Bezeichnung = data.fertigunglinenname,
+                Bezeichnung = data.fertigungslinienname,
             }
             )
             ;

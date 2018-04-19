@@ -144,7 +144,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungslinieDtoName:
                     {
                         var item = _httphelper.HttpGet<FertigungslinieDto>($"api/fertigungslinie/{_id}").Result;
-                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.fertigunglinenname });
+                        tmpUpdateValues.Add(new SetValuesHelper() { Label = "Name", Value = item.fertigungslinienname });
                         tmpUpdateValues.Add(new SetValuesHelper() { Label = "FertigungID", Value = item.fertigungslinieID.ToString() });
                         break;
                     }
@@ -229,7 +229,7 @@ namespace ProMan_Simulator.Model
                 case ObjectDtos.FertigungslinieDtoName:
                     _httphelper.HttpPut($"api/fertigungslinie/{_id}", new FertigungslinieDto()
                     {
-                        fertigunglinenname = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
+                        fertigungslinienname = UpdateValues.ToList().FirstOrDefault(x => x.Label == "Name").Value,
                     }).Wait();
                     break;
                 case ObjectDtos.MaschineDtoName:

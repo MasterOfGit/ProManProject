@@ -67,8 +67,8 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             FertigungslinieDto item = new FertigungslinieDto()
             {
                 fertigungslinieID = id,
-                //fertigunglinenname = $"linie{id}",
-                fertigunglinenname = $"Fertigung{id}"
+                //fertigungslinienname = $"linie{id}",
+                fertigungslinienname = $"Fertigung{id}"
             };
 
             return item;
@@ -272,12 +272,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 1,
-                                    fertigunglinenname = "Fertigungslinie1_1"
+                                    fertigungslinienname = "Fertigungslinie1_1"
                                 },
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 2,
-                                    fertigunglinenname = "Fertigungslinie1_2"
+                                    fertigungslinienname = "Fertigungslinie1_2"
                                 },
                             }
                         },
@@ -290,12 +290,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 3,
-                                    fertigunglinenname = "Fertigungslinie2_1"
+                                    fertigungslinienname = "Fertigungslinie2_1"
                                 },
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 4,
-                                    fertigunglinenname = "Fertigungslinie2_2"
+                                    fertigungslinienname = "Fertigungslinie2_2"
                                 },
                             }
                         },
@@ -309,7 +309,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 
                                 {
                                     fertigungslinieID = 5,
-                                    fertigunglinenname = "Fertigungslinie3_1"
+                                    fertigungslinienname = "Fertigungslinie3_1"
                                 },
 
                             }
@@ -323,12 +323,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 5,
-                                    fertigunglinenname = "Fertigungslinie10_1"
+                                    fertigungslinienname = "Fertigungslinie10_1"
                                 },
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 6,
-                                    fertigunglinenname = "Fertigungslinie10_2"
+                                    fertigungslinienname = "Fertigungslinie10_2"
                                 },
                             }
                         },
@@ -341,12 +341,12 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 7,
-                                    fertigunglinenname = "Fertigungslinie20_1"
+                                    fertigungslinienname = "Fertigungslinie20_1"
                                 },
                                 new FertigungslinieDto()
                                 {
                                     fertigungslinieID = 8,
-                                    fertigunglinenname = "Fertigungslinie20_2"
+                                    fertigungslinienname = "Fertigungslinie20_2"
                                 },
                             }
                         },
@@ -360,7 +360,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
 
                                 {
                                     fertigungslinieID = 9,
-                                    fertigunglinenname = "Fertigungslinie30_1"
+                                    fertigungslinienname = "Fertigungslinie30_1"
                                 },
 
                             }
@@ -377,7 +377,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                 new FertigungslinieDto()
                 {
                     fertigungslinieID = 1,
-                    fertigunglinenname = "linie_1",
+                    fertigungslinienname = "linie_1",
                     arbeitsfolgen = new List<ArbeitsfolgeDto>()
                     {
                         new ArbeitsfolgeDto()
@@ -399,7 +399,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                                 new FertigungslinieDto()
                 {
                     fertigungslinieID = 2,
-                    fertigunglinenname = "linie_2",
+                    fertigungslinienname = "linie_2",
                     arbeitsfolgen = new List<ArbeitsfolgeDto>()
                     {
                         new ArbeitsfolgeDto()
