@@ -92,6 +92,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             return 0;
         }
+
+        public void AddObject(string type, int parent, int id)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }

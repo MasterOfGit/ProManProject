@@ -107,6 +107,7 @@
     <Compile Include="Base\BaseApiController.cs" />
     <Compile Include="Base\Logger.cs" />
     <Compile Include="Controllers\AbteilungController.cs" />
+    <Compile Include="Controllers\AddGetDeleteObjectController.cs" />
     <Compile Include="Controllers\AdminPageController.cs" />
     <Compile Include="Controllers\AuditController.cs" />
     <Compile Include="Controllers\BauteilController.cs" />

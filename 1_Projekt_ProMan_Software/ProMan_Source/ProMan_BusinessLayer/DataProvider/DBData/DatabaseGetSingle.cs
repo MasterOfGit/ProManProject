@@ -52,14 +52,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public FertigungDto GetFertigungsDto(int id)
         {
-            var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
-
+            var item = dbcontext.Fertigungen.Include("Fertigungslinien").FirstOrDefault(x => x.FertigungID == id);
+            
             FertigungDto fertigung = new FertigungDto()
             {
                 fertigungsID = item.FertigungID,
                 fertigungsname = item.Bezeichnung,
                 fertigungstyp = item.Fertigungstype.ToString(),
-                fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
+                fertigungslinien = item.Fertigungslinien?.Select(x => new FertigungslinieDto()
                 {
                     fertigungslinieID = x.FertigungslinieID,
                     fertigungslinienname = x.Bezeichnung,

@@ -4,6 +4,7 @@ using ProMan_Database;
 using ProMan_Database.Enums;
 using System;
 using System.Linq;
+using System.Data.Entity;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -277,6 +278,39 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
         public int SetProduktionsplanDto(ProduktionsplanDto data)
         {
             throw new NotImplementedException();
+        }
+
+        public void AddObject(string type, int parent, int id)
+        {
+            switch (type)
+            {
+                //remove Fertigung from Abteilung
+                case "Abteilung":
+                    {
+                        var fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
+                        dbcontext.Abteilungen.Include(x => x.Fertigungen).FirstOrDefault(x => x.AbteilungID == parent).Fertigungen.Add(fertigung);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                //remove Fertigungslinie from Fertigung
+                case "Fertigung":
+                    {
+                        var Fertigungslinien = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
+                        dbcontext.Fertigungen.Include(x => x.Fertigungslinien).FirstOrDefault(x => x.FertigungID == parent).Fertigungslinien.Add(Fertigungslinien);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                //remove Arbeitsfolge from Fertigungslinie
+                case "Fertigungslinie":
+                    {
+                        var Arbeitsfolgen = dbcontext.Arbeitsfolgen.FirstOrDefault(x => x.ArbeitsfolgeID == id);
+                        dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).FirstOrDefault(x => x.FertigungslinieID == parent).Arbeitsfolgen.Add(Arbeitsfolgen);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         #endregion

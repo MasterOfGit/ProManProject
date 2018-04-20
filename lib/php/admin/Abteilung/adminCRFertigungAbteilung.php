@@ -9,55 +9,23 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/addgetdeleteobject/?type=FertigungListe");
+curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/addgetdeleteobject/?type=FertigungListe");
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
-$fertigungslinien = curl_exec( $ch1 );
+$fertigungsliste = curl_exec( $ch1 );
 curl_close( $ch1 );
 
-// Testausgabe
-//echo($maschinen);
-
 // Unwandlung von json in Array	
-$jsonfertigungslinien = json_decode($fertigungslinien, TRUE);
-//print_r($fertigungslinien);
-
-//print_r($jsonfertigungslinien);
+$jsonfertigungsliste = json_decode($fertigungsliste, TRUE);
 
 echo <<<'HOME1_HEADER'
 
 <script>
 function createData(q)
 {
-
-
-		var data = JSON.stringify(
-		{
-	
-						"abteilungsID"		:	$("#abteilungsID").val(),
-
-		 				"abteilunngsname"	:	$("#abteilunngsname").val(),
-
-		 	
-
-		 				"fertigungen"	:
-
-							[
-
-								{
-
-									"fertigungsID"			:	$("#fertigungsID").val(),
-
-									"fertifertigungsname"	:	$("#fertifertigungsname").val()		
-
-								}
-						    ]
-		}
-);
-saveAbteilung(data, q);
-
-alert("createData saveAbteilung");
-
+	addFertigungAbteilung(q, $("#fertigungsID").val());
 };
 </script>
 <div class="Fetigung">
@@ -66,22 +34,12 @@ alert("createData saveAbteilung");
 		
 HOME1_HEADER;
 			
-						// TODO: maxiD muss noch bestimmt werden
-
 						echo("<label for='abteilungsID'>abteilungsID</label>");
 						echo("<input readonly type='text' class='form-control' id='abteilungsID' aria-describedby='userID' placeholder='' value={$q}>");
 
-					
-						echo("<label for='abteilunngsname'>abteilunngsname</label>");
-						echo("<input type='text' class='form-control' id='abteilunngsname' aria-describedby='abteilunngsname' placeholder='' value=0>");
-					
 						echo("<label for='fertigungsID'>fertigungsID</label>");
-						echo("<input type='text' class='form-control' id='fertigungsID' aria-describedby='fertigungsID' placeholder='' value=0>");
-					
-						echo("<label for='fertifertigungsname'>fertifertigungsname</label>");
-						echo("<input type='text' class='form-control' id='fertifertigungsname' aria-describedby='fertifertigungsname' placeholder='' value=0>");
-					
-											
+						echo("<input type='text' class='form-control' id='fertigungsID' aria-describedby='fertigungsID' placeholder='' value=0>");			
+			
 						echo("<br>");
 						echo("<td><input type='button' value='Speichern'  onclick='createData({$q});'></td>");
 

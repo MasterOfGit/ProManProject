@@ -70,5 +70,7 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         List<ProduktionsplanDto> GetProduktionsplanDto();
 
         List<UserAnfrageDto> GetUserAnfrageDto();
+
+        List<KeyValueHelper> GetTypeObjects(string type);
     }
 }

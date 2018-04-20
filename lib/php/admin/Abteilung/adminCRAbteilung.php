@@ -9,20 +9,15 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/abteilung" );
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
 $abteilungen = curl_exec( $ch1 );
 curl_close( $ch1 );
 
-// Testausgabe
-//echo($maschinen);
-
 // Unwandlung von json in Array	
 $jsonabteilungen = json_decode($abteilungen, TRUE);
-//print_r($jsonabteilungen);
-
-//print_r($jsonfertigungslinien);
 
 echo <<<'HOME1_HEADER'
 <div class="Abteilung">
@@ -55,25 +50,25 @@ echo <<<'HOME1_HEADER'
 HOME1_HEADER;
 			
 							
-						foreach($jsonabteilungen['abteilungen'] as $abteilung) 
+						foreach($jsonabteilungen as $abteilung) 
 						{	echo("<tr>");
 							
-							foreach($abteilung['fertigungen'] as $fertigung) 
+							foreach($abteilung['Fertigungen'] as $fertigung) 
 								{ 	   	echo("<td>{$abteilung['abteilungsID']}</td>");
-										echo("<td>{$abteilung['abteilunngsname']}</td>");
+										echo("<td>{$abteilung['abteilungsname']}</td>");
 										echo("<td>{$fertigung['fertigungsID']}</td>"); 
 										echo("<td>{$fertigung['fertigungsname']}</td>");	
-										echo("<td><input class='btn btn-primary' type='button' value='loeschen'  onclick='deleteAbteilung({$abteilung['abteilungsID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='entfernen'  onclick='deleteFertigungAbteilung();'></td>");
 										
 								echo("</tr>");
 								};
-						 echo("<td><input class='btn btn-primary' type='button' value='Neu Fertigung hinzufügen'  onclick='editAbteilung({$abteilung['abteilungsID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='Neue Fertigung zu {$abteilung['abteilungsname']} hinzufügen'  onclick='editFertigungAbteilung({$abteilung['abteilungsID']});'></td>");
 						};
 			echo("</tbody>");
 			echo("</table>");
 			echo("<br>");
 echo("<br>");
-echo("<td><input class='btn btn-primary' type='button' value='Neu Abteilung hinzufügen'  onclick='newAbteilung();'></td>");
+echo("<td><input class='btn btn-primary' type='button' value='Neue Abteilung hinzufügen'  onclick='newAbteilung();'></td>");
 echo("<td><input class='btn btn-primary' type='button' value='Alles Speichern'  onclick='saveAbteilungen();'></td>");
 
 

@@ -16,6 +16,8 @@ namespace ProMan_BusinessLayer.Models
         {
             get
             {
+                if (fertigungslinien == null)
+                    return 0;
                 return fertigungslinien.Count;
             }
             set { }

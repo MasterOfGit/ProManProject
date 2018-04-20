@@ -8,8 +8,8 @@ $ch1 = curl_init();
 
 
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
-//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/bauteil");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
+curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/bauteil");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -38,9 +38,9 @@ function createData()
 
 			"bauteilIndex"			:	$("#bauteilIndex").val(),
 
-			"bauteilVersion"		:	$("#bauteilVersion").val(),
-
 			"bauteilArt"			:	$("#bauteilArt").val(),
+
+			"bauteilVersion"		:	$("#bauteilVersion").val(),
 
 			"bauteilStatus"	 		:	$("#bauteilStatus").val(),
 			
@@ -102,16 +102,7 @@ HEADER;
 			  	};
            		if( $q == 0) //neues Bauteil
 					{
-				  		foreach($jsonbauteil['bauteile'] as $bauteil)
-						{	$bauteilidmax = 0;
-							if($bauteil['bauteileID']>$bauteilidmax)
-							{
-								$bauteilidmax = $bauteil['bauteileID'];
-								
-							}
-						 	$bauteilidmax++;
-						}
-						
+					
 				  		echo("<label for='bauteileID'>bauteileID</label>");
 						echo("<input  readonly type='text' class='form-control' id='bauteileID' aria-describedby='bauteileID' placeholder='' value=0>");
 						echo("<label for='bauteilNummer'>bauteilNummer</label>");

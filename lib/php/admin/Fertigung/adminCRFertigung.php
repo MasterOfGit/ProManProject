@@ -9,7 +9,9 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/fertigung/fertigungen.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/fertigung/fertigungen.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/fertigung" );
+curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/fertigung" );
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
 $fertigungen = curl_exec( $ch1 );
@@ -57,7 +59,7 @@ echo <<<HOME1_HEADER
 HOME1_HEADER;
 			
 							
-						foreach($jsonfertigungen['fertigungen'] as $fertigung) 
+						foreach($jsonfertigungen as $fertigung) 
 						{	echo("<tr>");
 							
 							foreach($fertigung['fertigungslinien'] as $fertigungslinie) 
@@ -71,7 +73,7 @@ HOME1_HEADER;
 										
 								echo("</tr>");
 								};
-						 echo("<td><input class='btn btn-primary' type='button' value='Fertigungslinie hinzufügen'  onclick='editFertigung({$fertigung['fertigungsID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='Fertigungslinie zu {$fertigung['fertigungsname']} hinzufügen'  onclick='editFertigung({$fertigung['fertigungsID']});'></td>");
 						};
 							echo("</tbody>");
 						 echo("</table>");

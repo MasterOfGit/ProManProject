@@ -11,8 +11,8 @@ $ch2 = curl_init();
 $ch3 = curl_init();
 
 
-//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/maschine");
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine);
+curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/maschine");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine);
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
@@ -85,7 +85,7 @@ HOME1_HEADER;
 					echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editMaschine({$maschine['maschinenID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input class='btn btn-primary' type='button' value='Neues Maschine anlegen'  onclick='editMaschine();'></td>");
+				echo("<td><input class='btn btn-primary' type='button' value='Neues Maschine anlegen'  onclick='editMaschine(0);'></td>");
 
 
 echo <<<HOME1_FOOTER

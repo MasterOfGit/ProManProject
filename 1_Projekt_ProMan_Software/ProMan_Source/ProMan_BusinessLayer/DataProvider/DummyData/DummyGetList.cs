@@ -102,5 +102,10 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             throw new NotImplementedException();
         }
+
+        public List<KeyValueHelper> GetTypeObjects(string type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

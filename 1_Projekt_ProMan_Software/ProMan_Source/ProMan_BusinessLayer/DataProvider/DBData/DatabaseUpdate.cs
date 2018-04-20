@@ -262,6 +262,42 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             return true;
         }
 
+        public void MoveObject(string type, int oldparent, int newparent, int id)
+        {
+            switch (type)
+            {
+                //remove Fertigung from Abteilung
+                case "Abteilung":
+                    {
+                        var fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
+                        dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == oldparent).Fertigungen.Remove(fertigung);
+                        dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == newparent).Fertigungen.Add(fertigung);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                //remove Fertigungslinie from Fertigung
+                case "Fertigung":
+                    {
+                        var Fertigungslinien = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
+                        dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == oldparent).Fertigungslinien.Remove(Fertigungslinien);
+                        dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == newparent).Fertigungslinien.Add(Fertigungslinien);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                //remove Arbeitsfolge from Fertigungslinie
+                case "Fertigungslinie":
+                    {
+                        var Arbeitsfolgen = dbcontext.Arbeitsfolgen.FirstOrDefault(x => x.ArbeitsfolgeID == id);
+                        dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == oldparent).Arbeitsfolgen.Remove(Arbeitsfolgen);
+                        dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == newparent).Arbeitsfolgen.Add(Arbeitsfolgen);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
 
         #endregion

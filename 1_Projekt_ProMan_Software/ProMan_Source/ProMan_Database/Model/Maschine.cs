@@ -11,6 +11,7 @@ namespace ProMan_Database.Model
 {
     public class Maschine
     {
+        [Key]
         public int MaschineID { get; set; }
         [Index(IsUnique = true)]
         [StringLength(100)]
