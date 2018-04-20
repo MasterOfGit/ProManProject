@@ -37,6 +37,7 @@ namespace ProMan_WebAPI.Controllers
             dataprovider.UpdateDataProvider.MoveObject(type, oldparent, newparent, id);
         }
 
+        [HttpDelete]
         // DELETE: api/AddGetDeleteObject/?type=&parent=&id=
         public void Delete(string type,int parent, int id)
         {

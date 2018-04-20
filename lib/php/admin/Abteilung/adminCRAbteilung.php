@@ -20,6 +20,15 @@ curl_close( $ch1 );
 $jsonabteilungen = json_decode($abteilungen, TRUE);
 
 echo <<<'HOME1_HEADER'
+
+<script>
+function removeentry(parent,id)
+{
+	alert("Remove"+parent+id);
+	deleteFertigungAbteilung(parent, id);
+};
+</script>
+
 <div class="Abteilung">
 	<div class="jumbotron">
 		<div class="container">
@@ -58,7 +67,7 @@ HOME1_HEADER;
 										echo("<td>{$abteilung['abteilungsname']}</td>");
 										echo("<td>{$fertigung['fertigungsID']}</td>"); 
 										echo("<td>{$fertigung['fertigungsname']}</td>");	
-										echo("<td><input class='btn btn-primary' type='button' value='entfernen'  onclick='deleteFertigungAbteilung();'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='entfernen'  onclick='deleteFertigungAbteilung({$abteilung['abteilungsID']},{$fertigung['fertigungsID']});'></td>");
 										
 								echo("</tr>");
 								};

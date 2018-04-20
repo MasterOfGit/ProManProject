@@ -65,11 +65,11 @@ HOME1_HEADER;
 							foreach($fertigung['fertigungslinien'] as $fertigungslinie) 
 								{ 	    echo("<td>{$fertigung['fertigungsID']}</td>");
 										echo("<td>{$fertigung['fertigungsname']}</td>");
-										echo("<td>{$fertigungslinie['fertigungslinienID']}</td>"); 
+										echo("<td>{$fertigungslinie['fertigungslinieID']}</td>"); 
 										echo("<td>{$fertigungslinie['fertigungslinienname']}</td>");
 										echo("<td>{$fertigungslinie['fertigungstyp']}</td>");
 										echo("<td>{$fertigungslinie['maschinenzahl']}</td>");
-										echo("<td><input class='btn btn-primary' type='button' value='loeschen'  onclick='deleteFertigung({$fertigung['fertigungsID']});'></td>");
+										echo("<td><input class='btn btn-primary' type='button' value='loeschen'  onclick='deleteFertigungslinieFertigung({$fertigung['fertigungsID']},{$fertigungslinie['fertigungslinieID']});'></td>");
 										
 								echo("</tr>");
 								};

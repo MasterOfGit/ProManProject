@@ -3,6 +3,7 @@ using ProMan_BusinessLayer.DataProvider.Interfaces;
 using ProMan_Database;
 using System.Linq;
 using ProMan_Database.Model;
+using System.Data.Entity;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -341,7 +342,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 case "Abteilung":
                     {
                         var fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
-                        var item = dbcontext.Abteilungen.FirstOrDefault(x => x.AbteilungID == parent).Fertigungen.Remove(fertigung);
+                        var item = dbcontext.Abteilungen.Include(x => x.Fertigungen).FirstOrDefault(x => x.AbteilungID == parent).Fertigungen.Remove(fertigung);
                         dbcontext.SaveChanges();
                     }
                 break;
@@ -349,7 +350,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 case "Fertigung":
                     {
                         var Fertigungslinien = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
-                        var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == parent).Fertigungslinien.Remove(Fertigungslinien);
+                        var item = dbcontext.Fertigungen.Include(x => x.Fertigungslinien).FirstOrDefault(x => x.FertigungID == parent).Fertigungslinien.Remove(Fertigungslinien);
                         dbcontext.SaveChanges();
                     }
                     break;
@@ -357,7 +358,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 case "Fertigungslinie":
                     {
                         var Arbeitsfolgen = dbcontext.Arbeitsfolgen.FirstOrDefault(x => x.ArbeitsfolgeID == id);
-                        var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == parent).Arbeitsfolgen.Remove(Arbeitsfolgen);
+                        var item = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).FirstOrDefault(x => x.FertigungslinieID == parent).Arbeitsfolgen.Remove(Arbeitsfolgen);
                         dbcontext.SaveChanges();
                     }
                     break;
