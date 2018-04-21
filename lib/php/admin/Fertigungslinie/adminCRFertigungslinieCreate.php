@@ -8,7 +8,11 @@ function createData()
 		var data = JSON.stringify(
 		{
 	
-			"fertigungslinienname"	:	$("#fertigungslinienname").val(),
+      "fertigungslinienname"	:	$("#fertigungslinienname").val(),
+      
+      "fertigungstyp"	:	$("#fertigungstyp").val(),
+
+      "fertigungsname"	:	$("#fertigungsname").val(),
 
 		}
         );
@@ -32,6 +36,10 @@ HEADER;
 		
 echo("<label for='fertigungslinienname'>fertigungslinienname</label>");
 echo("<input type='text' class='form-control' id='fertigungslinienname' aria-describedby='fertigungslinienname' placeholder='' value=>");
+echo("<label for='fertigungstyp'>fertigungstyp</label>");
+echo("<input type='text' class='form-control' id='fertigungstyp' aria-describedby='fertigungstyp' placeholder='' value=>");
+echo("<label for='fertigungsname'>fertigungsname</label>");
+echo("<input type='text' class='form-control' id='fertigungsname' aria-describedby='fertigungsname' placeholder='' value=>");
 
 echo <<<FOOTER
 		</div>

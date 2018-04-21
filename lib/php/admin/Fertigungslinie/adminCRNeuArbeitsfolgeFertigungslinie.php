@@ -43,10 +43,6 @@ function createData(q)
 
 			"maschineID"				:	$("#maschineID").val(),
 
-			"technologie"				:	$("#technologie").val(),
-
-			"fertigungstyp"				:	$("#fertigungstyp").val(),
-
 			"bauteilID"					:	$("#bauteilID").val(),
 
 			"arbeitplan"	 			:	$("#arbeitplan").val()
@@ -65,22 +61,12 @@ alert("createData SaveNewArbeitsfolgeInFertigunglinie");
 		
 HOME1_HEADER;
 			
-						// TODO: maxiD muss noch bestimmt werden
-
 						echo("<label for='arbeitsfolgeID'>arbeitsfolgeID</label>");
 						echo("<input readonly type='text' class='form-control' id='arbeitsfolgeID' aria-describedby='userID' placeholder='' value=0>");
-
-
 					
 						echo("<label for='maschineID'>maschineID</label>");
 						echo("<input type='text' class='form-control' id='maschineID' aria-describedby='maschineID' placeholder='' value=0>");
-					
-						echo("<label for='technologie'>technologie</label>");
-						echo("<input type='text' class='form-control' id='technologie' aria-describedby='technologie' placeholder='' value=0>");
-					
-						echo("<label for='fertigungstyp'>fertigungstyp</label>");
-						echo("<input type='text' class='form-control' id='fertigungstyp' aria-describedby='fertigungstyp' placeholder='' value=0>");
-					
+										
 						echo("<label for='bauteilID'>bauteilID</label>");
 						echo("<input type='text' class='form-control' id='bauteilID' aria-describedby='userID' placeholder='' value=0>");
 						
