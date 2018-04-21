@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
 <file name="adminCRUser.php" server="C:/xampp/htdocs/proman/" local="131688050616898803" remote="131688050610000000" Dst="2" />
 <file name="adminCRUserBearbeiten.php" server="C:/xampp/htdocs/proman/" local="131688050727102345" remote="131688050720000000" Dst="2" />
 <file name="adminCRUser.php" server="192.168.178.26" local="131685515156038879" remote="131685561600000000" Dst="2" />
 <file name="adminCRUserBearbeiten.php" server="192.168.178.26" local="131680919281998527" remote="131683802400000000" Dst="2" />
 <file name="adminCRUserRegistrierungBearbeiten.php" server="C:/xampp/htdocs/proman/" local="131688050825518044" remote="131688050820000000" Dst="2" />
+=======
+<file name="adminCRUser.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+<file name="adminCRUserBearbeiten.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+<file name="adminCRUser.php" server="192.168.178.26" local="131685515156038879" remote="131685561600000000" Dst="2" />
+<file name="adminCRUserBearbeiten.php" server="192.168.178.26" local="131680919281998527" remote="131683802400000000" Dst="2" />
+<file name="adminCRUserRegistrierungBearbeiten.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+>>>>>>> origin/master
 <file name="adminCRUserRegistrierungBearbeiten.php" server="192.168.178.26" local="131680925141268590" remote="131683802400000000" Dst="2" />
 </dwsync>
