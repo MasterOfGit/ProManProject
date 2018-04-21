@@ -11,11 +11,9 @@ $q = $_REQUEST["q"];
 //$q= 0;
 $ch1 = curl_init();
 
-
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
-
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
 curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/maschine");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -23,11 +21,10 @@ $maschine=curl_exec($ch1);
 curl_close($ch1);
 
 // Testausgabe
-//echo($bauteil);
+
 
 // Unwandlung von json in Array	
 $jsonmaschine = json_decode($maschine, TRUE);
-
 
 echo <<<HEADER
 
@@ -35,7 +32,7 @@ echo <<<HEADER
 function createData()
 {
 
-
+		var givenId = $q;
 		var data = JSON.stringify(
 		{
 	
@@ -49,16 +46,19 @@ function createData()
 
 			"standort"					:	$("#standort").val(),
 
-			"abteilung"	 				:	$("#abteilung").val(),
+			"abteilungsId"	 				:	$("#abteilung").val(),
 			
 			"status"					:	$("#status").val()
 		}
+
 );
 
-saveMaschine(data);
-
-alert("createData saveMaschine");
-
+		if(givenId==0)		{	
+			saveMaschine(data);		
+		}
+		else{
+			updateMaschine(data,givenId);
+		}
 };
 </script>
 
@@ -95,7 +95,7 @@ HEADER;
 						echo("<input type='text' class='form-control' id='standort' aria-describedby='standort' placeholder='' value={$maschine['standort']}>");
 					
 						echo("<label for='abteilung'>abteilung</label>");
-						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value={$maschine['abteilung']}>");
+						echo("<input type='text' class='form-control' id='abteilung' aria-describedby='abteilung' placeholder='' value={$maschine['abteilungsId']}>");
 					
 						echo("<label for='status'>status</label>");
 						echo("<input type='text' class='form-control' id='status' aria-describedby='status' placeholder='' value={$maschine['status']}>");

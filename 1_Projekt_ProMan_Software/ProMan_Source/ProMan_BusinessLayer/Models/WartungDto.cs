@@ -8,10 +8,10 @@ namespace ProMan_BusinessLayer.Models
     public class WartungDto
     {
         public int wartungsID { get; set; }
-        public int abteilung { get; set; }
-        public int fertigung { get; set; }
-        public int fertigungslinie { get; set; }
-        public int maschine { get; set; }
+        public int? abteilung { get; set; }
+        public int? fertigung { get; set; }
+        public int? fertigungslinie { get; set; }
+        public int? maschine { get; set; }
         public string terminturnus { get; set; }
         public string status { get; set; }
 

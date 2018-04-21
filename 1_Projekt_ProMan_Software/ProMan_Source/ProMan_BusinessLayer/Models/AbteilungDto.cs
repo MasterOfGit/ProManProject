@@ -18,7 +18,9 @@ namespace ProMan_BusinessLayer.Models
         {
             get
             {
-                return Fertigungen.Count;
+                if(Fertigungen != null)
+                    return Fertigungen.Count;
+                return 0;
             }
             set { }
 
@@ -31,10 +33,14 @@ namespace ProMan_BusinessLayer.Models
             get
             {
                 int count = 0;
-                foreach(var item in Fertigungen)
+                if(Fertigungen != null)
                 {
-                    count += item.FertigungslinienAnzahl;
+                    foreach (var item in Fertigungen)
+                    {
+                        count += item.FertigungslinienAnzahl;
+                    }
                 }
+
 
                 return count;
             }

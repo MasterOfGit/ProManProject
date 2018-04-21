@@ -68,6 +68,7 @@
     <Compile Include="DataProvider\Interfaces\IGetListDataProvider.cs" />
     <Compile Include="DataProvider\Interfaces\IGetSingleProvider.cs" />
     <Compile Include="DataProvider\Interfaces\IUpdateDataProvider.cs" />
+    <Compile Include="KeyValueHelper.cs" />
     <Compile Include="Models\AbteilungDto.cs" />
     <Compile Include="Models\AdminPages\AdminPageAbteilungDto.cs" />
     <Compile Include="Models\AdminPages\AdminPageBauteilDto.cs" />

@@ -14,7 +14,9 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/fertigung/fertigung.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/fertigung/fertigung.json" );
+curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/addgetdeleteobject/?type=FertigungLinieListe");
+//curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/addgetdeleteobject/?type=FertigungLinieListe");
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
 $fertigungslinien = curl_exec( $ch1 );
@@ -35,35 +37,7 @@ echo <<<'HOME1_HEADER'
 function createData(q)
 {
 
-
-		var data = JSON.stringify(
-		{
-	
-						"fertigungsID"		:	$("#fertigungsID").val(),
-
-		 				"fertigungsname"	:	$("#fertigungsname").val(),
-
-		 				"fertigungslinien"	:
-
-							[
-
-								{
-
-									"fertigungslinienID"	:	$("#fertigungslinienID").val(),
-
-									"fertigungslinienname"	:	$("#fertigungslinienname").val(),		
-
-									"fertigungstyp"			:	$("#fertigungstyp").val(),
-
-									"maschinenzahl"			:	$("#maschinenzahl").val()
-
-								}
-							]
-		}
-);
-saveFertigung(data, q);
-
-alert("createData SaveNewArbeitsfolgeInFertigunglinie");
+	addFertigungslinieFertigung(q, $("#fertigungslinienID").val());
 
 };
 </script>
@@ -73,26 +47,11 @@ alert("createData SaveNewArbeitsfolgeInFertigunglinie");
 		
 HOME1_HEADER;
 			
-						// TODO: maxiD muss noch bestimmt werden
-
 						echo("<label for='fertigungsID'>fertigungsID</label>");
-						echo("<input readonly type='text' class='form-control' id='fertigungsID' aria-describedby='userID' placeholder='' value=0>");
+						echo("<input readonly type='text' class='form-control' id='fertigungsID' aria-describedby='userID' placeholder='' value={$q}>");
 
-					
-						echo("<label for='fertigungsname'>fertigungsname</label>");
-						echo("<input type='text' class='form-control' id='fertigungsname' aria-describedby='fertigungsname' placeholder='' value=0>");
-					
 						echo("<label for='fertigungslinienID'>fertigungslinienID</label>");
 						echo("<input type='text' class='form-control' id='fertigungslinienID' aria-describedby='fertigungslinienID' placeholder='' value=0>");
-					
-						echo("<label for='fertigungslinienname'>fertigungslinienname</label>");
-						echo("<input type='text' class='form-control' id='fertigungslinienname' aria-describedby='fertigungslinienname' placeholder='' value=0>");
-					
-						echo("<label for='fertigungstyp'>fertigungstyp</label>");
-						echo("<input type='text' class='form-control' id='fertigungstyp' aria-describedby='fertigungstyp' placeholder='' value=0>");
-						
-						echo("<label for='maschinenzahl'>maschinenzahl</label>");
-						echo("<input type='text' class='form-control' id='maschinenzahl' aria-describedby='maschinenzahl' placeholder='' value=0>");
 					
 						echo("<br>");
 						echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='createData({$q});'></td>");

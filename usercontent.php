@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html lang="de">
 <head>
 <meta charset="utf-8">
@@ -56,7 +58,7 @@
               <li role="separator" class="divider"></li>
               <li> <a href="#" onclick="loadData('lib/php/admin/Sonderaufgaben/userCRSonderaufgaben.php?q=2222',FunctionSonderaufgaben)">Sonderaufgaben</a></li>
               <li role="separator" class="divider"></li>
-              <li> <a href="login.html">Logout</a> </li>
+              <li> <a href="logout.php">Logout</a> </li>
             </ul>
           </li>
         </ul>
@@ -77,7 +79,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bottomFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <ol class="breadcrumb navbar-brand">
           <li><a href="index.html">Home</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="start.php">Login</a></li>
           <li class="active">Administrator</li>
         </ol>
       </div>

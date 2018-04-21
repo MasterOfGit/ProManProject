@@ -2,11 +2,13 @@
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
 using System.Collections.Generic;
+using System.IO;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
+    [RoutePrefix("bauteil")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BauteilController : BaseApiController
     {
@@ -22,6 +24,7 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilDto(id)));
         }
 
+        //[HttpPost]
         // POST: api/<controller>
         public IHttpActionResult Post([FromBody]BauteilDto value)
         {

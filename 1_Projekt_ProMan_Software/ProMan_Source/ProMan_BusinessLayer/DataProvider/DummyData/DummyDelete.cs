@@ -89,5 +89,10 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             return false;
         }
+
+        public void RemoteObject(string type, int parent, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

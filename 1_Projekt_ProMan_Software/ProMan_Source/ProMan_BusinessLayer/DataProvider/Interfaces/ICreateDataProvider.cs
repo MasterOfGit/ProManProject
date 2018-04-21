@@ -75,5 +75,7 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         int SetMaschineVerwendungDto(MaschineVerwendungDto data);
         int SetProduktionsplanDto(ProduktionsplanDto data);
         int SetUserAnfrageDto(UserAnfrageDto data);
+
+        void AddObject(string type, int parent, int id);
     }
 }

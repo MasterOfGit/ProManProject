@@ -52,14 +52,18 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public FertigungDto GetFertigungsDto(int id)
         {
-            var item = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
-
+            var item = dbcontext.Fertigungen.Include("Fertigungslinien").FirstOrDefault(x => x.FertigungID == id);
+            
             FertigungDto fertigung = new FertigungDto()
             {
                 fertigungsID = item.FertigungID,
                 fertigungsname = item.Bezeichnung,
-                fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
+                fertigungstyp = item.Fertigungstype.ToString(),
+                fertigungslinien = item.Fertigungslinien?.Select(x => new FertigungslinieDto()
                 {
+                    fertigungslinieID = x.FertigungslinieID,
+                    fertigungslinienname = x.Bezeichnung,
+                    maschinenanzahl = x.Arbeitsfolgen.Count,
                     arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
                         ID = y.ArbeitsfolgeID,
@@ -77,7 +81,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             FertigungslinieDto fertigungslinie = new FertigungslinieDto()
             {
                 fertigungslinieID = item.FertigungslinieID,
-                fertigunglinenname = item.Bezeichnung,
+                fertigungslinienname = item.Bezeichnung,
+                maschinenanzahl = item.Arbeitsfolgen.Count,
                 arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                 {
                     ID = y.ArbeitsfolgeID,
@@ -318,7 +323,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 fertigungslinien = x.Fertigungslinien.Select(y => new FertigungslinieDto()
                 {
                     fertigungslinieID = y.FertigungslinieID,
-                    fertigunglinenname = y.Bezeichnung,
+                    fertigungslinienname = y.Bezeichnung,
                     arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
                     {
                         ID = z.ArbeitsfolgeID,
@@ -354,7 +359,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             item.Fertigungslinien = dbcontext.Fertigungslinien.Select(y => new FertigungslinieDto()
             {
                 fertigungslinieID = y.FertigungslinieID,
-                fertigunglinenname = y.Bezeichnung,
+                fertigungslinienname = y.Bezeichnung,
                 arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
                 {
                     ID = z.ArbeitsfolgeID,

@@ -92,6 +92,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             return true;
         }
 
+        public void MoveObject(string type, int oldparent, int newparent, int id)
+        {
+            throw new NotImplementedException();
+        }
+
 
 
         #endregion

@@ -7,6 +7,7 @@ using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
+    [RoutePrefix("bauteilverwendung")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BauteilVerwendungController : BaseApiController
     {

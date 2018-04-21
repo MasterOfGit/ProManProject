@@ -3,6 +3,7 @@ using ProMan_BusinessLayer.DataProvider.Interfaces;
 using ProMan_Database;
 using System.Linq;
 using ProMan_Database.Model;
+using System.Data.Entity;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -331,6 +332,39 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
 
             return true;
+        }
+
+        public void RemoteObject(string type,int parent, int id)
+        {
+            switch (type)
+            { 
+                //remove Fertigung from Abteilung
+                case "Abteilung":
+                    {
+                        var fertigung = dbcontext.Fertigungen.FirstOrDefault(x => x.FertigungID == id);
+                        var item = dbcontext.Abteilungen.Include(x => x.Fertigungen).FirstOrDefault(x => x.AbteilungID == parent).Fertigungen.Remove(fertigung);
+                        dbcontext.SaveChanges();
+                    }
+                break;
+                //remove Fertigungslinie from Fertigung
+                case "Fertigung":
+                    {
+                        var Fertigungslinien = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
+                        var item = dbcontext.Fertigungen.Include(x => x.Fertigungslinien).FirstOrDefault(x => x.FertigungID == parent).Fertigungslinien.Remove(Fertigungslinien);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                //remove Arbeitsfolge from Fertigungslinie
+                case "Fertigungslinie":
+                    {
+                        var Arbeitsfolgen = dbcontext.Arbeitsfolgen.FirstOrDefault(x => x.ArbeitsfolgeID == id);
+                        var item = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).FirstOrDefault(x => x.FertigungslinieID == parent).Arbeitsfolgen.Remove(Arbeitsfolgen);
+                        dbcontext.SaveChanges();
+                    }
+                    break;
+                default:
+                break;
+            }
         }
     }
 }
