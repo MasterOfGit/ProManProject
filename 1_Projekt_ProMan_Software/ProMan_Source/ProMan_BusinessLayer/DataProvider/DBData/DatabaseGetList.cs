@@ -73,7 +73,6 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     fertigungsID = item.FertigungID,
                     fertigungsname = item.Bezeichnung,
-                    fertigungstyp = item.Fertigungstype.ToString(),
                     fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
                     {
                         fertigungslinieID = x.FertigungslinieID,

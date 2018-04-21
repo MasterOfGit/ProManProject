@@ -31,17 +31,12 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetFertigungsDto(FertigungDto data)
         {
-            Fertigungstype tmpFertigungstype;
-            Enum.TryParse(data.fertigungstyp, out tmpFertigungstype);
-
-            if (tmpFertigungstype == null)
-                tmpFertigungstype = Fertigungstype.Gruenfertigung;
 
             var abteilung = dbcontext.Abteilungen.FirstOrDefault(x => x.Bezeichnung == data.abteilungName);
             dbcontext.Fertigungen.Add(new ProMan_Database.Model.Fertigung()
             {
                 Bezeichnung = data.fertigungsname,
-                Fertigungstype = tmpFertigungstype,
+
             });
 
             dbcontext.SaveChanges();
@@ -51,9 +46,15 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetFertigungslinieDto(FertigungslinieDto data)
         {
+            Fertigungstype tmpFertigungstype;
+            Enum.TryParse(data.fertigungstyp, out tmpFertigungstype);
+
+            if (tmpFertigungstype == null)
+                tmpFertigungstype = Fertigungstype.Gruenfertigung;
             dbcontext.Fertigungslinien.Add(new ProMan_Database.Model.Fertigungslinie()
             {
                 Bezeichnung = data.fertigungslinienname,
+                Fertigungstype = tmpFertigungstype,
             }
             )
             ;

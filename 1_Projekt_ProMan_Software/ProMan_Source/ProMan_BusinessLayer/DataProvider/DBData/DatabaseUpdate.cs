@@ -80,9 +80,13 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
         {
+            Fertigungstype tmpFertigungstype;
+            Enum.TryParse(data.fertigungstyp, out tmpFertigungstype);
+
             var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
 
             item.Bezeichnung = data.fertigungslinienname;
+            item.Fertigungstype = tmpFertigungstype;
 
             //TODO arbeitsfolgen
 
