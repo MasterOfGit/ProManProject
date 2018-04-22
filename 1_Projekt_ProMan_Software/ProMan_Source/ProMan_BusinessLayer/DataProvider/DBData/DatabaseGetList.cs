@@ -7,6 +7,7 @@ using System.Linq;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
 using ProMan_Database.Model;
 using System.Data.Entity;
+using ProMan_Database.Enums;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -294,7 +295,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<WartungDto> GetWartungDto()
         {
-            var items = dbcontext.Wartungen;
+            var items = dbcontext.Wartungen.Include(x => x.Maschine).Include(x => x.Maschine.Arbeitsfolge).Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie).
+                Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung).Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung.Abteilung);
             List<WartungDto> returnlist = new List<WartungDto>();
 
             foreach (var item in items)
@@ -316,7 +318,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<AuditDto> GetAuditDto()
         {
-            var items = dbcontext.Audits;
+            var items = dbcontext.Audits.Include(x => x.Abteilung);
             List<AuditDto> returnlist = new List<AuditDto>();
 
             foreach (var item in items)
@@ -327,7 +329,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     terminturnus = item.Turnus.ToString(),
                     auditart = item.AuditArt,
                     status = item.Status.ToString(),
-                    termin = item.Endtermin.Value,
+                    termin = item.Beginntermin.Value,
                     beurteilung = item.Bewertung,
                     abteilung = item.Abteilung.AbteilungID,
                     nacharbeiten = item.Aufgabe,
@@ -408,7 +410,51 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     }
                     break;
                 default:
+                #region Enums
+                case "FertigungType":
+                    {
+                        foreach(var item in Enum.GetValues(typeof(Fertigungstype)))
+                        {
+                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
+                        }
+                    }
                     break;
+                case "MaschinenStatus":
+                    {
+                        foreach (var item in Enum.GetValues(typeof(MaschinenStatus)))
+                        {
+                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
+                        }
+                    }
+                    break;
+                case "Turnus":
+                    {
+                        foreach (var item in Enum.GetValues(typeof(Turnus)))
+                        {
+                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
+                        }
+                    }
+                    break;
+                case "StatusArt":
+                    {
+                        foreach (var item in Enum.GetValues(typeof(StatusArt)))
+                        {
+                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
+                        }
+                    }
+                    break;
+                #endregion
+                case "GetNoUseFertigung":
+                    {
+                        values = dbcontext.Fertigungen.Include(x => x.Abteilung).Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() { Key = x.FertigungID.ToString(), Value = x.Bezeichnung }).ToList();
+                    }
+                    break;
+                case "GetNoUseFertigungsLinie":
+                    {
+                        values = dbcontext.Fertigungslinien.Include(x => x.Fertigung).Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung }).ToList();
+                    }
+                    break;
+                    
             }
             return values;
         }

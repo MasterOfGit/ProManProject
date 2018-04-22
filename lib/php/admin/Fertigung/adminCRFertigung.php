@@ -2,7 +2,9 @@
 Ersteller : Markus Kessler	
 MatrNr 	  : 894361
 Presentation: 28.04.2018
-Theam : ProMan
+Team : ProMan
+modifikations : Sebastian Molkenthin
+MartNr : 896734
 -->
 <?php
 //echo "PHP Datenabfrage<br>";
