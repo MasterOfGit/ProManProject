@@ -14,8 +14,8 @@ $options = [
 ];
 $passwordcrypt = password_hash($passwort_aktuell, PASSWORD_BCRYPT,$options);
 
-//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/login?username=$name&password=$passwort_aktuell");
-curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/login?username=$name&password=$passwort_aktuell");
+curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/login?username=$name&password=$passwort_aktuell");
+//curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/login?username=$name&password=$passwort_aktuell");
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );
 $login = curl_exec( $ch1 );
