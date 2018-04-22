@@ -11,7 +11,7 @@ MartNr : 896734
 	$q = 0;
 	$q = $_REQUEST[ "q"] ;
 	
-	curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/audits.json" );
+	//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/audits.json" );
 	curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/audit" );
 	//curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/audit" );
 	curl_setopt( $ch1, CURLOPT_HEADER, 0 );

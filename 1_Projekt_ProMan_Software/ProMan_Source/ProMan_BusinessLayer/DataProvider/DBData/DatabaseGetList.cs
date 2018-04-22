@@ -132,7 +132,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     //AnzeigeName = $"{mitarbeiter.Namenszusatz} {mitarbeiter.Nachname}",
                     userKennung = item.Username,
-                    userpasswort = item.Password,
+                    //userpasswort = item.Password,
                     userbereich = item.LoginType.ToString(),
                     userLastLogin = item.LastLogin.Value,
                     userID = item.LoginID,
@@ -257,7 +257,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                         userFestnetzNr = item.Bearbeiter.FirstOrDefault().Festnetz,
                         userMobilNr  = item.Bearbeiter.FirstOrDefault().Mobil,
                         userNachname = item.Bearbeiter.FirstOrDefault().Nachname,
-                        userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz
+                        userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz.ToString()
                     },
                     Status = item.Status.ToString(),
                     InventarNummer = item.Maschinen.FirstOrDefault().Inventarnummer,
@@ -286,7 +286,38 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     userFestnetzNr = item.Festnetz,
                     userMobilNr = item.Mobil,
                     userNachname = item.Nachname,
-                    userAnrede = item.Namenszusatz
+                    userAnrede = item.Namenszusatz.ToString()
+                });
+            }
+
+            return returnlist;
+        }
+
+        public List<UserDto> GetUserDto(bool needlogin)
+        {
+            
+            IQueryable<Mitarbeiter> items;
+
+            if (needlogin)
+                items = dbcontext.Mitarbeiter.Include(x => x.Login).Where(x => x.Login != null);
+            else
+                items = dbcontext.Mitarbeiter.Include(x => x.Login).Where(x => x.Login == null);
+
+            List<UserDto> returnlist = new List<UserDto>();
+
+            foreach (var item in items)
+            {
+                returnlist.Add(new UserDto()
+                {
+                    userID = item.MitarbeiterID,
+                    userVorname = item.Vorname,
+                    userActive = item.Active,
+                    userBemerkung = item.Bemerkung,
+                    userEmail = item.eMail,
+                    userFestnetzNr = item.Festnetz,
+                    userMobilNr = item.Mobil,
+                    userNachname = item.Nachname,
+                    userAnrede = item.Namenszusatz.ToString()
                 });
             }
 
@@ -458,5 +489,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             }
             return values;
         }
+
+
     }
 }

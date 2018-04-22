@@ -79,7 +79,7 @@ echo "Anfrage : " . $q . "<br>";
 		<button type="button" 
 					class="btn btn-primary" 
 				    onclick="saveData(loginurl,logindata);">
-		Senden Login</button>
+		Senden Login1</button>
 			
 					
 			<button type="reset" class="btn btn-primary">alles löschen</button>

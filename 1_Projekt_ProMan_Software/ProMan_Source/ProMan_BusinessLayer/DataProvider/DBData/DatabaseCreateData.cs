@@ -105,6 +105,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetUserDto(UserDto data)
         {
+            Anrede tmp2;
+            Enum.TryParse(data.userAnrede, out tmp2);
             var userlogin = dbcontext.Logins.FirstOrDefault(x => x.LoginID == data.LoginId);
 
             dbcontext.Mitarbeiter.Add(new ProMan_Database.Model.Mitarbeiter()
@@ -116,7 +118,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 Mobil = data.userMobilNr,
                 Bemerkung = data.userBemerkung,
                 Active = data.userActive,
-                Namenszusatz = data.userAnrede,
+                Namenszusatz = tmp2,
                 Login = userlogin,
             }
                 );

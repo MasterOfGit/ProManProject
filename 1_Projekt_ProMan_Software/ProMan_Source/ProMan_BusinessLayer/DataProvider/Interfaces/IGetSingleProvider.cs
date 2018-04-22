@@ -66,6 +66,8 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// <returns></returns>
         LoginDto GetLoginDto(string username, string password);
 
+        bool ExecuteLoginDto(string username, string password);
+
         AuditDto GetAuditDto(int id);
 
         BauteilVerwendungDto GetBauteilVerwendungDto(int id);

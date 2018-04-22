@@ -507,7 +507,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     userBemerkung = "Projektleiter",
                     userNachname = "Molkenthin",
                     userVorname = "Thomas",
-                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr.ToString(),
                     userID = 3,
                     
                 },
@@ -517,7 +517,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     userBemerkung = "Projektadmin",
                     userNachname = "Kessler",
                     userVorname = "Markus",
-                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr.ToString(),
                     userID = 3
                 },
                 new UserDto()
@@ -526,7 +526,7 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     userBemerkung = "Projektmitarbeiter",
                     userNachname = "Molkenthin",
                     userVorname = "Sebastian",
-                    userAnrede = ProMan_Database.Enums.Anrede.Herr,
+                    userAnrede = ProMan_Database.Enums.Anrede.Herr.ToString(),
                     userID = 3
                 },
             };
@@ -844,6 +844,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             {
                 bauteileID = id,
             };
+        }
+
+        public bool ExecuteLoginDto(string username, string password)
+        {
+            throw new NotImplementedException();
         }
 
 

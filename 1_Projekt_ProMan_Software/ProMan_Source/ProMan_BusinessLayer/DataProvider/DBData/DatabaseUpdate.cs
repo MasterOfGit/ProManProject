@@ -118,6 +118,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateUserDto(UserDto data, int id)
         {
+            Anrede tmp2;
+            Enum.TryParse(data.userAnrede, out tmp2);
             var item = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == id);
 
             item.Vorname = data.userVorname;
@@ -127,7 +129,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             item.Mobil = data.userMobilNr;
             item.Bemerkung = data.userBemerkung;
             item.Active = data.userActive;
-            item.Namenszusatz = data.userAnrede;
+            item.Namenszusatz = tmp2;
 
             dbcontext.SaveChanges();
 

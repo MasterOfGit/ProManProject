@@ -134,7 +134,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     userFestnetzNr = item.Bearbeiter.FirstOrDefault().Festnetz,
                     userMobilNr = item.Bearbeiter.FirstOrDefault().Mobil,
                     userNachname = item.Bearbeiter.FirstOrDefault().Nachname,
-                    userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz
+                    userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz.ToString()
                 },
                 Status = item.Status.ToString(),
                 InventarNummer = item.Maschinen.FirstOrDefault().Inventarnummer,
@@ -158,7 +158,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 userFestnetzNr = item.Festnetz,
                 userMobilNr = item.Mobil,
                 userNachname = item.Nachname,
-                userAnrede = item.Namenszusatz
+                userAnrede = item.Namenszusatz.ToString()
             };
 
             return user;
@@ -222,7 +222,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             return new LoginDto()
             {
                 userKennung = item.Username,
-                userpasswort = item.Password,
+                //userpasswort = item.Password,
                 userbereich = item.LoginType.ToString(),
                 userID = item.LoginID,
                 userLastLogin = item.LastLogin.Value,
@@ -249,6 +249,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             };
         }
 
+        public bool ExecuteLoginDto(string username, string password)
+        {
+            var item = dbcontext.Logins.FirstOrDefault(x => x.Username == username && x.Password == password);
+
+            return item != null ? true : false;
+
+        }
+
         #endregion
 
         #region ViewModels
@@ -265,7 +273,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 userID = x.MitarbeiterID,
                 userMobilNr = x.Mobil,
                 userNachname = x.Nachname,
-                userAnrede = x.Namenszusatz,
+                userAnrede = x.Namenszusatz.ToString(),
                 userVorname = x.Vorname,
                 
             }).ToList();
