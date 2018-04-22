@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="adminCRMaschineBear.php" server="C:/xampp/htdocs/proman/" local="131688051901055578" remote="131688051900000000" Dst="2" />
 <file name="adminCRMaschinen.php" server="C:/xampp/htdocs/proman/" local="131688051832609895" remote="131688051830000000" Dst="2" />
 <file name="adminCRMaschineVerwBear.php" server="C:/xampp/htdocs/proman/" local="131688051764164178" remote="131688051760000000" Dst="2" />
@@ -10,20 +9,4 @@
 <file name="adminCRMaschineBear-workPC.php" server="192.168.178.26" local="131688058811169974" remote="131688102600000000" Dst="2" />
 <file name="adminCRMaschinen-workPC.php" server="192.168.178.26" local="131688058811129950" remote="131688102600000000" Dst="2" />
 <file name="adminCRMaschineVerwBear-workPC.php" server="192.168.178.26" local="131688051764164178" remote="131688102600000000" Dst="2" />
-=======
-<<<<<<< HEAD
-<file name="adminCRMaschineBear.php" server="C:/xampp/htdocs/proman/" local="131688051901055578" remote="131688051900000000" Dst="2" />
-<file name="adminCRMaschinen.php" server="C:/xampp/htdocs/proman/" local="131688051832609895" remote="131688051830000000" Dst="2" />
-<file name="adminCRMaschineVerwBear.php" server="C:/xampp/htdocs/proman/" local="131688051764164178" remote="131688051760000000" Dst="2" />
-<file name="adminCRMaschineBear.php" server="192.168.178.26" local="131685563279708368" remote="131685563400000000" Dst="2" />
-<file name="adminCRMaschinen.php" server="192.168.178.26" local="131685563279578269" remote="131685563400000000" Dst="2" />
-=======
-<file name="adminCRMaschineBear.php" server="C:/xampp/htdocs/proman/" local="131686367369801781" remote="131686367360000000" Dst="2" />
-<file name="adminCRMaschinen.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRMaschineVerwBear.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRMaschineBear.php" server="192.168.178.26" local="131685550181199615" remote="131685561600000000" Dst="2" />
-<file name="adminCRMaschinen.php" server="192.168.178.26" local="131685549417195676" remote="131685561600000000" Dst="2" />
->>>>>>> origin/master
-<file name="adminCRMaschineVerwBear.php" server="192.168.178.26" local="131685548858632521" remote="131685561600000000" Dst="2" />
->>>>>>> origin/master
 </dwsync>

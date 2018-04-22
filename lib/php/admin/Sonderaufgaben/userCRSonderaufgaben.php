@@ -1,11 +1,3 @@
-<!--
-Ersteller : Markus Kessler	
-MatrNr 	  : 894361
-Presentation: 28.04.2018
-Team : ProMan
-modifikations : Sebastian Molkenthin
-MartNr : 896734
--->
 <?php
 //echo "PHP Datenabfrage<br>";
 //$q = $_REQUEST["q"];
@@ -17,7 +9,7 @@ $ch2 = curl_init();
 //$ch3 = curl_init();
 
 curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/audit");
-//curl_setopt($ch1, CURLOPT_URL, "http://localhost:50435/api/audit");
+
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/audits.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
@@ -26,7 +18,7 @@ $saudits=curl_exec($ch1);
 curl_close($ch1);
 
 curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/wartung");
-//curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/wartung");
+
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/sonderaufgaben/wartungen.json");
 
 curl_setopt($ch2, CURLOPT_HEADER, 0);
@@ -89,7 +81,7 @@ echo <<<'HOME1_HEADER'
 						  <tbody>  
 HOME1_HEADER;
 
-				foreach($jsonwartungen as $wartung)
+				foreach($jsonwartungen['wartungen'] as $wartung)
 				{
 				 
 					echo("<tr>");
@@ -142,7 +134,7 @@ echo <<<'MENU1_HEADER'
 MENU1_HEADER;
 
 
-				foreach($jsonsaudits as $audit)
+				foreach($jsonsaudits['audits'] as $audit)
 				{
 					echo("<tr>");
 					echo("<td>{$audit['auditID']}</td>");
@@ -160,7 +152,7 @@ MENU1_HEADER;
 					echo("<td><input class='btn btn-primary' type='button' value='Verschieben'  onclick='moveAuditDatum({$audit['auditID']});'></td>");
 				echo("</tr>");
 				};
-				echo("<td><input class='btn btn-primary'  type='button' value='Neu Audit anlegen'  onclick='editAudit(0);'></td>");
+				echo("<td><inputclass='btn btn-primary'  type='button' value='Neu Audit anlegen'  onclick='editAudit();'></td>");
 				echo("<td><input class='btn btn-primary' type='button' value='Speichern'  onclick='saveAllAudit();'></td>");	
 
 

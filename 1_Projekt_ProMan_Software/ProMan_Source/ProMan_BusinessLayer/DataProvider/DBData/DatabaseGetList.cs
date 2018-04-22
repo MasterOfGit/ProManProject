@@ -7,7 +7,6 @@ using System.Linq;
 using ProMan_BusinessLayer.Models.Maschinenfuehrer;
 using ProMan_Database.Model;
 using System.Data.Entity;
-using ProMan_Database.Enums;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -74,16 +73,16 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     fertigungsID = item.FertigungID,
                     fertigungsname = item.Bezeichnung,
+                    fertigungstyp = item.Fertigungstype.ToString(),
                     fertigungslinien = item.Fertigungslinien.Select(x => new FertigungslinieDto()
                     {
                         fertigungslinieID = x.FertigungslinieID,
                         fertigungslinienname = x.Bezeichnung,
                         maschinenanzahl = x.Arbeitsfolgen.Count,
-                        fertigungstyp = x.Fertigungstype.ToString(),
                         arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                         {
-                            arbeitsfolgeID = y.ArbeitsfolgeID,
-                            arbeitplan = y.ArbeitsfolgeName,
+                            ID = y.ArbeitsfolgeID,
+                            ArbeitsfolgeName = y.ArbeitsfolgeName,
                         }).ToList()
                     }).ToList()
                 });
@@ -94,7 +93,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<FertigungslinieDto> GetFertigungslinieDto()
         {
-            var items = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).Include(x => x.Arbeitsfolgen.Select(y => y.Maschinen)).Include(x => x.Arbeitsfolgen.Select(y => y.Bauteile));
+            var items = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).Include(x => x.Arbeitsfolgen.Select(y => y.Maschinen)); ;
             List<FertigungslinieDto> returnlist = new List<FertigungslinieDto>();
 
             foreach (var item in items)
@@ -104,16 +103,15 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     fertigungslinieID = item.FertigungslinieID,
                     fertigungslinienname = item.Bezeichnung,
                     maschinenanzahl = item.Arbeitsfolgen.Count,
-                    fertigungstyp = item.Fertigungstype.ToString(),
                     arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
-                        arbeitsfolgeID = y.ArbeitsfolgeID,
-                        arbeitplan = y.ArbeitsfolgeName,
-                        maschineID = y.Maschinen.FirstOrDefault().MaschineID,
-                        technologie = y.Maschinen.FirstOrDefault().Technologie.ToString(),
-                        bauteilID = y.Bauteile.FirstOrDefault().BauteilID,
-                        
-
+                        ID = y.ArbeitsfolgeID,
+                        ArbeitsfolgeName = y.ArbeitsfolgeName,
+                        Maschinen = new List<MaschineDto>() { new MaschineDto()
+                        {
+                            maschinenID = y.Maschinen.FirstOrDefault().MaschineID,
+                            maschinenInventarNummer = y.Maschinen.FirstOrDefault().Inventarnummer,
+                        } }
                     }).ToList()
                 });
             }
@@ -132,11 +130,11 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     //AnzeigeName = $"{mitarbeiter.Namenszusatz} {mitarbeiter.Nachname}",
                     userKennung = item.Username,
-                    //userpasswort = item.Password,
+                    userpasswort = item.Password,
                     userbereich = item.LoginType.ToString(),
                     userLastLogin = item.LastLogin.Value,
                     userID = item.LoginID,
-                    userStatus = item.UserStatus.ToString()
+                    userStatus = item.UserStatus.ToString()              
                 });
             }
 
@@ -255,9 +253,9 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                         userBemerkung = item.Bearbeiter.FirstOrDefault().Bemerkung,
                         userEmail = item.Bearbeiter.FirstOrDefault().eMail,
                         userFestnetzNr = item.Bearbeiter.FirstOrDefault().Festnetz,
-                        userMobilNr = item.Bearbeiter.FirstOrDefault().Mobil,
+                        userMobilNr  = item.Bearbeiter.FirstOrDefault().Mobil,
                         userNachname = item.Bearbeiter.FirstOrDefault().Nachname,
-                        userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz.ToString()
+                        userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz
                     },
                     Status = item.Status.ToString(),
                     InventarNummer = item.Maschinen.FirstOrDefault().Inventarnummer,
@@ -286,38 +284,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     userFestnetzNr = item.Festnetz,
                     userMobilNr = item.Mobil,
                     userNachname = item.Nachname,
-                    userAnrede = item.Namenszusatz.ToString()
-                });
-            }
-
-            return returnlist;
-        }
-
-        public List<UserDto> GetUserDto(bool needlogin)
-        {
-
-            IQueryable<Mitarbeiter> items;
-
-            if (needlogin)
-                items = dbcontext.Mitarbeiter.Include(x => x.Login).Where(x => x.Login != null);
-            else
-                items = dbcontext.Mitarbeiter.Include(x => x.Login).Where(x => x.Login == null);
-
-            List<UserDto> returnlist = new List<UserDto>();
-
-            foreach (var item in items)
-            {
-                returnlist.Add(new UserDto()
-                {
-                    userID = item.MitarbeiterID,
-                    userVorname = item.Vorname,
-                    userActive = item.Active,
-                    userBemerkung = item.Bemerkung,
-                    userEmail = item.eMail,
-                    userFestnetzNr = item.Festnetz,
-                    userMobilNr = item.Mobil,
-                    userNachname = item.Nachname,
-                    userAnrede = item.Namenszusatz.ToString()
+                    userAnrede = item.Namenszusatz
                 });
             }
 
@@ -326,8 +293,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<WartungDto> GetWartungDto()
         {
-            var items = dbcontext.Wartungen.Include(x => x.Maschine).Include(x => x.Maschine.Arbeitsfolge).Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie).
-                Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung).Include(x => x.Maschine.Arbeitsfolge.Fertigungslinie.Fertigung.Abteilung);
+            var items = dbcontext.Wartungen;
             List<WartungDto> returnlist = new List<WartungDto>();
 
             foreach (var item in items)
@@ -349,7 +315,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<AuditDto> GetAuditDto()
         {
-            var items = dbcontext.Audits.Include(x => x.Abteilung);
+            var items = dbcontext.Audits;
             List<AuditDto> returnlist = new List<AuditDto>();
 
             foreach (var item in items)
@@ -360,11 +326,11 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     terminturnus = item.Turnus.ToString(),
                     auditart = item.AuditArt,
                     status = item.Status.ToString(),
-                    termin = item.Beginntermin.Value,
+                    termin = item.Endtermin.Value,
                     beurteilung = item.Bewertung,
                     abteilung = item.Abteilung.AbteilungID,
                     nacharbeiten = item.Aufgabe,
-
+                    
                 });
             }
 
@@ -425,98 +391,25 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 //remove Fertigung from Abteilung
                 case "Abteilung":
                     {
-                        values = dbcontext.Fertigungen.Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() { Key = x.FertigungID.ToString(), Value = x.Bezeichnung }).ToList();
+                        values = dbcontext.Fertigungen.Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() {Key = x.FertigungID.ToString(), Value =x.Bezeichnung}).ToList(); 
                     }
                     break;
                 //remove Fertigungslinie from Fertigung
                 case "Fertigung":
                     {
-                        values = dbcontext.Fertigungslinien.Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung }).ToList();
+                        values = dbcontext.Fertigungslinien.Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung}).ToList();
                     }
                     break;
                 //remove Arbeitsfolge from Fertigungslinie
                 case "Fertigungslinie":
-                    {
+                    { 
                         values = dbcontext.Arbeitsfolgen.Where(x => x.Fertigungslinie == null).Select(x => new KeyValueHelper() { Key = x.ArbeitsfolgeID.ToString(), Value = x.ArbeitsfolgeName }).ToList();
                     }
                     break;
                 default:
-                #region Enums
-                case "FertigungType":
-                    {
-                        foreach (var item in Enum.GetValues(typeof(Fertigungstype)))
-                        {
-                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
-                        }
-                    }
                     break;
-                case "MaschinenStatus":
-                    {
-                        foreach (var item in Enum.GetValues(typeof(MaschinenStatus)))
-                        {
-                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
-                        }
-                    }
-                    break;
-                case "Turnus":
-                    {
-                        foreach (var item in Enum.GetValues(typeof(Turnus)))
-                        {
-                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
-                        }
-                    }
-                    break;
-                case "StatusArt":
-                    {
-                        foreach (var item in Enum.GetValues(typeof(StatusArt)))
-                        {
-                            values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
-                        }
-                    }
-                    break;
-                #endregion
-                case "GetNoUseFertigung":
-                    {
-                        values = dbcontext.Fertigungen.Include(x => x.Abteilung).Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() { Key = x.FertigungID.ToString(), Value = x.Bezeichnung }).ToList();
-                    }
-                    break;
-                case "GetNoUseFertigungsLinie":
-                    {
-                        values = dbcontext.Fertigungslinien.Include(x => x.Fertigung).Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung }).ToList();
-                    }
-                    break;
-
             }
             return values;
-        }
-
-        public List<ArbeitsfolgeDto> GetArbeitsfolgeDto()
-        {
-            var items = dbcontext.Arbeitsfolgen.Include(x => x.Bauteile).Include(x => x.Maschinen).Include(x => x.Fertigungslinie.FertigungslinieID);
-            List<ArbeitsfolgeDto> returnlist = new List<ArbeitsfolgeDto>();
-
-            foreach (var item in items)
-            {
-                returnlist.Add(
-                    new ArbeitsfolgeDto()
-                    {
-                        arbeitplan = item.ArbeitsfolgeName,
-                        arbeitsfolgeID = item.ArbeitsfolgeID,
-                        Status = item.Status,
-                        Order = item.Order,
-                        bauteilID = item.Bauteile.FirstOrDefault().BauteilID,
-                        maschineID = item.Maschinen.FirstOrDefault().MaschineID,
-                        technologie = item.Maschinen.FirstOrDefault().Technologie.ToString(),
-                        fertigungslinieID = item.Fertigungslinie.FertigungslinieID,
-                        fertigunglinenname = item.Fertigungslinie.Bezeichnung,
-                        fertigungstyp = item.Fertigungslinie.Fertigungstype.ToString()
-                    });
-            
-            }
-
-
-            return returnlist;
-
         }
     }
 }

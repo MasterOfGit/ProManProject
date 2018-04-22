@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131688051044254069" remote="131688051040000000" Dst="2" />
 <file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="adminCRWartungBear.php" server="C:/xampp/htdocs/proman/" local="131688051254434380" remote="131688051250000000" Dst="2" />
@@ -16,29 +15,4 @@
 <file name="saveAuditJsonDatei-workPC.php" server="192.168.178.26" local="131688051201879298" remote="131688102600000000" Dst="2" />
 <file name="saveWartungJsonDatei-workPC.php" server="192.168.178.26" local="131688051137626435" remote="131688102600000000" Dst="2" />
 <file name="userCRSonderaufgaben-workPC.php" server="192.168.178.26" local="131688051044254069" remote="131688102600000000" Dst="2" />
-=======
-<<<<<<< HEAD
-<file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131688051044254069" remote="131688051040000000" Dst="2" />
-<file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131685563279448194" remote="131685563400000000" Dst="2" />
-<file name="adminCRWartungBear.php" server="C:/xampp/htdocs/proman/" local="131688051254434380" remote="131688051250000000" Dst="2" />
-<file name="adminCRAuditsBear.php" server="192.168.178.26" local="131685544048694113" remote="131685561600000000" Dst="2" />
-<file name="adminCRWartungBear.php" server="192.168.178.26" local="131685544228003938" remote="131685561600000000" Dst="2" />
-<file name="adminCRAuditsBear.php" server="C:/xampp/htdocs/proman/" local="131688051308720134" remote="131688051300000000" Dst="2" />
-<file name="saveAuditJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131688051201879298" remote="131688051200000000" Dst="2" />
-<file name="saveAuditJsonDatei.php" server="192.168.178.26" local="131683601782435757" remote="131683802400000000" Dst="2" />
-<file name="saveWartungJsonDatei.php" server="192.168.178.26" local="131683601464753977" remote="131683802400000000" Dst="2" />
-<file name="saveWartungJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131688051137626435" remote="131688051130000000" Dst="2" />
-=======
-<file name="userCRSonderaufgaben.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="userCRSonderaufgaben.php" server="192.168.178.26" local="131685544740686491" remote="131685561600000000" Dst="2" />
-<file name="adminCRWartungBear.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRAuditsBear.php" server="192.168.178.26" local="131685544048694113" remote="131685561600000000" Dst="2" />
-<file name="adminCRWartungBear.php" server="192.168.178.26" local="131685544228003938" remote="131685561600000000" Dst="2" />
-<file name="adminCRAuditsBear.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="saveAuditJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="saveAuditJsonDatei.php" server="192.168.178.26" local="131683601782435757" remote="131683802400000000" Dst="2" />
-<file name="saveWartungJsonDatei.php" server="192.168.178.26" local="131683601464753977" remote="131683802400000000" Dst="2" />
-<file name="saveWartungJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
->>>>>>> origin/master
->>>>>>> origin/master
 </dwsync>

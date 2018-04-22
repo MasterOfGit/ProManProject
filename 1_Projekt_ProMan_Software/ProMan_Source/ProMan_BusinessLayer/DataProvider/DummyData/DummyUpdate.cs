@@ -97,11 +97,6 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             throw new NotImplementedException();
         }
 
-        public bool UpdateArbeitsfolgeDto(ArbeitsfolgeDto data, int id)
-        {
-            throw new NotImplementedException();
-        }
-
 
 
         #endregion

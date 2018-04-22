@@ -97,11 +97,6 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             throw new NotImplementedException();
         }
-
-        public int SetArbeitsfolgeDto(ArbeitsfolgeDto data)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }

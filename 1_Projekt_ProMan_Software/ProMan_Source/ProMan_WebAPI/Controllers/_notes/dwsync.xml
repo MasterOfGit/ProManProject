@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<<<<<<< HEAD
 <file name="FertigungController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="FertigungslinieController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="LoginController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
@@ -8,16 +7,6 @@
 <file name="ReparaturController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="UserController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="WartungController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
-=======
-<<<<<<< HEAD
-<file name="FertigungController.cs" server="192.168.178.26" local="131685563278507554" remote="131685563400000000" Dst="2" />
-<file name="FertigungslinieController.cs" server="192.168.178.26" local="131685563278537577" remote="131685563400000000" Dst="2" />
-<file name="LoginController.cs" server="192.168.178.26" local="131685563278577604" remote="131685563400000000" Dst="2" />
-<file name="MaschineController.cs" server="192.168.178.26" local="131685563278597617" remote="131685563400000000" Dst="2" />
-<file name="ReparaturController.cs" server="192.168.178.26" local="131685563278687686" remote="131685563400000000" Dst="2" />
-<file name="UserController.cs" server="192.168.178.26" local="131685563278727695" remote="131685563400000000" Dst="2" />
-<file name="WartungController.cs" server="192.168.178.26" local="131685563278747711" remote="131685563400000000" Dst="2" />
->>>>>>> origin/master
 <file name="FertigungController.cs" server="C:/xampp/htdocs/proman/" local="131681762244588265" remote="131681762240000000" Dst="2" />
 <file name="FertigungslinieController.cs" server="C:/xampp/htdocs/proman/" local="131680914570218823" remote="131680914570000000" Dst="2" />
 <file name="LoginController.cs" server="C:/xampp/htdocs/proman/" local="131680914570258846" remote="131680914570000000" Dst="2" />
@@ -27,7 +16,6 @@
 <file name="WartungController.cs" server="C:/xampp/htdocs/proman/" local="131680914570398940" remote="131680914570000000" Dst="2" />
 <file name="AbteilungController.cs" server="C:/xampp/htdocs/proman/" local="131681762244428164" remote="131681762240000000" Dst="2" />
 <file name="WerkController.cs" server="C:/xampp/htdocs/proman/" local="131628380503175745" remote="131628344500000000" Dst="2" />
-<<<<<<< HEAD
 <file name="AbteilungController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="WerkController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="AdminPageController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
@@ -43,43 +31,6 @@
 <file name="MaschineVerwendungController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="ProduktionsplanController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="UserAnfrageController.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
-=======
-<file name="AbteilungController.cs" server="192.168.178.26" local="131685563278427512" remote="131685563400000000" Dst="2" />
-=======
-<file name="FertigungController.cs" server="192.168.178.26" local="131681762244588265" remote="131683802400000000" Dst="2" />
-<file name="FertigungslinieController.cs" server="192.168.178.26" local="131680914570218823" remote="131683802400000000" Dst="2" />
-<file name="LoginController.cs" server="192.168.178.26" local="131680914570258846" remote="131683802400000000" Dst="2" />
-<file name="MaschineController.cs" server="192.168.178.26" local="131680914570278863" remote="131683802400000000" Dst="2" />
-<file name="ReparaturController.cs" server="192.168.178.26" local="131680914570338900" remote="131683802400000000" Dst="2" />
-<file name="UserController.cs" server="192.168.178.26" local="131681762244768394" remote="131683802400000000" Dst="2" />
-<file name="WartungController.cs" server="192.168.178.26" local="131680914570398940" remote="131683802400000000" Dst="2" />
-<file name="FertigungController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="FertigungslinieController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="LoginController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="MaschineController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="ReparaturController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="UserController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="WartungController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="AbteilungController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="WerkController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="AbteilungController.cs" server="192.168.178.26" local="131681762244428164" remote="131683802400000000" Dst="2" />
->>>>>>> origin/master
-<file name="WerkController.cs" server="192.168.178.26" local="131628380503175745" remote="131683802400000000" Dst="2" />
-<file name="AdminPageController.cs" server="192.168.178.26" local="131681762244458187" remote="131683802400000000" Dst="2" />
-<file name="AdminPageController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="MFPageController.cs" server="192.168.178.26" local="131681762244638316" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="NachrichtController.cs" server="192.168.178.26" local="131685563278647647" remote="131685563400000000" Dst="2" />
-<file name="MFPageController.cs" server="C:/xampp/htdocs/proman/" local="131681762244638316" remote="131681762240000000" Dst="2" />
-<file name="NachrichtController.cs" server="C:/xampp/htdocs/proman/" local="131681762244688341" remote="131681762240000000" Dst="2" />
-<file name="AuditController.cs" server="192.168.178.26" local="131685563278447514" remote="131685563400000000" Dst="2" />
-<file name="BauteilController.cs" server="192.168.178.26" local="131685563278467533" remote="131685563400000000" Dst="2" />
-<file name="BauteilVerwendungController.cs" server="192.168.178.26" local="131685563278487549" remote="131685563400000000" Dst="2" />
-<file name="InstandhaltungsAuftragController.cs" server="192.168.178.26" local="131685563278557602" remote="131685563400000000" Dst="2" />
-<file name="MaschineVerwendungController.cs" server="192.168.178.26" local="131685563278617630" remote="131685563400000000" Dst="2" />
-<file name="ProduktionsplanController.cs" server="192.168.178.26" local="131685563278667676" remote="131685563400000000" Dst="2" />
-<file name="UserAnfrageController.cs" server="192.168.178.26" local="131685563278717712" remote="131685563400000000" Dst="2" />
->>>>>>> origin/master
 <file name="AuditController.cs" server="C:/xampp/htdocs/proman/" local="131681762244498208" remote="131681762240000000" Dst="2" />
 <file name="BauteilController.cs" server="C:/xampp/htdocs/proman/" local="131681762244528231" remote="131681762240000000" Dst="2" />
 <file name="BauteilVerwendungController.cs" server="C:/xampp/htdocs/proman/" local="131681762244558242" remote="131681762240000000" Dst="2" />
@@ -87,7 +38,6 @@
 <file name="MaschineVerwendungController.cs" server="C:/xampp/htdocs/proman/" local="131681762244658315" remote="131681762240000000" Dst="2" />
 <file name="ProduktionsplanController.cs" server="C:/xampp/htdocs/proman/" local="131681762244708348" remote="131681762240000000" Dst="2" />
 <file name="UserAnfrageController.cs" server="C:/xampp/htdocs/proman/" local="131681762244748384" remote="131681762240000000" Dst="2" />
-<<<<<<< HEAD
 <file name="AddGetDeleteObjectController.cs" server="192.168.178.26" local="131687363410000000" remote="131688102600000000" Dst="2" />
 <file name="AbteilungController-workPC.cs" server="192.168.178.26" local="131685563278427512" remote="131688102600000000" Dst="2" />
 <file name="AuditController-workPC.cs" server="192.168.178.26" local="131685563278447514" remote="131688102600000000" Dst="2" />
@@ -102,25 +52,4 @@
 <file name="UserAnfrageController-workPC.cs" server="192.168.178.26" local="131685563278717712" remote="131688102600000000" Dst="2" />
 <file name="UserController-workPC.cs" server="192.168.178.26" local="131685563278727695" remote="131688102600000000" Dst="2" />
 <file name="WartungController-workPC.cs" server="192.168.178.26" local="131685563278747711" remote="131688102600000000" Dst="2" />
-=======
-=======
-<file name="NachrichtController.cs" server="192.168.178.26" local="131681762244688341" remote="131683802400000000" Dst="2" />
-<file name="MFPageController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="NachrichtController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="AuditController.cs" server="192.168.178.26" local="131681762244498208" remote="131683802400000000" Dst="2" />
-<file name="BauteilController.cs" server="192.168.178.26" local="131681762244528231" remote="131683802400000000" Dst="2" />
-<file name="BauteilVerwendungController.cs" server="192.168.178.26" local="131681762244558242" remote="131683802400000000" Dst="2" />
-<file name="InstandhaltungsAuftragController.cs" server="192.168.178.26" local="131681762244608287" remote="131683802400000000" Dst="2" />
-<file name="MaschineVerwendungController.cs" server="192.168.178.26" local="131681762244658315" remote="131683802400000000" Dst="2" />
-<file name="ProduktionsplanController.cs" server="192.168.178.26" local="131681762244708348" remote="131683802400000000" Dst="2" />
-<file name="UserAnfrageController.cs" server="192.168.178.26" local="131681762244748384" remote="131683802400000000" Dst="2" />
-<file name="AuditController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="BauteilController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="BauteilVerwendungController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="InstandhaltungsAuftragController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="MaschineVerwendungController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="ProduktionsplanController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="UserAnfrageController.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
->>>>>>> origin/master
->>>>>>> origin/master
 </dwsync>

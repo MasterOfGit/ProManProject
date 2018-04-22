@@ -1,5 +1,4 @@
-﻿using ProMan_Database.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +12,6 @@ namespace ProMan_Database.Model
         public int FertigungslinieID { get; set; }
         [StringLength(100)]
         public string Bezeichnung { get; set; }
-        public Fertigungstype Fertigungstype { get; set; }
         public ICollection<Arbeitsfolge> Arbeitsfolgen { get; set; }
         public ICollection<Reparatur> Reparaturen { get; set; }
         public ICollection<Sonderaufgabe> Sonderaufgaben { get; set; }

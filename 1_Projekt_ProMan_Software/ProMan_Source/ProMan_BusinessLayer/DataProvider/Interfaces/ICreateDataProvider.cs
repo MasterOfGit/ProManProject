@@ -68,13 +68,6 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// <returns></returns>
         int SetLoginDto(LoginDto data);
 
-        /// <summary>
-        /// Creates a new Arbeitsfolge object in the datastructure
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-
-        int SetArbeitsfolgeDto(ArbeitsfolgeDto data);
         int SetAuditDto(AuditDto data);
         int SetBauteilVerwendungDto(BauteilVerwendungDto data);
         int SetInstandhaltungsAuftragDto(InstandhaltungsAuftragDto data);

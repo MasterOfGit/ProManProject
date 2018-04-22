@@ -66,14 +66,6 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// <returns></returns>
         LoginDto GetLoginDto(string username, string password);
 
-        /// <summary>
-        /// Returns a list of  single Arbeitsfolgeobject
-        /// </summary>
-        /// <returns></returns>
-        ArbeitsfolgeDto GetArbeitsfolgeDto(int id);
-
-        bool ExecuteLoginDto(string username, string password);
-
         AuditDto GetAuditDto(int id);
 
         BauteilVerwendungDto GetBauteilVerwendungDto(int id);

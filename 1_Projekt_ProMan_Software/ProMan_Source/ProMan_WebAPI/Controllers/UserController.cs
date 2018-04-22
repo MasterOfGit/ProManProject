@@ -20,12 +20,6 @@ namespace ProMan_WebAPI.Controllers
             return dataprovider.GetListDataProvider.GetUserDto();
         }
 
-        // GET: api/<controller>
-        public IEnumerable<UserDto> Get(bool needlogin)
-        {
-            return dataprovider.GetListDataProvider.GetUserDto(needlogin);
-        }
-
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {

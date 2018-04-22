@@ -6,7 +6,7 @@ namespace ProMan_BusinessLayer.Models
     {
         public int userID { get; set; }
         public bool userActive { get; set; }
-        public string userAnrede { get; set; }
+        public Anrede userAnrede { get; set; }
         public string userVorname { get; set; }
         public string userNachname { get; set; }
         public string userFestnetzNr { get; set; }

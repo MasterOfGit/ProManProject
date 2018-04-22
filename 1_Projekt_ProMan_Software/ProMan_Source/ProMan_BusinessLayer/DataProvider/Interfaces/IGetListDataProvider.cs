@@ -37,10 +37,6 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// </summary>
         List<UserDto> GetUserDto();
         /// <summary>
-        /// Returns a list of all Userobjects
-        /// </summary>
-        List<UserDto> GetUserDto(bool needlogin);
-        /// <summary>
         /// Returns a list of all Wartungsobjects
         /// </summary>
         List<WartungDto> GetWartungDto();
@@ -52,11 +48,6 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         /// Returns a list of all Loginobjects
         /// </summary>
         List<LoginDto> GetLoginDto();
-
-        /// <summary>
-        /// Returns a list of all Loginobjects
-        /// </summary>
-        List<ArbeitsfolgeDto> GetArbeitsfolgeDto();
         /// <summary>
         /// Returns a list of all Nachrichtenobjects
         /// </summary>
@@ -81,7 +72,5 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         List<UserAnfrageDto> GetUserAnfrageDto();
 
         List<KeyValueHelper> GetTypeObjects(string type);
-        
-
     }
 }

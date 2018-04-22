@@ -10,6 +10,7 @@ namespace ProMan_BusinessLayer.Models
         public int fertigungsID { get; set; }
         public string fertigungsname { get; set; }
         public string abteilungName { get; set; }
+        public string fertigungstyp { get; set; }
         public List<FertigungslinieDto> fertigungslinien;
         public int FertigungslinienAnzahl
         {

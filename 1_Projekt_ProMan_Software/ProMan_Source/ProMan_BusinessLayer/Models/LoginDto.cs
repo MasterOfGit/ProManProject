@@ -13,7 +13,7 @@ namespace ProMan_BusinessLayer.Models
         public string userStatus { get; set;}
         public string userbereich { get; set; }
         public string userKennung { get; set; }
-        public string userpasswort { get; set; } = "*****";
+        public string userpasswort { get; set; }
        
     }
 }

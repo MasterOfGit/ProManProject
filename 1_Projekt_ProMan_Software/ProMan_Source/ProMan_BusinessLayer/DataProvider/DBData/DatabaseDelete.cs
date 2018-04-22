@@ -366,29 +366,5 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 break;
             }
         }
-
-        public bool DeleteArbeitsfolgeDto(int id)
-        {
-            var item = dbcontext.Arbeitsfolgen.FirstOrDefault(x => x.ArbeitsfolgeID == id);
-            if (item == null)
-            {
-                return false;
-            }
-
-
-            //try to remove it. If it is locked, an exception will be thrown
-            try
-            {
-                dbcontext.Arbeitsfolgen.Remove(item);
-                dbcontext.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-
-            return true;
-        }
     }
 }

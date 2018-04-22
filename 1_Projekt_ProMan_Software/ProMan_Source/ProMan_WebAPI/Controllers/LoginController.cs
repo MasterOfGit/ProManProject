@@ -28,7 +28,7 @@ namespace ProMan_WebAPI.Controllers
         // GET api/<controller>/?username=&password=
         public IHttpActionResult Get(string username, string password)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.ExecuteLoginDto(username,password)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetLoginDto(username,password)));
         }
 
         // POST api/<controller>
