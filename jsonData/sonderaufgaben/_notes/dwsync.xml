@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="audits.json" server="C:/xampp/htdocs/proman/" local="131688937891471114" remote="131688937890000000" Dst="2" />
-<file name="wartungen.json" server="C:/xampp/htdocs/proman/" local="131688937891471114" remote="131688937890000000" Dst="2" />
-<file name="audits.json" server="192.168.178.26" local="131679342010000000" remote="131683802400000000" Dst="2" />
-<file name="wartungen.json" server="192.168.178.26" local="131679332977461364" remote="131683802400000000" Dst="2" />
+<file name="audits.json" server="C:/xampp/htdocs/proman/" local="131688977120544281" remote="131688977120000000" Dst="2" />
+<file name="wartungen.json" server="C:/xampp/htdocs/proman/" local="131688977120564294" remote="131688977120000000" Dst="2" />
+<file name="audits.json" server="192.168.178.26" local="131688977120544281" remote="131688979800000000" Dst="2" />
+<file name="wartungen.json" server="192.168.178.26" local="131688977120564294" remote="131688979800000000" Dst="2" />
+<file name="auditstest.json" server="C:/xampp/htdocs/proman/" local="131688977120554284" remote="131688977120000000" Dst="2" />
+<file name="wartungentest.json" server="C:/xampp/htdocs/proman/" local="131688977120574301" remote="131688977120000000" Dst="2" />
+<file name="auditstest.json" server="192.168.178.26" local="131688977120554284" remote="131688979800000000" Dst="2" />
+<file name="wartungentest.json" server="192.168.178.26" local="131688977120574301" remote="131688979800000000" Dst="2" />
 </dwsync>

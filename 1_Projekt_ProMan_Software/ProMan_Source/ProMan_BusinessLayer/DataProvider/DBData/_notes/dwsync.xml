@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="DatabaseCreateData.cs" server="192.168.178.26" local="131685563278317427" remote="131685563400000000" Dst="2" />
-<file name="DatabaseDataProvider.cs" server="192.168.178.26" local="131676897292261330" remote="131683802400000000" Dst="2" />
-<file name="DatabaseDelete.cs" server="192.168.178.26" local="131680914569578399" remote="131683802400000000" Dst="2" />
-<file name="DatabaseGetList.cs" server="192.168.178.26" local="131681762244338104" remote="131683802400000000" Dst="2" />
-<file name="DatabaseGetSingle.cs" server="192.168.178.26" local="131680914569628429" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="DatabaseUpdate.cs" server="192.168.178.26" local="131685563278337449" remote="131685563400000000" Dst="2" />
-<file name="DatabaseCreateData.cs" server="C:/xampp/htdocs/proman/" local="131681762244318088" remote="131681762240000000" Dst="2" />
-<file name="DatabaseDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131676897292261330" remote="131676897290000000" Dst="2" />
-<file name="DatabaseDelete.cs" server="C:/xampp/htdocs/proman/" local="131680914569578399" remote="131680914560000000" Dst="2" />
-<file name="DatabaseGetList.cs" server="C:/xampp/htdocs/proman/" local="131681762244338104" remote="131681762240000000" Dst="2" />
-<file name="DatabaseGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131680914569628429" remote="131680914560000000" Dst="2" />
-<file name="DatabaseUpdate.cs" server="C:/xampp/htdocs/proman/" local="131681762244368115" remote="131681762240000000" Dst="2" />
-=======
-<file name="DatabaseUpdate.cs" server="192.168.178.26" local="131681762244368115" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="DatabaseCreateData.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DatabaseDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DatabaseDelete.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DatabaseGetList.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DatabaseGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DatabaseUpdate.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
->>>>>>> origin/master
-=======
-<file name="DatabaseCreateData.cs" server="C:/xampp/htdocs/proman/" local="131688937888349026" remote="131688937880000000" Dst="2" />
-<file name="DatabaseDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131688937888359036" remote="131688937880000000" Dst="2" />
-<file name="DatabaseDelete.cs" server="C:/xampp/htdocs/proman/" local="131688937888369052" remote="131688937880000000" Dst="2" />
-<file name="DatabaseGetList.cs" server="C:/xampp/htdocs/proman/" local="131688937888379046" remote="131688937880000000" Dst="2" />
-<file name="DatabaseGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131688937888389050" remote="131688937880000000" Dst="2" />
-<file name="DatabaseUpdate.cs" server="C:/xampp/htdocs/proman/" local="131688937888399060" remote="131688937880000000" Dst="2" />
->>>>>>> bd0714b7c6e1179fd876c5fd07ddc93702ea23aa
+<file name="DatabaseCreateData.cs" server="192.168.178.26" local="131688977115310796" remote="131688979800000000" Dst="2" />
+<file name="DatabaseDataProvider.cs" server="192.168.178.26" local="131688977115320794" remote="131688979800000000" Dst="2" />
+<file name="DatabaseDelete.cs" server="192.168.178.26" local="131688977115330800" remote="131688979800000000" Dst="2" />
+<file name="DatabaseGetList.cs" server="192.168.178.26" local="131688977115340816" remote="131688979800000000" Dst="2" />
+<file name="DatabaseGetSingle.cs" server="192.168.178.26" local="131688977115350823" remote="131688979800000000" Dst="2" />
+<file name="DatabaseUpdate.cs" server="192.168.178.26" local="131688977115360823" remote="131688979800000000" Dst="2" />
+<file name="DatabaseCreateData.cs" server="C:/xampp/htdocs/proman/" local="131688977115310796" remote="131688977110000000" Dst="2" />
+<file name="DatabaseDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131688977115320794" remote="131688977110000000" Dst="2" />
+<file name="DatabaseDelete.cs" server="C:/xampp/htdocs/proman/" local="131688977115330800" remote="131688977110000000" Dst="2" />
+<file name="DatabaseGetList.cs" server="C:/xampp/htdocs/proman/" local="131688977115340816" remote="131688977110000000" Dst="2" />
+<file name="DatabaseGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131688977115350823" remote="131688977110000000" Dst="2" />
+<file name="DatabaseUpdate.cs" server="C:/xampp/htdocs/proman/" local="131688977115360823" remote="131688977110000000" Dst="2" />
 </dwsync>

@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Publish.pubxml" server="192.168.178.26" local="131624030350155428" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="Publish.pubxml.user" server="192.168.178.26" local="131685563278777752" remote="131685563400000000" Dst="2" />
-<file name="Publish.pubxml" server="C:/xampp/htdocs/proman/" local="131624030350155428" remote="131623994350000000" Dst="2" />
-<file name="Publish.pubxml.user" server="C:/xampp/htdocs/proman/" local="131683775676695600" remote="131683775670000000" Dst="2" />
-=======
-<file name="Publish.pubxml.user" server="192.168.178.26" local="131683775676695600" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="Publish.pubxml" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="Publish.pubxml.user" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
->>>>>>> origin/master
-=======
-<file name="Publish.pubxml" server="C:/xampp/htdocs/proman/" local="131688937890200271" remote="131688937890000000" Dst="2" />
-<file name="Publish.pubxml.user" server="C:/xampp/htdocs/proman/" local="131688937890210272" remote="131688937890000000" Dst="2" />
->>>>>>> bd0714b7c6e1179fd876c5fd07ddc93702ea23aa
+<file name="Publish.pubxml" server="192.168.178.26" local="131688977118803127" remote="131688979800000000" Dst="2" />
+<file name="Publish.pubxml.user" server="192.168.178.26" local="131688977118813131" remote="131688979800000000" Dst="2" />
+<file name="Publish.pubxml" server="C:/xampp/htdocs/proman/" local="131688977118803127" remote="131688977110000000" Dst="2" />
+<file name="Publish.pubxml.user" server="C:/xampp/htdocs/proman/" local="131688977118813131" remote="131688977110000000" Dst="2" />
 </dwsync>

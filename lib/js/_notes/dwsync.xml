@@ -3,27 +3,18 @@
 <file name="jquery-1.11.3.min.js" server="C:/xampp/htdocs/proman" local="131509978280000000" remote="131510014280000000" Dst="1" />
 <file name="bootstrap.js" server="C:/xampp/htdocs/proman" local="131509978280000000" remote="131510014280000000" Dst="1" />
 <file name="helpers.js" server="C:/xampp/htdocs/proman" local="131623002350751709" remote="131623002350000000" Dst="1" />
-<file name="bootstrap.js" server="C:/xampp/htdocs/proman/" local="131616249925863721" remote="131616213920000000" Dst="2" />
-<file name="helpers.js" server="C:/xampp/htdocs/proman/" local="131688065245444151" remote="131688065240000000" Dst="2" />
-<file name="jquery-1.11.3.min.js" server="C:/xampp/htdocs/proman/" local="131616249921343068" remote="131616213920000000" Dst="2" />
-<file name="popper.js" server="C:/xampp/htdocs/proman/" local="131688937891651234" remote="131688937890000000" Dst="2" />
-<file name="jquery-1.11.3.min.js" server="192.168.178.26" local="131624030350745809" remote="131683802400000000" Dst="2" />
-<file name="bootstrap.js" server="192.168.178.26" local="131624030350725799" remote="131683802400000000" Dst="2" />
-<file name="helpers.js" server="192.168.178.26" local="131647478638398115" remote="131683802400000000" Dst="2" />
-<file name="popper.js" server="192.168.178.26" local="131625739088776119" remote="131683802400000000" Dst="2" />
-<file name="connectDB.js" server="C:/xampp/htdocs/proman/" local="131688065245384470" remote="131688065240000000" Dst="2" />
-<file name="connectDB.js" server="192.168.178.26" local="131679344188891288" remote="131683802400000000" Dst="2" />
-<<<<<<< HEAD
-<file name="dbbuttonaction.js" server="192.168.178.26" local="131685563278807760" remote="131685563400000000" Dst="2" />
-<file name="dbbuttonaction.js" server="C:/xampp/htdocs/proman/" local="131683882580554481" remote="131683882580000000" Dst="2" />
-=======
-<file name="dbbuttonaction.js" server="192.168.178.26" local="131683882580554481" remote="131683882200000000" Dst="2" />
-<<<<<<< HEAD
-<file name="dbbuttonaction.js" server="C:/xampp/htdocs/proman/" local="131686367369441545" remote="131686367360000000" Dst="2" />
->>>>>>> origin/master
-=======
-<file name="dbbuttonaction.js" server="C:/xampp/htdocs/proman/" local="131688818925726005" remote="131688818920000000" Dst="2" />
->>>>>>> bd0714b7c6e1179fd876c5fd07ddc93702ea23aa
-<file name="dbbuttonaction - Kopie.js" server="192.168.178.26" local="131682849997501807" remote="131683802400000000" Dst="2" />
-<file name="dbbuttonaction - Kopie.js" server="C:/xampp/htdocs/proman/" local="131688937891611207" remote="131688937890000000" Dst="2" />
+<file name="bootstrap.js" server="C:/xampp/htdocs/proman/" local="131688977120684377" remote="131688977120000000" Dst="2" />
+<file name="helpers.js" server="C:/xampp/htdocs/proman/" local="131688977120734408" remote="131688977120000000" Dst="2" />
+<file name="jquery-1.11.3.min.js" server="C:/xampp/htdocs/proman/" local="131688977120754424" remote="131688977120000000" Dst="2" />
+<file name="popper.js" server="C:/xampp/htdocs/proman/" local="131688977120774443" remote="131688977120000000" Dst="2" />
+<file name="jquery-1.11.3.min.js" server="192.168.178.26" local="131688977120754424" remote="131688979800000000" Dst="2" />
+<file name="bootstrap.js" server="192.168.178.26" local="131688977120684377" remote="131688979800000000" Dst="2" />
+<file name="helpers.js" server="192.168.178.26" local="131688977120734408" remote="131688979800000000" Dst="2" />
+<file name="popper.js" server="192.168.178.26" local="131688977120774443" remote="131688979800000000" Dst="2" />
+<file name="connectDB.js" server="C:/xampp/htdocs/proman/" local="131688977120704385" remote="131688977120000000" Dst="2" />
+<file name="connectDB.js" server="192.168.178.26" local="131688977120704385" remote="131688979800000000" Dst="2" />
+<file name="dbbuttonaction.js" server="192.168.178.26" local="131688981245874376" remote="131688981600000000" Dst="2" />
+<file name="dbbuttonaction.js" server="C:/xampp/htdocs/proman/" local="131688977120734408" remote="131688977120000000" Dst="2" />
+<file name="dbbuttonaction - Kopie.js" server="192.168.178.26" local="131688977120714391" remote="131688979800000000" Dst="2" />
+<file name="dbbuttonaction - Kopie.js" server="C:/xampp/htdocs/proman/" local="131688977120714391" remote="131688977120000000" Dst="2" />
 </dwsync>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="HttpHelper.cs" server="C:/xampp/htdocs/proman/" local="131688937889449773" remote="131688937880000000" Dst="2" />
-<file name="ObjectDtos.cs" server="C:/xampp/htdocs/proman/" local="131688937889459789" remote="131688937880000000" Dst="2" />
-<file name="SerializeHelper.cs" server="C:/xampp/htdocs/proman/" local="131688937889469781" remote="131688937880000000" Dst="2" />
-<file name="WindowService.cs" server="C:/xampp/htdocs/proman/" local="131688937889489797" remote="131688937880000000" Dst="2" />
-<file name="SetValuesHelper.cs" server="C:/xampp/htdocs/proman/" local="131688937889479796" remote="131688937880000000" Dst="2" />
-<file name="HttpHelper.cs" server="192.168.178.26" local="131628380502845545" remote="131683802400000000" Dst="2" />
-<file name="ObjectDtos.cs" server="192.168.178.26" local="131683775676595536" remote="131683802400000000" Dst="2" />
-<file name="SerializeHelper.cs" server="192.168.178.26" local="131624030349374904" remote="131683802400000000" Dst="2" />
-<file name="SetValuesHelper.cs" server="192.168.178.26" local="131628380502865537" remote="131683802400000000" Dst="2" />
-<file name="WindowService.cs" server="192.168.178.26" local="131628380502885547" remote="131683802400000000" Dst="2" />
+<file name="HttpHelper.cs" server="C:/xampp/htdocs/proman/" local="131688977117662357" remote="131688977110000000" Dst="2" />
+<file name="ObjectDtos.cs" server="C:/xampp/htdocs/proman/" local="131688977117672366" remote="131688977110000000" Dst="2" />
+<file name="SerializeHelper.cs" server="C:/xampp/htdocs/proman/" local="131688977117682373" remote="131688977110000000" Dst="2" />
+<file name="WindowService.cs" server="C:/xampp/htdocs/proman/" local="131688977117702386" remote="131688977110000000" Dst="2" />
+<file name="SetValuesHelper.cs" server="C:/xampp/htdocs/proman/" local="131688977117692374" remote="131688977110000000" Dst="2" />
+<file name="HttpHelper.cs" server="192.168.178.26" local="131688977117662357" remote="131688979800000000" Dst="2" />
+<file name="ObjectDtos.cs" server="192.168.178.26" local="131688977117672366" remote="131688979800000000" Dst="2" />
+<file name="SerializeHelper.cs" server="192.168.178.26" local="131688977117682373" remote="131688979800000000" Dst="2" />
+<file name="SetValuesHelper.cs" server="192.168.178.26" local="131688977117692374" remote="131688979800000000" Dst="2" />
+<file name="WindowService.cs" server="192.168.178.26" local="131688977117702386" remote="131688979800000000" Dst="2" />
 </dwsync>

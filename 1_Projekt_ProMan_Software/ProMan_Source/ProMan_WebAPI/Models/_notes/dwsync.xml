@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="FertigungDto.cs" server="192.168.178.26" local="131624030350035342" remote="131683802400000000" Dst="2" />
-<file name="FertigungslinieDto.cs" server="192.168.178.26" local="131624030350045351" remote="131683802400000000" Dst="2" />
-<file name="MaschineDto.cs" server="192.168.178.26" local="131624030350055358" remote="131683802400000000" Dst="2" />
-<file name="ReparaturDto.cs" server="192.168.178.26" local="131624030350065368" remote="131683802400000000" Dst="2" />
-<file name="UserDto.cs" server="192.168.178.26" local="131624030350075368" remote="131683802400000000" Dst="2" />
-<file name="WartungDto.cs" server="192.168.178.26" local="131624030350085375" remote="131683802400000000" Dst="2" />
-<file name="FertigungDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890110208" remote="131688937890000000" Dst="2" />
-<file name="FertigungslinieDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890120221" remote="131688937890000000" Dst="2" />
-<file name="MaschineDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890130218" remote="131688937890000000" Dst="2" />
-<file name="ReparaturDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890140222" remote="131688937890000000" Dst="2" />
-<file name="UserDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890140222" remote="131688937890000000" Dst="2" />
-<file name="WartungDto.cs" server="C:/xampp/htdocs/proman/" local="131688937890150232" remote="131688937890000000" Dst="2" />
+<file name="FertigungDto.cs" server="192.168.178.26" local="131688977118653018" remote="131688979800000000" Dst="2" />
+<file name="FertigungslinieDto.cs" server="192.168.178.26" local="131688977118663022" remote="131688979800000000" Dst="2" />
+<file name="MaschineDto.cs" server="192.168.178.26" local="131688977118673034" remote="131688979800000000" Dst="2" />
+<file name="ReparaturDto.cs" server="192.168.178.26" local="131688977118673034" remote="131688979800000000" Dst="2" />
+<file name="UserDto.cs" server="192.168.178.26" local="131688977118683035" remote="131688979800000000" Dst="2" />
+<file name="WartungDto.cs" server="192.168.178.26" local="131688977118693045" remote="131688979800000000" Dst="2" />
+<file name="FertigungDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118653018" remote="131688977110000000" Dst="2" />
+<file name="FertigungslinieDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118663022" remote="131688977110000000" Dst="2" />
+<file name="MaschineDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118673034" remote="131688977110000000" Dst="2" />
+<file name="ReparaturDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118673034" remote="131688977110000000" Dst="2" />
+<file name="UserDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118683035" remote="131688977110000000" Dst="2" />
+<file name="WartungDto.cs" server="C:/xampp/htdocs/proman/" local="131688977118693045" remote="131688977110000000" Dst="2" />
 </dwsync>
