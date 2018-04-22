@@ -15,8 +15,8 @@ $ch2 = curl_init();
 $ch3 = curl_init();
 
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=true");
-curl_setopt($ch1, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=true");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=true");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=true");
 
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
@@ -25,8 +25,8 @@ $userDatawithLogin=curl_exec($ch1);
 curl_close($ch1);
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userLogin.json");
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=false");
-curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=false");
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=false");
+//curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=false");
 
 
 curl_setopt($ch2, CURLOPT_HEADER, 0);
@@ -35,8 +35,8 @@ $userDatawithoutLogin=curl_exec($ch2);
 curl_close($ch2);
 
 //curl_setopt($ch3, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userAnfragen.json");
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/useranfrage");
-curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/useranfrage");
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/useranfrage");
+//curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/useranfrage");
 curl_setopt($ch3, CURLOPT_HEADER, 0);
 curl_setopt($ch3,CURLOPT_RETURNTRANSFER,true);
 $userAnfragen=curl_exec($ch3);
