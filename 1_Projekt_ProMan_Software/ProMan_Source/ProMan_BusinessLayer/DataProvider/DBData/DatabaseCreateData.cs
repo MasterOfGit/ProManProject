@@ -5,6 +5,8 @@ using ProMan_Database.Enums;
 using System;
 using System.Linq;
 using System.Data.Entity;
+using ProMan_Database.Model;
+using System.Collections.ObjectModel;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -314,6 +316,30 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 default:
                     break;
             }
+        }
+
+        public int SetArbeitsfolgeDto(ArbeitsfolgeDto data)
+        {
+            var bauteil = dbcontext.Bauteile.FirstOrDefault(x => x.BauteilID == data.bauteilID);
+            var maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.maschineID);
+            var fertigungslinie = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).FirstOrDefault(x => x.FertigungslinieID == data.fertigungslinieID);
+
+            var item = dbcontext.Arbeitsfolgen.Add(new ProMan_Database.Model.Arbeitsfolge()
+            {
+                ArbeitsfolgeName = data.arbeitplan,
+                Fertigungslinie = fertigungslinie,
+                Order = data.Order,
+                Arbeitsplaene = data.Arbeitsplaene
+            });
+
+            item.Maschinen = new Collection<Maschine>() { maschine }; 
+            item.Bauteile = new Collection<Bauteil>() { bauteil };
+
+            fertigungslinie.Arbeitsfolgen.Add(item);
+
+            dbcontext.SaveChanges();
+
+            return 1;
         }
 
         #endregion

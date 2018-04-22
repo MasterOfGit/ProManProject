@@ -72,7 +72,7 @@ HOME1_HEADER;
 							
 							foreach($fertigungslinie['arbeitsfolgen'] as $arbeitsfolge) 
 								{ 	echo("<td>{$fertigungslinie['fertigungslinieID']}</td>");
-								 	echo("<td>{$fertigungslinie['fertigunglinenname']}</td>");
+								 	echo("<td>{$fertigungslinie['fertigungslinienname']}</td>");
 									echo("<td>{$arbeitsfolge['arbeitsfolgeID']}</td>"); 
 									echo("<td>{$arbeitsfolge['maschineID']}</td>");
 									echo("<td>{$arbeitsfolge['technologie']}</td>");
@@ -84,7 +84,7 @@ HOME1_HEADER;
 										echo("<td><input class='btn btn-primary' type='button' value='verschieben'  onclick='moveArbeitsfolgeFertigungslinien({$fertigungslinie['fertigungslinieID']}, {$arbeitsfolge['arbeitsfolgeID']});'></td>");
 								echo("</tr>");
 								};
-						 echo("<td><input class='btn btn-primary' type='button' value='neue Arbeitsfolge zu {$fertigungslinie['fertigunglinenname']} hinzufügen'  onclick='editNewArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
+						 echo("<td><input class='btn btn-primary' type='button' value='neue Arbeitsfolge zu {$fertigungslinie['fertigungslinienname']} hinzufügen'  onclick='editNewArbeitsfolgeInFertigunglinie({$fertigungslinie['fertigungslinieID']});'></td>");
 						 
 						};
 

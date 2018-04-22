@@ -82,8 +82,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                         fertigungstyp = x.Fertigungstype.ToString(),
                         arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                         {
-                            ID = y.ArbeitsfolgeID,
-                            ArbeitsfolgeName = y.ArbeitsfolgeName,
+                            arbeitsfolgeID = y.ArbeitsfolgeID,
+                            arbeitplan = y.ArbeitsfolgeName,
                         }).ToList()
                     }).ToList()
                 });
@@ -94,7 +94,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<FertigungslinieDto> GetFertigungslinieDto()
         {
-            var items = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).Include(x => x.Arbeitsfolgen.Select(y => y.Maschinen)); ;
+            var items = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).Include(x => x.Arbeitsfolgen.Select(y => y.Maschinen)).Include(x => x.Arbeitsfolgen.Select(y => y.Bauteile));
             List<FertigungslinieDto> returnlist = new List<FertigungslinieDto>();
 
             foreach (var item in items)
@@ -107,13 +107,13 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     fertigungstyp = item.Fertigungstype.ToString(),
                     arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
-                        ID = y.ArbeitsfolgeID,
-                        ArbeitsfolgeName = y.ArbeitsfolgeName,
-                        Maschinen = new List<MaschineDto>() { new MaschineDto()
-                        {
-                            maschinenID = y.Maschinen.FirstOrDefault().MaschineID,
-                            maschinenInventarNummer = y.Maschinen.FirstOrDefault().Inventarnummer,
-                        } }
+                        arbeitsfolgeID = y.ArbeitsfolgeID,
+                        arbeitplan = y.ArbeitsfolgeName,
+                        maschineID = y.Maschinen.FirstOrDefault().MaschineID,
+                        technologie = y.Maschinen.FirstOrDefault().Technologie.ToString(),
+                        bauteilID = y.Bauteile.FirstOrDefault().BauteilID,
+                        
+
                     }).ToList()
                 });
             }
@@ -136,7 +136,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     userbereich = item.LoginType.ToString(),
                     userLastLogin = item.LastLogin.Value,
                     userID = item.LoginID,
-                    userStatus = item.UserStatus.ToString()              
+                    userStatus = item.UserStatus.ToString()
                 });
             }
 
@@ -255,7 +255,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                         userBemerkung = item.Bearbeiter.FirstOrDefault().Bemerkung,
                         userEmail = item.Bearbeiter.FirstOrDefault().eMail,
                         userFestnetzNr = item.Bearbeiter.FirstOrDefault().Festnetz,
-                        userMobilNr  = item.Bearbeiter.FirstOrDefault().Mobil,
+                        userMobilNr = item.Bearbeiter.FirstOrDefault().Mobil,
                         userNachname = item.Bearbeiter.FirstOrDefault().Nachname,
                         userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz.ToString()
                     },
@@ -295,7 +295,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public List<UserDto> GetUserDto(bool needlogin)
         {
-            
+
             IQueryable<Mitarbeiter> items;
 
             if (needlogin)
@@ -364,7 +364,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     beurteilung = item.Bewertung,
                     abteilung = item.Abteilung.AbteilungID,
                     nacharbeiten = item.Aufgabe,
-                    
+
                 });
             }
 
@@ -425,18 +425,18 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 //remove Fertigung from Abteilung
                 case "Abteilung":
                     {
-                        values = dbcontext.Fertigungen.Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() {Key = x.FertigungID.ToString(), Value =x.Bezeichnung}).ToList(); 
+                        values = dbcontext.Fertigungen.Where(x => x.Abteilung == null).Select(x => new KeyValueHelper() { Key = x.FertigungID.ToString(), Value = x.Bezeichnung }).ToList();
                     }
                     break;
                 //remove Fertigungslinie from Fertigung
                 case "Fertigung":
                     {
-                        values = dbcontext.Fertigungslinien.Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung}).ToList();
+                        values = dbcontext.Fertigungslinien.Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung }).ToList();
                     }
                     break;
                 //remove Arbeitsfolge from Fertigungslinie
                 case "Fertigungslinie":
-                    { 
+                    {
                         values = dbcontext.Arbeitsfolgen.Where(x => x.Fertigungslinie == null).Select(x => new KeyValueHelper() { Key = x.ArbeitsfolgeID.ToString(), Value = x.ArbeitsfolgeName }).ToList();
                     }
                     break;
@@ -444,7 +444,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 #region Enums
                 case "FertigungType":
                     {
-                        foreach(var item in Enum.GetValues(typeof(Fertigungstype)))
+                        foreach (var item in Enum.GetValues(typeof(Fertigungstype)))
                         {
                             values.Add(new KeyValueHelper() { Key = item.ToString(), Value = item.ToString() });
                         }
@@ -485,11 +485,38 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                         values = dbcontext.Fertigungslinien.Include(x => x.Fertigung).Where(x => x.Fertigung == null).Select(x => new KeyValueHelper() { Key = x.FertigungslinieID.ToString(), Value = x.Bezeichnung }).ToList();
                     }
                     break;
-                    
+
             }
             return values;
         }
 
+        public List<ArbeitsfolgeDto> GetArbeitsfolgeDto()
+        {
+            var items = dbcontext.Arbeitsfolgen.Include(x => x.Bauteile).Include(x => x.Maschinen).Include(x => x.Fertigungslinie.FertigungslinieID);
+            List<ArbeitsfolgeDto> returnlist = new List<ArbeitsfolgeDto>();
 
+            foreach (var item in items)
+            {
+                returnlist.Add(
+                    new ArbeitsfolgeDto()
+                    {
+                        arbeitplan = item.ArbeitsfolgeName,
+                        arbeitsfolgeID = item.ArbeitsfolgeID,
+                        Status = item.Status,
+                        Order = item.Order,
+                        bauteilID = item.Bauteile.FirstOrDefault().BauteilID,
+                        maschineID = item.Maschinen.FirstOrDefault().MaschineID,
+                        technologie = item.Maschinen.FirstOrDefault().Technologie.ToString(),
+                        fertigungslinieID = item.Fertigungslinie.FertigungslinieID,
+                        fertigunglinenname = item.Fertigungslinie.Bezeichnung,
+                        fertigungstyp = item.Fertigungslinie.Fertigungstype.ToString()
+                    });
+            
+            }
+
+
+            return returnlist;
+
+        }
     }
 }

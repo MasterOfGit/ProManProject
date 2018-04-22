@@ -382,15 +382,15 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     {
                         new ArbeitsfolgeDto()
                         {
-                            ID = 1,
-                            ArbeitsfolgeName = "ABF_1",
+                            arbeitsfolgeID = 1,
+                            arbeitplan = "ABF_1",
                             Arbeitsplaene = "PL_1",
                             Status = ProMan_Database.Enums.StatusArt.Aufbau
                         },
                         new ArbeitsfolgeDto()
                         {
-                            ID = 2,
-                            ArbeitsfolgeName = "ABF_2",
+                            arbeitsfolgeID = 2,
+                            arbeitplan = "ABF_2",
                             Arbeitsplaene = "PL_2",
                             Status = ProMan_Database.Enums.StatusArt.Aufbau
                         }
@@ -404,15 +404,15 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
                     {
                         new ArbeitsfolgeDto()
                         {
-                            ID = 3,
-                            ArbeitsfolgeName = "ABF_3",
+                            arbeitsfolgeID = 3,
+                            arbeitplan = "ABF_3",
                             Arbeitsplaene = "PL_3",
                             Status = ProMan_Database.Enums.StatusArt.AusserBetrieb
                         },
                         new ArbeitsfolgeDto()
                         {
-                            ID = 4,
-                            ArbeitsfolgeName = "ABF_3",
+                            arbeitsfolgeID = 4,
+                            arbeitplan = "ABF_3",
                             Arbeitsplaene = "PL_3",
                             Status = ProMan_Database.Enums.StatusArt.AusserBetrieb
                         }
@@ -847,6 +847,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         }
 
         public bool ExecuteLoginDto(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ArbeitsfolgeDto GetArbeitsfolgeDto(int id)
         {
             throw new NotImplementedException();
         }

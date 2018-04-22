@@ -10,6 +10,11 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
             return false;
         }
 
+        public bool DeleteArbeitsfolgeDto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool DeleteAuditDto(int id)
         {
             return false;
