@@ -107,5 +107,15 @@ namespace ProMan_BusinessLayer.DataProvider.DummyData
         {
             throw new NotImplementedException();
         }
+
+        public List<UserDto> GetUserDto(bool needlogin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ArbeitsfolgeDto> GetArbeitsfolgeDto()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

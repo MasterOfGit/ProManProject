@@ -1,4 +1,9 @@
-
+<!--
+Ersteller : Markus Kessler	
+MatrNr 	  : 894361
+Presentation: 28.04.2018
+Theam : ProMan
+-->
 <?php
 echo "PHP Datenabfrage<br>";
 $q = $_REQUEST[ "q" ];
@@ -74,7 +79,7 @@ echo "Anfrage : " . $q . "<br>";
 		<button type="button" 
 					class="btn btn-primary" 
 				    onclick="saveData(loginurl,logindata);">
-		Senden Login</button>
+		Senden Login1</button>
 			
 					
 			<button type="reset" class="btn btn-primary">alles löschen</button>

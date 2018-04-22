@@ -109,5 +109,8 @@
         bool DeleteUserAnfrageDto(int id);
 
         void RemoteObject(string type, int parent, int id);
+
+        bool DeleteArbeitsfolgeDto(int id);
+
     }
 }

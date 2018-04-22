@@ -20,6 +20,7 @@ namespace ProMan_Database.Model
         public ICollection<Bauteil> Bauteile { get; set; }
         public string Arbeitsplaene { get; set; }
         public StatusArt Status { get; set; }
+        public int Order { get; set; }
 
         public virtual Fertigungslinie Fertigungslinie { get; set; }
 

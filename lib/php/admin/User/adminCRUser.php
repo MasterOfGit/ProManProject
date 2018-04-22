@@ -1,3 +1,9 @@
+<!--
+Ersteller : Markus Kessler	
+MatrNr 	  : 894361
+Presentation: 28.04.2018
+Theam : ProMan
+-->
 <?php
 //echo "PHP Datenabfrage<br>";
 //$q = $_REQUEST["q"];
@@ -8,26 +14,29 @@ $ch1 = curl_init();
 $ch2 = curl_init();
 $ch3 = curl_init();
 
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageUser");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=true");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=true");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
-$userData=curl_exec($ch1);
+$userDatawithLogin=curl_exec($ch1);
 curl_close($ch1);
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
+//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userLogin.json");
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user?needlogin=false");
+//curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/user?needlogin=false");
 
-curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userLogin.json");
+
 curl_setopt($ch2, CURLOPT_HEADER, 0);
 curl_setopt($ch2,CURLOPT_RETURNTRANSFER,true);
-$userLogin=curl_exec($ch2);
+$userDatawithoutLogin=curl_exec($ch2);
 curl_close($ch2);
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
-
-curl_setopt($ch3, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userAnfragen.json");
+//curl_setopt($ch3, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userAnfragen.json");
+curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/useranfrage");
+//curl_setopt($ch2, CURLOPT_URL, "http://localhost:50435/api/useranfrage");
 curl_setopt($ch3, CURLOPT_HEADER, 0);
 curl_setopt($ch3,CURLOPT_RETURNTRANSFER,true);
 $userAnfragen=curl_exec($ch3);
@@ -43,8 +52,8 @@ curl_close($ch3);
 //print_r($userAnfragen);
 	
 // Unwandlung von json in Array	
-$jsonUserData = json_decode($userData, TRUE);
-$jsonUserLogin = json_decode($userLogin, TRUE);
+$jsonuserDatawithLogin = json_decode($userDatawithLogin, TRUE);
+$jsonuserDatawithoutLogin = json_decode($userDatawithoutLogin, TRUE);
 $jsonUserAnfrage = json_decode($userAnfragen, TRUE);
 
 //print_r($jsonUserLogin);
@@ -83,18 +92,20 @@ echo <<<'HOME1_HEADER'
 						  <tbody>  
 HOME1_HEADER;
 
-				foreach($jsonUserData['users'] as $userdata)
+				foreach($jsonuserDatawithLogin as $itemuserdatawithLogin)
 				{
 				 
 				echo("<tr>");
-				echo("<td>{$userdata['userID']}</td>");
-				echo("<td>{$userdata['userAnrede']}</td>");
-				echo("<td>{$userdata['userVorname']}</td>");
-	  			echo("<td>{$userdata['userNachname']}</td>");
-				echo("<td>{$userdata['userEmail'] }</td>");
-				echo("<td>{$userdata['userFestnetzNr']}</td>");
-	  			
-				foreach($jsonUserLogin['logins'] as $userlogin)
+				echo("<td>{$itemuserdatawithLogin['userID']}</td>");
+				echo("<td>{$itemuserdatawithLogin['userAnrede']}</td>");
+				echo("<td>{$itemuserdatawithLogin['userVorname']}</td>");
+	  			echo("<td>{$itemuserdatawithLogin['userNachname']}</td>");
+				echo("<td>{$itemuserdatawithLogin['userEmail'] }</td>");
+				echo("<td>{$itemuserdatawithLogin['userFestnetzNr']}</td>");
+				  
+				echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeRegistUser({$userdata['userID']});'></td>");
+
+/* 				foreach($jsonUserLogin as $userlogin)
 				{
 	  				if($userdata['userID'] == $userlogin['userID'] )
 					{
@@ -107,9 +118,9 @@ HOME1_HEADER;
 							echo("<td><input class='form-check-input' type='checkbox' id='defaultCheck2' disabled><td>");
 						}
 					
-						echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeRegistUser({$userdata['userID']});'></td>");
+						
 					}
-				};
+				}; */
 	  			//value = {$item['ID']};
 		  
 				echo("</tr>");
@@ -143,22 +154,22 @@ echo <<<'MENU1_HEADER'
 					  <tbody>
 MENU1_HEADER;
 
-				foreach($jsonUserData['users'] as $userdata)
+				foreach($jsonuserDatawithoutLogin as $itemuserdatawithoutLogin)
 				{
-				foreach($jsonUserLogin['logins'] as $userlogin)
+/* 				foreach($jsonUserLogin['logins'] as $userlogin)
 				{
 	  				if(($userdata['userID'] == $userlogin['userID']) && ($userlogin['userStatus'] == false))
-					{
+					{ */
 						echo("<tr>");
-							echo("<td>{$userdata['userID']}</td>");
-							echo("<td>{$userdata['userAnrede']}</td>");
-							echo("<td>{$userdata['userVorname']}</td>");
-							echo("<td>{$userdata['userNachname']}</td>");
-							echo("<td>{$userdata['userEmail'] }</td>");
-							echo("<td>{$userdata['userFestnetzNr']}</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userID']}</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userAnrede']}</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userVorname']}</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userNachname']}</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userEmail'] }</td>");
+							echo("<td>{$itemuserdatawithoutLogin['userFestnetzNr']}</td>");
 							echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeNewRegistUser({$userdata['userID']});'></td>");
-					}	
-				};
+					//}	
+				//};
 	  			  
 						echo("</tr>");
 				};
@@ -190,7 +201,7 @@ echo <<<'MENU2_HEADER'
 						  <tbody>
 MENU2_HEADER;
 
-						foreach($jsonUserAnfrage['userAnfragen'] as $useranfragen)
+						foreach($jsonUserAnfrage as $useranfragen)
 						{	
 				
 						echo("<tr>");

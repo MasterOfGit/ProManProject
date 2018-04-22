@@ -4,6 +4,7 @@ using ProMan_Database;
 using ProMan_Database.Enums;
 using System;
 using System.Linq;
+using System.Data.Entity;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -80,9 +81,13 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateFertigungslinieDto(FertigungslinieDto data, int id)
         {
+            Fertigungstype tmpFertigungstype;
+            Enum.TryParse(data.fertigungstyp, out tmpFertigungstype);
+
             var item = dbcontext.Fertigungslinien.FirstOrDefault(x => x.FertigungslinieID == id);
 
             item.Bezeichnung = data.fertigungslinienname;
+            item.Fertigungstype = tmpFertigungstype;
 
             //TODO arbeitsfolgen
 
@@ -114,6 +119,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public bool UpdateUserDto(UserDto data, int id)
         {
+            Anrede tmp2;
+            Enum.TryParse(data.userAnrede, out tmp2);
             var item = dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == id);
 
             item.Vorname = data.userVorname;
@@ -123,7 +130,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             item.Mobil = data.userMobilNr;
             item.Bemerkung = data.userBemerkung;
             item.Active = data.userActive;
-            item.Namenszusatz = data.userAnrede;
+            item.Namenszusatz = tmp2;
 
             dbcontext.SaveChanges();
 
@@ -296,6 +303,28 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 default:
                     break;
             }
+        }
+
+        public bool UpdateArbeitsfolgeDto(ArbeitsfolgeDto data, int id)
+        {
+            var item = dbcontext.Arbeitsfolgen.Include(x => x.Bauteile).Include(x => x.Maschinen).Include(x => x.Fertigungslinie).FirstOrDefault(x => x.ArbeitsfolgeID == id);
+
+            var bauteil = dbcontext.Bauteile.FirstOrDefault(x => x.BauteilID == data.bauteilID);
+            var maschine = dbcontext.Maschinen.FirstOrDefault(x => x.MaschineID == data.maschineID);
+            var fertigungslinie = dbcontext.Fertigungslinien.Include(x => x.Arbeitsfolgen).FirstOrDefault(x => x.FertigungslinieID == data.fertigungslinieID);
+            item.ArbeitsfolgeName = data.arbeitplan;
+
+            item.Order = data.Order;
+            item.Arbeitsplaene = data.Arbeitsplaene;
+
+
+            //item.Maschinen.Add(maschine);
+            //item.Bauteile.Add(bauteil);
+            item.Fertigungslinie = fertigungslinie;
+
+            dbcontext.SaveChanges();
+
+            return true;
         }
 
 

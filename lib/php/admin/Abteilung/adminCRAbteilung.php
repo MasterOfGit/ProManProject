@@ -1,4 +1,11 @@
-
+<!--
+Ersteller : Markus Kessler	
+MatrNr 	  : 894361
+Presentation: 28.04.2018
+Team : ProMan
+modifikations : Sebastian Molkenthin
+MartNr : 896734
+-->
 <?php
 //echo "PHP Datenabfrage<br>";
 //$q = $_REQUEST[ "q" ];
@@ -7,9 +14,9 @@
 $ch1 = curl_init();
 
 
-//curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+//curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu/jsonData/abteilung/abteilung.json" );
+curl_setopt( $ch1, CURLOPT_URL,"http://zoomnation.selfhost.eu:8080/ProManAPI/api/abteilung" );
 //curl_setopt( $ch1, CURLOPT_URL,"http://localhost:50435/api/abteilung" );
 curl_setopt( $ch1, CURLOPT_HEADER, 0 );
 curl_setopt( $ch1, CURLOPT_RETURNTRANSFER, true );

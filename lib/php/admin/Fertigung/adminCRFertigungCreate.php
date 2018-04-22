@@ -10,8 +10,6 @@ function createData()
 	
 			"fertigungsname"	:	$("#fertigungsname").val(),
 
-            "fertigungstyp"	:	$("#fertigungstyp").val(),
-
 			"abteilungName"			:	$("#abteilungName").val(),
 
 		}
@@ -37,8 +35,6 @@ HEADER;
 		
 echo("<label for='fertigungsname'>fertigungsname</label>");
 echo("<input type='text' class='form-control' id='fertigungsname' aria-describedby='fertigungsname' placeholder='' value=>");
-echo("<label for='fertigungstyp'>fertigungstyp</label>");
-echo("<input type='text' class='form-control' id='fertigungstyp' aria-describedby='fertigungstyp' placeholder='' value=>");
 echo("<label for='abteilungName'>abteilungName</label>");
 echo("<input type='text' class='form-control' id='abteilungName' aria-describedby='abteilungName' placeholder='' value=>");
 

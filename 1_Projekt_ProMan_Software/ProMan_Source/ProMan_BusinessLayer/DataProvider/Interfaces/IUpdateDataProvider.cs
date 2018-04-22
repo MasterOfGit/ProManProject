@@ -26,6 +26,8 @@ namespace ProMan_BusinessLayer.DataProvider.Interfaces
         bool UpdateProduktionsplanDto(ProduktionsplanDto data, int id);
         bool UpdateUserAnfrageDto(UserAnfrageDto data, int id);
 
+        bool UpdateArbeitsfolgeDto(ArbeitsfolgeDto data, int id);
+
         void MoveObject(string type, int oldparent, int newparent, int id);
 
     }

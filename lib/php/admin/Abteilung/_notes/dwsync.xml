@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
 <file name="adminCRAbteilung.php" server="C:/xampp/htdocs/proman/" local="131688053214902653" remote="131688053210000000" Dst="2" />
 <file name="adminCRAbteilung.php" server="192.168.178.26" local="131687700990000000" remote="131688102600000000" Dst="2" />
 <file name="adminCRFertigungAbteilung.php" server="C:/xampp/htdocs/proman/" local="131682047639671918" remote="131682047630000000" Dst="2" />
@@ -10,4 +11,16 @@
 <file name="adminCRAbteilung-workPC.php" server="192.168.178.26" local="131688058811500192" remote="131688102600000000" Dst="2" />
 <file name="adminCRFertigungAbteilung-workPC.php" server="192.168.178.26" local="131688058811460162" remote="131688102600000000" Dst="2" />
 <file name="instCRAuftragAnzeigen-workPC.php" server="192.168.178.26" local="131688053346549858" remote="131688102600000000" Dst="2" />
+=======
+<<<<<<< HEAD
+<file name="adminCRAbteilung.php" server="C:/xampp/htdocs/proman/" local="131688053214902653" remote="131688053210000000" Dst="2" />
+=======
+<file name="adminCRAbteilung.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+>>>>>>> origin/master
+<file name="adminCRAbteilung.php" server="192.168.178.26" local="131685560156093612" remote="131685561600000000" Dst="2" />
+<file name="adminCRFertigungAbteilung.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+<file name="adminCRFertigungAbteilung.php" server="192.168.178.26" local="131682047639671918" remote="131683802400000000" Dst="2" />
+<file name="instCRAuftragAnzeigen.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+<file name="instCRAuftragAnzeigen.php" server="192.168.178.26" local="131682515302315007" remote="131683802400000000" Dst="2" />
+>>>>>>> origin/master
 </dwsync>

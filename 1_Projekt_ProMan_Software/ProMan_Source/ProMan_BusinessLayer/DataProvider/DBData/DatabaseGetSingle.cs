@@ -7,6 +7,7 @@ using ProMan_Database.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 
 namespace ProMan_BusinessLayer.DataProvider.DBData
 {
@@ -58,16 +59,16 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             {
                 fertigungsID = item.FertigungID,
                 fertigungsname = item.Bezeichnung,
-                fertigungstyp = item.Fertigungstype.ToString(),
                 fertigungslinien = item.Fertigungslinien?.Select(x => new FertigungslinieDto()
                 {
                     fertigungslinieID = x.FertigungslinieID,
                     fertigungslinienname = x.Bezeichnung,
+                    fertigungstyp = x.Fertigungstype.ToString(),
                     maschinenanzahl = x.Arbeitsfolgen.Count,
                     arbeitsfolgen = x.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                     {
-                        ID = y.ArbeitsfolgeID,
-                        ArbeitsfolgeName = y.ArbeitsfolgeName,
+                        arbeitsfolgeID = y.ArbeitsfolgeID,
+                        arbeitplan = y.ArbeitsfolgeName,
                     }).ToList()
                 }).ToList()
             };
@@ -82,11 +83,12 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             {
                 fertigungslinieID = item.FertigungslinieID,
                 fertigungslinienname = item.Bezeichnung,
+                fertigungstyp = item.Fertigungstype.ToString(),
                 maschinenanzahl = item.Arbeitsfolgen.Count,
                 arbeitsfolgen = item.Arbeitsfolgen.Select(y => new ArbeitsfolgeDto()
                 {
-                    ID = y.ArbeitsfolgeID,
-                    ArbeitsfolgeName = y.ArbeitsfolgeName,
+                    arbeitsfolgeID = y.ArbeitsfolgeID,
+                    arbeitplan = y.ArbeitsfolgeName,
                 }).ToList()
             };
 
@@ -133,7 +135,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                     userFestnetzNr = item.Bearbeiter.FirstOrDefault().Festnetz,
                     userMobilNr = item.Bearbeiter.FirstOrDefault().Mobil,
                     userNachname = item.Bearbeiter.FirstOrDefault().Nachname,
-                    userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz
+                    userAnrede = item.Bearbeiter.FirstOrDefault().Namenszusatz.ToString()
                 },
                 Status = item.Status.ToString(),
                 InventarNummer = item.Maschinen.FirstOrDefault().Inventarnummer,
@@ -157,7 +159,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 userFestnetzNr = item.Festnetz,
                 userMobilNr = item.Mobil,
                 userNachname = item.Nachname,
-                userAnrede = item.Namenszusatz
+                userAnrede = item.Namenszusatz.ToString()
             };
 
             return user;
@@ -221,7 +223,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             return new LoginDto()
             {
                 userKennung = item.Username,
-                userpasswort = item.Password,
+                //userpasswort = item.Password,
                 userbereich = item.LoginType.ToString(),
                 userID = item.LoginID,
                 userLastLogin = item.LastLogin.Value,
@@ -248,6 +250,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             };
         }
 
+        public bool ExecuteLoginDto(string username, string password)
+        {
+            var item = dbcontext.Logins.FirstOrDefault(x => x.Username == username && x.Password == password);
+
+            return item != null ? true : false;
+
+        }
+
         #endregion
 
         #region ViewModels
@@ -264,7 +274,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 userID = x.MitarbeiterID,
                 userMobilNr = x.Mobil,
                 userNachname = x.Nachname,
-                userAnrede = x.Namenszusatz,
+                userAnrede = x.Namenszusatz.ToString(),
                 userVorname = x.Vorname,
                 
             }).ToList();
@@ -324,25 +334,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 {
                     fertigungslinieID = y.FertigungslinieID,
                     fertigungslinienname = y.Bezeichnung,
+                    fertigungstyp = y.Fertigungstype.ToString(),
                     arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
                     {
-                        ID = z.ArbeitsfolgeID,
+                        arbeitsfolgeID = z.ArbeitsfolgeID,
                         //ArbeitsfolgeName = z.ArbeitsfolgeName,
                         //Arbeitsplaene = z.Arbeitsplaene,
                         //Status = z.Status,
-                        Maschinen = z.Maschinen.Select(m => new MaschineDto()
-                        {
-                            maschinenID = m.MaschineID,
-                            //Anschaffungsdatum = m.Anschaffungsdatum,
-                            //Garantie = m.Garantie,
-                            //Hersteller = m.Hersteller,
-                            //Standort = m.Standort,
-                            //Technologie = m.Technologie.ToString(),
-                            //Status = m.Status.ToString(),
-                            //Inventarnummer = m.Inventarnummer,
-                            //Version = m.Version,
-                            //Zeichnungsnummer = m.Zeichnungsnummer
-                        }).ToList(),
+                        maschineID = z.Maschinen.FirstOrDefault().MaschineID,
                     }).ToList()
                 }).ToList()
             }).ToList();
@@ -360,25 +359,14 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             {
                 fertigungslinieID = y.FertigungslinieID,
                 fertigungslinienname = y.Bezeichnung,
+                fertigungstyp = y.Fertigungstype.ToString(),
                 arbeitsfolgen = y.Arbeitsfolgen.Select(z => new ArbeitsfolgeDto()
                 {
-                    ID = z.ArbeitsfolgeID,
-                    ArbeitsfolgeName = z.ArbeitsfolgeName,
+                    arbeitsfolgeID = z.ArbeitsfolgeID,
+                    arbeitplan = z.ArbeitsfolgeName,
                     Arbeitsplaene = z.Arbeitsplaene,
                     Status = z.Status,
-                    Maschinen = z.Maschinen.Select(m => new MaschineDto()
-                    {
-                        maschinenID = m.MaschineID,
-                        Anschaffungsdatum = m.Anschaffungsdatum,
-                        Garantie = m.Garantie,
-                        hersteller = m.Hersteller,
-                        standort = m.Standort,
-                        technologie = m.Technologie.ToString(),
-                        maschinenInventarNummer = m.Inventarnummer,
-                        status = m.Status.ToString(),
-                        Version = m.Version,
-                        Zeichnungsnummer = m.Zeichnungsnummer
-                    }).ToList(),
+                    maschineID = z.Maschinen.FirstOrDefault().MaschineID,
                 }).ToList()
             }).ToList();
 
@@ -529,6 +517,26 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 userAnfrageStatus = item.NachrichtenStatus.ToString(),
                 userGrund = item.Betreff,
                 userNachricht = item.Text
+            };
+        }
+
+        public ArbeitsfolgeDto GetArbeitsfolgeDto(int id)
+        {
+            var item = dbcontext.Arbeitsfolgen.Include(x => x.Bauteile).Include(x => x.Maschinen).Include(x => x.Fertigungslinie).FirstOrDefault(x => x.ArbeitsfolgeID == id);
+
+            return new ArbeitsfolgeDto()
+            {
+                arbeitplan = item.ArbeitsfolgeName,
+                arbeitsfolgeID = item.ArbeitsfolgeID,
+                Status = item.Status,
+                Order = item.Order,
+                bauteilID = item.Bauteile.FirstOrDefault().BauteilID,
+                maschineID = item.Maschinen.FirstOrDefault().MaschineID,
+                technologie = item.Maschinen.FirstOrDefault().Technologie.ToString(),
+                fertigungslinieID = item.Fertigungslinie.FertigungslinieID,
+                fertigunglinenname = item.Fertigungslinie.Bezeichnung,
+                fertigungstyp = item.Fertigungslinie.Fertigungstype.ToString()
+                
             };
         }
     }

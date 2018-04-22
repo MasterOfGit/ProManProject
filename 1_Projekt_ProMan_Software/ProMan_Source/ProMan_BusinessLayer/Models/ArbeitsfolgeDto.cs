@@ -9,11 +9,16 @@ namespace ProMan_BusinessLayer.Models
 {
     public class ArbeitsfolgeDto
     {
-        public int ID { get; set; }
-        public string ArbeitsfolgeName { get; set; }
-        public List<MaschineDto> Maschinen { get; set; }
-        public List<BauteilDto> Bauteile { get; set; }
+        public int arbeitsfolgeID { get; set; }
+        public string arbeitplan { get; set; }
+        public int maschineID { get; set; }
+        public string technologie { get; set; }
+        public int bauteilID { get; set; }
+        public int Order { get; set; }
         public string Arbeitsplaene { get; set; }
         public StatusArt Status { get; set; }
+        public int fertigungslinieID { get; set; }
+        public string fertigunglinenname { get; set; }
+        public string fertigungstyp { get; set; }
     }
 }
