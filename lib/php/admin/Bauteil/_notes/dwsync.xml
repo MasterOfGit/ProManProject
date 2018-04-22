@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
+<file name="adminCRBauteil.php" server="C:/xampp/htdocs/proman/" local="131685558529958825" remote="131685558520000000" Dst="2" />
+<file name="adminCRBauteilBear.php" server="C:/xampp/htdocs/proman/" local="131685563279848459" remote="131685563270000000" Dst="2" />
+<file name="adminCRBauteilVerwBear.php" server="C:/xampp/htdocs/proman/" local="131685559172111790" remote="131685559170000000" Dst="2" />
+=======
 <file name="adminCRBauteil.php" server="C:/xampp/htdocs/proman/" local="131686367369591629" remote="131686367360000000" Dst="2" />
 <file name="adminCRBauteilBear.php" server="C:/xampp/htdocs/proman/" local="131686367369751744" remote="131686367360000000" Dst="2" />
 <file name="adminCRBauteilVerwBear.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+>>>>>>> origin/master
 <file name="adminCRBauteil.php" server="192.168.178.26" local="131685558529958825" remote="131685561600000000" Dst="2" />
-<file name="adminCRBauteilBear.php" server="192.168.178.26" local="131685559015777337" remote="131685561600000000" Dst="2" />
+<file name="adminCRBauteilBear.php" server="192.168.178.26" local="131685563279848459" remote="131685563400000000" Dst="2" />
 <file name="adminCRBauteilVerwBear.php" server="192.168.178.26" local="131685559172111790" remote="131685561600000000" Dst="2" />
 <file name="saveBauteilJsonDatei.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="saveBauteilJsonDatei.php" server="192.168.178.26" local="131683881454812176" remote="131683882200000000" Dst="2" />
