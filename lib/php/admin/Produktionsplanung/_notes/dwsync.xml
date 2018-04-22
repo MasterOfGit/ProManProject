@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="userCRProduktionsplanung.php" server="192.168.178.26" local="131685547792688359" remote="131685561600000000" Dst="2" />
-<file name="userCRProduktionsplanung.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRNewSchrittProduktionsplan.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRNewSchrittProduktionsplan.php" server="192.168.178.26" local="131685552526502938" remote="131685561600000000" Dst="2" />
-<file name="adminCRLagerortBear.php" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="adminCRLagerortBear.php" server="192.168.178.26" local="131685552646863813" remote="131685561600000000" Dst="2" />
+<file name="userCRProduktionsplanung.php" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="userCRProduktionsplanung.php" server="C:/xampp/htdocs/proman/" local="131688051560418205" remote="131688051560000000" Dst="2" />
+<file name="adminCRNewSchrittProduktionsplan.php" server="C:/xampp/htdocs/proman/" local="131688051606819142" remote="131688051600000000" Dst="2" />
+<file name="adminCRNewSchrittProduktionsplan.php" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="adminCRLagerortBear.php" server="C:/xampp/htdocs/proman/" local="131688051668130081" remote="131688051660000000" Dst="2" />
+<file name="adminCRLagerortBear.php" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="adminCRLagerortBear-workPC.php" server="192.168.178.26" local="131688051668130081" remote="131688102600000000" Dst="2" />
+<file name="adminCRNewSchrittProduktionsplan-workPC.php" server="192.168.178.26" local="131688051610000000" remote="131688102600000000" Dst="2" />
+<file name="userCRProduktionsplanung-workPC.php" server="192.168.178.26" local="131688051560418205" remote="131688102600000000" Dst="2" />
 </dwsync>

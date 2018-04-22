@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Global.asax" server="192.168.178.26" local="131624030350015328" remote="131683802400000000" Dst="2" />
-<file name="Global.asax.cs" server="192.168.178.26" local="131624030350025335" remote="131683802400000000" Dst="2" />
-<file name="packages.config" server="192.168.178.26" local="131624030350245479" remote="131683802400000000" Dst="2" />
-<file name="ProMan_WebAPI.csproj" server="192.168.178.26" local="131680914570418956" remote="131683802400000000" Dst="2" />
-<file name="ProMan_WebAPI.csproj.user" server="192.168.178.26" local="131624030350125405" remote="131683802400000000" Dst="2" />
-<file name="Web.config" server="192.168.178.26" local="131641178788910234" remote="131683802400000000" Dst="2" />
-<file name="Web.Debug.config" server="192.168.178.26" local="131624030350205458" remote="131683802400000000" Dst="2" />
-<file name="Web.Release.config" server="192.168.178.26" local="131624030350215462" remote="131683802400000000" Dst="2" />
+<file name="Global.asax" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="Global.asax.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="packages.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="ProMan_WebAPI.csproj" server="192.168.178.26" local="131687353420000000" remote="131688102600000000" Dst="2" />
+<file name="ProMan_WebAPI.csproj.user" server="192.168.178.26" local="131687353420000000" remote="131688102600000000" Dst="2" />
+<file name="Web.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="Web.Debug.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="Web.Release.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
 <file name="Global.asax" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="Global.asax.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="packages.config" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />

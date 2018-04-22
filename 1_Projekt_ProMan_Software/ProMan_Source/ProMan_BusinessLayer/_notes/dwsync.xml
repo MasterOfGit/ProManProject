@@ -3,7 +3,8 @@
 <file name="App.config" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="packages.config" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="ProMan_BusinessLayer.csproj" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="App.config" server="192.168.178.26" local="131624030348664431" remote="131683802400000000" Dst="2" />
-<file name="packages.config" server="192.168.178.26" local="131624030348814525" remote="131683802400000000" Dst="2" />
-<file name="ProMan_BusinessLayer.csproj" server="192.168.178.26" local="131680336198462712" remote="131683802400000000" Dst="2" />
+<file name="App.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="packages.config" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
+<file name="ProMan_BusinessLayer.csproj" server="192.168.178.26" local="131687353420000000" remote="131688102600000000" Dst="2" />
+<file name="KeyValueHelper.cs" server="192.168.178.26" local="131687353410000000" remote="131688102600000000" Dst="2" />
 </dwsync>
