@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="DummyCreateData.cs" server="192.168.178.26" local="131687353410000000" remote="131688102600000000" Dst="2" />
-<file name="DummyDataProvider.cs" server="192.168.178.26" local="131685239260000000" remote="131688102600000000" Dst="2" />
-<file name="DummyDelete.cs" server="192.168.178.26" local="131687353410000000" remote="131688102600000000" Dst="2" />
-<file name="DummyGetList.cs" server="192.168.178.26" local="131687353410000000" remote="131688102600000000" Dst="2" />
-<file name="DummyUpdate.cs" server="192.168.178.26" local="131687353410000000" remote="131688102600000000" Dst="2" />
-<file name="DummyGetSingle.cs" server="192.168.178.26" local="131686836510000000" remote="131688102600000000" Dst="2" />
+<file name="DummyCreateData.cs" server="192.168.178.26" local="131680914569668450" remote="131683802400000000" Dst="2" />
+<file name="DummyDataProvider.cs" server="192.168.178.26" local="131676897292421428" remote="131683802400000000" Dst="2" />
+<file name="DummyDelete.cs" server="192.168.178.26" local="131680914569698470" remote="131683802400000000" Dst="2" />
+<file name="DummyGetList.cs" server="192.168.178.26" local="131680914569728493" remote="131683802400000000" Dst="2" />
+<file name="DummyUpdate.cs" server="192.168.178.26" local="131680914569768523" remote="131683802400000000" Dst="2" />
+<file name="DummyGetSingle.cs" server="192.168.178.26" local="131680914569748506" remote="131683802400000000" Dst="2" />
 <file name="DummyCreateData.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="DummyDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
 <file name="DummyDelete.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
