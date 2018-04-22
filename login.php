@@ -44,7 +44,7 @@ else
 	$extra = 'start.php?f=1';
 }
 
-header("Location: http://$host$uri/$extra/$jsonlogin");
+header("Location: http://$host$uri/$extra");
 
 //if (!array_key_exists($name, $benutzer)) {
 //    $extra = 'start.php?f=1';
@@ -58,5 +58,5 @@ header("Location: http://$host$uri/$extra/$jsonlogin");
 //}
 
 
-//header("Location: http://$host$uri/$extra/$jsonlogin");
+//header("Location: http://$host$uri/$extra");
 ?>
