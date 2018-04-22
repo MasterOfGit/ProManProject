@@ -6,10 +6,10 @@
 <file name="DummyGetList.cs" server="192.168.178.26" local="131680914569728493" remote="131683802400000000" Dst="2" />
 <file name="DummyUpdate.cs" server="192.168.178.26" local="131680914569768523" remote="131683802400000000" Dst="2" />
 <file name="DummyGetSingle.cs" server="192.168.178.26" local="131680914569748506" remote="131683802400000000" Dst="2" />
-<file name="DummyCreateData.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DummyDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DummyDelete.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DummyGetList.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DummyGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
-<file name="DummyUpdate.cs" server="C:/xampp/htdocs/proman/" local="131685239260000000" remote="131685239260000000" Dst="2" />
+<file name="DummyCreateData.cs" server="C:/xampp/htdocs/proman/" local="131688937888439105" remote="131688937880000000" Dst="2" />
+<file name="DummyDataProvider.cs" server="C:/xampp/htdocs/proman/" local="131688937888449093" remote="131688937880000000" Dst="2" />
+<file name="DummyDelete.cs" server="C:/xampp/htdocs/proman/" local="131688937888459103" remote="131688937880000000" Dst="2" />
+<file name="DummyGetList.cs" server="C:/xampp/htdocs/proman/" local="131688937888459103" remote="131688937880000000" Dst="2" />
+<file name="DummyGetSingle.cs" server="C:/xampp/htdocs/proman/" local="131688937888469119" remote="131688937880000000" Dst="2" />
+<file name="DummyUpdate.cs" server="C:/xampp/htdocs/proman/" local="131688937888479131" remote="131688937880000000" Dst="2" />
 </dwsync>
