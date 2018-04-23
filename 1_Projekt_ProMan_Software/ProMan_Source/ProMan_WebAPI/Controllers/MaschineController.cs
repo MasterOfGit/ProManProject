@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using System.Collections.Generic;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
 using System.Web.Http.Cors;
@@ -26,18 +31,20 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetMaschineDto(id)));
         }
 
+        [HttpPost]
         // POST api/<controller>
         public IHttpActionResult Post([FromBody]MaschineDto value)
         {
-            dataprovider.CreateDataProvider.SetMaschineDto(value);
-            return Ok();
+            var returnvalue = dataprovider.CreateDataProvider.SetMaschineDto(value);
+            return Ok(returnvalue);
         }
 
+        [HttpPut]
         // PUT api/<controller>/5
         public IHttpActionResult Put(int id, [FromBody]MaschineDto value)
         {
-            dataprovider.UpdateDataProvider.UpdateMaschineDto(value, id);
-            return Ok();
+            var returnvalue = dataprovider.UpdateDataProvider.UpdateMaschineDto(value, id);
+            return Ok(returnvalue);
         }
 
         // DELETE api/<controller>/5

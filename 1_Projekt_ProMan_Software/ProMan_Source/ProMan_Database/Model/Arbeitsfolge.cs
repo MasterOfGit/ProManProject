@@ -1,4 +1,9 @@
-﻿using ProMan_Database.Enums;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using ProMan_Database.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,6 +25,7 @@ namespace ProMan_Database.Model
         public ICollection<Bauteil> Bauteile { get; set; }
         public string Arbeitsplaene { get; set; }
         public StatusArt Status { get; set; }
+
         public int Order { get; set; }
 
         public virtual Fertigungslinie Fertigungslinie { get; set; }

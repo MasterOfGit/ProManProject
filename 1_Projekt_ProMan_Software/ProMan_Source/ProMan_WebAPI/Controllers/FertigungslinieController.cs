@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using System.Collections.Generic;
 using System.Web.Http;
 using Newtonsoft.Json.Linq;
 using System.Web.Http.Cors;

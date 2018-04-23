@@ -1,4 +1,9 @@
-﻿using ProMan_BusinessLayer.DataProvider.Interfaces;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using ProMan_BusinessLayer.DataProvider.Interfaces;
 using ProMan_BusinessLayer.Models;
 using ProMan_Database;
 using ProMan_Database.Enums;
@@ -68,28 +73,38 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
 
         public int SetMaschineDto(MaschineDto data)
         {
-            MaschinenStatus tmpMaschinenStatus;
-            Enum.TryParse(data.status, out tmpMaschinenStatus);
+            int returnvalue = 0;
 
-            Technologie tmpTechnologie;
-            Enum.TryParse(data.technologie, out tmpTechnologie);
-
-            dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
+            try
             {
-                Anschaffungsdatum = data.Anschaffungsdatum,
-                Garantie = data.Garantie,
-                Hersteller = data.hersteller,
-                Technologie = tmpTechnologie,
-                Status = tmpMaschinenStatus,
-                Inventarnummer = data.maschinenInventarNummer,
-                Standort = data.standort,
-                Version = data.Version,
-                Zeichnungsnummer = data.Zeichnungsnummer,
-            });
+                MaschinenStatus tmpMaschinenStatus;
+                Enum.TryParse(data.status, out tmpMaschinenStatus);
 
-            dbcontext.SaveChanges();
+                Technologie tmpTechnologie;
+                Enum.TryParse(data.technologie, out tmpTechnologie);
 
-            return 1;
+                dbcontext.Maschinen.Add(new ProMan_Database.Model.Maschine()
+                {
+                    Anschaffungsdatum = data.Anschaffungsdatum,
+                    Garantie = data.Garantie,
+                    Hersteller = data.hersteller,
+                    Technologie = tmpTechnologie,
+                    Status = tmpMaschinenStatus,
+                    Inventarnummer = data.maschinenInventarNummer,
+                    Standort = data.standort,
+                    Version = data.Version,
+                    Zeichnungsnummer = data.Zeichnungsnummer,
+                });
+
+                dbcontext.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                returnvalue = 100;
+            }
+
+
+            return returnvalue;
 
         }
 

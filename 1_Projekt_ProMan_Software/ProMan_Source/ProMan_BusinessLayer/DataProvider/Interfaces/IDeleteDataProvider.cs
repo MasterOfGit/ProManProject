@@ -1,4 +1,9 @@
-﻿namespace ProMan_BusinessLayer.DataProvider.Interfaces
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+namespace ProMan_BusinessLayer.DataProvider.Interfaces
 {
     /// <summary>
     /// Interface to delete objects on the datastructure

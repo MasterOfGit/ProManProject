@@ -1,4 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
 using System;

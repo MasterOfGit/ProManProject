@@ -1,4 +1,9 @@
-﻿using System;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using System;
 using ProMan_BusinessLayer.DataProvider.Interfaces;
 
 namespace ProMan_BusinessLayer.DataProvider.DummyData

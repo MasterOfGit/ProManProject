@@ -1,4 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
 using System.Collections.Generic;
@@ -9,13 +14,13 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [RoutePrefix("bauteil")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "Content-type,content-type", methods: "*")]
     public class BauteilController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<BauteilDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetBauteilDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetBauteilDto()));
         }
 
         // GET: api/<controller>/5

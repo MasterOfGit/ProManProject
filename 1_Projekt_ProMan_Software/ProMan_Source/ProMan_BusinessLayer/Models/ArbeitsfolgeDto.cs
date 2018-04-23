@@ -1,9 +1,10 @@
-﻿using ProMan_Database.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
+using ProMan_Database.Enums;
+
 
 namespace ProMan_BusinessLayer.Models
 {

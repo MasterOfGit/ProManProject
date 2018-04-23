@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿///////////////////////////////
+//Autor Sebastian Molkenthin
+//Martikelnummer : 396734
+//Team: ProMan
+///////////////////////////////
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI
 {
@@ -10,8 +13,7 @@ namespace ProMan_WebAPI
         public static void Register(HttpConfiguration config)
         {
             // Web-API-Konfiguration und -Dienste
-
-            config.EnableCors();
+            //config.EnableCors();
 
             // Web-API-Routen
             config.MapHttpAttributeRoutes();
