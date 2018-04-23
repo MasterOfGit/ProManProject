@@ -3,7 +3,7 @@
 	[
 		{
 			"bauteileID"			:	1,
-			"bauteinNummer"			:	"120150115",
+			"bauteilNummer"			:	"120150115",
 			"bauteilIndex"			:	"A",
 			"bauteilVersiom"		:	"3.1",
 			"bauteilArt"			:	"Zahnrad",
@@ -12,7 +12,7 @@
 		},
 		{
 			"bauteileID"			:	2,
-			"bauteinNummer"			:	"323855115",
+			"bauteilNummer"			:	"323855115",
 			"bauteilIndex"			:	"B",
 			"bauteilVersiom"		:	"1.4",
 			"bauteilArt"			:	"Zahnrad",
@@ -21,7 +21,7 @@
 		},
 		{
 			"bauteileID"			:	3,
-			"bauteinNummer"			:	"323855115",
+			"bauteilNummer"			:	"323855115",
 			"bauteilIndex"			:	"AX",
 			"bauteilVersiom"		:	"1.0",
 			"bauteilArt"			:	"Zahnrad",
@@ -30,7 +30,7 @@
 		},
 		{
 			"bauteileID"			:	4,
-			"bauteinNummer"			:	"111111111",
+			"bauteilNummer"			:	"111111111",
 			"bauteilIndex"			:	"X",
 			"bauteilVersiom"		:	"0.0",
 			"bauteilArt"			:	"Zahnrad",

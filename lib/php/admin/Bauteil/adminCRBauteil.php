@@ -13,7 +13,7 @@ Theam : ProMan
 $ch1 = curl_init();
 $ch2 = curl_init();
 //$ch3 = curl_init();
-
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
 curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/bauteil");
 //curl_setopt($ch1, CURLOPT_URL, "http://localhost:50435/api/bauteil");
 //curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/bauteile/bauteile.json");
@@ -145,8 +145,13 @@ MENU1_HEADER;
 							echo("<td>{$bauteil['bauteilNummer']}</td>");
 							echo("<td>{$bauteil['bauteilIndex']}</td>");
 							echo("<td>{$bauteil['bauteilVersion']}</td>");
+							
 						}
+						
+						
+						
 					};
+						
 						echo("<td>{$bauteilverwendung['bauteilverwendungsID']}</td>");
 						echo("<td>{$bauteilverwendung['fertingungsLinienID']}</td>");
 						echo("<td>{$bauteilverwendung['technologie']}</td>");
@@ -155,6 +160,7 @@ MENU1_HEADER;
 						echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='editBauteilVerwendung({$bauteilverwendung['bauteileID']});'></td>");
 					
 				};
+
 					echo("</tr>");
 					echo("<td><input class='btn btn-primary' type='button' value='Neu Bauteil Verwendung anlegen'  onclick='editBauteilVerwendung(0);'></td>");
 
