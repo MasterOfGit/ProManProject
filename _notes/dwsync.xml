@@ -4,7 +4,6 @@
 <file name=".gitignore" server="192.168.178.26" local="131688977114890506" remote="131688979800000000" Dst="2" />
 <file name=".gitattributes" server="//MSSERVER2016/ProManWeb/" local="131599945832691567" remote="131599945830000000" Dst="1" />
 <file name=".gitignore" server="//MSSERVER2016/ProManWeb/" local="131607616829826844" remote="131607616820000000" Dst="1" />
-<file name="registrieren.html" server="192.168.178.26" local="131680765043829849" remote="131683802400000000" Dst="2" />
 <file name="inArbeit.html" server="192.168.178.26" local="131688977119883849" remote="131688979800000000" Dst="2" />
 <file name="impressum.html" server="192.168.178.26" local="131688977119873848" remote="131688979800000000" Dst="2" />
 <file name="adminkontakt.html" server="192.168.178.26" local="131688977119653686" remote="131688979800000000" Dst="2" />
@@ -20,8 +19,8 @@
 <file name="testJasonParameter.html" server="C:/xampp/htdocs/proman/" local="131688977121334808" remote="131688977120000000" Dst="2" />
 <file name="web.config" server="C:/xampp/htdocs/proman/" local="131688977122365493" remote="131688977120000000" Dst="2" />
 <file name="usercontent.php" server="C:/xampp/htdocs/proman/" local="131688977122355487" remote="131688977120000000" Dst="2" />
-<file name="start.php" server="C:/xampp/htdocs/proman/" local="131688977121254758" remote="131688977120000000" Dst="2" />
-<file name="login.php" server="C:/xampp/htdocs/proman/" local="131688977121214728" remote="131688977120000000" Dst="2" />
+<file name="start.php" server="C:/xampp/htdocs/proman/" local="131689710258231856" remote="131689710250000000" Dst="2" />
+<file name="login.php" server="C:/xampp/htdocs/proman/" local="131689711086835011" remote="131689711080000000" Dst="2" />
 <file name="logout.php" server="C:/xampp/htdocs/proman/" local="131688977121224753" remote="131688977120000000" Dst="2" />
 <file name="ERSTELLER.html" server="C:/xampp/htdocs/proman/" local="131688977119073305" remote="131688977110000000" Dst="2" />
 <file name="ERSTELLER.txt" server="C:/xampp/htdocs/proman/" local="131688977119083308" remote="131688977110000000" Dst="2" />
@@ -30,12 +29,13 @@
 <file name="ERSTELLER.html" server="192.168.178.26" local="131688977119073305" remote="131688979800000000" Dst="2" />
 <file name="ERSTELLER.txt" server="192.168.178.26" local="131688977119083308" remote="131688979800000000" Dst="2" />
 <file name="index.html" server="192.168.178.26" local="131688977119963896" remote="131688979800000000" Dst="2" />
-<file name="login.php" server="192.168.178.26" local="131688990639535136" remote="131688990600000000" Dst="2" />
+<file name="login.php" server="192.168.178.26" local="131688990639535136" remote="131689710600000000" Dst="2" />
 <file name="logout.php" server="192.168.178.26" local="131688977121224753" remote="131688979800000000" Dst="2" />
-<file name="Registrieren.html" server="192.168.178.26" local="131688977119083308" remote="131688979800000000" Dst="2" />
 <file name="start.html" server="192.168.178.26" local="131688977121254758" remote="131688979800000000" Dst="2" />
-<file name="start.php" server="192.168.178.26" local="131688977121254758" remote="131688979800000000" Dst="2" />
+<file name="start.php" server="192.168.178.26" local="131689710258231856" remote="131689710600000000" Dst="2" />
 <file name="usercontent.html" server="192.168.178.26" local="131688977122355487" remote="131688979800000000" Dst="2" />
 <file name="usercontent.php" server="192.168.178.26" local="131688977122355487" remote="131688979800000000" Dst="2" />
-<file name="web.config" server="192.168.178.26" local="131688977122365493" remote="131688979800000000" Dst="2" />
+<file name="web.config" server="192.168.178.26" local="131688977122365493" remote="131689710600000000" Dst="2" />
+<file name="Registrieren.php" server="C:/xampp/htdocs/proman/" local="131689709232893604" remote="131689709230000000" Dst="2" />
+<file name="Registrieren.php" server="192.168.178.26" local="131689709232893604" remote="131689710600000000" Dst="2" />
 </dwsync>

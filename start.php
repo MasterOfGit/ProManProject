@@ -80,7 +80,7 @@ if (isset($_GET['f'])) {
 	  </div>
 	  
 		  <button type="submit" class="btn btn-primary btn"  >Login</button>
-		  <button type="button" class="btn btn-success btn" onclick="window.open('registrieren.html')" >Registieren</button>	   
+		  <button type="button" class="btn btn-success btn" onclick="window.open('registrieren.php')" >Registieren</button>	   
 </form> 
 		  
         
