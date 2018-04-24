@@ -18,13 +18,13 @@ namespace ProMan_WebAPI.Controllers
         // GET: api/<controller>
         public IHttpActionResult Get()
         {
-            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetFertigungDto()));
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetFertigungsDto()));
         }
 
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungsDto(id)));
         }
 
         [Route("create")]
@@ -32,7 +32,7 @@ namespace ProMan_WebAPI.Controllers
         public IHttpActionResult Create(string value)
         {
             FertigungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<FertigungDto>(value);
-            dataprovider.CreateDataProvider.SetFertigungDto(result);
+            dataprovider.CreateDataProvider.SetFertigungsDto(result);
             return Ok();
         }
 
@@ -41,7 +41,7 @@ namespace ProMan_WebAPI.Controllers
         public IHttpActionResult Update(int id, string value)
         {
             FertigungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<FertigungDto>(value);
-            dataprovider.UpdateDataProvider.UpdateFertigungDto(result, id);
+            dataprovider.UpdateDataProvider.UpdateFertigungsDto(result, id);
             return Ok();
         }
 
@@ -49,7 +49,7 @@ namespace ProMan_WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Remove(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteFertigungDto(id);
+            dataprovider.DeleteDataProvider.DeleteFertigungsDto(id);
             return Ok();
         }
     }

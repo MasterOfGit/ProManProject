@@ -12,27 +12,27 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [RoutePrefix("bauteilverwendung")]
-    public class BauteilverwendungController : BaseApiController
+    [RoutePrefix("bauteilVerwendung")]
+    public class BauteilVerwendungController : BaseApiController
     {
         // GET: api/<controller>
         public IHttpActionResult Get()
         {
-            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetBauteilverwendungDto()));
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetBauteilVerwendungDto()));
         }
 
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilverwendungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilVerwendungDto(id)));
         }
 
         [Route("create")]
         [HttpPost]
         public IHttpActionResult Create(string value)
         {
-            BauteilverwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilverwendungDto>(value);
-            dataprovider.CreateDataProvider.SetBauteilverwendungDto(result);
+            BauteilVerwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilVerwendungDto>(value);
+            dataprovider.CreateDataProvider.SetBauteilVerwendungDto(result);
             return Ok();
         }
 
@@ -40,8 +40,8 @@ namespace ProMan_WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Update(int id, string value)
         {
-            BauteilverwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilverwendungDto>(value);
-            dataprovider.UpdateDataProvider.UpdateBauteilverwendungDto(result, id);
+            BauteilVerwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilVerwendungDto>(value);
+            dataprovider.UpdateDataProvider.UpdateBauteilVerwendungDto(result, id);
             return Ok();
         }
 
@@ -49,7 +49,7 @@ namespace ProMan_WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Remove(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteBauteilverwendungDto(id);
+            dataprovider.DeleteDataProvider.DeleteBauteilVerwendungDto(id);
             return Ok();
         }
     }

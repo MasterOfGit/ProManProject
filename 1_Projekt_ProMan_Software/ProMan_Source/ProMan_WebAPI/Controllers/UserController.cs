@@ -13,33 +13,33 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [RoutePrefix("login")]
-    public class LoginController : BaseApiController
+    [RoutePrefix("user")]
+    public class UserController : BaseApiController
     {
         // GET: api/<controller>
         public IHttpActionResult Get()
         {
-            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetLoginDto()));
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetUserDto()));
         }
 
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetLoginDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetUserDto(id)));
         }
 
         // GET: api/<controller>
-        public IEnumerable<UserDto> Get(bool needlogin)
+        public IEnumerable<UserDto> Get(bool needUser)
         {
-            return dataprovider.GetListDataProvider.GetUserDto(needlogin);
+            return dataprovider.GetListDataProvider.GetUserDto(needUser);
         }
 
         [Route("create")]
         [HttpPost]
         public IHttpActionResult Create(string value)
         {
-            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
-            dataprovider.CreateDataProvider.SetLoginDto(result);
+            UserDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<UserDto>(value);
+            dataprovider.CreateDataProvider.SetUserDto(result);
             return Ok();
         }
 
@@ -47,8 +47,8 @@ namespace ProMan_WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Update(int id, string value)
         {
-            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
-            dataprovider.UpdateDataProvider.UpdateLoginDto(result, id);
+            UserDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<UserDto>(value);
+            dataprovider.UpdateDataProvider.UpdateUserDto(result, id);
             return Ok();
         }
 
@@ -56,7 +56,7 @@ namespace ProMan_WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Remove(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteLoginDto(id);
+            dataprovider.DeleteDataProvider.DeleteUserDto(id);
             return Ok();
         }
     }

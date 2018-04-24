@@ -107,7 +107,6 @@
     <Compile Include="App_Start\CentralizedPrefixProvider.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Base\BaseApiController.cs" />
-    <Compile Include="Base\Logger.cs" />
     <Compile Include="Controllers\ArbeitsfolgeController.cs" />
     <Compile Include="Controllers\AbteilungController.cs" />
     <Compile Include="Controllers\AddGetDeleteObjectController.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="OptionsModule .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,8 +18,8 @@ $ch3 = curl_init();
 
 
 //curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/maschine");
-//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/maschine");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/maschinen/maschinen.json");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -41,7 +41,6 @@ curl_close($ch2);
 // Unwandlung von json in Array	
 $jsonmaschinen = json_decode($maschinen, TRUE);
 $jsonmaschinenVerwendung = json_decode($maschinenVerwendung, TRUE);
-echo($jsonmaschinen);
 echo <<<'HOME1_HEADER'
 <div class="User">
   	<div class="jumbotron">
