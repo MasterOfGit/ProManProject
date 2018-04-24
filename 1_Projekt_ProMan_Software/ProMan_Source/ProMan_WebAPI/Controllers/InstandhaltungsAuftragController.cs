@@ -6,19 +6,19 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("InstandhaltungsAuftrag")]
     public class InstandhaltungsAuftragController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<InstandhaltungsAuftragDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetInstandhaltungsAuftragDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetInstandhaltungsAuftragDto()));
         }
 
         // GET: api/<controller>/5
@@ -27,37 +27,30 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetInstandhaltungsAuftragDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]InstandhaltungsAuftragDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetInstandhaltungsAuftragDto(value);
+            InstandhaltungsAuftragDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<InstandhaltungsAuftragDto>(value);
+            dataprovider.CreateDataProvider.SetInstandhaltungsAuftragDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]InstandhaltungsAuftragDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateInstandhaltungsAuftragDto(value, id);
+            InstandhaltungsAuftragDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<InstandhaltungsAuftragDto>(value);
+            dataprovider.UpdateDataProvider.UpdateInstandhaltungsAuftragDto(result, id);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]List<InstandhaltungsAuftragDto> value)
-        {
-            foreach (var item in value)
-            {
-                Put(id, value);
-            }
-            return Ok();
-
-        }
-
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteInstandhaltungsAuftragDto(id);
             return Ok();
         }
     }
-
 }

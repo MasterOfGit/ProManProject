@@ -3,50 +3,51 @@
 //Martikelnummer : 396734
 //Team: ProMan
 ///////////////////////////////
-using ProMan_BusinessLayer.DataProvider;
-using ProMan_BusinessLayer.Models;
-using System.Collections.Generic;
-using System.Web.Http;
 using Newtonsoft.Json.Linq;
-using System.Web.Http.Cors;
+using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
-    [RoutePrefix("wartung")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("wartung")]
     public class WartungController : BaseApiController
     {
-
-        // GET api/<controller>
-        public IEnumerable<WartungDto> Get()
+        // GET: api/<controller>
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetWartungDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetWartungDto()));
         }
 
-        // GET api/<controller>/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetWartungDto(id)));
         }
 
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]WartungDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetWartungDto(value);
+            WartungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<WartungDto>(value);
+            dataprovider.CreateDataProvider.SetWartungDto(result);
             return Ok();
         }
 
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]WartungDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateWartungDto(value,id);
+            WartungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<WartungDto>(value);
+            dataprovider.UpdateDataProvider.UpdateWartungDto(result, id);
             return Ok();
         }
 
-        // DELETE api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteWartungDto(id);
             return Ok();

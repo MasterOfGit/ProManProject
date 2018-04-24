@@ -3,49 +3,51 @@
 //Martikelnummer : 396734
 //Team: ProMan
 ///////////////////////////////
-using System.Collections.Generic;
-using System.Web.Http;
 using Newtonsoft.Json.Linq;
-using System.Web.Http.Cors;
-using ProMan_BusinessLayer.DataProvider;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
-    [RoutePrefix("reparatur")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("reparatur")]
     public class ReparaturController : BaseApiController
     {
-
-        // GET api/<controller>
-        public IEnumerable<ReparaturDto> Get()
+        // GET: api/<controller>
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetReparaturDto(); ;
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetReparaturDto()));
         }
 
-        // GET api/<controller>/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetReparaturDto(id)));
         }
 
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]ReparaturDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetReparaturDto(value);
+            ReparaturDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ReparaturDto>(value);
+            dataprovider.CreateDataProvider.SetReparaturDto(result);
             return Ok();
         }
 
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]ReparaturDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateReparaturDto(value, id);
+            ReparaturDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ReparaturDto>(value);
+            dataprovider.UpdateDataProvider.UpdateReparaturDto(result, id);
             return Ok();
         }
 
-        // DELETE api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteReparaturDto(id);
             return Ok();

@@ -3,52 +3,51 @@
 //Martikelnummer : 396734
 //Team: ProMan
 ///////////////////////////////
-using System.Collections.Generic;
-using System.Web.Http;
 using Newtonsoft.Json.Linq;
-using System.Web.Http.Cors;
-using ProMan_BusinessLayer.DataProvider;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.IO;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
-    [RoutePrefix("maschine")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("maschine")]
     public class MaschineController : BaseApiController
     {
-
-        // GET api/<controller>
-        public IEnumerable<MaschineDto> Get()
+        // GET: api/<controller>
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetMaschineDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetMaschineDto()));
         }
 
-        // GET api/<controller>/5
+        // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetMaschineDto(id)));
         }
 
+        [Route("create")]
         [HttpPost]
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]MaschineDto value)
+        public IHttpActionResult Create(string value)
         {
-            var returnvalue = dataprovider.CreateDataProvider.SetMaschineDto(value);
-            return Ok(returnvalue);
+            MaschineDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<MaschineDto>(value);
+            dataprovider.CreateDataProvider.SetMaschineDto(result);
+            return Ok();
         }
 
-        [HttpPut]
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]MaschineDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            var returnvalue = dataprovider.UpdateDataProvider.UpdateMaschineDto(value, id);
-            return Ok(returnvalue);
+            MaschineDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<MaschineDto>(value);
+            dataprovider.UpdateDataProvider.UpdateMaschineDto(result, id);
+            return Ok();
         }
 
-        // DELETE api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteMaschineDto(id);
             return Ok();

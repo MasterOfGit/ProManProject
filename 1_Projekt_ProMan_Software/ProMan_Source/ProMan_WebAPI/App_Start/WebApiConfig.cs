@@ -13,11 +13,11 @@ namespace ProMan_WebAPI
         public static void Register(HttpConfiguration config)
         {
             // Web-API-Konfiguration und -Dienste
-            //config.EnableCors();
+            config.EnableCors();
 
             // Web-API-Routen
-            config.MapHttpAttributeRoutes();
-
+            config.MapHttpAttributeRoutes(new CentralizedPrefixProvider("api"));
+            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

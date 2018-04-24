@@ -6,45 +6,50 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("fertigung")]
     public class FertigungController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<FertigungDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetFertigungsDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetFertigungDto()));
         }
 
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungsDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetFertigungDto(id)));
         }
 
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]FertigungDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetFertigungsDto(value);
+            FertigungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<FertigungDto>(value);
+            dataprovider.CreateDataProvider.SetFertigungDto(result);
             return Ok();
         }
 
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]FertigungDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateFertigungsDto(value, id);
+            FertigungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<FertigungDto>(value);
+            dataprovider.UpdateDataProvider.UpdateFertigungDto(result, id);
             return Ok();
         }
 
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteFertigungsDto(id);
+            dataprovider.DeleteDataProvider.DeleteFertigungDto(id);
             return Ok();
         }
     }

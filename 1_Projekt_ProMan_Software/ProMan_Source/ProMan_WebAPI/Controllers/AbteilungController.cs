@@ -13,6 +13,7 @@ using System.Web.Http.Cors;
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("abteilung")]
     public class AbteilungController : BaseApiController
     {
         // GET: api/<controller>
@@ -27,22 +28,27 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetAbteilungDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]AbteilungDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetAbteilungDto(value);
+            AbteilungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<AbteilungDto>(value);
+            dataprovider.CreateDataProvider.SetAbteilungDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]AbteilungDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateAbteilungDto(value,id);
+            AbteilungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<AbteilungDto>(value);
+            dataprovider.UpdateDataProvider.UpdateAbteilungDto(result, id);
             return Ok();
         }
 
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteAbteilungDto(id);
             return Ok();

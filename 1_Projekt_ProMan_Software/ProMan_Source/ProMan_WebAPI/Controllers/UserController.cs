@@ -3,26 +3,29 @@
 //Martikelnummer : 396734
 //Team: ProMan
 ///////////////////////////////
+using Newtonsoft.Json.Linq;
+using ProMan_BusinessLayer.Models;
+using ProMan_WebAPI.Base;
 using System.Collections.Generic;
 using System.Web.Http;
-using ProMan_BusinessLayer.DataProvider;
-using ProMan_BusinessLayer.Models;
-using Newtonsoft.Json.Linq;
 using System.Web.Http.Cors;
-using ProMan_WebAPI.Base;
 
 namespace ProMan_WebAPI.Controllers
 {
-    [RoutePrefix("user")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class UserController : BaseApiController
+    [RoutePrefix("login")]
+    public class LoginController : BaseApiController
     {
-
-
         // GET: api/<controller>
-        public IEnumerable<UserDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetUserDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetLoginDto()));
+        }
+
+        // GET: api/<controller>/5
+        public IHttpActionResult Get(int id)
+        {
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetLoginDto(id)));
         }
 
         // GET: api/<controller>
@@ -31,32 +34,32 @@ namespace ProMan_WebAPI.Controllers
             return dataprovider.GetListDataProvider.GetUserDto(needlogin);
         }
 
-        // GET: api/<controller>/5
-        public IHttpActionResult Get(int id)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetUserDto(id)));
-        }
-
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]UserDto value)
-        {
-            dataprovider.CreateDataProvider.SetUserDto(value);
+            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
+            dataprovider.CreateDataProvider.SetLoginDto(result);
             return Ok();
         }
 
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]UserDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateUserDto(value, id);
+            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
+            dataprovider.UpdateDataProvider.UpdateLoginDto(result, id);
             return Ok();
         }
 
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
-            dataprovider.DeleteDataProvider.DeleteUserDto(id);
+            dataprovider.DeleteDataProvider.DeleteLoginDto(id);
             return Ok();
         }
     }
 }
+
+

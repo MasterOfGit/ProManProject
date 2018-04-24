@@ -6,19 +6,19 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("audit")]
     public class AuditController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<AuditDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetAuditDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetAuditDto()));
         }
 
         // GET: api/<controller>/5
@@ -27,33 +27,27 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetAuditDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]AuditDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetAuditDto(value);
+            AuditDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<AuditDto>(value);
+            dataprovider.CreateDataProvider.SetAuditDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]AuditDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateAuditDto(value, id);
+            AuditDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<AuditDto>(value);
+            dataprovider.UpdateDataProvider.UpdateAuditDto(result, id);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]List<AuditDto> value)
-        {
-            foreach(var item in value)
-            {
-                Put(id, value);
-            }
-            return Ok();
-
-        }
-
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteAuditDto(id);
             return Ok();

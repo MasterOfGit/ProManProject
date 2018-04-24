@@ -6,19 +6,19 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("userAnfrage")]
     public class UserAnfrageController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<UserAnfrageDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetUserAnfrageDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetUserAnfrageDto()));
         }
 
         // GET: api/<controller>/5
@@ -27,37 +27,30 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetUserAnfrageDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]UserAnfrageDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetUserAnfrageDto(value);
+            UserAnfrageDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<UserAnfrageDto>(value);
+            dataprovider.CreateDataProvider.SetUserAnfrageDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]UserAnfrageDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateUserAnfrageDto(value, id);
+            UserAnfrageDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<UserAnfrageDto>(value);
+            dataprovider.UpdateDataProvider.UpdateUserAnfrageDto(result, id);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]List<UserAnfrageDto> value)
-        {
-            foreach (var item in value)
-            {
-                Put(id, value);
-            }
-            return Ok();
-
-        }
-
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteUserAnfrageDto(id);
             return Ok();
         }
     }
-
 }

@@ -6,59 +6,51 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
-    [RoutePrefix("bauteilverwendung")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class BauteilVerwendungController : BaseApiController
+    [RoutePrefix("bauteilverwendung")]
+    public class BauteilverwendungController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<BauteilVerwendungDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetBauteilVerwendungDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetBauteilverwendungDto()));
         }
 
         // GET: api/<controller>/5
         public IHttpActionResult Get(int id)
         {
-            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilVerwendungDto(id)));
+            return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilverwendungDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]BauteilVerwendungDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetBauteilVerwendungDto(value);
+            BauteilverwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilverwendungDto>(value);
+            dataprovider.CreateDataProvider.SetBauteilverwendungDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]BauteilVerwendungDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateBauteilVerwendungDto(value, id);
+            BauteilverwendungDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilverwendungDto>(value);
+            dataprovider.UpdateDataProvider.UpdateBauteilverwendungDto(result, id);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]List<BauteilVerwendungDto> value)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
-            foreach (var item in value)
-            {
-                Put(id, value);
-            }
-            return Ok();
-
-        }
-
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
-        {
-            dataprovider.DeleteDataProvider.DeleteBauteilVerwendungDto(id);
+            dataprovider.DeleteDataProvider.DeleteBauteilverwendungDto(id);
             return Ok();
         }
     }
-
 }

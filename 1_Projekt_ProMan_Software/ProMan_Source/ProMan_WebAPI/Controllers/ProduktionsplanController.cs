@@ -6,19 +6,19 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("Produktionsplan")]
     public class ProduktionsplanController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<ProduktionsplanDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetProduktionsplanDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetProduktionsplanDto()));
         }
 
         // GET: api/<controller>/5
@@ -27,37 +27,30 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetProduktionsplanDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]ProduktionsplanDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetProduktionsplanDto(value);
+            ProduktionsplanDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ProduktionsplanDto>(value);
+            dataprovider.CreateDataProvider.SetProduktionsplanDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]ProduktionsplanDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateProduktionsplanDto(value, id);
+            ProduktionsplanDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ProduktionsplanDto>(value);
+            dataprovider.UpdateDataProvider.UpdateProduktionsplanDto(result, id);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]List<ProduktionsplanDto> value)
-        {
-            foreach (var item in value)
-            {
-                Put(id, value);
-            }
-
-            return Ok();
-        }
-
-        // DELETE: api/Audit/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteProduktionsplanDto(id);
             return Ok();
         }
     }
-
 }

@@ -15,9 +15,18 @@ using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
+    [RoutePrefix("addgetdeleteobject")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AddGetDeleteObjectController : BaseApiController
     {
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(string type, int parent, int id)
+        {
+            dataprovider.DeleteDataProvider.RemoteObject(type, parent, id);
+            return Ok();
+        }
+
         // GET: api/AddGetDeleteObject
         public IEnumerable<string> Get()
         {
@@ -30,8 +39,9 @@ namespace ProMan_WebAPI.Controllers
             return dataprovider.GetListDataProvider.GetTypeObjects(type);
         }
 
-        // POST: api/AddGetDeleteObject/?type=&parent=&id=
-        public void Post(string type, int parent, int id)
+        [Route("create")]
+        [HttpPost]
+        public void Create(string type, int parent, int id)
         {
             dataprovider.CreateDataProvider.AddObject(type, parent, id);
         }
@@ -42,11 +52,6 @@ namespace ProMan_WebAPI.Controllers
             dataprovider.UpdateDataProvider.MoveObject(type, oldparent, newparent, id);
         }
 
-        [HttpDelete]
-        // DELETE: api/AddGetDeleteObject/?type=&parent=&id=
-        public void Delete(string type,int parent, int id)
-        {
-            dataprovider.DeleteDataProvider.RemoteObject(type, parent, id);
-        }
+
     }
 }

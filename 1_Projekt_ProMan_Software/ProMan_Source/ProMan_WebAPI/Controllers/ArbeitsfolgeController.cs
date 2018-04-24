@@ -6,19 +6,19 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("arbeitsfolge")]
     public class ArbeitsfolgeController : BaseApiController
     {
         // GET: api/<controller>
-        public IEnumerable<ArbeitsfolgeDto> Get()
+        public IHttpActionResult Get()
         {
-            return dataprovider.GetListDataProvider.GetArbeitsfolgeDto();
+            return Ok(JToken.FromObject(dataprovider.GetListDataProvider.GetArbeitsfolgeDto()));
         }
 
         // GET: api/<controller>/5
@@ -27,22 +27,27 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetArbeitsfolgeDto(id)));
         }
 
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]ArbeitsfolgeDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetArbeitsfolgeDto(value);
+            ArbeitsfolgeDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ArbeitsfolgeDto>(value);
+            dataprovider.CreateDataProvider.SetArbeitsfolgeDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]ArbeitsfolgeDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateArbeitsfolgeDto(value,id);
+            ArbeitsfolgeDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<ArbeitsfolgeDto>(value);
+            dataprovider.UpdateDataProvider.UpdateArbeitsfolgeDto(result, id);
             return Ok();
         }
 
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteArbeitsfolgeDto(id);
             return Ok();

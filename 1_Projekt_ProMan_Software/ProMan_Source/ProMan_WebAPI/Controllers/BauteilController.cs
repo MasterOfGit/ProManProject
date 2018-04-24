@@ -6,15 +6,13 @@
 using Newtonsoft.Json.Linq;
 using ProMan_BusinessLayer.Models;
 using ProMan_WebAPI.Base;
-using System.Collections.Generic;
-using System.IO;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
 namespace ProMan_WebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("bauteil")]
-    [EnableCors(origins: "*", headers: "Content-type,content-type", methods: "*")]
     public class BauteilController : BaseApiController
     {
         // GET: api/<controller>
@@ -29,23 +27,27 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.GetBauteilDto(id)));
         }
 
-        //[HttpPost]
-        // POST: api/<controller>
-        public IHttpActionResult Post([FromBody]BauteilDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            dataprovider.CreateDataProvider.SetBauteilDto(value);
+            BauteilDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilDto>(value);
+            dataprovider.CreateDataProvider.SetBauteilDto(result);
             return Ok();
         }
 
-        // PUT: api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]BauteilDto value)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
         {
-            dataprovider.UpdateDataProvider.UpdateBauteilDto(value, id);
+            BauteilDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<BauteilDto>(value);
+            dataprovider.UpdateDataProvider.UpdateBauteilDto(result, id);
             return Ok();
         }
 
-        // DELETE: api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteBauteilDto(id);
             return Ok();
