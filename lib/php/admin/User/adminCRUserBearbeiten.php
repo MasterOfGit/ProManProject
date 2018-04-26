@@ -14,8 +14,9 @@ $ch1 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
-
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/user");
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
 $userData=curl_exec($ch1);

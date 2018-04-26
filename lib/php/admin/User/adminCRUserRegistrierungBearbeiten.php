@@ -14,7 +14,9 @@ $ch2 = curl_init();
 
 //curl_setopt($ch2, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/adminPage/?identifier=AdminPageAbteilung");
 
-curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
+//curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu/jsonData/user/userData.json");
+curl_setopt($ch1, CURLOPT_URL, "http://zoomnation.selfhost.eu:8080/ProManAPI/api/user");
+//curl_setopt($ch1, CURLOPT_URL, "http://localhost/api/user");
 
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 curl_setopt($ch1,CURLOPT_RETURNTRANSFER,true);
@@ -42,6 +44,69 @@ $jsonuserLogin = json_decode($userLogin, TRUE);
 
 
 echo <<<HEADER
+<script>
+function createData()
+{
+		var givenId = $q;
+		var data = JSON.stringify(
+		{
+		
+			"userID"		:	$("#userID").val(),
+
+		 	"userAnrede"	:	$("#userAnrede").val(),
+
+		 	"userVorname"	:	$("#userVorname").val(),
+
+		 	"userNachname"	:	$("#userNachname").val(),
+
+		 	"userPosition"	: 	$("#userPosition").val(),
+
+		 	"userBild"		: 	$("#userBild").val(),
+
+		 	"userLand"		: 	$("#userLand").val(),
+
+		 	"userWerk"		: 	$("#userWerk").val(),
+
+		 	"userAbteilung"	:	$("#userAbteilung").val(),
+
+		 	"userEmail"		:	$("#userEmail").val(),
+
+		 	"userFestnetzNr":	$("#userFestnetzNr").val(),
+
+		 	"userMobilNr"	:	$("#userMobilNr").val(),
+
+		 	"userBemerkung"	:	$("#userBemerkung").val()
+
+	
+		}
+	);
+	
+var logindata = JSON.stringify(
+	{
+	
+		"userID" : $q,
+
+		"userbereich"		:	$("#userbereich").val(),
+
+		 "userKennung"	:	$("#userKennung").val(),
+
+		 "userpasswort"	:	$("#userpasswort").val(),
+	}
+);
+
+    		
+		if(givenId==0)		{		
+			createRegistierung(data);
+		}
+		else{
+			updateregistrierungl(data,givenId);
+			
+		}
+		
+		createLogin(logindata);
+};
+</script>
+
 <div class="Userbearbeiten">
   <div class="jumbotron">
     <h1>User bearbeiten</h1>
@@ -52,14 +117,16 @@ echo <<<HEADER
         <div class="form-group">
         		 
 HEADER;
-		echo("<label for='userLastLogin'>LastLogin</label>");
-		echo("<input type='text' class='form-control' id='userLastLogin' aria-describedby='userLastLogin' placeholder='LastLogin' value=''>");
-						
-		echo("<label for='userStatus'>Status</label>");
-		echo("<input type='text' class='form-control' id='userStatus' aria-describedby='userStatus' placeholder='Status' value=''>");
-						
+											
 		echo("<label for='userbereich'>Userbereich</label>");
-		echo("<input type='text' class='form-control' id='userbereich' aria-describedby='userbereich' placeholder='Userbereich' value=''>");
+		echo("<select class='form-control' id='userbereich'>
+		<option>Administrator</option>
+		<option>Maschinenführer</option>
+		<option>Instandhalter</option>
+		<option>Gruppensprecher</option>
+		<option>Meister</option>
+		<option>Sachbearbeiter</option>
+	  	</select>");
 						
 		echo("<label for='userKennung'>Userkennung</label>");
 		echo("<input type='text' class='form-control' id='userKennung' aria-describedby='userKennung' placeholder='Userkennung' value=''>");
@@ -67,7 +134,7 @@ HEADER;
 		echo("<label for='userpasswort'>Userpasswort</label>");
 		echo("<input type='text' class='form-control' id='userpasswort' aria-describedby='userpasswort' placeholder='Userpasswort' value=''>");
 
-				foreach($jsonUserData['users'] as $userdata)
+				foreach($jsonUserData as $userdata)
 				{
 				
 					if($userdata['userID'] == $q )
@@ -119,7 +186,7 @@ HEADER;
            
 echo <<<FOOTER
 		</div>
-<button type="button" class="btn btn-primary" onclick="saveNewRegistrierung('data')"> Speichern</button>
+<button type="button" class="btn btn-primary" onclick="createData();"> Speichern</button>
 <input type="button" value="Zurück" onclick="window.location.href='usercontent.html'" />
 	      </form>
     </div>

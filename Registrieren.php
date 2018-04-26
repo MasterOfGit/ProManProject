@@ -9,7 +9,7 @@ Theam : ProMan
 $q = $_REQUEST["q"];
 //echo "Anfrage : "  . $q . "<br>";
 //$q= 0;
-$ch1 = curl_init();
+/* $ch1 = curl_init();
 
 
 
@@ -27,49 +27,48 @@ curl_close($ch1);
 
 // Unwandlung von json in Array	
 $jsonregistrierungl = json_decode($registrierung, TRUE);
-
+ */
 echo <<<HEADER
 
 <script>
 function createData()
 {
-
-		var givenId = $q;
+		var givenId = 0;
 		var data = JSON.stringify(
 		{
 		
 			"userID"		:	$("#userID").val(),
 
-		 	"userAnrede"	:	$("#userAnrede").val()
+		 	"userAnrede"	:	$("#userAnrede").val(),
 
-		 	"userVorname"	:	$("#userVorname").val()
+		 	"userVorname"	:	$("#userVorname").val(),
 
-		 	"userNachname"	:	$("#userNachname").val()
+		 	"userNachname"	:	$("#userNachname").val(),
 
-		 	"userPosition"	: 	$("#userPosition").val()
+		 	"userPosition"	: 	$("#userPosition").val(),
 
-		 	"userBild"		: 	$("#userBild").val()
+		 	"userBild"		: 	$("#userBild").val(),
 
-		 	"userLand"		: 	$("#userLand").val()
+		 	"userLand"		: 	$("#userLand").val(),
 
-		 	"userWerk"		: 	$("#userWerk").val()
+		 	"userWerk"		: 	$("#userWerk").val(),
 
-		 	"userAbteilung"	:	$("#userAbteilung").val()
+		 	"userAbteilung"	:	$("#userAbteilung").val(),
 
-		 	"userEmail"		:	$("#userEmail").val()
+		 	"userEmail"		:	$("#userEmail").val(),
 
-		 	"userFestnetzNr":	$("#userFestnetzNr").val()
+		 	"userFestnetzNr":	$("#userFestnetzNr").val(),
 
-		 	"userMobilNr"	:	$("#userMobilNr").val()
+		 	"userMobilNr"	:	$("#userMobilNr").val(),
 
 		 	"userBemerkung"	:	$("#userBemerkung").val()
 
 	
 		}
-		);
-		
+    );
+    		
 		if(givenId==0)		{		
-			saveregistrierung(data);
+			createRegistierung(data);
 		}
 		else{
 			updateregistrierungl(data,givenId);
@@ -142,7 +141,7 @@ HEADER;
 
 				
 			  echo("<label for='userID'>UserID (falls bekannt)</label>");
-              echo("<input type='text' class='form-control' id='userID' aria-describedby='userID' placeholder='UserID'>");
+              echo("<input type='text' class='form-control' id='userID' aria-describedby='userID' placeholder='UserID' value='0'>");
               
 			  echo("<label for='userAnrede'>Anrede</label>");
               echo("<select class='form-control' id='userAnrede'>
@@ -200,7 +199,7 @@ HEADER;
             echo("</div>");
             echo("<button type='button' 
 					class='btn btn-primary' 
-				    onclick='saveNewRegistrierung('data');'> Senden Login</button>");
+				    onclick='createData();'>Senden Login</button>");
              echo("<button type='reset class='btn btn-primary'>Reset</button>");
 echo <<<FOOTER
 			</div>

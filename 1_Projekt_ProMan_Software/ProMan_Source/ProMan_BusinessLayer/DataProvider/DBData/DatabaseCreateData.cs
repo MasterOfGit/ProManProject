@@ -171,7 +171,7 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
             Enum.TryParse(data.userbereich, out tmp);
             Enum.TryParse(data.userStatus, out tmp2);
 
-            dbcontext.Logins.Add(new ProMan_Database.Model.Login()
+            var login = dbcontext.Logins.Add(new ProMan_Database.Model.Login()
             {
                 Username = data.userKennung,
                 Password = data.userpasswort,
@@ -180,6 +180,8 @@ namespace ProMan_BusinessLayer.DataProvider.DBData
                 UserStatus = tmp2,
                 
             });
+
+            dbcontext.Mitarbeiter.FirstOrDefault(x => x.MitarbeiterID == data.userID).Login = login;
 
             dbcontext.SaveChanges();
 

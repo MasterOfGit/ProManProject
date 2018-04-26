@@ -103,7 +103,7 @@ HOME1_HEADER;
 				echo("<td>{$itemuserdatawithLogin['userEmail'] }</td>");
 				echo("<td>{$itemuserdatawithLogin['userFestnetzNr']}</td>");
 				  
-				echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeRegistUser({$userdata['userID']});'></td>");
+				echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeRegistUser({$itemuserdatawithLogin['userID']});'></td>");
 
 /* 				foreach($jsonUserLogin as $userlogin)
 				{
@@ -167,7 +167,7 @@ MENU1_HEADER;
 							echo("<td>{$itemuserdatawithoutLogin['userNachname']}</td>");
 							echo("<td>{$itemuserdatawithoutLogin['userEmail'] }</td>");
 							echo("<td>{$itemuserdatawithoutLogin['userFestnetzNr']}</td>");
-							echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeNewRegistUser({$userdata['userID']});'></td>");
+							echo("<td><input class='btn btn-primary' type='button' value='Bearbeiten'  onclick='changeNewRegistUser({$itemuserdatawithoutLogin['userID']});'></td>");
 					//}	
 				//};
 	  			  

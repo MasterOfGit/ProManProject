@@ -29,9 +29,9 @@ namespace ProMan_WebAPI.Controllers
         }
 
         // GET: api/<controller>
-        public IEnumerable<UserDto> Get(bool needUser)
+        public IEnumerable<UserDto> Get(bool needlogin)
         {
-            return dataprovider.GetListDataProvider.GetUserDto(needUser);
+            return dataprovider.GetListDataProvider.GetUserDto(needlogin);
         }
 
         [Route("create")]

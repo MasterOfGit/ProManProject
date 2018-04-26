@@ -36,21 +36,27 @@ namespace ProMan_WebAPI.Controllers
             return Ok(JToken.FromObject(dataprovider.GetSingleProvider.ExecuteLoginDto(username,password)));
         }
 
-        // POST api/<controller>
-        public IHttpActionResult Post([FromBody]LoginDto value)
+        [Route("create")]
+        [HttpPost]
+        public IHttpActionResult Create(string value)
         {
-            return Ok(dataprovider.CreateDataProvider.SetLoginDto(value));
-        }
-
-        // PUT api/<controller>/5
-        public IHttpActionResult Put(int id, [FromBody]LoginDto value)
-        {
-            dataprovider.UpdateDataProvider.UpdateLoginDto(value,id);
+            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
+            dataprovider.CreateDataProvider.SetLoginDto(result);
             return Ok();
         }
 
-        // DELETE api/<controller>/5
-        public IHttpActionResult Delete(int id)
+        [Route("update")]
+        [HttpPost]
+        public IHttpActionResult Update(int id, string value)
+        {
+            LoginDto result = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginDto>(value);
+            dataprovider.UpdateDataProvider.UpdateLoginDto(result, id);
+            return Ok();
+        }
+
+        [Route("remove")]
+        [HttpPost]
+        public IHttpActionResult Remove(int id)
         {
             dataprovider.DeleteDataProvider.DeleteLoginDto(id);
             return Ok();
